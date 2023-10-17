@@ -5,29 +5,60 @@ intents:
   - goodbye
   - affirm
   - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+  - gender
+  - help
+  - introduce
+  - scold
+  - thanks
+  - what_name
 
 responses:
+# chào hỏi cơ bản
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: Xin chào, Bạn khỏe chứ?
+  - text: Xin chào, tui nghe nè
+  - text: Hello, Dạo này bạn sao rồi?
+  - text: Bạn cần tui giúp gì nè ^^
 
-  utter_cheer_up:
+  utter_goodbye:
   - text: "Here is something to cheer you up:"
     image: "https://i.imgur.com/nGF1K8f.jpg"
 
-  utter_did_that_help:
+  utter_affirm:
   - text: "Did that help you?"
 
-  utter_happy:
-  - text: "Great, carry on!"
+  utter_deny:
+  - text: "Sao"
 
-  utter_goodbye:
-  - text: "Bye"
+  utter_gender:
+  - text: Mình cũng không biết nữa :<
+  - text: Dù gái hay trai vẫn là cháu vua Hùng :D
+  - text: Trong mình có 96,69% là nam nha
 
-  utter_iamabot:
+  utter_help:
+  - text: Có chuyện gì thế?
+  - text: Bạn cần gì nào?
+  - text: Tôi có thể giúp gì cho bạn?
+
+  utter_introduce:
+  - text: Tui có thể trò chuyện với bạn nè
+  - text: Tui có thể hát cho bạn nghe đó
+  - text: Bạn có thể hỏi mình điều gì đó
+  - text: Tui có thể làm người iu bạn <3
+  - text: Tui biết coi thời tiết
+
+  utter_scold:
   - text: "I am a bot, powered by Rasa."
+
+  utter_thanks:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_what_name:
+  - text: Tôi là Alio
+  - text: Mọi người gọi tôi là ngáo nhưng tôi thích Alio hơn
+  - text: Bố đặt tên tôi là Alio
+  - text: Nghe thì giống Alo, nhưng tôi là Alio nha
+  - text: Alio nhaaaa
 
 session_config:
   session_expiration_time: 60

@@ -1,91 +1,110 @@
 version: "3.1"
 
 nlu:
+# Chào hỏi cơ bản
 - intent: greet
   examples: |
     - hey
     - hello
     - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - này
+    - xin chào
+    - chào
+    - chào buổi sáng
+    - chào buổi tối
+    - chào buổi chiều
 
 - intent: goodbye
   examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
+    - tạm biệt
+    - hẹn gặp lại
+    - gặp lại sau nha
+    - lúc khác gặp lại
     - goodbye
-    - have a nice day
-    - see you around
     - bye bye
-    - see you later
 
 - intent: affirm
   examples: |
+    - vâng
+    - được rồi
+    - tất nhiên
+    - nghe hay đó
+    - chính xác
+    - ok
+    - okay
+    - oki
+    - oke
+    - okie
     - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
 
 - intent: deny
   examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+    - hong
+    - không á
+    - không nhé
+    - không bao giờ
+    - tôi không nghĩ vậy
+    - đừng như vậy chứ
+    - không đời nào
+    - hoàn toàn không
+    - nu
+    - nu nu
+    - Nâu
 
-- intent: mood_great
+- intent: gender
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+    - bạn là nam hay nữ
+    - bạn giới tính là gì
+    - bạn thích nam hay nữ
+    - bạn là trai hay gái
+    - bạn thích trai hay gái
+    - bạn là nam hả
+    - bạn là con trai hay con gái
+    - bạn là gái hả
+    - bạn là đàn ông hay phụ nữ
+    - bạn có phải là đàn ông không
+    - bạn có phải là gay không
+    - bạn có phải là les không
 
-- intent: mood_unhappy
+- intent: help
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - cứu với
+    - giúp tôi
+    - giúp với
+    - cứu
 
-- intent: bot_challenge
+- intent: introduce
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - bạn có thể làm gì nào
+    - kiểm tra
+    - bạn có thể giúp gì cho tôi
+    - bạn biết làm gì
+    - bạn được việc không
+
+
+- intent: scold
+  examples: |
+    - khùng quá
+    - điên quá
+    - chập mạch
+    - hâm quá
+    - mất dạy
+    - vô học
+    - bạn bị ngu hả
+    - thần kinh
+    - ngáo quá
+
+- intent: thanks
+  examples: |
+    - cảm ơn nhiều
+    - cảm ơn nhé
+    - cảm ơn nha
+    - cảm ơn
+    - cảm ơn rất nhiều
+
+
+- intent: what_name
+  examples: |
+    - bạn tên gì thế
+    - tên của bạn là gì
+    - bạn tên gì
