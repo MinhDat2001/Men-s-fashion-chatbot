@@ -4,15 +4,6 @@
 # See this guide on how to implement these action:
 # https://rasa.com/docs/rasa/custom-actions
 
-
-# This is a simple example for a custom action which utters "Hello World!"
-
-# from typing import Any, Text, Dict, List
-#
-# from rasa_sdk import Action, Tracker
-# from rasa_sdk.executor import CollectingDispatcher
-#
-#
 # class ActionHelloWorld(Action):
 #
 #     def name(self) -> Text:
@@ -25,3 +16,12 @@
 #         dispatcher.utter_message(text="Hello World!")
 #
 #         return []
+
+from rasa_sdk import Action, Tracker
+from rasa_sdk.executor import CollectingDispatcher
+from db_sqlite import insert_info, insert_hobby, create_database
+class ActionSaveUserInfo(Action):
+    def name(self):
+        return "action_save_info"
+    def run(self,dispatcher):
+        dispatcher.utter_message(text = "")

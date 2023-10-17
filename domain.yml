@@ -12,6 +12,9 @@ intents:
   - thanks
   - what_name
 
+
+actions:
+ - action_save_info
 responses:
 # chào hỏi cơ bản
   utter_greet:
