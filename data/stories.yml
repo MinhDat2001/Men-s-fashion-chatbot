@@ -7,6 +7,21 @@ stories:
   - intent: greet
   - action: utter_greet
 
+- story: goodbye path
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: affirm path
+  steps:
+  - intent: affirm
+  - action: utter_affirm
+
+- story: deny path
+  steps:
+  - intent: deny
+  - action: utter_deny
+
 - story: gender path
   steps:
   - intent: gender
@@ -21,3 +36,18 @@ stories:
   steps:
   - intent: introduce
   - action: utter_introduce
+
+- story: scold path
+  steps:
+  - intent: scold
+  - action: utter_scold
+
+- story: thanks path
+  steps:
+  - intent: thanks
+  - action: utter_thanks
+
+- story: what_name path
+  steps:
+  - intent: what_name
+  - action: utter_what_name
