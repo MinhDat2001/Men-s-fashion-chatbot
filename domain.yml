@@ -11,6 +11,7 @@ intents:
   - scold
   - thanks
   - what_name
+  - ask_about_shop_location
 
 
 actions:
@@ -24,14 +25,37 @@ responses:
   - text: Bạn cần tui giúp gì nè ^^
 
   utter_goodbye:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  - text: "Tạm biệt nhé"
+  - text: "Bye bye"
+  - text: "Hẹn gặp lại nhé"
+  - text: "Gặp lại sau nhee"
+  - text: "Lần sau lại ghé nhé bạn"
+  - text: "Bye bye, lần sau lại ghe nha"
+  - text: "Tạm biệt, lần sau nói chuyện tiếp nhé"
 
-  utter_affirm:
-  - text: "Did that help you?"
+  utter_affirm:    
+  - text: "vâng"
+  - text: "được rồi"
+  - text: "tất nhiên"
+  - text: "nghe hay đó"
+  - text: "chính xác"
+  - text: "ok"
+  - text: "okay"
+  - text: "oki"
+  - text: "oke"
+  - text: "okie"
+  - text: "yes"
 
   utter_deny:
-  - text: "Sao"
+  - text: "Dạ vâng"
+  - text: "Ô, xin lỗi vì làm bnaj không hài lòng"
+  - text: "Bạn thấy như thế có vấn đề gì ư"
+  - text: "Bạn đang không đồng ý điều gì"
+  - text: "Bạn đang băn khoăn điều gì hử"
+  - text: "uhm, nếu bạn khum thích thì thui vậy"
+  - text: "Sao bạn lại từ chối tui vậy"
+  - text: "Sao lại khum nhỉ"
+  - text: "Cho tui biết lý do đi"
 
   utter_gender:
   - text: Mình cũng không biết nữa :<
@@ -51,10 +75,19 @@ responses:
   - text: Tui biết coi thời tiết
 
   utter_scold:
-  - text: "I am a bot, powered by Rasa."
+  - text: "Sao bạn lại nói tôi như vậy"
+  - text: "Bạn nói vậy là tui buồn đó"
+  - text: "Bạn xin lỗi tui đi khum tui giận đó"
+  - text: "Tui khum thích bị chê như vậy"
+  - text: "Sao bạn lại nghĩ tui như vậy"
+  - text: "Tui khum có như vậy nhé"
 
   utter_thanks:
-  - text: "I am a bot, powered by Rasa."
+  - text: "Cảm ơn bạn nhe"
+  - text: "Thank kiu"
+  - text: "Cảm ơn nè -_-"
+  - text: "Cảm ơn bạn nhìu"
+  - text: "Dạ, mình cảm ơn"
 
   utter_what_name:
   - text: Tôi là Alio
@@ -63,6 +96,15 @@ responses:
   - text: Nghe thì giống Alo, nhưng tôi là Alio nha
   - text: Alio nhaaaa
 
+# 2. Hỏi về thông tin shop
+  utter_ask_shop_location:
+  - text: Shop mình ở số 1, Nguyễn Văn trỗi, Hà Đông, Hà Nội nhé
+  - text: Ở số 1, Nguyễn Văn trỗi, Hà Đông, Hà Nội bạn nhé
+  - text: Bạn đến số 1, Nguyễn Văn trỗi, Hà Đông, Hà Nội nhé
+  - text: Cửa hàng hiện tại là ở số 1, Nguyễn Văn trỗi, Hà Đông, Hà Nội nhé
+# 3. Gợi ý về chọn quần áo
+# 4. Khai thác thông tin người dùng(Lưu thông tin người dùng)
+# 5. Buôn chuyện(Phát hiện cảm xúc qua icon)
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

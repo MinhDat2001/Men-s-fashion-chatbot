@@ -108,3 +108,18 @@ nlu:
     - bạn tên gì thế
     - tên của bạn là gì
     - bạn tên gì
+
+# 2. Hỏi về thông tin shop
+- intent: ask_about_shop_location
+  examples: |
+    - Shop bạn ở đâu
+    - Shop địa chỉ ở đâu nhỉ
+    - Shop cửa hàng ở đâu
+    - Cửa hàng mình ở đâu nhỉ
+    - Cửa hàng địa chỉ ở đâu
+    - Địa chỉ cửa hàng ở đâu nhỉ
+    - Tôi có thể đến cửa hàng trực tiếp ở đâu nhỉ
+    - Cửa hàng trực tiếp của mình ở đâu nhỉ
+# 3. Gợi ý về chọn quần áo
+# 4. Khai thác thông tin người dùng(Lưu thông tin người dùng)
+# 5. Buôn chuyện(Phát hiện cảm xúc qua icon)

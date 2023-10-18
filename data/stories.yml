@@ -1,7 +1,7 @@
 version: "3.1"
 
 stories:
-# Chào hỏi cơ bản
+# 1. Chào hỏi cơ bản
 - story: greet path
   steps:
   - intent: greet
@@ -51,3 +51,14 @@ stories:
   steps:
   - intent: what_name
   - action: utter_what_name
+
+# 2. Hỏi về thông tin shop
+
+- story: ask about location path
+  steps:
+  - intent: ask_about_shop_location
+  - action: utter_ask_shop_location
+
+# 3. Gợi ý về chọn quần áo
+# 4. Khai thác thông tin người dùng(Lưu thông tin người dùng)
+# 5. Buôn chuyện(Phát hiện cảm xúc qua icon)
