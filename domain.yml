@@ -12,6 +12,7 @@ intents:
   - thanks
   - what_name
   - ask_about_shop_location
+  - ask_shop_product
 
 
 actions:
@@ -102,6 +103,15 @@ responses:
   - text: Ở số 1, Nguyễn Văn trỗi, Hà Đông, Hà Nội bạn nhé
   - text: Bạn đến số 1, Nguyễn Văn trỗi, Hà Đông, Hà Nội nhé
   - text: Cửa hàng hiện tại là ở số 1, Nguyễn Văn trỗi, Hà Đông, Hà Nội nhé
+
+  utter_ask_shop_product:
+  - text: Cửa hàng mình bán các loại quần áo nữ, trẻ trung, năng động nhé
+  - text: Ở đây có quần áo của các soái tỷ nhé
+  - text: Ở đây có rất nhiều đồ nữ đẹp, đặc biệt là các loại váy và đầm
+  - text: shop mình chuyên quần áo, váy vóc cho các chị em ạ
+  - text: Cửa hàng mình chuyên quần áo chị em, đặc biệt có những bộ váy, đầm dự tiệc cực xinh
+
+
 # 3. Gợi ý về chọn quần áo
 # 4. Khai thác thông tin người dùng(Lưu thông tin người dùng)
 # 5. Buôn chuyện(Phát hiện cảm xúc qua icon)

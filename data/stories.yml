@@ -59,6 +59,12 @@ stories:
   - intent: ask_about_shop_location
   - action: utter_ask_shop_location
 
+- story: ask about product path
+  steps:
+  - intent: ask_shop_product
+  - action: utter_ask_shop_product
+
+
 # 3. Gợi ý về chọn quần áo
 # 4. Khai thác thông tin người dùng(Lưu thông tin người dùng)
 # 5. Buôn chuyện(Phát hiện cảm xúc qua icon)

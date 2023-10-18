@@ -120,6 +120,18 @@ nlu:
     - Địa chỉ cửa hàng ở đâu nhỉ
     - Tôi có thể đến cửa hàng trực tiếp ở đâu nhỉ
     - Cửa hàng trực tiếp của mình ở đâu nhỉ
+
+
+- intent: ask_shop_product
+  examples: |
+    - Shop của bạn bán gì
+    - Cửa hàng mình có những gì
+    - Shop mình có những gì
+    - Cửa hàng mình là shop thời trang nữ đúng không
+    - Các sản phẩm mà cửa hàng mình có là gì
+    - Cửa hàng bán gì
+    - Cửa hàng có những gì
+
 # 3. Gợi ý về chọn quần áo
 # 4. Khai thác thông tin người dùng(Lưu thông tin người dùng)
 # 5. Buôn chuyện(Phát hiện cảm xúc qua icon)
