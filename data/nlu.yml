@@ -133,5 +133,44 @@ nlu:
     - Cửa hàng có những gì
 
 # 3. Gợi ý về chọn quần áo
+
+- intent: ask_shop_dress
+  examples: |
+    - Shop ơi tôi muốn mua váy đi tiệc
+    - Tôi thích mặc váy
+    - Tôi sắp đi tiệc bạn có gợi ý gì không
+    - Cửa hàng mình có váy gì đẹp không
+    - Tôi tôi hơi mũm mĩm, bạn có gợi ý nào không
+    - Tôi sắp đi chơi với bạn trai, mà không biết nên mặc gì
+    - Tôi sắp đi picnic, bạn có gợi ý gì không
+    - Tôi sắp đi du lịch, bạn có gợi ý gì không
+    - Người tôi gầy có mặc được váy không
+    - Bạn thấy như thế nào nếu tôi mặc váy
+
+- intent: ask_outfit_office
+  examples: |
+    - Tôi sắp đi làm ngày đầu ở công ty mới, bạn nghĩ nên mặc gì
+    - Bạn gợi ý cho tôi bộ nào mà đi làm mọi người đều phải nhìn tôi đi
+    - Tôi có công việc mới, bạn gợi ý đồ mặc cho tôi đi nhận việc với
+    - Tôi muốn thay đổi phong cách ăn mặc ở công sở
+    - Bạn có những bộ đồ công sở gì
+    - Mình đi liên hoan với công ty, nên mặc gì nhỉ
+    - Bạn nghĩ nên mặc như nào khi đi làm
+    - Đi làm ở cơ quan nhà nước nên mặc gì nhỉ
+    - Tôi sắp về ra mắt nhà bạn trai, nên mặc gì nhỉ
+
 # 4. Khai thác thông tin người dùng(Lưu thông tin người dùng)
+
+- intent: user_name
+  examples: |
+    - Tôi tên là :
+    - Mình tên là :
+    - Mình tên :
+    - Tôi là :
+    - Tao là :
+    - Chị là :
+    - Em là :
+    - Chị tên :
+    - Em tên :
+
 # 5. Buôn chuyện(Phát hiện cảm xúc qua icon)

@@ -66,5 +66,25 @@ stories:
 
 
 # 3. Gợi ý về chọn quần áo
+
+
+- story: ask about dress
+  steps:
+  - intent: ask_shop_dress
+  - action: utter_ask_shop_dress
+
+
+- story: ask about office outfit
+  steps:
+  - intent: ask_outfit_office
+  - action: utter_ask_outfit_office
 # 4. Khai thác thông tin người dùng(Lưu thông tin người dùng)
+
+
+- story: ask customer name
+  steps:
+  - intent: user_name
+  - action: utter_user_name
+
+
 # 5. Buôn chuyện(Phát hiện cảm xúc qua icon)

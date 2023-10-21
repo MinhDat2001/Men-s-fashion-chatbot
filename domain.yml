@@ -13,6 +13,9 @@ intents:
   - what_name
   - ask_about_shop_location
   - ask_shop_product
+  - ask_shop_dress
+  - ask_outfit_office
+  - user_name
 
 
 actions:
@@ -113,6 +116,27 @@ responses:
 
 
 # 3. Gợi ý về chọn quần áo
+
+  utter_ask_shop_dress:
+  - text: Mình nghĩ một chiếc đầm  cute sẽ hợp với bạn đó
+  - text: Bạn nên mặc thoải mái và vẫn lịch sự và quyến rũ
+  - text: Tôi nghĩ chân váy kết hợp với áo sơ mi sẽ phù hợp đó
+  - text: Lúc này mình nghĩ bạn sẽ hợp với một cái đầm cute hơn
+  - text: Thực ra mặc váy cũng đẹp, nhưng bạn cũng có thể chọn một cái quần vải xuông và áo croptop
+  - text: Tôi mạnh dạn chọn cho bạn 1 chiếc váy bò dài kết hợp với 1 cái ao croptop
+
+
+  utter_ask_outfit_office:
+  - text: Bạn nên mặc lịch sự nhưng vẫn thời thượng, một chiếc quần vải xuông và 1 cái áo sơ mi là hợp lý
+  - text: Bạn thử một chiếc váy dài qua đầu gối cùng đó là áo sơ mi, trông vừa dịu dàng mà lịch sự
+  - text: Một chiếc đầm và khoắc thêm áo khoác bên ngoài cũng là một lựa chọn
+  
+  utter_user_name:
+  - text: Oh, một cái tên đẹp
+  - text: Tên đẹp như người vậy
+  - text: Bố mẹ bạn đặt tên thật khéo
+  - text: Nghe cái tên tôi đoán bạn rất xinh đẹp
+  
 # 4. Khai thác thông tin người dùng(Lưu thông tin người dùng)
 # 5. Buôn chuyện(Phát hiện cảm xúc qua icon)
 session_config:
