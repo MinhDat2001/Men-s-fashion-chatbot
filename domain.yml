@@ -18,6 +18,7 @@ intents:
   - user_name
   - sing_poem
   - how_are_u
+  - praise
 
 
 actions:
@@ -145,7 +146,7 @@ responses:
 
   utter_ask_outfit_office:
   - text: Bạn nên mặc lịch sự nhưng vẫn thời thượng. Sau đây tôi gửi một số ảnh để bạn cân nhắc nhé
-    image: https://image.phunuonline.com.vn/news/2018/20181019/fckimage/143307_0f0a8f3813e2f507d273fb609963e76a007658e3-181150538.jpg https://bizweb.dktcdn.net/100/438/408/files/mau-dong-phuc-cong-so-nu-dep-yodyvn-6.jpg?v=1682394389897
+    image: https://image.phunuonline.com.vn/news/2018/20181019/fckimage/143307_0f0a8f3813e2f507d273fb609963e76a007658e3-181150538.jpg
   - text: Bạn thử một chiếc váy dài qua đầu gối cùng đó là áo sơ mi, trông vừa dịu dàng mà lịch sự
     image: https://kenh14cdn.com/203336854389633024/2022/5/5/photo-1-16517253955391146395902.jpg
   - text: Bạn có thích mặc vest không, hãy thử thăm khảo những ảnh sau đây nhé
@@ -173,6 +174,14 @@ responses:
   - text: Bữa trước cô bói nói tui sống thọ hơn 200 tuổi
   - text: Hiện tại mình khỏe lắm, khum có người nói chuyện cùng thui
   - text: Mệt lắm nhưng vẫn ngồi nói chuyện với bạn nè
+
+  utter_praise:
+  - text: Bạn khen quá rồi, hihi
+    image: https://cdn.chanhtuoi.com/uploads/2020/05/icon-facebook-56-1.jpg
+  - text: Hihi, bán quá khen
+  - text: Hehe, mình cảm ơn
+  - text: Hehe
+    image: https://cdn.iconscout.com/icon/premium/png-256-thumb/hihi-4639987-3849464.png
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

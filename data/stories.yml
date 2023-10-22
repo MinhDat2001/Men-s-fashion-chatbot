@@ -98,3 +98,8 @@ stories:
   steps:
   - intent: how_are_u
   - action: utter_how_are_u
+
+- story: praise
+  steps:
+  - intent: praise
+  - action: utter_praise

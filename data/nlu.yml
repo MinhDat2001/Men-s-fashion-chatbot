@@ -190,3 +190,11 @@ nlu:
     - bạn có khỏe không
     - dạo này bạn thế nào
     - bạn sao rồi
+
+- intent: praise
+  examples: |
+    - Hay thế nhỉ
+    - Bạn giỏi thế
+    - Bạn duyên thế
+    - Nó hay đấy
+    - Tốt đấy
