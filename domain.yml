@@ -16,34 +16,49 @@ intents:
   - ask_shop_dress
   - ask_outfit_office
   - user_name
+  - sing_poem
+  - how_are_u
 
 
 actions:
  - action_save_info
 responses:
+
+  utter_default:
+  - text: Bạn nói cái gì tui hỏng có hỉu
+  - text: Xung quanh anh toàn là nước eiii
+  - text: Alio là bot hỗ trợ khách hàng của shop
+  - text: Trời trong xanh, gió long lanh eii
+
 # chào hỏi cơ bản
   utter_greet:
   - text: Xin chào, Bạn khỏe chứ?
+    image: https://i.pinimg.com/originals/b0/06/7a/b0067ade5e832d2aefec8ee9bda50fdc.gif
   - text: Xin chào, tui nghe nè
-  - text: Hello, Dạo này bạn sao rồi?
+  - text: Bạn cần giúp gì không
   - text: Bạn cần tui giúp gì nè ^^
 
   utter_goodbye:
   - text: "Tạm biệt nhé"
+    image: https://i.pinimg.com/originals/b0/06/7a/b0067ade5e832d2aefec8ee9bda50fdc.gif
   - text: "Bye bye"
   - text: "Hẹn gặp lại nhé"
+    image: https://scr.vn/wp-content/uploads/2020/07/%E1%BA%A2nh-%C4%91%E1%BB%99ng-bye-bye-d%E1%BB%85-th%C6%B0%C6%A1ng.gif
   - text: "Gặp lại sau nhee"
   - text: "Lần sau lại ghé nhé bạn"
+    image: https://scr.vn/wp-content/uploads/2020/07/%E1%BA%A2nh-%C4%91%E1%BB%99ng-bye-bye-d%E1%BB%85-th%C6%B0%C6%A1ng.gif
   - text: "Bye bye, lần sau lại ghe nha"
   - text: "Tạm biệt, lần sau nói chuyện tiếp nhé"
 
   utter_affirm:    
   - text: "vâng"
+    image: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6hiSP7K92eS18xenIdZq1nxzWbUbC9B3GLrdEtr7UWKXT6NirI7YVz6ceECRiMkEFH0g&usqp=CAU
   - text: "được rồi"
   - text: "tất nhiên"
   - text: "nghe hay đó"
   - text: "chính xác"
   - text: "ok"
+    image: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6hiSP7K92eS18xenIdZq1nxzWbUbC9B3GLrdEtr7UWKXT6NirI7YVz6ceECRiMkEFH0g&usqp=CAU
   - text: "okay"
   - text: "oki"
   - text: "oke"
@@ -88,9 +103,11 @@ responses:
 
   utter_thanks:
   - text: "Cảm ơn bạn nhe"
+    image: https://toigingiuvedep.vn/wp-content/uploads/2021/06/anh-dong-powerpoint-tam-biet-de-thuong-nhat.gif
   - text: "Thank kiu"
   - text: "Cảm ơn nè -_-"
   - text: "Cảm ơn bạn nhìu"
+    image: https://toigingiuvedep.vn/wp-content/uploads/2021/06/anh-dong-powerpoint-tam-biet-de-thuong-nhat.gif
   - text: "Dạ, mình cảm ơn"
 
   utter_what_name:
@@ -127,9 +144,12 @@ responses:
 
 
   utter_ask_outfit_office:
-  - text: Bạn nên mặc lịch sự nhưng vẫn thời thượng, một chiếc quần vải xuông và 1 cái áo sơ mi là hợp lý
+  - text: Bạn nên mặc lịch sự nhưng vẫn thời thượng. Sau đây tôi gửi một số ảnh để bạn cân nhắc nhé
+    image: https://image.phunuonline.com.vn/news/2018/20181019/fckimage/143307_0f0a8f3813e2f507d273fb609963e76a007658e3-181150538.jpg https://bizweb.dktcdn.net/100/438/408/files/mau-dong-phuc-cong-so-nu-dep-yodyvn-6.jpg?v=1682394389897
   - text: Bạn thử một chiếc váy dài qua đầu gối cùng đó là áo sơ mi, trông vừa dịu dàng mà lịch sự
-  - text: Một chiếc đầm và khoắc thêm áo khoác bên ngoài cũng là một lựa chọn
+    image: https://kenh14cdn.com/203336854389633024/2022/5/5/photo-1-16517253955391146395902.jpg
+  - text: Bạn có thích mặc vest không, hãy thử thăm khảo những ảnh sau đây nhé
+    image: https://phuhoang.com.vn/wp-content/uploads/2020/04/product-07-33-scaled.jpeg
   
   utter_user_name:
   - text: Oh, một cái tên đẹp
@@ -139,6 +159,20 @@ responses:
   
 # 4. Khai thác thông tin người dùng(Lưu thông tin người dùng)
 # 5. Buôn chuyện(Phát hiện cảm xúc qua icon)
+
+  utter_sing_poem:
+  - text: "Con cò bé bé \nNó đậu cành tre \nĐi không hỏi mẹ \nBiết đi đường nào. \n\
+      Khi đi em hỏi\nKhi về em chào\nMiệng em chúm chím\nMẹ yêu không nào."
+  - text: "Một con vịt xòe ra hai cái cánh,\nNó kêu rằng cáp cáp cáp cạp cạp cạp\n\
+      Gặp hồ nước nó bì bà bì bõm\nLúc lên bờ vẫy cái cánh cho khô."
+  - text: "Nam quốc sơn hà nam đế cư \nTiệt nhiên định phận tại thiên thư \nNhư hà\
+      \ nghịch lỗ lai xâm phạm? \nNhữ đẳng hành khan thủ bại hư! "
+
+  utter_how_are_u:
+  - text: Tôi cực kì khỏe luôn nhé
+  - text: Bữa trước cô bói nói tui sống thọ hơn 200 tuổi
+  - text: Hiện tại mình khỏe lắm, khum có người nói chuyện cùng thui
+  - text: Mệt lắm nhưng vẫn ngồi nói chuyện với bạn nè
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

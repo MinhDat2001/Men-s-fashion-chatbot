@@ -88,3 +88,13 @@ stories:
 
 
 # 5. Buôn chuyện(Phát hiện cảm xúc qua icon)
+
+- story: sing poem
+  steps:
+  - intent: sing_poem
+  - action: utter_sing_poem
+
+- story: how are you
+  steps:
+  - intent: how_are_u
+  - action: utter_how_are_u

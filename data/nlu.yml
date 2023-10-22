@@ -174,3 +174,19 @@ nlu:
     - Em tên :
 
 # 5. Buôn chuyện(Phát hiện cảm xúc qua icon)
+
+- intent: sing_poem
+  examples: |
+    - Tôi tên là :
+    - bạn biết hát không
+    - hát cho mình nghe đi
+    - đọc thơ đi bạn
+    - đọc thơ cho mình nghe
+    - bạn biết đọc thơ không
+    - hát đi bạn
+
+- intent: how_are_u
+  examples: |
+    - bạn có khỏe không
+    - dạo này bạn thế nào
+    - bạn sao rồi
