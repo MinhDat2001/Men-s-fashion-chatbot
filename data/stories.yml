@@ -103,3 +103,23 @@ stories:
   steps:
   - intent: praise
   - action: utter_praise
+
+- story: health_ok
+  steps:
+  - intent: health_ok
+  - action: utter_health_ok
+
+- story: health_NG
+  steps:
+  - intent: health_NG
+  - action: utter_health_NG
+
+- story: speak non vietnammese
+  steps:
+  - intent: non_vietnammese
+  - action: utter_non_vietnammese
+
+- story: speak out scope other
+  steps:
+  - intent: out_scope_other
+  - action: utter_out_scope_other

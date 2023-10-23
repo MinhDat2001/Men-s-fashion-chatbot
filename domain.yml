@@ -1,5 +1,9 @@
 version: "3.1"
 
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
 intents:
   - greet
   - goodbye
@@ -19,6 +23,10 @@ intents:
   - sing_poem
   - how_are_u
   - praise
+  - health_ok
+  - health_NG
+  - non_vietnammese
+  - out_scope_other
 
 
 actions:
@@ -182,6 +190,26 @@ responses:
   - text: Hehe, mình cảm ơn
   - text: Hehe
     image: https://cdn.iconscout.com/icon/premium/png-256-thumb/hihi-4639987-3849464.png
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+
+  utter_health_ok:
+  - text: Oh, tôi rất vui về điều đó
+  - text: Nghe vậy tôi cũng mừng hẳn
+  - text: Oh, tuyệt vời, có sức khỏe là có tất cả
+
+  utter_health_NG:
+  - text: Oh, bạn nên đi khám xem
+  - text: :(, Bạn cố giữ sức khỏe để ghé shop thường xuyên nhé
+  - text: Sức khỏe là tất cả, hãy chú ý đến nó
+  - text: Vậy bạn nên thử những bộ đồ mới bên mình, chắc chắn tâm trạng tốt lên thì Sức khỏe cũng tốt thôi
+
+# Out of scope
+  utter_non_vietnammese:
+  - text: Xin lỗi, tôi chỉ hiểu tiếng Việt
+  - text: Bạn có thể nói tiếng Việt không, tôi không hiểu
+  - text: Xin lỗi tôi chưa biết nói tiếng nước ngoài
+
+  utter_out_scope_other:
+  - text: Bạn có thể hỏi câu khác được không
+  - text: Xin lỗi, cái này tôi không biết
+  - text: Cái này mình chưa biết, bạn hỏi câu khác được không
+

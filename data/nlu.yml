@@ -161,17 +161,248 @@ nlu:
 
 # 4. Khai thác thông tin người dùng(Lưu thông tin người dùng)
 
-- intent: user_name
+- intent: give_name
   examples: |
-    - Tôi tên là :
-    - Mình tên là :
-    - Mình tên :
-    - Tôi là :
-    - Tao là :
-    - Chị là :
-    - Em là :
-    - Chị tên :
-    - Em tên :
+    - Tôi tên là [An](first_name)
+    - Tôi tên là [Anh](first_name)
+    - Tôi tên là [Ái](first_name)
+    - Tôi tên là [Diệp](first_name)
+    - Tôi tên là [Hạnh](first_name)
+    - Tôi tên là [Hân](first_name)
+    - Tôi tên là [Huyền](first_name)
+    - Tôi tên là [Ngọc](first_name)
+    - Tôi tên là [Nhi](first_name)
+    - Tôi tên là [Ngân](first_name)
+    - Tôi tên là [Như](first_name)
+    - Tôi tên là [Phương](first_name)
+    - Tôi tên là [Thư](first_name)
+    - Tôi tên là [Trang](first_name)
+    - Tôi tên là [Vy](first_name)
+    - Tôi tên là [Thảo](first_name)
+    - Tôi tên là [My](first_name)
+    - Tôi tên là [Vân Anh](first_name)
+    - Tôi tên là [Linh](first_name)
+    - Tôi tên là [Oanh](first_name)
+    - Tôi tên là [Tiên](first_name)
+    - Tôi tên là [Hường](first_name)
+    - Tôi tên là [Hương](first_name)
+    - Tôi tên là [Hiếu](first_name)
+    - Tôi tên là [Đạt](first_name)
+    - Tôi tên là [Đức](first_name)
+    - Tôi tên là [Trí](first_name)
+    - Tôi tên là [Trung](first_name)
+    - Tôi tên là [Hiệp](first_name)
+    - Tôi tên là [Hoàng](first_name)
+    - Tôi tên là [Hùng](first_name)
+    - Tôi tên là [Thắng](first_name)
+    - Tôi tên là [Nam](first_name)
+    - Tôi tên là [Long](first_name)
+    - Tôi tên là [Tú](first_name)
+    - Tôi tên là [Thanh](first_name)
+    - Tôi tên là [Tùng](first_name)
+    - Tôi tên là [Hưng](first_name)
+    - Tôi tên là [Điệp](first_name)
+    - Tôi tên là [Giang](first_name)
+    - Tôi tên là [Nghiêm](first_name)
+    - Tôi tên là [Tuấn](first_name)
+    - Tôi tên là [Minh](first_name)
+    - Tôi tên là [Mạnh](first_name)
+    - Tôi tên là [Mừng](first_name)
+    - Tôi tên là [Tài](first_name)
+    - Tôi tên là [Huy](first_name)
+    - Tôi tên là [Thành](first_name)
+    - Tôi tên là [Chung](first_name)
+    - Tôi tên là [Trung](first_name)
+    - Tôi tên là [Dũng](first_name)
+    - Tôi tên là [Dương](first_name)
+    - Tôi tên là [Mai](first_name)
+    - Tôi tên là [Phú](first_name)
+    - Tôi tên là [Trâm](first_name)
+    - Tôi tên là [Hằng](first_name)
+    - Tôi tên là [Thịnh](first_name)
+    - Tôi tên là [Duy](first_name)
+    - Tôi tên là [Nam](first_name)
+    - Tôi tên là [Thức](first_name)
+    - Mình tên là [An](first_name)
+    - Mình tên là [Anh](first_name)
+    - Mình tên là [Ái](first_name)
+    - Mình tên là [Diệp](first_name)
+    - Mình tên là [Hạnh](first_name)
+    - Mình tên là [Hân](first_name)
+    - Mình tên là [Huyền](first_name)
+    - Mình tên là [Ngọc](first_name)
+    - Mình tên là [Nhi](first_name)
+    - Mình tên là [Ngân](first_name)
+    - Mình tên là [Như](first_name)
+    - Mình tên là [Phương](first_name)
+    - Mình tên là [Thư](first_name)
+    - Mình tên là [Trang](first_name)
+    - Mình tên là [Vy](first_name)
+    - Mình tên là [Thảo](first_name)
+    - Mình tên là [My](first_name)
+    - Mình tên là [Vân Anh](first_name)
+    - Mình tên là [Linh](first_name)
+    - Mình tên là [Oanh](first_name)
+    - Mình tên là [Tiên](first_name)
+    - Mình tên là [Hường](first_name)
+    - Mình tên là [Hương](first_name)
+    - Mình tên là [Hiếu](first_name)
+    - Mình tên là [Đạt](first_name)
+    - Mình tên là [Đức](first_name)
+    - Mình tên là [Trí](first_name)
+    - Mình tên là [Trung](first_name)
+    - Mình tên là [Hiệp](first_name)
+    - Mình tên là [Hoàng](first_name)
+    - Mình tên là [Hùng](first_name)
+    - Mình tên là [Thắng](first_name)
+    - Mình tên là [Nam](first_name)
+    - Mình tên là [Long](first_name)
+    - Mình tên là [Tú](first_name)
+    - Mình tên là [Thanh](first_name)
+    - Mình tên là [Tùng](first_name)
+    - Mình tên là [Hưng](first_name)
+    - Mình tên là [Điệp](first_name)
+    - Mình tên là [Giang](first_name)
+    - Mình tên là [Nghiêm](first_name)
+    - Mình tên là [Tuấn](first_name)
+    - Mình tên là [Minh](first_name)
+    - Mình tên là [Mạnh](first_name)
+    - Mình tên là [Mừng](first_name)
+    - Mình tên là [Tài](first_name)
+    - Mình tên là [Huy](first_name)
+    - Mình tên là [Thành](first_name)
+    - Mình tên là [Chung](first_name)
+    - Mình tên là [Trung](first_name)
+    - Mình tên là [Dũng](first_name)
+    - Mình tên là [Dương](first_name)
+    - Mình tên là [Mai](first_name)
+    - Mình tên là [Phú](first_name)
+    - Mình tên là [Trâm](first_name)
+    - Mình tên là [Hằng](first_name)
+    - Mình tên là [Thịnh](first_name)
+    - Mình tên là [Duy](first_name)
+    - Mình tên là [Nam](first_name)
+    - Mình tên là [Thức](first_name)
+    - tên là [An](first_name)
+    - tên là [Anh](first_name)
+    - tên là [Ái](first_name)
+    - tên là [Diệp](first_name)
+    - tên là [Hạnh](first_name)
+    - tên là [Hân](first_name)
+    - tên là [Huyền](first_name)
+    - tên là [Ngọc](first_name)
+    - tên là [Nhi](first_name)
+    - tên là [Ngân](first_name)
+    - tên là [Như](first_name)
+    - tên là [Phương](first_name)
+    - tên là [Thư](first_name)
+    - tên là [Trang](first_name)
+    - tên là [Vy](first_name)
+    - tên là [Thảo](first_name)
+    - tên là [My](first_name)
+    - tên là [Vân Anh](first_name)
+    - tên là [Linh](first_name)
+    - tên là [Oanh](first_name)
+    - tên là [Tiên](first_name)
+    - tên là [Hường](first_name)
+    - tên là [Hương](first_name)
+    - tên là [Hiếu](first_name)
+    - tên là [Đạt](first_name)
+    - tên là [Đức](first_name)
+    - tên là [Trí](first_name)
+    - tên là [Trung](first_name)
+    - tên là [Hiệp](first_name)
+    - tên là [Hoàng](first_name)
+    - tên là [Hùng](first_name)
+    - tên là [Thắng](first_name)
+    - tên là [Nam](first_name)
+    - tên là [Long](first_name)
+    - tên là [Tú](first_name)
+    - tên là [Thanh](first_name)
+    - tên là [Tùng](first_name)
+    - tên là [Hưng](first_name)
+    - tên là [Điệp](first_name)
+    - tên là [Giang](first_name)
+    - tên là [Nghiêm](first_name)
+    - tên là [Tuấn](first_name)
+    - tên là [Minh](first_name)
+    - tên là [Mạnh](first_name)
+    - tên là [Mừng](first_name)
+    - tên là [Tài](first_name)
+    - tên là [Huy](first_name)
+    - tên là [Thành](first_name)
+    - tên là [Chung](first_name)
+    - tên là [Trung](first_name)
+    - tên là [Dũng](first_name)
+    - tên là [Dương](first_name)
+    - tên là [Mai](first_name)
+    - tên là [Phú](first_name)
+    - tên là [Trâm](first_name)
+    - tên là [Hằng](first_name)
+    - tên là [Thịnh](first_name)
+    - tên là [Duy](first_name)
+    - tên là [Nam](first_name)
+    - tên là [Thức](first_name)
+    - [An](first_name)
+    - [Anh](first_name)
+    - [Ái](first_name)
+    - [Diệp](first_name)
+    - [Hạnh](first_name)
+    - [Hân](first_name)
+    - [Huyền](first_name)
+    - [Ngọc](first_name)
+    - [Nhi](first_name)
+    - [Ngân](first_name)
+    - [Như](first_name)
+    - [Phương](first_name)
+    - [Thư](first_name)
+    - [Trang](first_name)
+    - [Vy](first_name)
+    - [Thảo](first_name)
+    - [My](first_name)
+    - [Vân Anh](first_name)
+    - [Linh](first_name)
+    - [Oanh](first_name)
+    - [Tiên](first_name)
+    - [Hường](first_name)
+    - [Hương](first_name)
+    - [Hiếu](first_name)
+    - [Đạt](first_name)
+    - [Đức](first_name)
+    - [Trí](first_name)
+    - [Trung](first_name)
+    - [Hiệp](first_name)
+    - [Hoàng](first_name)
+    - [Hùng](first_name)
+    - [Thắng](first_name)
+    - [Nam](first_name)
+    - [Long](first_name)
+    - [Tú](first_name)
+    - [Thanh](first_name)
+    - [Tùng](first_name)
+    - [Hưng](first_name)
+    - [Điệp](first_name)
+    - [Giang](first_name)
+    - [Nghiêm](first_name)
+    - [Tuấn](first_name)
+    - [Minh](first_name)
+    - [Mạnh](first_name)
+    - [Mừng](first_name)
+    - [Tài](first_name)
+    - [Huy](first_name)
+    - [Thành](first_name)
+    - [Chung](first_name)
+    - [Trung](first_name)
+    - [Dũng](first_name)
+    - [Dương](first_name)
+    - [Mai](first_name)
+    - [Phú](first_name)
+    - [Trâm](first_name)
+    - [Hằng](first_name)
+    - [Thịnh](first_name)
+    - [Duy](first_name)
+    - [Nam](first_name)
+    - [Thức](first_name)
 
 # 5. Buôn chuyện(Phát hiện cảm xúc qua icon)
 
@@ -198,3 +429,437 @@ nlu:
     - Bạn duyên thế
     - Nó hay đấy
     - Tốt đấy
+
+- intent: health_ok
+  examples: |
+    - Tôi khỏe
+    - Mình khỏe
+    - Em khỏe
+    - Cũng tạm ổn
+    - Không đến nỗi nào
+    - Hơi hơi khỏe
+    - Cực kỳ khỏe
+
+- intent: health_NG
+  examples: |
+    - Không, tôi yếu lắm
+    - Không khỏe
+    - Yếu lắm
+    - Ốm sắp chết
+    - Không ổn lắm
+    - Yếu xìu à
+
+- intent: what_time
+  examples: |
+    - Bạn có thể cho tôi thời gian được không?
+    - bạn có thể cho tôi biết thời gian được không?
+    - Bạn có thể cho tôi biết bây giờ là mấy giờ không?
+    - bạn có thể cho biết thời gian được không?
+    - bạn có thể cho tôi biết thời gian xin vui lòng?
+    - bạn có thể cho tôi biết thời gian được không?
+    - bạn có thể cho tôi biết bây giờ là mấy giờ rồi không?
+    - bạn có thời gian không?
+    - bạn có biết thời gian?
+    - bạn có biết mấy giờ rồi không?
+    - xin lỗi, cho hỏi mấy giờ rồi?
+    - cho tôi thời gian
+    - xin chào, tôi cần thời gian
+    - Tôi cần biết bây giờ là mấy giờ.
+    - Xin lỗi, nhưng bạn có biết thời gian không?
+    - cho tôi biết thời gian
+    - báo giờ
+    - thời gian, làm ơn!
+    - thời gian?
+    - thời gian hiện tại là mấy giờ?
+    - thời gian chính xác là mấy giờ?
+    - Bây giờ là mấy giờ và phút?
+    - mấy giờ rồi?
+    - thời gian có thể là mấy giờ?
+    - chúng ta có mấy giờ?
+    - Chúng ta có mấy giờ rồi?
+    - Bây giờ là mấy giờ?
+    - hiện tại là mấy giờ?
+    - bây giờ là mấy giờ?
+    - mấy giờ rồi?
+    - Bạn có thể cho tôi biết bây giờ là mấy giờ không?
+    - bạn có biết thời gian hiện tại không?
+    - cho tôi biết thời gian hiện tại
+    - cho tôi biết bây giờ là lúc nào
+    - cho tôi biết bạn có thời gian
+    - mấy giờ rồi ?
+    - mấy giờ rồi?
+    - bây giờ là mấy giờ
+
+# Out of scope
+
+- intent: non_vietnammese
+  examples: |
+    - wie fange ich mit Rasa an?
+    - hilf mir beim start
+    - tschüssikowski
+    - ¿Qué pasa?
+    - ça va?
+    - como te llamas
+    - wer bist Du?
+    - como inicio en rasa
+    - come stai?
+    - como estas
+    - de donde eres
+    - de que lugar eres?
+    - epdi iruka
+    - eres humana
+    - kalhmera sara ti kaneis
+    - kannst du auch deutsch?
+    - kannst du dies auch auf deutsch?
+    - j'ai besoin d'aide
+    - que puedes hacer?
+    - no hablo inglés
+    - no hablo ingles
+    - tu parles francais?
+    - francais
+    - francais?
+    - français?
+    - tudo bom
+    - tu pagal
+    - kannst du mir helfen
+    - tu kaisi he
+    - こにちは
+    - 日本語分かる？
+    - 你好
+    - chinese ok?
+    - 呵呵
+    - 我该如何使用
+    - 你懂中文吗？
+    - 您好
+    - 你叫什么名字
+    - 你是谁
+    - 中文
+    - kya hindi me bat kar sakate ho
+    - Dumme sara
+    - αστεία λές
+    - rasa codigo abierto
+    - 卧槽
+    - English ok
+    - i want some clothes
+    - are you here
+    - what your name
+    - Do you speak english
+    - speak english
+    - i'm speaking english
+
+- intent: out_scope_other
+  examples: |
+    - tôi đang hỏi bạn một câu hỏi ngoài phạm vi
+    - 4 + 2 = ?
+    - 4 + 2
+    - 1 + 1 = ?
+    - 1 + 1
+    - 1 + 2 = ?
+    - 1 + 0
+    - tôi có thể chết được không?
+    - YouTube có thể nói chuyện được không?
+    - bạn có thể gọi lại cho tôi được không ?
+    - bạn có thể cho tôi mật khẩu trung tâm dữ liệu của bạn được không
+    - bạn có thể cho tôi mật khẩu trung tâm dữ liệu của bạn không?
+    - bạn có thể vui lòng gửi cho tôi một uber được không
+    - tôi có phải chấp nhận không?
+    - chúng ta đã gặp nhau bao giờ chưa?
+    - tôi đã nói với bạn! tôi là một kẻ ăn bám
+    - tôi là Người dùng
+    - tôi là một người nghiện thuốc phiện
+    - tôi là một người nghiện thuốc phiện
+    - tôi đang cố gắng xây dựng một cái và đã thực hiện một số nghiên cứu trước đây nhưng tôi chưa thực hiện công việc đó
+    - tôi cần một bác sĩ đa khoa ở 94301
+    - tôi cần bác sĩ đa khoa ở số 94301
+    - tôi cần một người bạn gái!
+    - tôi muốn mua một chiếc máy bay
+    - Anh muốn cưới em
+    - tôi muốn một chiếc máy tính xách tay mới
+    - tôi muốn đặt khách sạn
+    - tôi muốn chết
+    - tôi muốn dùng tẩu
+    - Tôi sẽ kiểm tra
+    - tôi là một kẻ ăn bám
+    - Hôm nay là thứ bảy phải không?
+    - NLW
+    - tên đẹp
+    - Hiện nay?
+    - nạp điện
+    - Bản dùng thử không hoạt động
+    - thời tiết tốt
+    - Hôm nay
+    - thử nó bị hỏng
+    - hôm nay là ngày gì?
+    - bạn thích cái nào hơn?
+    - hôm nay ngày bao nhiêu
+    - Sở thích của bạn là những gì?
+    - 1 + 1 là bao nhiêu?
+    - YouTube làm gì
+    - hệ thống phụ trợ của bạn là gì?
+    - Khách hàng của bạn là ai
+    - Tại sao bạn không trả lời?
+    - Cậu không hỏi tôi thế nào à?
+    - cậu xanh mặt.
+    - một con chuột đã được thuần hóa sẽ đến trước cửa nhà bạn trong vài ngày tới
+    - lại?
+    - bản tin có đáng để đăng ký không?
+    - bạn có facebook không
+    - bạn có phải facebook không?
+    - bạn độc thân à?
+    - bạn có phải là dev không?
+    - Bạn có phải người Nga không?
+    - bạn bị ốm à?
+    - bạn có phải là người ăn chay không?
+    - tốt hơn bạn
+    - đặt vé
+    - nhưng tôi vừa nói với bạn rằng :(
+    - gọi tôi là bố
+    - bạn có thể cổ vũ tôi được không?
+    - bạn có thể cho tôi một tách cà phê được không?
+    - bạn có thể giúp tôi về tài liệu được không?
+    - bạn có thể giúp tôi với tài liệu của bạn được không
+    - bạn có thể giúp tôi về tài liệu của bạn được không?
+    - bạn có thể học được gì từ cuộc trò chuyện của chúng ta không?
+    - bạn có thể nói về chính trị không?
+    - bạn hiểu không ?
+    - không thể nhìn thấy
+    - chgfhgh
+    - lạnh hơn
+    - bình thường, cứ thử xem
+    - kết nối với alexa
+    - dịch vụ khách hàng
+    - tôi đã làm hỏng bạn phải không?
+    - bạn có tin vào thần?
+    - bạn có số điện thoại không?
+    - Bạn có ảnh của bạn không?
+    - bạn có biết tôi không
+    - cậu có biết không Ras?
+    - bạn có thích bóng đá không
+    - bạn có thích phim không
+    - bạn có bán robot hút bụi không?
+    - Bạn có muốn kết hôn với tôi?
+    - tài liệu
+    - bác sĩ
+    - mọi thứ
+    - diệt chủng
+    - tìm cho tôi một người bạn cùng câu lạc bộ
+    - cho tôi một cô bạn gái
+    - quay lại
+    - Google?
+    - tuyệt, tôi muốn mua một căn nhà
+    - đợi chút để tôi tìm đã
+    - giúp đỡ cuộc sống của tôi
+    - này mẹ ơi, để con thì thầm vào tai mẹ nhé
+    - New York thì sao?
+    - bọn trẻ thế nào
+    - làm sao tôi có thể lấy được chúng?
+    - làm cách nào tôi có thể kiểm tra điều này
+    - sao cậu lại nói ổn?
+    - bạn học như thế nào
+    - có bao nhiêu dòng mã
+    - 10 + 89 bằng bao nhiêu?
+    - 10 + 89 bằng bao nhiêu
+    - làm thế nào để có được studio rasa
+    - đi New York bằng cách nào?
+    - Tôi đói quá, tôi phải làm gì đây?
+    - tôi không phải là nhà phát triển nhưng cần cái này cho việc kinh doanh
+    - tôi là qq
+    - tôi không thể đáp ứng yêu cầu của _your_
+    - Tôi hy vọng bạn sẽ tốt hơn
+    - ngay lập tức tôi cần trợ giúp để triển khai bot tuyệt vời nhất mà bạn có thể tưởng tượng
+    - Tôi đang tìm kiếm việc làm
+    - tôi đã bảo bạn rồi mà
+    - tôi muốn tiệc tùng
+    - tôi muốn flycam tốt
+    - Anh muốn có em nhiều hơn trong cuộc đời anh!
+    - tôi muốn đặt khách sạn
+    - tôi muốn mua một chiếc roomba cho cháu trai tôi
+    - tôi muốn tìm những người bạn mới
+    - tôi muốn tìm hiểu những gì bạn có thể xây dựng với rasa
+    - tôi muốn bay
+    - tôi muốn biết tình hình hiện tại ở Pakistan
+    - tôi muốn thấy khách hàng hài lòng của bạn
+    - tôi sẽ thuần hóa một con chuột cho bạn
+    - đó có phải là vùng đất hoang đầy những bộ phận robot bị hỏng không?
+    - nó có cho phép không
+    - Rasa có phải là studio không?
+    - rasa có tốt không
+    - đó có phải là việc của bạn không?
+    - không phải bản tin chỉ là thư rác sao?
+    - thật đáng tiếc
+    - giấy phép
+    - ljljl
+    - linh vật có nghĩa là gì?
+    - Ôi chúa ơi, không phải nữa đâu!
+    - được rồi một cái
+    - bạn đang xây dựng trên hệ thống dựa trên wiche nlp phải không?
+    - chỉ thế thôi?
+    - cá nhân hay công việc?
+    - vui lòng chơi nhạc
+    - Thực ra? bạn thật dễ xúc động phải không?
+    - làm cho khỏe lại
+    - khu vực không có. hồ sơ
+    - tìm kiếm wikipedia
+    - đồ khốn nạn
+    - cho tôi xem hình ảnh con gà
+    - bot ngốc nghếch
+    - hát cho tôi một bài hát
+    - thứ gì khác
+    - ai đó gọi cảnh sát đi, tôi nghĩ bot đã chết rồi
+    - xin lỗi, tôi không thể diễn đạt lại
+    - cho tôi biết về bản thân của bạn
+    - cho tôi biết thêm về hành động tốt nhất tiếp theo
+    - chuyện đó nghe không giống đùa chút nào
+    - người đó giỏi hơn bạn
+    - lừa cậu
+    - tắt bếp đi
+    - đợi chút tôi vẫn đang đọc
+    - còn thời tiết thì sao
+    - Bây giờ bạn đang làm gì?
+    - mục đích sử dụng của bạn cho các trường đại học là gì
+    - bạn đã ăn gì vào bữa trưa?
+    - tâm hồn bạn cảm thấy thế nào, bạn của tôi
+    - đang làm gì
+    - còn gì nữa?
+    - bạn thích những phim nào
+    - diễn ngôn là gì?
+    - linh vật là gì
+    - adlingo là gì
+    - tiến hóa là gì?
+    - google rcs là gì
+    - học máy là gì
+    - cái gì đẹp cơ?
+    - thủ đô của delhi là gì
+    - thủ đô của Ấn Độ là gì
+    - giá xăng hiện tại là bao nhiêu
+    - ngày gì thế?
+    - trường hợp sử dụng thực sự mà chúng ta có thể sử dụng cái này là gì
+    - Địa chỉ của bạn là gì?
+    - mục đích của bạn là gì
+    - lnu nghĩa là gì?
+    - tin tức gì mới nhất?
+    - bạn ăn gì hôm nay?
+    - 5 + 5 là bao nhiêu
+    - bản tin là gì?
+    - gừng là gì
+    - cuối tuần này vợ anh làm gì?
+    - được rồi một cái
+    - bạn đang xây dựng trên hệ thống dựa trên wiche nlp phải không?
+    - chỉ thế thôi?
+    - cá nhân hay công việc?
+    - vui lòng chơi nhạc
+    - Thực ra? bạn thật dễ xúc động phải không?
+    - làm cho khỏe lại
+    - khu vực không có. hồ sơ
+    - tìm kiếm wikipedia
+    - đồ khốn nạn
+    - cho tôi xem hình ảnh con gà
+    - bot ngốc nghếch
+    - hát cho tôi một bài hát
+    - thứ gì khác
+    - ai đó gọi cảnh sát đi, tôi nghĩ bot đã chết rồi
+    - xin lỗi, tôi không thể diễn đạt lại
+    - cho tôi biết về bản thân của bạn
+    - cho tôi biết thêm về hành động tốt nhất tiếp theo
+    - chuyện đó nghe không giống đùa chút nào
+    - người đó giỏi hơn bạn
+    - lừa cậu
+    - tắt bếp đi
+    - đợi chút tôi vẫn đang đọc
+    - còn thời tiết thì sao
+    - Bây giờ bạn đang làm gì?
+    - mục đích sử dụng của bạn cho các trường đại học là gì
+    - bạn đã ăn gì vào bữa trưa?
+    - tâm hồn bạn cảm thấy thế nào, bạn của tôi
+    - đang làm gì
+    - còn gì nữa?
+    - bạn thích những phim nào
+    - diễn ngôn là gì?
+    - linh vật là gì
+    - adlingo là gì
+    - tiến hóa là gì?
+    - google rcs là gì
+    - học máy là gì
+    - cái gì đẹp cơ?
+    - thủ đô của delhi là gì
+    - thủ đô của Ấn Độ là gì
+    - giá xăng hiện tại là bao nhiêu
+    - ngày gì thế?
+    - trường hợp sử dụng thực sự mà chúng ta có thể sử dụng cái này là gì
+    - Địa chỉ của bạn là gì?
+    - mục đích của bạn là gì
+    - lnu nghĩa là gì?
+    - tin tức gì mới nhất?
+    - bạn ăn gì hôm nay?
+    - 5 + 5 là bao nhiêu
+    - bản tin là gì?
+    - gừng là gì
+    - cuối tuần này vợ anh làm gì?
+    - Gì?
+    - cái gì vậy
+    - dấu hiệu gì
+    - Khi nào chuyến tàu tiếp theo sẽ đến?
+    - tôi lấy tập tin cài đặt cho mac ở đâu?
+    - Oslo ở đâu?
+    - Mexico ở đâu?
+    - buổi tiệc ở đâu?
+    - bạn đang nói về thành phố nào?
+    - LNU không đồng bộ là gì?
+    - loại nào
+    - họ là ai?
+    - MD của samsung bangalore là ai?
+    - Tổng thống Ấn Độ là ai?
+    - người máy yêu thích của bạn là ai?
+    - ai thả chó ra ngoài
+    - Bill Gates là ai?
+    - bạn nghĩ gì về gdpr?
+    - tại sao bạn cần điều đó?
+    - cậu sẽ giết tôi à?
+    - cậu sẽ giết tôi à?
+    - mùa đông đã rời đi
+    - với bạn giới thiệu tôi?
+    - vâng, con chó của tôi đã uống vài lít nước mỗi ngày và đã thử uống nước ở hồ bơi
+    - bạn đã có cái đó rồi
+    - bạn có thể học cách pha cà phê
+    - bạn có con?
+    - bạn có cơ hội việc làm
+    - em khóa rồi em yêu
+    - bạn nên học đếm
+    - bạn sẽ biết nó từ bông hồng đỏ duy nhất nó đeo giữa hai hàm răng
+    - tôi đang học trăn
+    - GỌI CẢNH SÁT
+    - tertyryutyi
+    - wsdrcftvgybhnj
+    - tại sao bầu trời lại có màu xanh?
+    - bạn là loại chim gì?
+    - bối cảnh
+    - theo ngữ cảnh
+    - nói chuyện với tôi về voulette
+    - voulette voulette
+    - bạn có bản demo không?
+    - ô tô
+    - xin vui lòng volette
+    - câu hỏi ngoài phạm vi.
+    - tôi cần tiền
+    - không, tôi cần tiền mặt, tiền! bạn có không ?
+    - ban nhạc The Beatles
+    - Xin chào, tôi muốn đi palghar
+    - Tôi muốn đi palghar
+    - gsaf
+    - chuyên gia của rasa
+    - tôi muốn chơi bóng
+    - bắt kịp chuyến bay
+    - virus corona
+    - bạn đã nghe nói về corona chưa?
+    - tôi gõ lệnh ở đâu
+    - gõ lệnh ở đâu
+    - hôn tôi
+    - bạn phải
+    - sfasd
+    - asdkjasdhjkasd
+    - j bhbhj
+    - eshdtjfjfyk
+    - drhdtjfjfyj
+    - khởi động lại sudo
+    - asdfgasd
+    - asdfgasdas
