@@ -2,6 +2,11 @@ version: "3.1"
 
 nlu:
 # Chào hỏi cơ bản
+
+- intent: create_db
+  examples: |
+    - Tạo sqlite db
+
 - intent: greet
   examples: |
     - hey
@@ -13,6 +18,9 @@ nlu:
     - chào buổi sáng
     - chào buổi tối
     - chào buổi chiều
+    - êi
+    - hêi
+    - hey
 
 - intent: goodbye
   examples: |
@@ -490,6 +498,15 @@ nlu:
     - mấy giờ rồi?
     - bây giờ là mấy giờ
 
+- intent: ask_customer_name
+  examples: |
+    - Bạn còn nhớ tôi tên là gì không
+    - Còn nhớ tôi tên gì không
+    - Tôi tên gì bạn biết không
+    - Bạn có nhớ tui tên gì khum
+    - Tôi tên là gì nhỉ
+    - Bạn không nhớ tên tôi đúng không
+    - Đố bạn nhớ tên tôi là gì
 # Out of scope
 
 - intent: non_vietnammese

@@ -83,8 +83,18 @@ stories:
 
 - story: ask customer name
   steps:
-  - intent: user_name
-  - action: utter_user_name
+  - intent: give_name
+  - action: action_save_user_name
+
+- story: create database
+  steps:
+  - intent: create_db
+  - action: action_create_db
+
+- story: action ask customer name
+  steps:
+  - intent: ask_customer_name
+  - action: action_ask_customer_name
 
 
 # 5. Buôn chuyện(Phát hiện cảm xúc qua icon)

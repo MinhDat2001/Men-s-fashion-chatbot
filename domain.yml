@@ -27,10 +27,25 @@ intents:
   - health_NG
   - non_vietnammese
   - out_scope_other
+  - give_name
+  - create_db
+  - ask_customer_name
 
+entities:
+  - first_name
+
+slots:
+  first_name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: first_name
 
 actions:
- - action_save_info
+ - action_save_user_name
+ - action_create_db
+ - action_ask_customer_name
+
 responses:
 
   utter_default:
@@ -41,11 +56,19 @@ responses:
 
 # chào hỏi cơ bản
   utter_greet:
-  - text: Xin chào, Bạn khỏe chứ?
+  - text: Xin chào , Bạn khỏe chứ?
     image: https://i.pinimg.com/originals/b0/06/7a/b0067ade5e832d2aefec8ee9bda50fdc.gif
-  - text: Xin chào, tui nghe nè
-  - text: Bạn cần giúp gì không
+  - text: Xin chào , tui nghe nè
+  - text: Bạn cần giúp gì không 
   - text: Bạn cần tui giúp gì nè ^^
+
+
+  utter_ask_customer_name:
+  - text: Tôi còn tên bạn là {name} mà
+  - text: Tên là {name}, tôi còn nhớ chứ
+  - text: Bạn lại khinh thường trí nhớ tôi rồi \n Tôi còn nhớ bạn nói với tôi bạn tên là {name} 
+  - text: Làm sao tôi có thể quên được bạn tên {name} cơ chứ
+  - text: Bạn có nói với tôi bạn tên là {name} rồi
 
   utter_goodbye:
   - text: "Tạm biệt nhé"
@@ -167,6 +190,19 @@ responses:
   - text: Nghe cái tên tôi đoán bạn rất xinh đẹp
   
 # 4. Khai thác thông tin người dùng(Lưu thông tin người dùng)
+  
+  utter_greet_name:
+  - text: Xin chào {name}, Bạn khỏe chứ?
+    image: https://i.pinimg.com/originals/b0/06/7a/b0067ade5e832d2aefec8ee9bda50fdc.gif
+  - text: Xin chào {name}, tui nghe nè
+  - text: Bạn cần giúp gì không {name} 
+  - text: Chào {name}, Bạn cần tui giúp gì nè ^^
+
+  utter_forget_customer_name:
+  - text: Xin lỗi tôi không nhớ bạn tên là gì
+  - text: Bạn đã nói tên bạn với tôi chưa nhỉ?
+  - text: Bạn có thể nói lại tên bạn là gì khum
+  - text: Tôi không nhớ lắm, bạn có thể nói lại không
 # 5. Buôn chuyện(Phát hiện cảm xúc qua icon)
 
   utter_sing_poem:
