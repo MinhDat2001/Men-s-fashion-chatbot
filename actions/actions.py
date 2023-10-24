@@ -37,12 +37,35 @@ class ActionAskCustomerName(Action):
 
         if user_name:
             dispatcher.utter_message(
-                response="utter_greet_name",
+                response="utter_ask_customer_name",
                 name=user_name
             )
         else:
             dispatcher.utter_message(
                 response="utter_forget_customer_name"
+            )
+
+        return []
+    
+class ActionGreet(Action):
+    def name(self) -> Text:
+        return "action_greet"
+
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        user_name = get_user_name("1")
+
+        if user_name:
+            dispatcher.utter_message(
+                response="utter_greet_name",
+                name=user_name
+            )
+        else:
+            dispatcher.utter_message(
+                response="utter_greet"
             )
 
         return []
@@ -127,4 +150,4 @@ def get_user_name(sender_id):
     print("select name successfully........")
     records = cursor.fetchone()
     print(records)
-    return records
+    return records[1]
