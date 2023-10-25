@@ -13,13 +13,21 @@ class ActionSaveUserName(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         first_name = tracker.get_slot("first_name")
-        
-        insert_info(1,first_name,"","")
+        user_id = tracker.sender_id
+        if get_user_name(user_id) == None:
+            insert_info(user_id,first_name,"","")
+        else:
+            update_info(user_id, first_name, "","")
 
         if first_name:
-            dispatcher.utter_message(f"Xin chào, {first_name}!")
+            dispatcher.utter_message(
+                response="utter_greet_name",
+                name=first_name
+            )
         else:
-            dispatcher.utter_message("Xin chào!")
+            dispatcher.utter_message(
+                response="utter_greet"
+            )
 
         return []
     
@@ -32,8 +40,8 @@ class ActionAskCustomerName(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
-        user_name = get_user_name("1")
+        user_id = tracker.sender_id
+        user_name = get_user_name(user_id)
 
         if user_name:
             dispatcher.utter_message(
@@ -55,8 +63,8 @@ class ActionGreet(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
-        user_name = get_user_name("1")
+        user_id = tracker.sender_id
+        user_name = get_user_name(user_id)
 
         if user_name:
             dispatcher.utter_message(
@@ -150,4 +158,20 @@ def get_user_name(sender_id):
     print("select name successfully........")
     records = cursor.fetchone()
     print(records)
-    return records[1]
+    if records:
+        return records[1]
+    else:
+        return None
+    
+def update_info(sender_id, name, gender, age):
+    conn = sqlite3.connect("Alio.db")
+    cursor = conn.cursor()
+
+    print("connect to database success!") 
+
+    cursor.execute('''UPDATE user_info SET name=? WHERE CustomerID=?;''',(sender_id, name))
+    
+    print("update successfully !........")
+
+    conn.commit()
+    conn.close()

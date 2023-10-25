@@ -119,11 +119,11 @@ responses:
   - text: Tôi có thể giúp gì cho bạn?
 
   utter_introduce:
-  - text: Tui có thể trò chuyện với bạn nè
-  - text: Tui có thể hát cho bạn nghe đó
+  - text: Mình được tạo để nói chuyện với bạn, giúp bạn đặt hàng, hỗ trợ bạn khi không có nhân viên của cửa hàng nhé
+  - text: Tui có thể nói chuyện cùng bạn
   - text: Bạn có thể hỏi mình điều gì đó
-  - text: Tui có thể làm người iu bạn <3
-  - text: Tui biết coi thời tiết
+  - text: Tôi có nhiệm vụ hỗ trợ bạn, gợi ý quần áo và hỗ trợ bạn đặt hàng nhé
+  - text: Tôi có thể nói chuyện cùng bạn, giúp bạn đặt hàng, gợi ý thời trang và bầu bạn với bạn
 
   utter_scold:
   - text: "Sao bạn lại nói tôi như vậy"
@@ -245,6 +245,7 @@ responses:
   - text: Xin lỗi tôi chưa biết nói tiếng nước ngoài
 
   utter_out_scope_other:
+  - text: Mình không hiểu bạn nói gì
   - text: Bạn có thể hỏi câu khác được không
   - text: Xin lỗi, cái này tôi không biết
   - text: Cái này mình chưa biết, bạn hỏi câu khác được không

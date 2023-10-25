@@ -84,10 +84,15 @@ nlu:
 - intent: introduce
   examples: |
     - bạn có thể làm gì nào
-    - kiểm tra
     - bạn có thể giúp gì cho tôi
     - bạn biết làm gì
     - bạn được việc không
+    - bạn có chức năng gì
+    - chức năng của bạn là gì
+    - bạn sống có ý nghĩa gì
+    - ý nghĩa của bạn là gì
+    - chức năng
+    - bạn được sinh ra để làm gì
 
 
 - intent: scold
@@ -351,66 +356,6 @@ nlu:
     - tên là [Duy](first_name)
     - tên là [Nam](first_name)
     - tên là [Thức](first_name)
-    - [An](first_name)
-    - [Anh](first_name)
-    - [Ái](first_name)
-    - [Diệp](first_name)
-    - [Hạnh](first_name)
-    - [Hân](first_name)
-    - [Huyền](first_name)
-    - [Ngọc](first_name)
-    - [Nhi](first_name)
-    - [Ngân](first_name)
-    - [Như](first_name)
-    - [Phương](first_name)
-    - [Thư](first_name)
-    - [Trang](first_name)
-    - [Vy](first_name)
-    - [Thảo](first_name)
-    - [My](first_name)
-    - [Vân Anh](first_name)
-    - [Linh](first_name)
-    - [Oanh](first_name)
-    - [Tiên](first_name)
-    - [Hường](first_name)
-    - [Hương](first_name)
-    - [Hiếu](first_name)
-    - [Đạt](first_name)
-    - [Đức](first_name)
-    - [Trí](first_name)
-    - [Trung](first_name)
-    - [Hiệp](first_name)
-    - [Hoàng](first_name)
-    - [Hùng](first_name)
-    - [Thắng](first_name)
-    - [Nam](first_name)
-    - [Long](first_name)
-    - [Tú](first_name)
-    - [Thanh](first_name)
-    - [Tùng](first_name)
-    - [Hưng](first_name)
-    - [Điệp](first_name)
-    - [Giang](first_name)
-    - [Nghiêm](first_name)
-    - [Tuấn](first_name)
-    - [Minh](first_name)
-    - [Mạnh](first_name)
-    - [Mừng](first_name)
-    - [Tài](first_name)
-    - [Huy](first_name)
-    - [Thành](first_name)
-    - [Chung](first_name)
-    - [Trung](first_name)
-    - [Dũng](first_name)
-    - [Dương](first_name)
-    - [Mai](first_name)
-    - [Phú](first_name)
-    - [Trâm](first_name)
-    - [Hằng](first_name)
-    - [Thịnh](first_name)
-    - [Duy](first_name)
-    - [Nam](first_name)
-    - [Thức](first_name)
 
 # 5. Buôn chuyện(Phát hiện cảm xúc qua icon)
 
@@ -880,3 +825,6 @@ nlu:
     - khởi động lại sudo
     - asdfgasd
     - asdfgasdas
+    - Éc
+    - Hơ
+    - Ủa
