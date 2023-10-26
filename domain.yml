@@ -30,6 +30,14 @@ intents:
   - give_name
   - create_db
   - ask_customer_name
+  - ask_sale_product
+  - ask_products_price
+  - ask_dress_price
+  - ask_shirts_price
+  - ask_trousers_price
+  - ask_dress_type
+  - ask_shirt_type
+  - ask_trousers_type
 
 entities:
   - first_name
@@ -40,11 +48,29 @@ slots:
     mappings:
       - type: from_entity
         entity: first_name
+  start_price:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: start_price
+  end_price:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: end_price
 
 actions:
  - action_save_user_name
  - action_create_db
  - action_ask_customer_name
+ - action_save_conversation
+ - action_product_price
+ - action_dress_price
+ - action_shirts_price
+ - action_trousers_price
+ - action_dress_type
+ - action_shirt_type
+ - action_trousers_type
 
 responses:
 
@@ -162,6 +188,54 @@ responses:
   - text: Ở đây có rất nhiều đồ nữ đẹp, đặc biệt là các loại váy và đầm
   - text: shop mình chuyên quần áo, váy vóc cho các chị em ạ
   - text: Cửa hàng mình chuyên quần áo chị em, đặc biệt có những bộ váy, đầm dự tiệc cực xinh
+
+  utter_ask_sale_product:
+  - text: Bên mình bán áo phông, áo sơ mi, quần váy và các loại đầm của chị em nhé
+  - text: Cửa hàng mình có áo phông, cáo sơ mi, váy, đầm và các loại chân váy nhé
+  - text: Bên mình chuyên các loại váy và chân váy ngoài ra thì còn có áo sơ mi và áo phông để phối cùng ạ
+  - text: Bên mình có bán áo, bán quần và các loại váy của chị em phụ nữ nhé
+
+  utter_ask_products_price:
+  - text: "Với tầm giá này bên mình có một số sản phẩm như: {products}"
+  - text: Tầm giá này hiện tại bên mình đang có {products}
+  - text: Bên mình đang có {products} là trong khoảng giá bạn muốn tìm nhé
+  - text: Với mức giá này bên mình có một số sản phẩm tiêu biểu như {products}
+
+  utter_ask_dress_price:
+  - text: "Với tầm giá này bên mình có một số váy như: {dress}"
+  - text: Tầm giá này hiện tại bên mình đang có {dress}
+  - text: Bên mình đang có {dress} là trong khoảng giá bạn muốn tìm nhé
+  - text: Với mức giá này bên mình có một số váy tiêu biểu như {dress}
+
+  utter_ask_shirts_price:
+  - text: "Với tầm giá này bên mình có một số áo như: {shirt}"
+  - text: Tầm giá này hiện tại bên mình đang có {shirt}
+  - text: Bên mình đang có {shirt} là trong khoảng giá bạn muốn tìm nhé
+  - text: Với mức giá này bên mình có một số áo tiêu biểu như {shirt}
+
+  utter_ask_trousers_price:
+  - text: "Với tầm giá này bên mình có một số quần như: {trousers}"
+  - text: Tầm giá này hiện tại bên mình đang có {trousers}
+  - text: Bên mình đang có {trousers} là trong khoảng giá bạn muốn tìm nhé
+  - text: Với mức giá này bên mình có một số quần tiêu biểu như {trousers}
+
+  utter_ask_dress_type:
+  - text: Váy bên mình đang bán một số kiểu như {dress}
+  - text: Bên mình đang bán {dress}
+  - text: Váy bên mình đang hot mấy kiểu {dress}
+  - text: Bên mình có mấy kiểu váy này đang bán chạy như {dress}
+
+  utter_ask_shirt_type:
+  - text: Áo bên mình đang bán một số kiểu như {shirt}
+  - text: Bên mình đang bán {shirt}
+  - text: Áo bên mình đang hot mấy kiểu {shirt}
+  - text: Bên mình có mấy kiểu áo này đang bán chạy như {shirt}
+
+  utter_ask_trousers_type:
+  - text: Quần bên mình đang bán một số kiểu như {trousers}
+  - text: Bên mình đang bán {trousers}
+  - text: Quần bên mình đang hot mấy kiểu {trousers}
+  - text: Bên mình có mấy kiểu quần này đang bán chạy như {trousers}
 
 
 # 3. Gợi ý về chọn quần áo

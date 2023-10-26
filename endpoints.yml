@@ -17,11 +17,11 @@ action_endpoint:
 # By default the conversations are stored in memory.
 # https://rasa.com/docs/rasa/tracker-stores
 
-tracker_store:
-  type: SQL
-  dialect: "sqlite"  # MySQL, PostgreSQL, ...
-  url: "sqlite:///rasa.db"   # Đường dẫn đến tệp tin SQLite
-  db: "events"  # Tên cơ sở dữ liệu
+# tracker_store:
+#   type: SQL
+#   dialect: "sqlite"  # MySQL, PostgreSQL, ...
+#   url: "sqlite:///rasa.db"   # Đường dẫn đến tệp tin SQLite
+#   db: "events"  # Tên cơ sở dữ liệu
 
 # Event broker which all conversation events should be streamed to.
 # https://rasa.com/docs/rasa/event-brokers

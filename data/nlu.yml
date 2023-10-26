@@ -134,7 +134,6 @@ nlu:
     - Tôi có thể đến cửa hàng trực tiếp ở đâu nhỉ
     - Cửa hàng trực tiếp của mình ở đâu nhỉ
 
-
 - intent: ask_shop_product
   examples: |
     - Shop của bạn bán gì
@@ -144,6 +143,203 @@ nlu:
     - Các sản phẩm mà cửa hàng mình có là gì
     - Cửa hàng bán gì
     - Cửa hàng có những gì
+
+- intent: ask_sale_product
+  examples: |
+    - Có bán áo không
+    - Có bán quần không
+    - Bán váy không
+    - Bạn có bán váy không
+    - Bạn có bán mũ không
+    - Bạn có bán áo phông không
+    - Bạn có bán và vạt không
+    - Cửa hàng có chân váy không
+    - Có mũ bảo hiểm không
+    - Có bán đồ lót không
+    - Có bán áo sơ mi dự tiệc không
+    - Có bán kính không
+    - Có bán mĩ phẩm không
+    - Ngoài áo ra có những gì
+    - Ngoài quần ra có những gì
+    - Ngoài váy ra có những gì
+
+- intent: ask_products_price
+  examples: |
+    - Quần áo loại [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Quần áo từ [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Quần áo từ [200k](start_price)-[500k](end_price) có loại nào
+    - Quần áo [200k](start_price) - [500k](end_price) có những loại nào
+    - Quần áo [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Giá từ [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Quần áo loại [200](start_price) đến [500](end_price) có những mẫu nào
+    - Quần áo từ [200](start_price) đến [500](end_price) có những mẫu nào
+    - Quần áo từ [200](start_price)-[500](end_price) có loại nào
+    - Quần áo [200](start_price) - [500](end_price) có những loại nào
+    - Quần áo [200](start_price) đến [500](end_price) có những mẫu nào
+    - Giá từ [200](start_price) đến [500](end_price) có những mẫu nào
+    - Quần áo loại dưới [500k](end_price) có những mẫu nào
+    - Quần áo dưới [500k](end_price) có những mẫu nào
+    - Quần áo ít hơn [500k](end_price) có loại nào
+    - Quần áo loại trên [500k](start_price) có những mẫu nào
+    - Quần áo trên [500k](start_price) có những mẫu nào
+    - Quần áo nhiều hơn [500k](start_price) có loại nào
+
+- intent: ask_dress_price
+  examples: |
+    - Váy loại [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Váy từ [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Váy từ [200k](start_price)-[500k](end_price) có loại nào
+    - Váy [200k](start_price) - [500k](end_price) có những loại nào
+    - Váy [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Giá từ [200k](start_price) đến [500k](end_price) có những mẫu váy nào
+    - Váy loại [200](start_price) đến [500](end_price) có những mẫu nào
+    - Váy từ [200](start_price) đến [500](end_price) có những mẫu nào
+    - Váy từ [200](start_price)-[500](end_price) có loại nào
+    - Váy [200](start_price) - [500](end_price) có những loại nào
+    - Váy [200](start_price) đến [500](end_price) có những mẫu nào
+    - Váy loại dưới [500k](end_price) có những mẫu nào
+    - Váy dưới [500k](end_price) có những mẫu nào
+    - Váy ít hơn [500k](end_price) có loại nào
+    - Váy loại trên [500k](start_price) có những mẫu nào
+    - Váy trên [500k](start_price) có những mẫu nào
+    - Váy nhiều hơn [500k](start_price) có loại nào
+    - Đầm loại [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Đầm từ [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Đầm từ [200k](start_price)-[500k](end_price) có loại nào
+    - Đầm [200k](start_price) - [500k](end_price) có những loại nào
+    - Đầm [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Giá từ [200k](start_price) đến [500k](end_price) có những mẫu Đầm nào
+    - Đầm loại [200](start_price) đến [500](end_price) có những mẫu nào
+    - Đầm từ [200](start_price) đến [500](end_price) có những mẫu nào
+    - Đầm từ [200](start_price)-[500](end_price) có loại nào
+    - Đầm [200](start_price) - [500](end_price) có những loại nào
+    - Đầm [200](start_price) đến [500](end_price) có những mẫu nào
+    - Đầm loại dưới [500k](end_price) có những mẫu nào
+    - Đầm dưới [500k](end_price) có những mẫu nào
+    - Đầm ít hơn [500k](end_price) có loại nào
+    - Đầm loại trên [500k](start_price) có những mẫu nào
+    - Đầm trên [500k](start_price) có những mẫu nào
+    - Đầm nhiều hơn [500k](start_price) có loại nào
+
+- intent: ask_shirts_price
+  examples: |
+    - Áo loại [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Áo từ [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Áo từ [200k](start_price)-[500k](end_price) có loại nào
+    - Áo [200k](start_price) - [500k](end_price) có những loại nào
+    - Áo [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Giá từ [200k](start_price) đến [500k](end_price) có những mẫu Áo nào
+    - Áo loại [200](start_price) đến [500](end_price) có những mẫu nào
+    - Áo từ [200](start_price) đến [500](end_price) có những mẫu nào
+    - Áo từ [200](start_price)-[500](end_price) có loại nào
+    - Áo [200](start_price) - [500](end_price) có những loại nào
+    - Áo [200](start_price) đến [500](end_price) có những mẫu nào
+    - Giá từ [200](start_price) đến [500](end_price) có những mẫu nào
+    - Áo loại dưới [500k](end_price) có những mẫu nào
+    - Áo dưới [500k](end_price) có những mẫu nào
+    - Áo ít hơn [500k](end_price) có loại nào
+    - Áo loại trên [500k](start_price) có những mẫu nào
+    - Áo trên [500k](start_price) có những mẫu nào
+    - Áo nhiều hơn [500k](start_price) có loại nào
+    - Áo sơ mi loại [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Áo sơ mi từ [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Áo sơ mi từ [200k](start_price)-[500k](end_price) có loại nào
+    - Áo sơ mi [200k](start_price) - [500k](end_price) có những loại nào
+    - Áo sơ mi [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Giá từ [200k](start_price) đến [500k](end_price) có những mẫu Áo sơ mi nào
+    - Áo sơ mi loại [200](start_price) đến [500](end_price) có những mẫu nào
+    - Áo sơ mi từ [200](start_price) đến [500](end_price) có những mẫu nào
+    - Áo sơ mi từ [200](start_price)-[500](end_price) có loại nào
+    - Áo sơ mi [200](start_price) - [500](end_price) có những loại nào
+    - Áo sơ mi [200](start_price) đến [500](end_price) có những mẫu nào
+    - Áo sơ mi loại dưới [500k](end_price) có những mẫu nào
+    - Áo sơ mi dưới [500k](end_price) có những mẫu nào
+    - Áo sơ mi ít hơn [500k](end_price) có loại nào
+    - Áo sơ mi loại trên [500k](start_price) có những mẫu nào
+    - Áo sơ mi trên [500k](start_price) có những mẫu nào
+    - Áo sơ mi nhiều hơn [500k](start_price) có loại nào
+    
+    - Áo phông loại [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Áo phông từ [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Áo phông từ [200k](start_price)-[500k](end_price) có loại nào
+    - Áo phông [200k](start_price) - [500k](end_price) có những loại nào
+    - Áo phông [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Giá từ [200k](start_price) đến [500k](end_price) có những mẫu Áo phông nào
+    - Áo phông loại [200](start_price) đến [500](end_price) có những mẫu nào
+    - Áo phông từ [200](start_price) đến [500](end_price) có những mẫu nào
+    - Áo phông từ [200](start_price)-[500](end_price) có loại nào
+    - Áo phông [200](start_price) - [500](end_price) có những loại nào
+    - Áo phông [200](start_price) đến [500](end_price) có những mẫu nào
+    - Áo phông loại dưới [500k](end_price) có những mẫu nào
+    - Áo phông dưới [500k](end_price) có những mẫu nào
+    - Áo phông ít hơn [500k](end_price) có loại nào
+    - Áo phông loại trên [500k](start_price) có những mẫu nào
+    - Áo phông trên [500k](start_price) có những mẫu nào
+    - Áo phông nhiều hơn [500k](start_price) có loại nào
+
+- intent: ask_trousers_price
+  examples: |
+    - Quần loại [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Quần từ [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Quần từ [200k](start_price)-[500k](end_price) có loại nào
+    - Quần [200k](start_price) - [500k](end_price) có những loại nào
+    - Quần [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Giá từ [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Quần loại [200](start_price) đến [500](end_price) có những mẫu nào
+    - Quần từ [200](start_price) đến [500](end_price) có những mẫu nào
+    - Quần từ [200](start_price)-[500](end_price) có loại nào
+    - Quần [200](start_price) - [500](end_price) có những loại nào
+    - Quần [200](start_price) đến [500](end_price) có những mẫu nào
+    - Quần loại dưới [500k](end_price) có những mẫu nào
+    - Quần dưới [500k](end_price) có những mẫu nào
+    - Quần ít hơn [500k](end_price) có loại nào
+    - Quần loại trên [500k](start_price) có những mẫu nào
+    - Quần trên [500k](start_price) có những mẫu nào
+    - Quần nhiều hơn [500k](start_price) có loại nào
+
+- intent: ask_dress_type
+  examples: |
+    - Có những kiểu váy nào
+    - Có những kiểu đầm nào
+    - có nhưng loại váy gì
+    - có những loại đầm gì
+    - váy có những loại nào
+    - đầm có những loại nào
+    - váy có những mẫu nào
+    - có những mẫu váy nào
+    - vay co nhung kieu nao
+    - vay co nhung loai nao
+    - co nhung kieu vay nao
+    - cửa hàng có những kiểu váy nào
+    - ở đây có váy kiểu gì
+    - Cửa hàng có mẫu váy gì ở đây
+
+- intent: ask_shirt_type
+  examples: |
+    - Có những kiểu áo nào
+    - Có những kiểu áo sơ mi nào
+    - có nhưng loại áo gì
+    - có những loại áo sơ mi gì
+    - áo có những loại nào
+    - áo sơ mi có những loại nào
+    - áo có những mẫu nào
+    - có những mẫu áo nào
+    - ao phong co nhung kieu nao
+    - ao phong co nhung loai nao
+    - co nhung kieu ao phong nao
+    - cửa hàng có những kiểu áo nào
+    - ở đây có áo kiểu gì
+    - Cửa hàng có mẫu áo gì ở đây
+
+- intent: ask_trousers_type
+  examples: |
+    - Có những kiểu quần nào
+    - quần có những kiểu nào
+    - có những loại quần nào
+    - quần có mấy loại
+    - Cửa hàng có những mẫu quần nào
+    - Ở đây bán những kiểu quần như nào
+    - Có abns kiểu quần nào
 
 # 3. Gợi ý về chọn quần áo
 
@@ -828,3 +1024,4 @@ nlu:
     - Éc
     - Hơ
     - Ủa
+

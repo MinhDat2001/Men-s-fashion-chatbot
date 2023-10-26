@@ -2,6 +2,142 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 import sqlite3
 from typing import Any, Text, Dict, List
+import json
+
+# Cơ bản ---------Start-------------
+class SaveConversationAction(Action):
+    def name(self):
+        return "action_save_conversation"
+
+    def run(self, dispatcher, tracker, domain):
+        conversation = tracker.export_stories()
+        print("write conversation!")
+        with open("conversation.json", "w") as file:
+            json.dump(conversation, file)
+
+        return []
+
+class ActionGreet(Action):
+    def name(self) -> Text:
+        return "action_greet"
+
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        user_id = tracker.sender_id
+        user_name = get_user_name(user_id)
+
+        if user_name:
+            dispatcher.utter_message(
+                response="utter_greet_name",
+                name=user_name
+            )
+        else:
+            dispatcher.utter_message(
+                response="utter_greet"
+            )
+
+        return []
+
+# Cơ bản ---------End-------------
+
+# Thông tin sản phẩm---------Start-------------
+
+class ActionProductPrice(Action):
+    def name(self):
+        return "action_product_price"
+
+    def run(self, dispatcher, tracker, domain):
+        print("action_product_price")
+
+        dispatcher.utter_message(
+                response="utter_ask_products_price"
+            )
+        return []
+
+class ActionDressPrice(Action):
+    def name(self):
+        return "action_dress_price"
+
+    def run(self, dispatcher, tracker, domain):
+        print("action_dress_price")
+
+        dispatcher.utter_message(
+                response="utter_ask_dress_price"
+            )
+        return []
+
+class ActionShirtsPrice(Action):
+    def name(self):
+        return "action_shirts_price"
+
+    def run(self, dispatcher, tracker, domain):
+        print("action_shirts_price")
+
+        dispatcher.utter_message(
+                response="utter_ask_shirts_price"
+            )
+        return []
+
+class ActionTrousersPrice(Action):
+    def name(self):
+        return "action_trousers_price"
+
+    def run(self, dispatcher, tracker, domain):
+        print("action_trousers_price")
+
+        dispatcher.utter_message(
+                response="utter_ask_trousers_price"
+            )
+        return []
+
+class ActionDressType(Action):
+    def name(self):
+        return "action_dress_type"
+
+    def run(self, dispatcher, tracker, domain):
+        print("action_dress_type")
+
+        dispatcher.utter_message(
+                response="utter_ask_dress_type"
+            )
+        return []
+
+class ActionShirtType(Action):
+    def name(self):
+        return "action_shirt_type"
+
+    def run(self, dispatcher, tracker, domain):
+        print("action_shirt_type")
+
+        dispatcher.utter_message(
+                response="utter_ask_shirt_type"
+            )
+        return []
+
+class ActionTrousersType(Action):
+    def name(self):
+        return "action_trousers_type"
+
+    def run(self, dispatcher, tracker, domain):
+        print("action_trousers_type")
+
+        dispatcher.utter_message(
+                response="utter_ask_trousers_type"
+            )
+        return []
+
+
+# Thông tin sản phẩm---------End-------------
+
+
+# Mua hàng---------Start-------------
+
+# Mua hàng---------End-------------
+
+
+# Thông tin người dùng---------Start-------------
 
 class ActionSaveUserName(Action):
     def name(self) -> Text:
@@ -30,7 +166,6 @@ class ActionSaveUserName(Action):
             )
 
         return []
-    
 
 class ActionAskCustomerName(Action):
     def name(self) -> Text:
@@ -54,30 +189,8 @@ class ActionAskCustomerName(Action):
             )
 
         return []
-    
-class ActionGreet(Action):
-    def name(self) -> Text:
-        return "action_greet"
 
-    def run(self,
-            dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        user_id = tracker.sender_id
-        user_name = get_user_name(user_id)
-
-        if user_name:
-            dispatcher.utter_message(
-                response="utter_greet_name",
-                name=user_name
-            )
-        else:
-            dispatcher.utter_message(
-                response="utter_greet"
-            )
-
-        return []
-    
+# Thông tin người dùng---------End-------------
 
 class ActionCreateDB(Action):
     def name(self) -> Text:
@@ -169,7 +282,7 @@ def update_info(sender_id, name, gender, age):
 
     print("connect to database success!") 
 
-    cursor.execute('''UPDATE user_info SET name=? WHERE CustomerID=?;''',(sender_id, name))
+    cursor.execute('''UPDATE user_info SET name=? WHERE sender_id=?;''',(sender_id, name))
     
     print("update successfully !........")
 

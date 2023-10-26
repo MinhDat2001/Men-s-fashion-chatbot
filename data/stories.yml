@@ -78,6 +78,48 @@ stories:
   steps:
   - intent: ask_outfit_office
   - action: utter_ask_outfit_office
+
+- story: ask sale product
+  steps:
+  - intent: ask_sale_product
+  - action: utter_ask_sale_product
+
+- story: ask product price
+  steps:
+  - intent: ask_products_price
+  - action: action_product_price
+
+- story: ask dress price
+  steps:
+  - intent: ask_dress_price
+  - action: action_dress_price
+
+- story: ask shirt price
+  steps:
+  - intent: ask_shirts_price
+  - action: action_shirts_price
+
+- story: ask trousers price
+  steps:
+  - intent: ask_trousers_price
+  - action: action_trousers_price
+
+- story: ask dress type
+  steps:
+  - intent: ask_dress_type
+  - action: action_dress_type
+
+- story: ask shirt type
+  steps:
+  - intent: ask_shirt_type
+  - action: action_shirt_type
+
+- story: ask trousers type
+  steps:
+  - intent: ask_trousers_type
+  - action: action_trousers_type
+
+
 # 4. Khai thác thông tin người dùng(Lưu thông tin người dùng)
 
 
