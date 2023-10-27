@@ -121,6 +121,13 @@ nlu:
     - bạn tên gì thế
     - tên của bạn là gì
     - bạn tên gì
+    - Tên bạn là gì
+    - bạn tên chi
+    - Tên bạn
+    - Mày tên gì
+    - Người ta gọi bạn là gì
+    - Tôi có thể gọi bạn là
+    - Tôi có thể gọi bạn là gì
 
 # 2. Hỏi về thông tin shop
 - intent: ask_about_shop_location
@@ -170,7 +177,6 @@ nlu:
     - Quần áo từ [200k](start_price)-[500k](end_price) có loại nào
     - Quần áo [200k](start_price) - [500k](end_price) có những loại nào
     - Quần áo [200k](start_price) đến [500k](end_price) có những mẫu nào
-    - Giá từ [200k](start_price) đến [500k](end_price) có những mẫu nào
     - Quần áo loại [200](start_price) đến [500](end_price) có những mẫu nào
     - Quần áo từ [200](start_price) đến [500](end_price) có những mẫu nào
     - Quần áo từ [200](start_price)-[500](end_price) có loại nào
@@ -234,7 +240,6 @@ nlu:
     - Áo từ [200](start_price)-[500](end_price) có loại nào
     - Áo [200](start_price) - [500](end_price) có những loại nào
     - Áo [200](start_price) đến [500](end_price) có những mẫu nào
-    - Giá từ [200](start_price) đến [500](end_price) có những mẫu nào
     - Áo loại dưới [500k](end_price) có những mẫu nào
     - Áo dưới [500k](end_price) có những mẫu nào
     - Áo ít hơn [500k](end_price) có loại nào
@@ -258,7 +263,6 @@ nlu:
     - Áo sơ mi loại trên [500k](start_price) có những mẫu nào
     - Áo sơ mi trên [500k](start_price) có những mẫu nào
     - Áo sơ mi nhiều hơn [500k](start_price) có loại nào
-    
     - Áo phông loại [200k](start_price) đến [500k](end_price) có những mẫu nào
     - Áo phông từ [200k](start_price) đến [500k](end_price) có những mẫu nào
     - Áo phông từ [200k](start_price)-[500k](end_price) có loại nào
@@ -284,7 +288,7 @@ nlu:
     - Quần từ [200k](start_price)-[500k](end_price) có loại nào
     - Quần [200k](start_price) - [500k](end_price) có những loại nào
     - Quần [200k](start_price) đến [500k](end_price) có những mẫu nào
-    - Giá từ [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Giá từ [200k](start_price) đến [500k](end_price) có những mẫu Quần nào
     - Quần loại [200](start_price) đến [500](end_price) có những mẫu nào
     - Quần từ [200](start_price) đến [500](end_price) có những mẫu nào
     - Quần từ [200](start_price)-[500](end_price) có loại nào

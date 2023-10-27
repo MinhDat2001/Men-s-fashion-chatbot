@@ -64,21 +64,6 @@ stories:
   - intent: ask_shop_product
   - action: utter_ask_shop_product
 
-
-# 3. Gợi ý về chọn quần áo
-
-
-- story: ask about dress
-  steps:
-  - intent: ask_shop_dress
-  - action: utter_ask_shop_dress
-
-
-- story: ask about office outfit
-  steps:
-  - intent: ask_outfit_office
-  - action: utter_ask_outfit_office
-
 - story: ask sale product
   steps:
   - intent: ask_sale_product
@@ -99,10 +84,10 @@ stories:
   - intent: ask_shirts_price
   - action: action_shirts_price
 
-- story: ask trousers price
-  steps:
-  - intent: ask_trousers_price
-  - action: action_trousers_price
+# - story: ask trousers price
+#   steps:
+#   - intent: ask_trousers_price
+#   - action: action_trousers_price
 
 - story: ask dress type
   steps:
@@ -118,6 +103,21 @@ stories:
   steps:
   - intent: ask_trousers_type
   - action: action_trousers_type
+
+
+# 3. Gợi ý về chọn quần áo
+
+
+# - story: ask about dress
+#   steps:
+#   - intent: ask_shop_dress
+#   - action: utter_ask_shop_dress
+
+
+- story: ask about office outfit
+  steps:
+  - intent: ask_outfit_office
+  - action: utter_ask_outfit_office
 
 
 # 4. Khai thác thông tin người dùng(Lưu thông tin người dùng)

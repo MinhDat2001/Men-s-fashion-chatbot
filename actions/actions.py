@@ -99,8 +99,14 @@ class ActionDressType(Action):
     def run(self, dispatcher, tracker, domain):
         print("action_dress_type")
 
+        records = get_product_by_type("Váy")
+        dresses = ""
+        for i in records:
+            dresses += i[0] +", "
+
         dispatcher.utter_message(
-                response="utter_ask_dress_type"
+                response="utter_ask_dress_type",
+                dress = dresses
             )
         return []
 
@@ -111,8 +117,13 @@ class ActionShirtType(Action):
     def run(self, dispatcher, tracker, domain):
         print("action_shirt_type")
 
+        records = get_product_by_type("Áo")
+        shirts = ""
+        for i in records:
+            shirts += i[0] +", "
         dispatcher.utter_message(
-                response="utter_ask_shirt_type"
+                response="utter_ask_shirt_type",
+                shirt = shirts
             )
         return []
 
@@ -123,8 +134,14 @@ class ActionTrousersType(Action):
     def run(self, dispatcher, tracker, domain):
         print("action_trousers_type")
 
+        records = get_product_by_type("Quần")
+        
+        trouser = ""
+        for i in records:
+            trouser += i[0] +", "
         dispatcher.utter_message(
-                response="utter_ask_trousers_type"
+                response="utter_ask_trousers_type",
+                trousers = trouser
             )
         return []
 
@@ -201,7 +218,7 @@ class ActionCreateDB(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        # create_database()
+        create_database()
         dispatcher.utter_message("Đã tạo DB")
 
         return []
@@ -211,21 +228,32 @@ def create_database():
     conn = sqlite3.connect("Alio.db")
     cursor = conn.cursor()
     sql1 = """
-
     CREATE TABLE user_info(
         sender_id VARCHAR,
         name VARCHAR,
         age VARCHAR,
         gender VARCHAR);
-"""
+    """
     sql2 = """
-    
     CREATE TABLE user_hobby(
         sender_id VARCHAR,
         hobby VARCHAR)
-"""
-    cursor.execute(sql1)
-    cursor.execute(sql2)
+    """
+    sql3 = """
+    CREATE TABLE product(
+        id INTEGER,
+        name VARCHAR,
+        type VARCHAR,
+        description VARCHAR,
+        price INTEGER,
+        type_detail VARCHAR,
+        quantity INTEGER,
+        image TEXT,
+        PRIMARY KEY("id" AUTOINCREMENT));
+    """
+    # cursor.execute(sql1)
+    # cursor.execute(sql2)
+    cursor.execute(sql3)
     print("create table successfully........")
 
     # Commit your changes in the database
@@ -288,3 +316,32 @@ def update_info(sender_id, name, gender, age):
 
     conn.commit()
     conn.close()
+
+
+def get_product_by_type(type):
+    conn = sqlite3.connect("Alio.db")
+    cursor = conn.cursor()
+    print("type: " , type)
+    print("connect to database success!") 
+
+    cursor.execute('''SELECT DISTINCT type_detail from product WHERE type=?''',(type,))
+    
+    print("select product type_detail successfully........")
+    records = cursor.fetchall()
+    print(records)
+    return records
+
+def get_product_by_price(start_price, end_price):
+    conn = sqlite3.connect("Alio.db")
+    cursor = conn.cursor()
+    print("start_price: " , start_price)
+    print("end_price: " , start_price)
+    print("connect to database success!") 
+
+    cursor.execute('''SELECT * from product WHERE price<=? and price>=?''',(start_price,end_price))
+    
+    print("select product successfully........")
+    records = cursor.fetchall()
+    print(records)
+    return records
+  

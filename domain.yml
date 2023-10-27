@@ -41,6 +41,8 @@ intents:
 
 entities:
   - first_name
+  - start_price
+  - end_price
 
 slots:
   first_name:
@@ -241,7 +243,7 @@ responses:
 # 3. Gợi ý về chọn quần áo
 
   utter_ask_shop_dress:
-  - text: Mình nghĩ một chiếc đầm  cute sẽ hợp với bạn đó
+  - text: Mình nghĩ một chiếc đầm cute sẽ hợp với bạn đó
   - text: Bạn nên mặc thoải mái và vẫn lịch sự và quyến rũ
   - text: Tôi nghĩ chân váy kết hợp với áo sơ mi sẽ phù hợp đó
   - text: Lúc này mình nghĩ bạn sẽ hợp với một cái đầm cute hơn
