@@ -21,6 +21,12 @@ nlu:
     - êi
     - hêi
     - hey
+    - B ơi
+    - Đằng đấy ơi
+    - bạn ơi
+    - Alio ơi
+    - shop ơi
+    - bot ơi
 
 - intent: goodbye
   examples: |
@@ -189,6 +195,10 @@ nlu:
     - Quần áo loại trên [500k](start_price) có những mẫu nào
     - Quần áo trên [500k](start_price) có những mẫu nào
     - Quần áo nhiều hơn [500k](start_price) có loại nào
+    - Với giá từ [200](start_price) đến [500](end_price) có những sản phẩm nào
+    - Với giá từ [200](start_price) - [500](end_price) có những sản phẩm nào
+    - Những sản phẩm có giá từ [200](start_price) đến [500](end_price) 
+    - Những sản phẩm có giá từ [200](start_price) - [500](end_price) 
 
 - intent: ask_dress_price
   examples: |
@@ -557,7 +567,60 @@ nlu:
     - tên là [Nam](first_name)
     - tên là [Thức](first_name)
 
-# 5. Buôn chuyện(Phát hiện cảm xúc qua icon)
+# 5. Mua sản phẩm
+
+- intent: buy_product_intent
+  examples: |
+    - Cho tôi mua {buy_product}
+    - Tôi mua cái {buy_product}
+    - Cho tôi mua cái {buy_product} nhé
+    - Chốt mua {buy_product}
+    - Ship cho tôi {buy_product} nhé
+    - Tôi mua {buy_product}
+    - Mua {buy_product} nhé
+    - Tôi đặt {buy_product}
+
+- intent: cancle_buy_product
+  examples: |
+    - Tôi không mua {cancle_product} nữa
+    - Tôi hủy không mua {cancle_product} nữa nhé
+    - Cho tôi hủy đơn {cancle_product} nhé
+    - Hủy hộ tôi cái {cancle_product}
+    - Hủy mua {cancle_product} shop nhé
+    - Không mua {cancle_product} nữa, hủy đơn hộ tôi nhé
+
+
+- intent: ask_product_detail
+  examples: |
+    - Cho tôi xem {product_detail} 
+    - Tôi muốn xem {product_detail} 
+    - Tôi muốn xem cái {product_detail} nhé
+    - Gửi tôi thông tin {product_detail} đi
+    - Cho tôi xem ảnh {product_detail} shop nhé
+    - Tôi muốn xem ảnh của {product_detail} 
+    - Cho xem ảnh và thông tin của {product_detail} 
+    - Gửi thêm thông tin về {product_detail} cho tôi đi
+    - thông tin chi tiết về {product_detail} đi
+    - Gửi thông tin kèm hình ảnh của {product_detail} đi
+    - Cái {product_detail} có ảnh không
+    - KHông có ảnh cho {product_detail} à
+    - Thông tin chi tiết cho {product_detail} đi
+
+
+# 6. Buôn chuyện(Phát hiện cảm xúc qua icon)
+
+- intent: ask_weather
+  examples: |
+    - Thời tiết {date} như thế nào
+    - Trời {date} như thế nào
+    - Thời tiết {date} Có mưa không
+    - Thời tiết {date} có nắng không
+    - Trời {date} có nắng không
+    - Trời {date} có mưa không
+    - {date} Trời như thế nào
+    - Trời {date} sẽ thế nào
+    - {date} thời tiết thế nào
+    - Trời {date} thế nào
 
 - intent: sing_poem
   examples: |

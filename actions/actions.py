@@ -3,6 +3,7 @@ from rasa_sdk.executor import CollectingDispatcher
 import sqlite3
 from typing import Any, Text, Dict, List
 import json
+import re
 
 # Cơ bản ---------Start-------------
 class SaveConversationAction(Action):
@@ -51,9 +52,26 @@ class ActionProductPrice(Action):
     def run(self, dispatcher, tracker, domain):
         print("action_product_price")
 
-        dispatcher.utter_message(
-                response="utter_ask_products_price"
-            )
+        start_price = tracker.get_slot("start_price")
+        end_price = tracker.get_slot("end_price")
+        if not start_price:
+            start_price = 0
+        if not end_price:
+            start_price = 100000000
+        products = get_product_by_price(start_price, end_price)
+        
+        productString = ""
+        for i in products:
+            productString += i[0] +", "
+        if len(products):
+            dispatcher.utter_message(
+                    response="utter_ask_products_price",
+                    products = productString
+                )
+        else:
+            dispatcher.utter_message(
+                    response="utter_not_have_product"
+                )
         return []
 
 class ActionDressPrice(Action):
@@ -63,9 +81,26 @@ class ActionDressPrice(Action):
     def run(self, dispatcher, tracker, domain):
         print("action_dress_price")
 
-        dispatcher.utter_message(
-                response="utter_ask_dress_price"
-            )
+        start_price = tracker.get_slot("start_price")
+        end_price = tracker.get_slot("end_price")
+        if not start_price:
+            start_price = 0
+        if not end_price:
+            start_price = 100000000
+        products = get_product_by_price_and_type(start_price, end_price, "Váy")
+        
+        productString = ""
+        for i in products:
+            productString += i[0] +", "
+        if len(products):
+            dispatcher.utter_message(
+                    response="utter_ask_dress_price",
+                    dress = productString
+                )
+        else:
+            dispatcher.utter_message(
+                    response="utter_not_have_dress"
+                )
         return []
 
 class ActionShirtsPrice(Action):
@@ -74,10 +109,26 @@ class ActionShirtsPrice(Action):
 
     def run(self, dispatcher, tracker, domain):
         print("action_shirts_price")
+        start_price = tracker.get_slot("start_price")
+        end_price = tracker.get_slot("end_price")
+        if not start_price:
+            start_price = 0
+        if not end_price:
+            start_price = 100000000
+        products = get_product_by_price_and_type(start_price, end_price, "Áo")
 
-        dispatcher.utter_message(
-                response="utter_ask_shirts_price"
-            )
+        productString = ""
+        for i in products:
+            productString += i[0] +", "
+        if len(products):
+            dispatcher.utter_message(
+                    response="utter_ask_shirts_price",
+                    shirt = productString
+                )
+        else:
+            dispatcher.utter_message(
+                    response="utter_not_have_shirt"
+                )
         return []
 
 class ActionTrousersPrice(Action):
@@ -87,9 +138,27 @@ class ActionTrousersPrice(Action):
     def run(self, dispatcher, tracker, domain):
         print("action_trousers_price")
 
-        dispatcher.utter_message(
-                response="utter_ask_trousers_price"
-            )
+        start_price = tracker.get_slot("start_price")
+        end_price = tracker.get_slot("end_price")
+        if not start_price:
+            start_price = 0
+        if not end_price:
+            start_price = 100000000
+
+        products = get_product_by_price_and_type(start_price, end_price, "Quần")
+        
+        productString = ""
+        for i in products:
+            productString += i[0] +", "
+        if len(products):
+            dispatcher.utter_message(
+                    response="utter_ask_trousers_price",
+                    trousers = productString
+                )
+        else:
+            dispatcher.utter_message(
+                    response="utter_not_have_trousers"
+                )
         return []
 
 class ActionDressType(Action):
@@ -226,6 +295,7 @@ class ActionCreateDB(Action):
 # connect DB
 def create_database():
     conn = sqlite3.connect("Alio.db")
+    print("create table start........")
     cursor = conn.cursor()
     sql1 = """
     CREATE TABLE user_info(
@@ -253,7 +323,7 @@ def create_database():
     """
     # cursor.execute(sql1)
     # cursor.execute(sql2)
-    cursor.execute(sql3)
+    # cursor.execute(sql3)
     print("create table successfully........")
 
     # Commit your changes in the database
@@ -322,7 +392,7 @@ def get_product_by_type(type):
     conn = sqlite3.connect("Alio.db")
     cursor = conn.cursor()
     print("type: " , type)
-    print("connect to database success!") 
+    print("get_product_by_type") 
 
     cursor.execute('''SELECT DISTINCT type_detail from product WHERE type=?''',(type,))
     
@@ -334,14 +404,48 @@ def get_product_by_type(type):
 def get_product_by_price(start_price, end_price):
     conn = sqlite3.connect("Alio.db")
     cursor = conn.cursor()
-    print("start_price: " , start_price)
-    print("end_price: " , start_price)
-    print("connect to database success!") 
+    print("get_product_by_price") 
+    number1 = re.findall(r'\d+', start_price)
+    number2 = re.findall(r'\d+', end_price)
+    start = int(number1[0])*1000
+    end = int(number2[0])*1000
+    print("start_price: " , start)
+    print("end_price: " , end)
 
-    cursor.execute('''SELECT * from product WHERE price<=? and price>=?''',(start_price,end_price))
+    cursor.execute('''SELECT name from product WHERE price>=? and price<=?''',(start,end))
     
     print("select product successfully........")
     records = cursor.fetchall()
     print(records)
     return records
-  
+
+def get_product_by_price_and_type(start_price, end_price, type):
+    conn = sqlite3.connect("Alio.db")
+    cursor = conn.cursor()
+    print("get_product_by_price_and_type") 
+    number1 = re.findall(r'\d+', start_price)
+    number2 = re.findall(r'\d+', end_price)
+    start = int(number1[0])*1000
+    end = int(number2[0])*1000
+    print("start_price: " , start)
+    print("end_price: " , end)
+
+    cursor.execute('''SELECT name from product WHERE price>=? and price<=? and type=?''',(start,end, type))
+    
+    print("select product successfully........")
+    records = cursor.fetchall()
+    print(records)
+    return records
+
+def get_product_by_name(name):
+    conn = sqlite3.connect("Alio.db")
+    cursor = conn.cursor()
+    print("name: " , name)
+    print("get_product_by_name") 
+
+    cursor.execute('''SELECT DISTINCT type_detail from product WHERE name LIKE '%?%' ''',(name,))
+    
+    print("select product successfully........")
+    records = cursor.fetchall()
+    print(records)
+    return records

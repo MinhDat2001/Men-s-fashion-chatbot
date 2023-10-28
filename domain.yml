@@ -38,11 +38,19 @@ intents:
   - ask_dress_type
   - ask_shirt_type
   - ask_trousers_type
+  - buy_product_intent
+  - cancle_buy_product
+  - ask_product_detail
+  - ask_weather
 
 entities:
   - first_name
   - start_price
   - end_price
+  - buy_product
+  - product_detail
+  - cancle_product
+  - date
 
 slots:
   first_name:
@@ -60,6 +68,26 @@ slots:
     mappings:
       - type: from_entity
         entity: end_price
+  buy_product:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: buy_product
+  cancle_product:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: cancle_product
+  product_detail:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: product_detail
+  date:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: date
 
 actions:
  - action_save_user_name
@@ -239,6 +267,25 @@ responses:
   - text: Quần bên mình đang hot mấy kiểu {trousers}
   - text: Bên mình có mấy kiểu quần này đang bán chạy như {trousers}
 
+  utter_not_have_product:
+  - text: Với mức giá này bên mình không có sản phẩm nào
+  - text: Mức giá này bên mình chưa có sản phẩm nào
+  - text: Bên mình không có sản phẩm nào trong mức giá này
+
+  utter_not_have_dress:
+  - text: Với mức giá này bên mình không có váy nào
+  - text: Mức giá này bên mình chưa có váy nào
+  - text: Bên mình không có váy nào trong mức giá này
+
+  utter_not_have_shirt:
+  - text: Với mức giá này bên mình không có áo nào
+  - text: Mức giá này bên mình chưa có áo nào
+  - text: Bên mình không có áo nào trong mức giá này
+
+  utter_not_have_trousers:
+  - text: Với mức giá này bên mình không có quần nào
+  - text: Mức giá này bên mình chưa có quần nào
+  - text: Bên mình không có quần nào trong mức giá này
 
 # 3. Gợi ý về chọn quần áo
 

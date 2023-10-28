@@ -128,10 +128,10 @@ stories:
   - intent: give_name
   - action: action_save_user_name
 
-- story: create database
-  steps:
-  - intent: create_db
-  - action: action_create_db
+# - story: create database
+#   steps:
+#   - intent: create_db
+#   - action: action_create_db
 
 - story: action ask customer name
   steps:
