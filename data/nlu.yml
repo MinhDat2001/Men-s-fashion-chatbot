@@ -571,46 +571,46 @@ nlu:
 
 - intent: buy_product_intent
   examples: |
-    - Cho tôi mua {buy_product}
-    - Tôi mua cái {buy_product}
-    - Cho tôi mua cái {buy_product} nhé
-    - Chốt mua {buy_product}
-    - Ship cho tôi {buy_product} nhé
-    - Tôi mua {buy_product}
-    - Mua {buy_product} nhé
-    - Tôi đặt {buy_product}
+    - Cho tôi mua [Áo thun nữ](buy_product)
+    - Tôi mua cái [Áo thun nữ](buy_product)
+    - Cho tôi mua cái [Áo thun nữ](buy_product) nhé
+    - Chốt mua [Áo thun nữ](buy_product)
+    - Ship cho tôi [Áo thun nữ](buy_product) nhé
+    - Tôi mua [Áo thun nữ](buy_product)
+    - Mua [Áo thun nữ](buy_product) nhé
+    - Tôi đặt [Áo thun nữ](buy_product)
 
 - intent: cancle_buy_product
   examples: |
-    - Tôi không mua {cancle_product} nữa
-    - Tôi hủy không mua {cancle_product} nữa nhé
-    - Cho tôi hủy đơn {cancle_product} nhé
-    - Hủy hộ tôi cái {cancle_product}
-    - Hủy mua {cancle_product} shop nhé
-    - Không mua {cancle_product} nữa, hủy đơn hộ tôi nhé
+    - Tôi không mua [Áo thun nữ](cancle_product) nữa
+    - Tôi hủy không mua [Áo thun nữ](cancle_product) nữa nhé
+    - Cho tôi hủy đơn [Áo thun nữ](cancle_product) nhé
+    - Hủy hộ tôi cái [Áo thun nữ](cancle_product)
+    - Hủy mua [Áo thun nữ](cancle_product) shop nhé
+    - Không mua [Áo thun nữ](cancle_product) nữa, hủy đơn hộ tôi nhé
 
 
 - intent: ask_product_detail
   examples: |
-    - Cho tôi xem {product_detail} 
-    - Tôi muốn xem {product_detail} 
-    - Tôi muốn xem cái {product_detail} nhé
-    - Gửi tôi thông tin {product_detail} đi
-    - Cho tôi xem ảnh {product_detail} shop nhé
-    - Tôi muốn xem ảnh của {product_detail} 
-    - Cho xem ảnh và thông tin của {product_detail} 
-    - Gửi thêm thông tin về {product_detail} cho tôi đi
-    - thông tin chi tiết về {product_detail} đi
-    - Gửi thông tin kèm hình ảnh của {product_detail} đi
-    - Cái {product_detail} có ảnh không
-    - KHông có ảnh cho {product_detail} à
-    - Thông tin chi tiết cho {product_detail} đi
-    - Cho tôi xem áo {product_detail}
-    - Cho tôi xem quần {product_detail}
-    - cho tôi xem váy {product_detail}
-    - tôi muốn xem váy {product_detail}
-    - tôi muốn xem quần {product_detail}
-    - tôi muốn xem áo {product_detail}
+    - Cho tôi xem [Áo thun nữ](product_detail) 
+    - Tôi muốn xem [Áo Sơ Mi Nữ](product_detail) 
+    - Tôi muốn xem cái [Áo Sơ Mi Nữ](product_detail) nhé
+    - Gửi tôi thông tin [Áo thun nữ](product_detail) đi
+    - Cho tôi xem ảnh [Áo thun nữ](product_detail) shop nhé
+    - Tôi muốn xem ảnh của [Áo thun nữ](product_detail) 
+    - Cho xem ảnh và thông tin của [Áo thun nữ](product_detail) 
+    - Gửi thêm thông tin về [Áo thun nữ](product_detail) cho tôi đi
+    - thông tin chi tiết về [Áo thun nữ](product_detail) đi
+    - Gửi thông tin kèm hình ảnh của [Áo thun nữ](product_detail) đi
+    - Cái [Áo thun nữ](product_detail) có ảnh không
+    - KHông có ảnh cho [Áo thun nữ](product_detail) à
+    - Thông tin chi tiết cho [Áo thun nữ](product_detail) đi
+    - Cho tôi xem áo [Áo thun nữ](product_detail)
+    - Cho tôi xem quần [Áo thun nữ](product_detail)
+    - cho tôi xem váy [Áo thun nữ](product_detail)
+    - tôi muốn xem váy [Áo thun nữ](product_detail)
+    - tôi muốn xem quần [Áo thun nữ](product_detail)
+    - tôi muốn xem áo [Áo thun nữ](product_detail)
 
 
 # 6. Buôn chuyện(Phát hiện cảm xúc qua icon)

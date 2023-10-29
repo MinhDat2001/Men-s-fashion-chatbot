@@ -243,7 +243,9 @@ class ActionProductDetail(Action):
         return "action_product_detail"
 
     def run(self, dispatcher, tracker, domain):
-        product_detail = tracker.get_slot("product_detail")
+        latest_message = tracker.latest_message
+        entities = latest_message['entities']
+        product_detail = entities[0]['value']
         print("product detail: ", product_detail)
 
         product_name = get_product_correct_name(product_detail)
@@ -252,9 +254,10 @@ class ActionProductDetail(Action):
         if product:
             dispatcher.utter_message(
                 response="utter_ask_product_detail",
-                name = product[1],
-                price = product[3],
-                description = product[5]
+                name = product[0][1],
+                price = product[0][4],
+                description = product[0][3],
+                image = product[0][7]
             )
         else:
             dispatcher.utter_message(
@@ -352,13 +355,16 @@ class ActionCreateDB(Action):
 
 def get_product_correct_name(pre_name):
 
-    max_distance = 0
+    max_distance = 1000
     name = ""
     product = get_all_product_name()
 
     for i in product:
         distance = lev.distance(pre_name, i[0])
-        if distance>max_distance:
+        print("i[0]:", i[0])
+        print("pre_name:", pre_name)
+        print("distance:", distance)
+        if distance<max_distance:
             name = i[0]
             max_distance = distance
 
@@ -517,7 +523,7 @@ def get_product_by_name(name):
     print("name: " , name)
     print("get_product_by_name") 
 
-    cursor.execute('''SELECT DISTINCT type_detail from product WHERE name LIKE '%?%' ''',(name,))
+    cursor.execute('''SELECT * from product WHERE name LIKE ? LIMIT 1''',(name,))
     
     print("select product successfully........")
     records = cursor.fetchall()
