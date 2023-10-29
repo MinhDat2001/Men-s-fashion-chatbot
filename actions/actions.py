@@ -4,6 +4,7 @@ import sqlite3
 from typing import Any, Text, Dict, List
 import json
 import re
+import Levenshtein as lev
 
 # Cơ bản ---------Start-------------
 class SaveConversationAction(Action):
@@ -54,10 +55,12 @@ class ActionProductPrice(Action):
 
         start_price = tracker.get_slot("start_price")
         end_price = tracker.get_slot("end_price")
-        if not start_price:
-            start_price = 0
-        if not end_price:
-            start_price = 100000000
+        user_message = tracker.latest_message.get('text').lower()
+        if "trên" in user_message or "tren" in user_message:
+            end_price = str(100000)
+        if "dưới" in user_message or "duoi" in user_message:
+            start_price = str(0)
+
         products = get_product_by_price(start_price, end_price)
         
         productString = ""
@@ -83,10 +86,11 @@ class ActionDressPrice(Action):
 
         start_price = tracker.get_slot("start_price")
         end_price = tracker.get_slot("end_price")
-        if not start_price:
-            start_price = 0
-        if not end_price:
-            start_price = 100000000
+        user_message = tracker.latest_message.get('text').lower()
+        if "trên" in user_message or "tren" in user_message:
+            end_price = str(100000)
+        if "dưới" in user_message or "duoi" in user_message:
+            start_price = str(0)
         products = get_product_by_price_and_type(start_price, end_price, "Váy")
         
         productString = ""
@@ -111,10 +115,11 @@ class ActionShirtsPrice(Action):
         print("action_shirts_price")
         start_price = tracker.get_slot("start_price")
         end_price = tracker.get_slot("end_price")
-        if not start_price:
-            start_price = 0
-        if not end_price:
-            start_price = 100000000
+        user_message = tracker.latest_message.get('text').lower()
+        if "trên" in user_message or "tren" in user_message:
+            end_price = str(100000)
+        if "dưới" in user_message or "duoi" in user_message:
+            start_price = str(0)
         products = get_product_by_price_and_type(start_price, end_price, "Áo")
 
         productString = ""
@@ -140,10 +145,11 @@ class ActionTrousersPrice(Action):
 
         start_price = tracker.get_slot("start_price")
         end_price = tracker.get_slot("end_price")
-        if not start_price:
-            start_price = 0
-        if not end_price:
-            start_price = 100000000
+        user_message = tracker.latest_message.get('text').lower()
+        if "trên" in user_message or "tren" in user_message:
+            end_price = str(100000)
+        if "dưới" in user_message or "duoi" in user_message:
+            start_price = str(0)
 
         products = get_product_by_price_and_type(start_price, end_price, "Quần")
         
@@ -220,6 +226,56 @@ class ActionTrousersType(Action):
 
 # Mua hàng---------Start-------------
 
+class ActionBuyProduct(Action):
+    def name(self):
+        return "action_buy_product"
+
+    def run(self, dispatcher, tracker, domain):
+        conversation = tracker.export_stories()
+        print("write conversation!")
+        with open("conversation.json", "w") as file:
+            json.dump(conversation, file)
+
+        return []
+
+class ActionProductDetail(Action):
+    def name(self):
+        return "action_product_detail"
+
+    def run(self, dispatcher, tracker, domain):
+        product_detail = tracker.get_slot("product_detail")
+        print("product detail: ", product_detail)
+
+        product_name = get_product_correct_name(product_detail)
+        
+        product = get_product_by_name(product_name)
+        if product:
+            dispatcher.utter_message(
+                response="utter_ask_product_detail",
+                name = product[1],
+                price = product[3],
+                description = product[5]
+            )
+        else:
+            dispatcher.utter_message(
+                response="utter_not_have_product_detail",
+                name = product_detail
+            )
+
+        return []
+
+class ActionCancleBuyProduct(Action):
+    def name(self):
+        return "action_cancle_buy_product"
+
+    def run(self, dispatcher, tracker, domain):
+        conversation = tracker.export_stories()
+        print("write conversation!")
+        with open("conversation.json", "w") as file:
+            json.dump(conversation, file)
+
+        return []
+
 # Mua hàng---------End-------------
 
 
@@ -292,6 +348,22 @@ class ActionCreateDB(Action):
 
         return []
     
+# hàm common
+
+def get_product_correct_name(pre_name):
+
+    max_distance = 0
+    name = ""
+    product = get_all_product_name()
+
+    for i in product:
+        distance = lev.distance(pre_name, i[0])
+        if distance>max_distance:
+            name = i[0]
+            max_distance = distance
+
+    return name
+
 # connect DB
 def create_database():
     conn = sqlite3.connect("Alio.db")
@@ -405,6 +477,8 @@ def get_product_by_price(start_price, end_price):
     conn = sqlite3.connect("Alio.db")
     cursor = conn.cursor()
     print("get_product_by_price") 
+    print("start_price: " , start_price)
+    print("end_price: " , end_price)
     number1 = re.findall(r'\d+', start_price)
     number2 = re.findall(r'\d+', end_price)
     start = int(number1[0])*1000
@@ -448,4 +522,16 @@ def get_product_by_name(name):
     print("select product successfully........")
     records = cursor.fetchall()
     print(records)
+    return records
+
+def get_all_product_name():
+    conn = sqlite3.connect("Alio.db")
+    cursor = conn.cursor()
+    print("get_all_product_name") 
+
+    cursor.execute('''SELECT DISTINCT name from product ''')
+    
+    print("select product successfully........")
+    records = cursor.fetchall()
+    print("số sản phẩm: ",len(records))
     return records

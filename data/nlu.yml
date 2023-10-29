@@ -605,6 +605,12 @@ nlu:
     - Cái {product_detail} có ảnh không
     - KHông có ảnh cho {product_detail} à
     - Thông tin chi tiết cho {product_detail} đi
+    - Cho tôi xem áo {product_detail}
+    - Cho tôi xem quần {product_detail}
+    - cho tôi xem váy {product_detail}
+    - tôi muốn xem váy {product_detail}
+    - tôi muốn xem quần {product_detail}
+    - tôi muốn xem áo {product_detail}
 
 
 # 6. Buôn chuyện(Phát hiện cảm xúc qua icon)

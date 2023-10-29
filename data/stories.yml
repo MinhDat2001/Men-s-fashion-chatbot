@@ -139,7 +139,15 @@ stories:
   - action: action_ask_customer_name
 
 
-# 5. Buôn chuyện(Phát hiện cảm xúc qua icon)
+# 5. Mua hàng
+
+- story: action ask product detail
+  steps:
+  - intent: ask_product_detail
+  - action: action_product_detail
+
+
+# 6. Buôn chuyện(Phát hiện cảm xúc qua icon)
 
 - story: sing poem
   steps:

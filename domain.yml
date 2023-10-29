@@ -101,6 +101,7 @@ actions:
  - action_dress_type
  - action_shirt_type
  - action_trousers_type
+ - action_product_detail
 
 responses:
 
@@ -326,7 +327,22 @@ responses:
   - text: Bạn đã nói tên bạn với tôi chưa nhỉ?
   - text: Bạn có thể nói lại tên bạn là gì khum
   - text: Tôi không nhớ lắm, bạn có thể nói lại không
-# 5. Buôn chuyện(Phát hiện cảm xúc qua icon)
+
+# 5. Mua sản phẩm
+
+  utter_ask_product_detail:
+  - text: Sản phẩm {name} hiện đang có giá bán là {price} \n Sau đây là hình ảnh của sản phẩm
+    image: "{image}"
+  - text: Sản phẩm {name} bên mình đang bán với giá {price} \n đây là ảnh của sản phẩm
+    image: "{image}"
+
+  utter_not_have_product_detail:
+  - text: Bên mình không có sản phẩm nào với tên {name}
+  - text: Bên mình không có sản phẩm nào với tên là {name}
+  - text: Có phải bạn muốn tìm sản phẩm có tên {name} không, bên mình hiện không có sản phẩm này
+  - text: Bạn có thể viết rõ hơn được không, chứ bên mình không có sản phẩm nào với tên {name}
+
+# 6. Buôn chuyện(Phát hiện cảm xúc qua icon)
 
   utter_sing_poem:
   - text: "Con cò bé bé \nNó đậu cành tre \nĐi không hỏi mẹ \nBiết đi đường nào. \n\
