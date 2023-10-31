@@ -107,9 +107,10 @@ responses:
 
   utter_default:
   - text: Bạn nói cái gì tui hỏng có hỉu
-  - text: Xung quanh anh toàn là nước eiii
+  - text: Tôi không hiểu bạn nói gì, bạn có thể hỏi câu khác được không
   - text: Alio là bot hỗ trợ khách hàng của shop
-  - text: Trời trong xanh, gió long lanh eii
+  - text: Xin lỗi tôi chưa hiểu bạn nói gì
+  - text: Xin lỗi tôi không hiểu bạn nói gì, tôi sẽ cố gắng học giỏi hơn để có thể trả lời bạn trong tương lai
 
 # chào hỏi cơ bản
   utter_greet:
@@ -206,7 +207,7 @@ responses:
   - text: Nghe thì giống Alo, nhưng tôi là Alio nha
   - text: Alio nhaaaa
 
-# 2. Hỏi về thông tin shop
+# 2. Hỏi về thông tin shop, sản phẩm
   utter_ask_shop_location:
   - text: Shop mình ở số 1, Nguyễn Văn trỗi, Hà Đông, Hà Nội nhé
   - text: Ở số 1, Nguyễn Văn trỗi, Hà Đông, Hà Nội bạn nhé
@@ -227,28 +228,28 @@ responses:
   - text: Bên mình có bán áo, bán quần và các loại váy của chị em phụ nữ nhé
 
   utter_ask_products_price:
-  - text: "Với tầm giá này bên mình có một số sản phẩm như: {products}"
-  - text: Tầm giá này hiện tại bên mình đang có {products}
-  - text: Bên mình đang có {products} là trong khoảng giá bạn muốn tìm nhé
-  - text: Với mức giá này bên mình có một số sản phẩm tiêu biểu như {products}
+  - text: "Với tầm giá này bên mình có một số sản phẩm như:"
+  - text: Tầm giá này hiện tại bên mình đang có 
+  - text: Bạn xem một số sản phẩm sau sau nhé
+  - text: Với mức giá này bên mình có một số sản phẩm tiêu biểu như 
 
   utter_ask_dress_price:
-  - text: "Với tầm giá này bên mình có một số váy như: {dress}"
-  - text: Tầm giá này hiện tại bên mình đang có {dress}
-  - text: Bên mình đang có {dress} là trong khoảng giá bạn muốn tìm nhé
-  - text: Với mức giá này bên mình có một số váy tiêu biểu như {dress}
+  - text: "Với tầm giá này bên mình có một số váy như: "
+  - text: Tầm giá này hiện tại bên mình đang có 
+  - text: Bạn xem một số váy sau nhé
+  - text: Với mức giá này bên mình có một số váy tiêu biểu như 
 
   utter_ask_shirts_price:
-  - text: "Với tầm giá này bên mình có một số áo như: {shirt}"
-  - text: Tầm giá này hiện tại bên mình đang có {shirt}
-  - text: Bên mình đang có {shirt} là trong khoảng giá bạn muốn tìm nhé
-  - text: Với mức giá này bên mình có một số áo tiêu biểu như {shirt}
+  - text: "Với tầm giá này bên mình có một số áo như: "
+  - text: Tầm giá này hiện tại bên mình đang có 
+  - text: Bạn xem một số quần sau nhé
+  - text: Với mức giá này bên mình có một số áo tiêu biểu như 
 
   utter_ask_trousers_price:
-  - text: "Với tầm giá này bên mình có một số quần như: {trousers}"
-  - text: Tầm giá này hiện tại bên mình đang có {trousers}
-  - text: Bên mình đang có {trousers} là trong khoảng giá bạn muốn tìm nhé
-  - text: Với mức giá này bên mình có một số quần tiêu biểu như {trousers}
+  - text: "Với tầm giá này bên mình có một số quần như: "
+  - text: Tầm giá này hiện tại bên mình đang có 
+  - text: Bạn xem một số quần sau nhé
+  - text: Với mức giá này bên mình có một số quần tiêu biểu như 
 
   utter_ask_dress_type:
   - text: Váy bên mình đang bán một số kiểu như {dress}
@@ -287,6 +288,11 @@ responses:
   - text: Với mức giá này bên mình không có quần nào
   - text: Mức giá này bên mình chưa có quần nào
   - text: Bên mình không có quần nào trong mức giá này
+
+  utter_ask_price:
+  - text: Bên mình có rất nhiều quần áo cùng nhiều giá khác nhau, bạn muốn xem cái nào ạ
+  - text: Có rất nhiều quần áo, không biết bạn muốn xem giá của cái nào ạ
+  - text: Không biết bạn muốn hỏi giá cho chiếc váy/quần/áo nào ạ
 
 # 3. Gợi ý về chọn quần áo
 

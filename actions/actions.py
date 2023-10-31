@@ -5,6 +5,11 @@ from typing import Any, Text, Dict, List
 import json
 import re
 import Levenshtein as lev
+# Constant
+
+AlioConstant_Dress = "Váy"
+AlioConstant_Trousers = "Quần"
+AlioConstant_Shirt = "Áo"
 
 # Cơ bản ---------Start-------------
 class SaveConversationAction(Action):
@@ -63,14 +68,15 @@ class ActionProductPrice(Action):
 
         products = get_product_by_price(start_price, end_price)
         
-        productString = ""
-        for i in products:
-            productString += i[0] +", "
         if len(products):
             dispatcher.utter_message(
-                    response="utter_ask_products_price",
-                    products = productString
+                    response="utter_ask_products_price"
                 )
+            for i in products:
+                dispatcher.utter_message(
+                        text = i[0],
+                        image = i[1]
+                    )
         else:
             dispatcher.utter_message(
                     response="utter_not_have_product"
@@ -91,16 +97,20 @@ class ActionDressPrice(Action):
             end_price = str(100000)
         if "dưới" in user_message or "duoi" in user_message:
             start_price = str(0)
-        products = get_product_by_price_and_type(start_price, end_price, "Váy")
+        products = get_product_by_price_and_type(start_price, end_price, AlioConstant_Dress)
         
         productString = ""
         for i in products:
             productString += i[0] +", "
         if len(products):
             dispatcher.utter_message(
-                    response="utter_ask_dress_price",
-                    dress = productString
+                    response="utter_ask_products_price"
                 )
+            for i in products:
+                dispatcher.utter_message(
+                        text = i[0],
+                        image = i[1]
+                    )
         else:
             dispatcher.utter_message(
                     response="utter_not_have_dress"
@@ -120,16 +130,20 @@ class ActionShirtsPrice(Action):
             end_price = str(100000)
         if "dưới" in user_message or "duoi" in user_message:
             start_price = str(0)
-        products = get_product_by_price_and_type(start_price, end_price, "Áo")
+        products = get_product_by_price_and_type(start_price, end_price, AlioConstant_Shirt)
 
         productString = ""
         for i in products:
             productString += i[0] +", "
         if len(products):
             dispatcher.utter_message(
-                    response="utter_ask_shirts_price",
-                    shirt = productString
+                    response="utter_ask_products_price"
                 )
+            for i in products:
+                dispatcher.utter_message(
+                        text = i[0],
+                        image = i[1]
+                    )
         else:
             dispatcher.utter_message(
                     response="utter_not_have_shirt"
@@ -151,16 +165,20 @@ class ActionTrousersPrice(Action):
         if "dưới" in user_message or "duoi" in user_message:
             start_price = str(0)
 
-        products = get_product_by_price_and_type(start_price, end_price, "Quần")
+        products = get_product_by_price_and_type(start_price, end_price, AlioConstant_Trousers)
         
         productString = ""
         for i in products:
             productString += i[0] +", "
         if len(products):
             dispatcher.utter_message(
-                    response="utter_ask_trousers_price",
-                    trousers = productString
+                    response="utter_ask_products_price"
                 )
+            for i in products:
+                dispatcher.utter_message(
+                        text = i[0],
+                        image = i[1]
+                    )
         else:
             dispatcher.utter_message(
                     response="utter_not_have_trousers"
@@ -174,7 +192,7 @@ class ActionDressType(Action):
     def run(self, dispatcher, tracker, domain):
         print("action_dress_type")
 
-        records = get_product_by_type("Váy")
+        records = get_product_by_type(AlioConstant_Dress)
         dresses = ""
         for i in records:
             dresses += i[0] +", "
@@ -182,6 +200,12 @@ class ActionDressType(Action):
         dispatcher.utter_message(
                 response="utter_ask_dress_type",
                 dress = dresses
+            )
+        images = get_image_by_type(AlioConstant_Dress)
+        dispatcher.utter_message("Sau đây là một số ảnh: ")
+        for i in images:
+            dispatcher.utter_message(
+                image = i[0]
             )
         return []
 
@@ -192,13 +216,19 @@ class ActionShirtType(Action):
     def run(self, dispatcher, tracker, domain):
         print("action_shirt_type")
 
-        records = get_product_by_type("Áo")
+        records = get_product_by_type(AlioConstant_Shirt)
         shirts = ""
         for i in records:
             shirts += i[0] +", "
         dispatcher.utter_message(
                 response="utter_ask_shirt_type",
                 shirt = shirts
+            )
+        images = get_image_by_type(AlioConstant_Shirt)
+        dispatcher.utter_message("Sau đây là một số ảnh: ")
+        for i in images:
+            dispatcher.utter_message(
+                image = i[0]
             )
         return []
 
@@ -209,7 +239,7 @@ class ActionTrousersType(Action):
     def run(self, dispatcher, tracker, domain):
         print("action_trousers_type")
 
-        records = get_product_by_type("Quần")
+        records = get_product_by_type(AlioConstant_Trousers)
         
         trouser = ""
         for i in records:
@@ -217,6 +247,12 @@ class ActionTrousersType(Action):
         dispatcher.utter_message(
                 response="utter_ask_trousers_type",
                 trousers = trouser
+            )
+        images = get_image_by_type(AlioConstant_Trousers)
+        dispatcher.utter_message("Sau đây là một số ảnh: ")
+        for i in images:
+            dispatcher.utter_message(
+                image = i[0]
             )
         return []
 
@@ -245,6 +281,8 @@ class ActionProductDetail(Action):
     def run(self, dispatcher, tracker, domain):
         latest_message = tracker.latest_message
         entities = latest_message['entities']
+        print("message: ",latest_message)
+        print("entities: ",entities)
         product_detail = entities[0]['value']
         print("product detail: ", product_detail)
 
@@ -360,7 +398,7 @@ def get_product_correct_name(pre_name):
     product = get_all_product_name()
 
     for i in product:
-        distance = lev.distance(pre_name, i[0])
+        distance = lev.distance(pre_name.lower(), i[0].lower())/len(i[0])
         print("i[0]:", i[0])
         print("pre_name:", pre_name)
         print("distance:", distance)
@@ -479,6 +517,19 @@ def get_product_by_type(type):
     print(records)
     return records
 
+def get_image_by_type(type):
+    conn = sqlite3.connect("Alio.db")
+    cursor = conn.cursor()
+    print("type: " , type)
+    print("get_product_by_type") 
+
+    cursor.execute('''SELECT image  from product WHERE type=? LIMIT 3''',(type,))
+    
+    print("select product type_detail successfully........")
+    records = cursor.fetchall()
+    print(records)
+    return records
+
 def get_product_by_price(start_price, end_price):
     conn = sqlite3.connect("Alio.db")
     cursor = conn.cursor()
@@ -492,7 +543,7 @@ def get_product_by_price(start_price, end_price):
     print("start_price: " , start)
     print("end_price: " , end)
 
-    cursor.execute('''SELECT name from product WHERE price>=? and price<=?''',(start,end))
+    cursor.execute('''SELECT name, image from product WHERE price>=? and price<=?''',(start,end))
     
     print("select product successfully........")
     records = cursor.fetchall()
@@ -510,7 +561,7 @@ def get_product_by_price_and_type(start_price, end_price, type):
     print("start_price: " , start)
     print("end_price: " , end)
 
-    cursor.execute('''SELECT name from product WHERE price>=? and price<=? and type=?''',(start,end, type))
+    cursor.execute('''SELECT name, image from product WHERE price>=? and price<=? and type=?''',(start,end, type))
     
     print("select product successfully........")
     records = cursor.fetchall()
