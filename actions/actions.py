@@ -5,6 +5,7 @@ from typing import Any, Text, Dict, List
 import json
 import re
 import Levenshtein as lev
+import db_sqlite as DB
 # Constant
 
 AlioConstant_Dress = "Váy"
@@ -33,7 +34,7 @@ class ActionGreet(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         user_id = tracker.sender_id
-        user_name = get_user_name(user_id)
+        user_name = DB.get_user_name(user_id)
 
         if user_name:
             dispatcher.utter_message(
@@ -99,9 +100,6 @@ class ActionDressPrice(Action):
             start_price = str(0)
         products = get_product_by_price_and_type(start_price, end_price, AlioConstant_Dress)
         
-        productString = ""
-        for i in products:
-            productString += i[0] +", "
         if len(products):
             dispatcher.utter_message(
                     response="utter_ask_products_price"
@@ -132,9 +130,6 @@ class ActionShirtsPrice(Action):
             start_price = str(0)
         products = get_product_by_price_and_type(start_price, end_price, AlioConstant_Shirt)
 
-        productString = ""
-        for i in products:
-            productString += i[0] +", "
         if len(products):
             dispatcher.utter_message(
                     response="utter_ask_products_price"
@@ -167,9 +162,6 @@ class ActionTrousersPrice(Action):
 
         products = get_product_by_price_and_type(start_price, end_price, AlioConstant_Trousers)
         
-        productString = ""
-        for i in products:
-            productString += i[0] +", "
         if len(products):
             dispatcher.utter_message(
                     response="utter_ask_products_price"
@@ -254,6 +246,32 @@ class ActionTrousersType(Action):
             dispatcher.utter_message(
                 image = i[0]
             )
+        return []
+    
+class ActionAskProductOrder(Action):
+    def name(self):
+        return "action_ask_product_order"
+
+    def run(self, dispatcher, tracker, domain):
+        print("action_ask_product_order")
+
+        
+        product_order = tracker.get_slot("product_order")
+        order = resolve_product_order(product_order)
+        previous_actions = []
+        for event in tracker.events:
+            if event.get('event') == 'action':
+                previous_actions.append(event.get('name'))
+        action = get_previous_action(previous_actions)
+        
+        if action is None or order is None:
+            dispatcher.utter_message(
+                response="utter_dont_know_product"
+            )
+        else:
+            print("")
+
+        dispatcher.utter_message(f"The previous actions were: {previous_actions}")
         return []
 
 
@@ -408,6 +426,27 @@ def get_product_correct_name(pre_name):
 
     return name
 
+def get_previous_action(list):
+    listSkip = ["action_ask_product_order","action_unlikely_intent","action_listen"]
+    for i in list:
+        if i in listSkip:
+            continue
+        else:
+            return i
+
+    return None
+
+def resolve_product_order(product_order):
+    if product_order.lower() == "đầu" or product_order.lower() == "dầu":
+        return 1
+    if product_order.lower() == "giữa" or product_order.lower() == "giua":
+        return 2
+    if product_order.lower() == "cuối" or product_order.lower() == "cuoi":
+        return 3
+    try:
+        return int(product_order)
+    except:
+        return None
 # connect DB
 def create_database():
     conn = sqlite3.connect("Alio.db")

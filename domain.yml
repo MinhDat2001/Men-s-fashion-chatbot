@@ -42,6 +42,8 @@ intents:
   - cancle_buy_product
   - ask_product_detail
   - ask_weather
+  - ask_price
+  - ask_previous_product
 
 entities:
   - first_name
@@ -51,6 +53,7 @@ entities:
   - product_detail
   - cancle_product
   - date
+  - product_order
 
 slots:
   first_name:
@@ -88,6 +91,11 @@ slots:
     mappings:
       - type: from_entity
         entity: date
+  product_order:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: product_order
 
 actions:
  - action_save_user_name
@@ -102,6 +110,7 @@ actions:
  - action_shirt_type
  - action_trousers_type
  - action_product_detail
+ - action_ask_product_order
 
 responses:
 
@@ -124,7 +133,7 @@ responses:
   utter_ask_customer_name:
   - text: Tôi còn tên bạn là {name} mà
   - text: Tên là {name}, tôi còn nhớ chứ
-  - text: Bạn lại khinh thường trí nhớ tôi rồi \n Tôi còn nhớ bạn nói với tôi bạn tên là {name} 
+  - text: "Bạn lại khinh thường trí nhớ tôi rồi \n Tôi còn nhớ bạn nói với tôi bạn tên là {name} "
   - text: Làm sao tôi có thể quên được bạn tên {name} cơ chứ
   - text: Bạn có nói với tôi bạn tên là {name} rồi
 
@@ -294,6 +303,12 @@ responses:
   - text: Có rất nhiều quần áo, không biết bạn muốn xem giá của cái nào ạ
   - text: Không biết bạn muốn hỏi giá cho chiếc váy/quần/áo nào ạ
 
+  utter_dont_know_product:
+  - text: Xin lỗi mình không biết bạn đang muốn xem sản phẩm nào
+  - text: Xin lỗi tôi không biết bạn đang muốn xem sản phẩm nào ạ
+  - text: Bạn đang muốn xem cái nào ạ
+  - text: Bạn có thể nói rõ bạn muốn xem cái nào được không
+
 # 3. Gợi ý về chọn quần áo
 
   utter_ask_shop_dress:
@@ -337,9 +352,9 @@ responses:
 # 5. Mua sản phẩm
 
   utter_ask_product_detail:
-  - text: Sản phẩm {name} hiện đang có giá bán là {price} \n Sau đây là hình ảnh của sản phẩm
+  - text: "Sản phẩm {name} hiện đang có giá bán là {price} \n Sau đây là hình ảnh của sản phẩm"
     image: "{image}"
-  - text: Sản phẩm {name} bên mình đang bán với giá {price} \n đây là ảnh của sản phẩm
+  - text: "Sản phẩm {name} bên mình đang bán với giá {price} \n đây là ảnh của sản phẩm"
     image: "{image}"
 
   utter_not_have_product_detail:

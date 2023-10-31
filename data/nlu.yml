@@ -178,27 +178,29 @@ nlu:
 
 - intent: ask_products_price
   examples: |
-    - Quần áo loại [200k](start_price) đến [500k](end_price) có những mẫu nào
-    - Quần áo từ [200k](start_price) đến [500k](end_price) có những mẫu nào
-    - Quần áo từ [200k](start_price)-[500k](end_price) có loại nào
-    - Quần áo [200k](start_price) - [500k](end_price) có những loại nào
-    - Quần áo [200k](start_price) đến [500k](end_price) có những mẫu nào
-    - Quần áo loại [200](start_price) đến [500](end_price) có những mẫu nào
-    - Quần áo từ [200](start_price) đến [500](end_price) có những mẫu nào
-    - Quần áo từ [200](start_price)-[500](end_price) có loại nào
-    - Quần áo [200](start_price) - [500](end_price) có những loại nào
-    - Quần áo [200](start_price) đến [500](end_price) có những mẫu nào
+    - Sản phẩm loại [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Sản phẩm từ [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Sản phẩm từ [200k](start_price)-[500k](end_price) có loại nào
+    - Sản phẩm [200k](start_price) - [500k](end_price) có những loại nào
+    - Sản phẩm [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Sản phẩm loại [200](start_price) đến [500](end_price) có những mẫu nào
+    - Sản phẩm từ [200](start_price) đến [500](end_price) có những mẫu nào
+    - Sản phẩm từ [200](start_price)-[500](end_price) có loại nào
+    - Sản phẩm [200](start_price) - [500](end_price) có những loại nào
+    - Sản phẩm [200](start_price) đến [500](end_price) có những mẫu nào
     - Giá từ [200](start_price) đến [500](end_price) có những mẫu nào
-    - Quần áo loại dưới [500k](end_price) có những mẫu nào
-    - Quần áo dưới [500k](end_price) có những mẫu nào
-    - Quần áo ít hơn [500k](end_price) có loại nào
-    - Quần áo loại trên [500k](start_price) có những mẫu nào
-    - Quần áo trên [500k](start_price) có những mẫu nào
-    - Quần áo nhiều hơn [500k](start_price) có loại nào
+    - Sản phẩm loại dưới [500k](end_price) có những mẫu nào
+    - Sản phẩm dưới [500k](end_price) có những mẫu nào
+    - Sản phẩm ít hơn [500k](end_price) có loại nào
+    - Sản phẩm loại trên [500k](start_price) có những mẫu nào
+    - Sản phẩm trên [500k](start_price) có những mẫu nào
+    - Sản phẩm nhiều hơn [500k](start_price) có loại nào
     - Với giá từ [200](start_price) đến [500](end_price) có những sản phẩm nào
     - Với giá từ [200](start_price) - [500](end_price) có những sản phẩm nào
     - Những sản phẩm có giá từ [200](start_price) đến [500](end_price) 
     - Những sản phẩm có giá từ [200](start_price) - [500](end_price) 
+    - Tôi muốn xem sản phẩm trên [500k](start_price)
+    - Tôi muốn xem sản phẩm dưới [500k](end_price)
 
 - intent: ask_dress_price
   examples: |
@@ -236,6 +238,8 @@ nlu:
     - Đầm loại trên [500k](start_price) có những mẫu nào
     - Đầm trên [500k](start_price) có những mẫu nào
     - Đầm nhiều hơn [500k](start_price) có loại nào
+    - Tôi muốn xem váy trên [500k](start_price)
+    - Tôi muốn xem váy dưới [500k](end_price)
 
 - intent: ask_shirts_price
   examples: |
@@ -290,6 +294,8 @@ nlu:
     - Áo phông loại trên [500k](start_price) có những mẫu nào
     - Áo phông trên [500k](start_price) có những mẫu nào
     - Áo phông nhiều hơn [500k](start_price) có loại nào
+    - Tôi muốn xem áo trên [500k](start_price)
+    - Tôi muốn xem áo dưới [500k](end_price)
 
 - intent: ask_trousers_price
   examples: |
@@ -298,7 +304,6 @@ nlu:
     - Quần từ [200k](start_price)-[500k](end_price) có loại nào
     - Quần [200k](start_price) - [500k](end_price) có những loại nào
     - Quần [200k](start_price) đến [500k](end_price) có những mẫu nào
-    - Giá từ [200k](start_price) đến [500k](end_price) có những mẫu Quần nào
     - Quần loại [200](start_price) đến [500](end_price) có những mẫu nào
     - Quần từ [200](start_price) đến [500](end_price) có những mẫu nào
     - Quần từ [200](start_price)-[500](end_price) có loại nào
@@ -310,6 +315,8 @@ nlu:
     - Quần loại trên [500k](start_price) có những mẫu nào
     - Quần trên [500k](start_price) có những mẫu nào
     - Quần nhiều hơn [500k](start_price) có loại nào
+    - Tôi muốn xem quần trên [500k](start_price)
+    - Tôi muốn xem quần dưới [500k](end_price)
 
 - intent: ask_dress_type
   examples: |
@@ -375,6 +382,49 @@ nlu:
     - Giá váy bên bạn bao nhiêu
     - Quần áo bên bạn giá bao nhiêu nhỉ
     - Váy bên bạn giá bao nhiêu
+
+- intent: ask_previous_product
+  examples: |
+    - Tôi muốn xem cái ở [đầu](product_order)
+    - Tôi muốn xem cái ở [giữa](product_order)
+    - Tôi muốn xem cái ở [cuối](product_order)
+    - Tôi muốn xem cái áo ở [đầu](product_order)
+    - Tôi muốn xem cái áo ở [giữa](product_order)
+    - Tôi muốn xem cái áo ở [cuối](product_order)
+    - Tôi muốn xem cái quần ở [đầu](product_order)
+    - Tôi muốn xem cái quần ở [giữa](product_order)
+    - Tôi muốn xem cái quần ở [cuối](product_order)
+    - Tôi muốn xem cái váy ở [đầu](product_order)
+    - Tôi muốn xem cái váy ở [giữa](product_order)
+    - Tôi muốn xem cái váy ở [cuối](product_order)
+    - Tôi muốn xem cái số [1](product_order)
+    - Tôi muốn xem cái số [2](product_order)
+    - Tôi muốn xem cái số [3](product_order)
+    - Tôi muốn xem cái số [4](product_order)
+    - Tôi muốn xem cái số [5](product_order)
+    - Tôi muốn xem cái số [6](product_order)
+    - Tôi muốn xem cái số [7](product_order)
+    - Tôi muốn xem cái áo số [1](product_order)
+    - Tôi muốn xem cái áo số [2](product_order)
+    - Tôi muốn xem cái áo số [3](product_order)
+    - Tôi muốn xem cái áo số [4](product_order)
+    - Tôi muốn xem cái áo số [5](product_order)
+    - Tôi muốn xem cái áo số [6](product_order)
+    - Tôi muốn xem cái áo số [7](product_order)
+    - Tôi muốn xem cái quần số [1](product_order)
+    - Tôi muốn xem cái quần số [2](product_order)
+    - Tôi muốn xem cái quần số [3](product_order)
+    - Tôi muốn xem cái quần số [4](product_order)
+    - Tôi muốn xem cái quần số [5](product_order)
+    - Tôi muốn xem cái quần số [6](product_order)
+    - Tôi muốn xem cái quần số [7](product_order)
+    - Tôi muốn xem cái váy số [1](product_order)
+    - Tôi muốn xem cái váy số [2](product_order)
+    - Tôi muốn xem cái váy số [3](product_order)
+    - Tôi muốn xem cái váy số [4](product_order)
+    - Tôi muốn xem cái váy số [5](product_order)
+    - Tôi muốn xem cái váy số [6](product_order)
+    - Tôi muốn xem cái váy số [7](product_order)
 
 # 3. Gợi ý về chọn quần áo
 
