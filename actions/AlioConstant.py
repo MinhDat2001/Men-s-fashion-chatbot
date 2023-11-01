@@ -1,3 +1,3 @@
-Dress = "váy"
+Dress = "Váy"
 Trousers = "Quần"
 Shirt = "Áo"

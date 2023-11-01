@@ -141,10 +141,10 @@ stories:
 # 4. Khai thác thông tin người dùng(Lưu thông tin người dùng)
 
 
-- story: ask customer name
-  steps:
-  - intent: give_name
-  - action: action_save_user_name
+# - story: ask customer name
+#   steps:
+#   - intent: give_name
+#   - action: action_save_user_name
 
 # - story: create database
 #   steps:
@@ -163,6 +163,18 @@ stories:
   steps:
   - intent: ask_product_detail
   - action: action_product_detail
+
+- story: action ask name
+  steps:
+  - intent: give_name
+  - action: action_save_user_name
+  - action: action_buy_product
+  - intent: give_phone
+  - action: action_save_user_name
+  - action: action_buy_product
+  - intent: give_address
+  - action: action_save_user_name
+  - action: action_buy_product
 
 
 # 6. Buôn chuyện(Phát hiện cảm xúc qua icon)

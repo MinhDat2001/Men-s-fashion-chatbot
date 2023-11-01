@@ -44,6 +44,8 @@ intents:
   - ask_weather
   - ask_price
   - ask_previous_product
+  - give_phone
+  - give_address
 
 entities:
   - first_name
@@ -54,6 +56,8 @@ entities:
   - cancle_product
   - date
   - product_order
+  - phone
+  - address
 
 slots:
   first_name:
@@ -96,6 +100,16 @@ slots:
     mappings:
       - type: from_entity
         entity: product_order
+  phone:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: phone
+  address:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: address
 
 actions:
  - action_save_user_name
@@ -111,6 +125,9 @@ actions:
  - action_trousers_type
  - action_product_detail
  - action_ask_product_order
+ - action_give_phone
+ - action_give_address
+ - action_buy_product
 
 responses:
 
@@ -348,6 +365,22 @@ responses:
   - text: Bạn đã nói tên bạn với tôi chưa nhỉ?
   - text: Bạn có thể nói lại tên bạn là gì khum
   - text: Tôi không nhớ lắm, bạn có thể nói lại không
+
+  utter_ask_cumtomer_name:
+  - text: Bạn tên gì ạ?
+  - text: Cho hỏi bạn tên gì?
+  - text: Tên của bạn là gì nhỉ?
+  - text: Cho mình xin tên của bạn?
+
+  utter_ask_cumtomer_phone:
+  - text: Số điện thoại của bạn là gì ạ?
+  - text: Bạn cho tôi xin số điện thoại?
+  - text: Cho mình xin số điện thoại của bạn?
+
+  utter_ask_cumtomer_address:
+  - text: Địa chỉ của bạn là gì ạ?
+  - text: Bạn cho tôi xin địa chỉ?
+  - text: Cho mình xin địa chỉ của bạn?
 
 # 5. Mua sản phẩm
 

@@ -335,6 +335,7 @@ nlu:
     - ở đây có váy kiểu gì
     - Cửa hàng có mẫu váy gì ở đây
     - tôi muốn mua váy
+    - tôi muốn xem váy
     - shop mình có những váy gì nhỉ
     - shop mình có những đầm gì nhỉ
     - bên mình bán những kiểu váy gì
@@ -356,6 +357,7 @@ nlu:
     - ở đây có áo kiểu gì
     - Cửa hàng có mẫu áo gì ở đây
     - tôi muốn mua áo
+    - tôi muốn xem áo
     - mình muốn mua áo
     - bên mình có những kiểu áo gì nhỉ
     - shop mình có áo gì
@@ -370,6 +372,7 @@ nlu:
     - Cửa hàng có những mẫu quần nào
     - Ở đây bán những kiểu quần như nào
     - tôi muốn mua quần
+    - tôi muốn xem quần
     - mình muốn mua quần
     - shop có những kiểu quần gì nhỉ
     - bên mình bán những kiểu quần nào nhỉ
@@ -425,6 +428,12 @@ nlu:
     - Tôi muốn xem cái váy số [5](product_order)
     - Tôi muốn xem cái váy số [6](product_order)
     - Tôi muốn xem cái váy số [7](product_order)
+    - Tôi muốn xem cái thứ [nhất](product_order)
+    - Tôi muốn xem cái thứ [hai](product_order)
+    - Tôi muốn xem cái thứ [ba](product_order)
+    - Tôi muốn xem cái thứ [1](product_order)
+    - Tôi muốn xem cái thứ [2](product_order)
+    - Tôi muốn xem cái thứ [3](product_order)
 
 # 3. Gợi ý về chọn quần áo
 
@@ -638,6 +647,79 @@ nlu:
     - tên là [Nam](first_name)
     - tên là [Thức](first_name)
 
+- intent: give_phone
+  examples: |
+    - [0963632312](phone)
+    - [0923434345](phone)
+    - [0967453625](phone)
+    - [0912345678](phone)
+    - [0912345678](phone)
+    - [0346788337](phone)
+    - [0933476374](phone)
+    - [0989776376](phone)
+    - [0999746466](phone)
+    - [0966635388](phone)
+    - [0974654767](phone)
+    - [0923434322](phone)
+    - [0945366744](phone)
+    - [0956754644](phone)
+    - [0945645634](phone)
+    - [0998734765](phone)
+    - [0909283476](phone)
+    - [0994486392](phone)
+    - [0923458734](phone)
+    - [0909888833](phone)
+    - [0923466533](phone)
+    - [0993682639](phone)
+    - [0936783763](phone)
+    - [0984737463](phone)
+    - [0998263763](phone)
+    - [0908978289](phone)
+    - [0909887634](phone)
+    - [0908738762](phone)
+    - [0912378634](phone)
+    - [0909827349](phone)
+    - [0909834763](phone)
+    - [0909876633](phone)
+    - [0909897876](phone)
+    - [0909876743](phone)
+    - [0349876743](phone)
+    - [0346840477](phone)
+    - [0342347634](phone)
+    - [0376374233](phone)
+    - [0390897343](phone)
+    - [0358763292](phone)
+    - [0323976343](phone)
+    - [0312398734](phone)
+    - [0312938723](phone)
+    - [0339485723](phone)
+    - [0320347383](phone)
+    - [0329347837](phone)
+    - [0323894763](phone)
+    - [0392387433](phone)
+    - [0392738439](phone)
+    - [0398234362](phone)
+    - [0345334542](phone)
+    - [0393778892](phone)
+    - [0302837427](phone)
+    - [0334534987](phone)
+    - [0339847548](phone)
+    - [0335948749](phone)
+    - [0336485693](phone)
+    - [0334508703](phone)
+    - [0343569873](phone)
+    - [0334578464](phone)
+
+- intent: give_address
+  examples: |
+    - [tỉnh Hòa Bình](address)
+    - [Số 15, Nguyễn văn Lộc, Hà Đông, Hà Nội](address)
+    - [thành phố Bác Giang](address)
+    - Tôi ở
+    - Địa chỉ ở
+    - Địa chỉ là
+    - Ở ABC nhé
+
 # 5. Mua sản phẩm
 
 - intent: buy_product_intent
@@ -765,6 +847,7 @@ nlu:
 
 - intent: ask_product_detail
   examples: |
+    - giá của [áo thun nữ thời trang ngắn tay oversize](product_detail) 
     - cho tôi xem [áo thun nữ thời trang ngắn tay oversize](product_detail) 
     - tôi muốn xem [áo thun nữ thời trang ngắn tay oversize](product_detail) 
     - tôi muốn xem cái [áo thun nữ thời trang ngắn tay oversize](product_detail) nhé
@@ -784,6 +867,8 @@ nlu:
     - tôi muốn xem váy [áo thun nữ thời trang ngắn tay oversize](product_detail)
     - tôi muốn xem quần [áo thun nữ thời trang ngắn tay oversize](product_detail)
     - tôi muốn xem áo [áo thun nữ thời trang ngắn tay oversize](product_detail)
+    - cho hỏi giá của [quần ielgy denim lưng cao dáng rộng](product_detail) 
+    - giá của [quần ielgy denim lưng cao dáng rộng](product_detail) như thê nào
     - cho tôi xem [quần ielgy denim lưng cao dáng rộng](product_detail) 
     - tôi muốn xem [quần ielgy denim lưng cao dáng rộng](product_detail) 
     - tôi muốn xem cái [quần ielgy denim lưng cao dáng rộng](product_detail) nhé
@@ -803,6 +888,7 @@ nlu:
     - tôi muốn xem váy [quần ielgy denim lưng cao dáng rộng](product_detail)
     - tôi muốn xem quần [quần ielgy denim lưng cao dáng rộng](product_detail)
     - tôi muốn xem áo [quần ielgy denim lưng cao dáng rộng](product_detail)
+    - giá của [quần dài lovito cột dây](product_detail) 
     - cho tôi xem [quần dài lovito cột dây](product_detail) 
     - tôi muốn xem [quần dài lovito cột dây](product_detail) 
     - tôi muốn xem cái [quần dài lovito cột dây](product_detail) nhé
@@ -823,6 +909,7 @@ nlu:
     - tôi muốn xem quần [quần dài lovito cột dây](product_detail)
     - tôi muốn xem áo [quần dài lovito cột dây](product_detail)
     - cho tôi xem [quần thể thao yeya ống rộng](product_detail) 
+    - giá của [quần thể thao yeya ống rộng](product_detail) là bao nhiêu
     - tôi muốn xem [quần thể thao yeya ống rộng](product_detail) 
     - tôi muốn xem cái [quần thể thao yeya ống rộng](product_detail) nhé
     - gửi tôi thông tin [quần thể thao yeya ống rộng](product_detail) đi
@@ -841,6 +928,7 @@ nlu:
     - tôi muốn xem váy [quần thể thao yeya ống rộng](product_detail)
     - tôi muốn xem quần [quần thể thao yeya ống rộng](product_detail)
     - tôi muốn xem áo [quần thể thao yeya ống rộng](product_detail)
+    - giá của [quần jean daduhey](product_detail) 
     - cho tôi xem [quần jean daduhey](product_detail) 
     - tôi muốn xem [quần jean daduhey](product_detail) 
     - tôi muốn xem cái [quần jean daduhey](product_detail) nhé
@@ -860,6 +948,7 @@ nlu:
     - tôi muốn xem váy [quần jean daduhey](product_detail)
     - tôi muốn xem quần [quần jean daduhey](product_detail)
     - tôi muốn xem áo [quần jean daduhey](product_detail)
+    - giá của [quần kaki túi hộp ống suông](product_detail) 
     - cho tôi xem [quần kaki túi hộp ống suông](product_detail) 
     - tôi muốn xem [quần kaki túi hộp ống suông](product_detail) 
     - tôi muốn xem cái [quần kaki túi hộp ống suông](product_detail) nhé
@@ -879,6 +968,7 @@ nlu:
     - tôi muốn xem váy [quần kaki túi hộp ống suông](product_detail)
     - tôi muốn xem quần [quần kaki túi hộp ống suông](product_detail)
     - tôi muốn xem áo [quần kaki túi hộp ống suông](product_detail)
+    - giá của [váy đi tiệc  tahe v267](product_detail) 
     - cho tôi xem [váy đi tiệc  tahe v267](product_detail) 
     - tôi muốn xem [váy đi tiệc  tahe v267](product_detail) 
     - tôi muốn xem cái [váy đi tiệc  tahe v267](product_detail) nhé
@@ -898,6 +988,7 @@ nlu:
     - tôi muốn xem váy [váy đi tiệc  tahe v267](product_detail)
     - tôi muốn xem quần [váy đi tiệc  tahe v267](product_detail)
     - tôi muốn xem áo [váy đi tiệc  tahe v267](product_detail)
+    - giá của [đầm váy đi đám cưới dự tiệc vvn042309](product_detail) 
     - cho tôi xem [đầm váy đi đám cưới dự tiệc vvn042309](product_detail) 
     - tôi muốn xem [đầm váy đi đám cưới dự tiệc vvn042309](product_detail) 
     - tôi muốn xem cái [đầm váy đi đám cưới dự tiệc vvn042309](product_detail) nhé
@@ -917,6 +1008,7 @@ nlu:
     - tôi muốn xem váy [đầm váy đi đám cưới dự tiệc vvn042309](product_detail)
     - tôi muốn xem quần [đầm váy đi đám cưới dự tiệc vvn042309](product_detail)
     - tôi muốn xem áo [đầm váy đi đám cưới dự tiệc vvn042309](product_detail)
+    - giá của [váy công sở dự tiệc sang trọng bigsize amyra](product_detail) 
     - cho tôi xem [váy công sở dự tiệc sang trọng bigsize amyra](product_detail) 
     - tôi muốn xem [váy công sở dự tiệc sang trọng bigsize amyra](product_detail) 
     - tôi muốn xem cái [váy công sở dự tiệc sang trọng bigsize amyra](product_detail) nhé
@@ -937,6 +1029,7 @@ nlu:
     - tôi muốn xem quần [váy công sở dự tiệc sang trọng bigsize amyra](product_detail)
     - tôi muốn xem áo [váy công sở dự tiệc sang trọng bigsize amyra](product_detail)
     - cho tôi xem [váy ren tiểu thư v920](product_detail) 
+    - giá của [váy ren tiểu thư v920](product_detail) 
     - tôi muốn xem [váy ren tiểu thư v920](product_detail) 
     - tôi muốn xem cái [váy ren tiểu thư v920](product_detail) nhé
     - gửi tôi thông tin [váy ren tiểu thư v920](product_detail) đi
@@ -955,6 +1048,7 @@ nlu:
     - tôi muốn xem váy [váy ren tiểu thư v920](product_detail)
     - tôi muốn xem quần [váy ren tiểu thư v920](product_detail)
     - tôi muốn xem áo [váy ren tiểu thư v920](product_detail)
+    - giá của [váy tơ tiểu thư v908](product_detail) 
     - cho tôi xem [váy tơ tiểu thư v908](product_detail) 
     - tôi muốn xem [váy tơ tiểu thư v908](product_detail) 
     - tôi muốn xem cái [váy tơ tiểu thư v908](product_detail) nhé
@@ -974,6 +1068,7 @@ nlu:
     - tôi muốn xem váy [váy tơ tiểu thư v908](product_detail)
     - tôi muốn xem quần [váy tơ tiểu thư v908](product_detail)
     - tôi muốn xem áo [váy tơ tiểu thư v908](product_detail)
+    - giá của [váy voan tiểu thư v784](product_detail) 
     - cho tôi xem [váy voan tiểu thư v784](product_detail) 
     - tôi muốn xem [váy voan tiểu thư v784](product_detail) 
     - tôi muốn xem cái [váy voan tiểu thư v784](product_detail) nhé
@@ -994,6 +1089,7 @@ nlu:
     - tôi muốn xem quần [váy voan tiểu thư v784](product_detail)
     - tôi muốn xem áo [váy voan tiểu thư v784](product_detail)
     - cho tôi xem [váy hoa nhí v243](product_detail) 
+    - giá của [váy hoa nhí v243](product_detail) 
     - tôi muốn xem [váy hoa nhí v243](product_detail) 
     - tôi muốn xem cái [váy hoa nhí v243](product_detail) nhé
     - gửi tôi thông tin [váy hoa nhí v243](product_detail) đi
@@ -1013,6 +1109,7 @@ nlu:
     - tôi muốn xem quần [váy hoa nhí v243](product_detail)
     - tôi muốn xem áo [váy hoa nhí v243](product_detail)
     - cho tôi xem [áo thun tay ngắn dây rút](product_detail) 
+    - giá của [áo thun tay ngắn dây rút](product_detail) 
     - tôi muốn xem [áo thun tay ngắn dây rút](product_detail) 
     - tôi muốn xem cái [áo thun tay ngắn dây rút](product_detail) nhé
     - gửi tôi thông tin [áo thun tay ngắn dây rút](product_detail) đi
@@ -1032,6 +1129,7 @@ nlu:
     - tôi muốn xem quần [áo thun tay ngắn dây rút](product_detail)
     - tôi muốn xem áo [áo thun tay ngắn dây rút](product_detail)
     - cho tôi xem [áo thun xiang nian ni tay ngắn phối dây rút](product_detail) 
+    - giá của [áo thun xiang nian ni tay ngắn phối dây rút](product_detail) 
     - tôi muốn xem [áo thun xiang nian ni tay ngắn phối dây rút](product_detail) 
     - tôi muốn xem cái [áo thun xiang nian ni tay ngắn phối dây rút](product_detail) nhé
     - gửi tôi thông tin [áo thun xiang nian ni tay ngắn phối dây rút](product_detail) đi
@@ -1051,6 +1149,7 @@ nlu:
     - tôi muốn xem quần [áo thun xiang nian ni tay ngắn phối dây rút](product_detail)
     - tôi muốn xem áo [áo thun xiang nian ni tay ngắn phối dây rút](product_detail)
     - cho tôi xem [áo phông áo thun american vintage ](product_detail) 
+    - giá của [áo phông áo thun american vintage ](product_detail) 
     - tôi muốn xem [áo phông áo thun american vintage ](product_detail) 
     - tôi muốn xem cái [áo phông áo thun american vintage ](product_detail) nhé
     - gửi tôi thông tin [áo phông áo thun american vintage ](product_detail) đi
@@ -1070,6 +1169,7 @@ nlu:
     - tôi muốn xem quần [áo phông áo thun american vintage ](product_detail)
     - tôi muốn xem áo [áo phông áo thun american vintage ](product_detail)
     - cho tôi xem [áo sơ mi nữ tay bồng sm12](product_detail) 
+    - giá của [áo sơ mi nữ tay bồng sm12](product_detail) 
     - tôi muốn xem [áo sơ mi nữ tay bồng sm12](product_detail) 
     - tôi muốn xem cái [áo sơ mi nữ tay bồng sm12](product_detail) nhé
     - gửi tôi thông tin [áo sơ mi nữ tay bồng sm12](product_detail) đi
@@ -1089,6 +1189,7 @@ nlu:
     - tôi muốn xem quần [áo sơ mi nữ tay bồng sm12](product_detail)
     - tôi muốn xem áo [áo sơ mi nữ tay bồng sm12](product_detail)
     - cho tôi xem [áo sơ mi nữ công sở lavilo sm07](product_detail) 
+    - giá của [áo sơ mi nữ công sở lavilo sm07](product_detail) 
     - tôi muốn xem [áo sơ mi nữ công sở lavilo sm07](product_detail) 
     - tôi muốn xem cái [áo sơ mi nữ công sở lavilo sm07](product_detail) nhé
     - gửi tôi thông tin [áo sơ mi nữ công sở lavilo sm07](product_detail) đi

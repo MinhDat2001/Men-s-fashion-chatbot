@@ -89,7 +89,7 @@ def update_info(sender_id, name, gender, age):
 
     print("connect to database success!") 
 
-    cursor.execute('''UPDATE user_info SET name=? WHERE sender_id=?;''',(sender_id, name))
+    cursor.execute('''UPDATE user_info SET name=? WHERE sender_id=?;''',(name, sender_id))
     
     print("update successfully !........")
 
@@ -108,6 +108,16 @@ def get_product_by_type(type):
     print("select product type_detail successfully........")
     records = cursor.fetchall()
     print(records)
+    return records
+
+def get_limit_product_by_type(type):
+    conn = sqlite3.connect("Alio.db")
+    cursor = conn.cursor()
+    print(" db_sqlite: get_limit_product_by_type") 
+    print("type: " , type)
+
+    cursor.execute('''SELECT * from product WHERE type=? LIMIT 3''',(type,))
+    records = cursor.fetchall()
     return records
 
 def get_image_by_type(type):
@@ -175,6 +185,30 @@ def get_product_by_name(name):
     return records
 
 def get_all_product_name():
+    conn = sqlite3.connect("Alio.db")
+    cursor = conn.cursor()
+    print("get_all_product_name") 
+
+    cursor.execute('''SELECT DISTINCT name from product ''')
+    
+    print("select product successfully........")
+    records = cursor.fetchall()
+    print("số sản phẩm: ",len(records))
+    return records
+
+def order_product(user_id):
+    conn = sqlite3.connect("Alio.db")
+    cursor = conn.cursor()
+    print("get_all_product_name") 
+
+    cursor.execute('''SELECT DISTINCT name from product ''')
+    
+    print("select product successfully........")
+    records = cursor.fetchall()
+    print("số sản phẩm: ",len(records))
+    return records
+
+def change_order_status(user_id, product_id):
     conn = sqlite3.connect("Alio.db")
     cursor = conn.cursor()
     print("get_all_product_name") 
