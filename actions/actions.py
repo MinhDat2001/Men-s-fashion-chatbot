@@ -50,15 +50,26 @@ class ActionProductPrice(Action):
 
     def run(self, dispatcher, tracker, domain):
         print("action_product_price")
-
-        start_price = tracker.get_slot("start_price")
-        end_price = tracker.get_slot("end_price")
+        start_price = "0"
+        end_price = "10000"
         user_message = tracker.latest_message.get('text').lower()
+
+        lastest_message = tracker.latest_message
+        entities = lastest_message.get("entities", [])
+
+        if len(entities) > 1:
+            start_price = entities[0]["value"]
+            end_price = entities[1]["value"]
+        elif len(entities) > 0:
+            start_price = entities[0]["value"]
+            end_price = entities[0]["value"]
         if "trên" in user_message or "tren" in user_message:
             end_price = str(100000)
         if "dưới" in user_message or "duoi" in user_message:
             start_price = str(0)
-
+        
+        tracker.slots["start_price"] = start_price
+        tracker.slots["end_price"] = end_price
         products = DB.get_product_by_price(start_price, end_price)
         
         if len(products):
@@ -82,14 +93,26 @@ class ActionDressPrice(Action):
 
     def run(self, dispatcher, tracker, domain):
         print("action_dress_price")
-
-        start_price = tracker.get_slot("start_price")
-        end_price = tracker.get_slot("end_price")
+        start_price = "0"
+        end_price = "10000"
         user_message = tracker.latest_message.get('text').lower()
+
+        lastest_message = tracker.latest_message
+        entities = lastest_message.get("entities", [])
+
+        if len(entities) > 1:
+            start_price = entities[0]["value"]
+            end_price = entities[1]["value"]
+        elif len(entities) > 0:
+            start_price = entities[0]["value"]
+            end_price = entities[0]["value"]
         if "trên" in user_message or "tren" in user_message:
             end_price = str(100000)
         if "dưới" in user_message or "duoi" in user_message:
             start_price = str(0)
+        
+        tracker.slots["start_price"] = start_price
+        tracker.slots["end_price"] = end_price
         products = DB.get_product_by_price_and_type(start_price, end_price, AlioConstant.Dress)
         
         if len(products):
@@ -113,13 +136,29 @@ class ActionShirtsPrice(Action):
 
     def run(self, dispatcher, tracker, domain):
         print("action_shirts_price")
-        start_price = tracker.get_slot("start_price")
-        end_price = tracker.get_slot("end_price")
+        start_price = "0"
+        end_price = "10000"
         user_message = tracker.latest_message.get('text').lower()
+
+        lastest_message = tracker.latest_message
+        entities = lastest_message.get("entities", [])
+
+        if len(entities) > 1:
+            start_price = entities[0]["value"]
+            end_price = entities[1]["value"]
+        elif len(entities) > 0:
+            start_price = entities[0]["value"]
+            end_price = entities[0]["value"]
         if "trên" in user_message or "tren" in user_message:
             end_price = str(100000)
         if "dưới" in user_message or "duoi" in user_message:
             start_price = str(0)
+            
+        
+        tracker.slots["start_price"] = start_price
+        tracker.slots["end_price"] = end_price
+        print(tracker.slots["start_price"])
+        print(tracker.slots["end_price"])
         products = DB.get_product_by_price_and_type(start_price, end_price, AlioConstant.Shirt)
 
         if len(products):
@@ -144,13 +183,26 @@ class ActionTrousersPrice(Action):
     def run(self, dispatcher, tracker, domain):
         print("action_trousers_price")
 
-        start_price = tracker.get_slot("start_price")
-        end_price = tracker.get_slot("end_price")
+        start_price = "0"
+        end_price = "10000"
         user_message = tracker.latest_message.get('text').lower()
+
+        lastest_message = tracker.latest_message
+        entities = lastest_message.get("entities", [])
+
+        if len(entities) > 1:
+            start_price = entities[0]["value"]
+            end_price = entities[1]["value"]
+        elif len(entities) > 0:
+            start_price = entities[0]["value"]
+            end_price = entities[0]["value"]
         if "trên" in user_message or "tren" in user_message:
             end_price = str(100000)
         if "dưới" in user_message or "duoi" in user_message:
             start_price = str(0)
+        
+        tracker.slots["start_price"] = start_price
+        tracker.slots["end_price"] = end_price
 
         products = DB.get_product_by_price_and_type(start_price, end_price, AlioConstant.Trousers)
         
@@ -262,8 +314,13 @@ class ActionAskProductOrder(Action):
             )
         else:
             print("action: ",action)
-            product = CommonFunction.get_product_by_action(action, order)
+            start_price = tracker.get_slot("start_price")
+            end_price = tracker.get_slot("end_price")
+            print(start_price)
+            print(end_price)
+            product = CommonFunction.get_product_by_action(action, order, start_price, end_price)
             
+            print("product get:", product)
             dispatcher.utter_message(
                 response="utter_ask_product_detail",
                 name = product[1],
@@ -284,17 +341,24 @@ class ActionBuyProduct(Action):
         return "action_buy_product"
 
     def run(self, dispatcher, tracker, domain):
+        print("action_buy_product")
 
         buy_product = tracker.get_slot("buy_product")
-
-        product_name = CommonFunction.get_product_correct_name(buy_product)
-        
-        product = DB.get_product_by_name(product_name)
-        
+        print("buy product: ", buy_product)
         user_id = tracker.sender_id
-        DB.change_order_status(user_id, product[0][0])
+        if not buy_product is None:
+            product_name = CommonFunction.get_product_correct_name(buy_product)
+            
+            product = DB.get_product_by_name(product_name)
+            print(product)
+            
+            DB.change_order_status(user_id, product[0][0])
+            tracker.slots["buy_product"] = None
         user = DB.get_user_name(user_id)
 
+        if user[6] == 0:
+            return []
+        
         if user[1] is None or len(user[1])<1:
             dispatcher.utter_message(
                 response= "utter_ask_cumtomer_name"
@@ -379,18 +443,44 @@ class ActionSaveUserName(Action):
         else:
             DB.update_info(user_id, first_name, "","")
 
-        if first_name:
-            dispatcher.utter_message(
-                response="utter_greet_name",
-                name=first_name
-            )
-        else:
-            dispatcher.utter_message(
-                response="utter_greet"
-            )
+        print("Đã lưu tên")
 
         return []
+    
+class ActionSavePhone(Action):
+    def name(self) -> Text:
+        return "action_save_phone"
 
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        phone = tracker.get_slot("phone")
+        user_id = tracker.sender_id
+        DB.update_phone(user_id,phone)
+
+        print("Đã lưu số điện thoại")
+
+        return []
+    
+class ActionSaveAddress(Action):
+    def name(self) -> Text:
+        return "action_save_address"
+
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        address = tracker.get_slot("address")
+        user_id = tracker.sender_id
+        DB.update_address(user_id,address)
+
+        print("Đã lưu địa chỉ")
+
+        return []
+    
 class ActionAskCustomerName(Action):
     def name(self) -> Text:
         return "action_ask_customer_name"

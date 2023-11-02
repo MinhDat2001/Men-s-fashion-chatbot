@@ -110,7 +110,7 @@ def get_product_by_type(type):
     print(records)
     return records
 
-def get_limit_product_by_type(type):
+def get_limit_product_by_type(type, order):
     conn = sqlite3.connect("Alio.db")
     cursor = conn.cursor()
     print(" db_sqlite: get_limit_product_by_type") 
@@ -118,6 +118,8 @@ def get_limit_product_by_type(type):
 
     cursor.execute('''SELECT * from product WHERE type=? LIMIT 3''',(type,))
     records = cursor.fetchall()
+    if len(records) >=order:
+        return records[order-1]
     return records
 
 def get_image_by_type(type):
@@ -211,11 +213,48 @@ def order_product(user_id):
 def change_order_status(user_id, product_id):
     conn = sqlite3.connect("Alio.db")
     cursor = conn.cursor()
-    print("get_all_product_name") 
+    print("change_order_status") 
 
-    cursor.execute('''SELECT DISTINCT name from product ''')
+    cursor.execute('''UPDATE user_info SET order=1, product_id=? WHERE sender_id=?;''',(product_id, user_id))
+    
+    print("change_order_status successfully........")
+    return True
+
+def update_phone(user_id, phone):
+    conn = sqlite3.connect("Alio.db")
+    cursor = conn.cursor()
+    print("change_order_status") 
+
+    cursor.execute('''UPDATE user_info SET phone_number=? WHERE sender_id=?;''',(phone, user_id))
+    
+    print("change_order_status successfully........")
+    return True
+
+def update_address(user_id, address):
+    conn = sqlite3.connect("Alio.db")
+    cursor = conn.cursor()
+    print("change_order_status") 
+
+    cursor.execute('''UPDATE user_info SET address=? WHERE sender_id=?;''',(address, user_id))
+    
+    print("change_order_status successfully........")
+    return True
+
+
+def get_limit_product_by_price_and_type(start_price, end_price, type):
+    conn = sqlite3.connect("Alio.db")
+    cursor = conn.cursor()
+    print("get_product_by_price_and_type") 
+    number1 = re.findall(r'\d+', start_price)
+    number2 = re.findall(r'\d+', end_price)
+    start = int(number1[0])*1000
+    end = int(number2[0])*1000
+    print("start_price: " , start)
+    print("end_price: " , end)
+
+    cursor.execute('''SELECT * from product WHERE price>=? and price<=? and type=?''',(start,end, type))
     
     print("select product successfully........")
     records = cursor.fetchall()
-    print("số sản phẩm: ",len(records))
+    print(records)
     return records

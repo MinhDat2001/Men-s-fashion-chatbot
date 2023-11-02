@@ -128,6 +128,8 @@ actions:
  - action_give_phone
  - action_give_address
  - action_buy_product
+ - action_save_phone
+ - action_save_address
 
 responses:
 

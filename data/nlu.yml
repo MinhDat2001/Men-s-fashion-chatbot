@@ -388,6 +388,7 @@ nlu:
 
 - intent: ask_previous_product
   examples: |
+    - Tôi muốn xem cái [đầu](product_order) tiên
     - Tôi muốn xem cái ở [đầu](product_order)
     - Tôi muốn xem cái ở [giữa](product_order)
     - Tôi muốn xem cái ở [cuối](product_order)
@@ -434,6 +435,24 @@ nlu:
     - Tôi muốn xem cái thứ [1](product_order)
     - Tôi muốn xem cái thứ [2](product_order)
     - Tôi muốn xem cái thứ [3](product_order)
+    - Tôi muốn xem cái áo thứ [nhất](product_order)
+    - Tôi muốn xem cái áo thứ [hai](product_order)
+    - Tôi muốn xem cái áo thứ [ba](product_order)
+    - Tôi muốn xem cái áo thứ [1](product_order)
+    - Tôi muốn xem cái áo thứ [2](product_order)
+    - Tôi muốn xem cái áo thứ [3](product_order)
+    - Tôi muốn xem cái quần thứ [nhất](product_order)
+    - Tôi muốn xem cái quần thứ [hai](product_order)
+    - Tôi muốn xem cái quần thứ [ba](product_order)
+    - Tôi muốn xem cái quần thứ [1](product_order)
+    - Tôi muốn xem cái quần thứ [2](product_order)
+    - Tôi muốn xem cái quần thứ [3](product_order)
+    - Tôi muốn xem cái váy thứ [nhất](product_order)
+    - Tôi muốn xem cái váy thứ [hai](product_order)
+    - Tôi muốn xem cái váy thứ [ba](product_order)
+    - Tôi muốn xem cái váy thứ [1](product_order)
+    - Tôi muốn xem cái váy thứ [2](product_order)
+    - Tôi muốn xem cái váy thứ [3](product_order)
 
 # 3. Gợi ý về chọn quần áo
 
@@ -724,14 +743,150 @@ nlu:
 
 - intent: buy_product_intent
   examples: |
-    - Cho tôi mua (buy_product)
-    - Tôi mua cái (buy_product)
-    - Cho tôi mua cái (buy_product) nhé
-    - Chốt mua (buy_product)
-    - Ship cho tôi (buy_product) nhé
-    - Tôi mua (buy_product)
-    - Mua (buy_product) nhé
-    - Tôi đặt (buy_product)
+    - Cho tôi mua [quần ielgy denim lưng cao dáng rộng](buy_product)
+    - Tôi mua cái [quần ielgy denim lưng cao dáng rộng](buy_product)
+    - Cho tôi mua cái [quần ielgy denim lưng cao dáng rộng](buy_product) nhé
+    - Chốt mua [quần ielgy denim lưng cao dáng rộng](buy_product)
+    - Ship cho tôi [quần ielgy denim lưng cao dáng rộng](buy_product) nhé
+    - Tôi mua [quần ielgy denim lưng cao dáng rộng](buy_product)
+    - Mua [quần ielgy denim lưng cao dáng rộng](buy_product) nhé
+    - Tôi đặt [quần ielgy denim lưng cao dáng rộng](buy_product)
+    - Cho tôi mua [quần dài lovito cột dây](buy_product)
+    - Tôi mua cái [quần dài lovito cột dây](buy_product)
+    - Cho tôi mua cái [quần dài lovito cột dây](buy_product) nhé
+    - Chốt mua [quần dài lovito cột dây](buy_product)
+    - Ship cho tôi [quần dài lovito cột dây](buy_product) nhé
+    - Tôi mua [quần dài lovito cột dây](buy_product)
+    - Mua [quần dài lovito cột dây](buy_product) nhé
+    - Tôi đặt [quần dài lovito cột dây](buy_product)
+    - Cho tôi mua [quần thể thao yeya ống rộng](buy_product)
+    - Tôi mua cái [quần thể thao yeya ống rộng](buy_product)
+    - Cho tôi mua cái [quần thể thao yeya ống rộng](buy_product) nhé
+    - Chốt mua [quần thể thao yeya ống rộng](buy_product)
+    - Ship cho tôi [quần thể thao yeya ống rộng](buy_product) nhé
+    - Tôi mua [quần thể thao yeya ống rộng](buy_product)
+    - Mua [quần thể thao yeya ống rộng](buy_product) nhé
+    - Tôi đặt [quần thể thao yeya ống rộng](buy_product)
+    - Cho tôi mua [quần jean daduhey](buy_product)
+    - Tôi mua cái [quần jean daduhey](buy_product)
+    - Cho tôi mua cái [quần jean daduhey](buy_product) nhé
+    - Chốt mua [quần jean daduhey](buy_product)
+    - Ship cho tôi [quần jean daduhey](buy_product) nhé
+    - Tôi mua [quần jean daduhey](buy_product)
+    - Mua [quần jean daduhey](buy_product) nhé
+    - Tôi đặt [quần jean daduhey](buy_product)
+    - Cho tôi mua [quần kaki túi hộp ống suông](buy_product)
+    - Tôi mua cái [quần kaki túi hộp ống suông](buy_product)
+    - Cho tôi mua cái [quần kaki túi hộp ống suông](buy_product) nhé
+    - Chốt mua [quần kaki túi hộp ống suông](buy_product)
+    - Ship cho tôi [quần kaki túi hộp ống suông](buy_product) nhé
+    - Tôi mua [quần kaki túi hộp ống suông](buy_product)
+    - Mua [quần kaki túi hộp ống suông](buy_product) nhé
+    - Tôi đặt [quần kaki túi hộp ống suông](buy_product)
+    - Cho tôi mua [váy đi tiệc tahe v267](buy_product)
+    - Tôi mua cái [váy đi tiệc tahe v267](buy_product)
+    - Cho tôi mua cái [váy đi tiệc tahe v267](buy_product) nhé
+    - Chốt mua [váy đi tiệc tahe v267](buy_product)
+    - Ship cho tôi [váy đi tiệc tahe v267](buy_product) nhé
+    - Tôi mua [váy đi tiệc tahe v267](buy_product)
+    - Mua [váy đi tiệc tahe v267](buy_product) nhé
+    - Tôi đặt [váy đi tiệc tahe v267](buy_product)
+    - Cho tôi mua [đầm váy đi đám cưới dự tiệc vvn042309](buy_product)
+    - Tôi mua cái [đầm váy đi đám cưới dự tiệc vvn042309](buy_product)
+    - Cho tôi mua cái [đầm váy đi đám cưới dự tiệc vvn042309](buy_product) nhé
+    - Chốt mua [đầm váy đi đám cưới dự tiệc vvn042309](buy_product)
+    - Ship cho tôi [đầm váy đi đám cưới dự tiệc vvn042309](buy_product) nhé
+    - Tôi mua [đầm váy đi đám cưới dự tiệc vvn042309](buy_product)
+    - Mua [đầm váy đi đám cưới dự tiệc vvn042309](buy_product) nhé
+    - Tôi đặt [đầm váy đi đám cưới dự tiệc vvn042309](buy_product)
+    - Cho tôi mua [váy công sở dự tiệc sang trọng bigsize amyra](buy_product)
+    - Tôi mua cái [váy công sở dự tiệc sang trọng bigsize amyra](buy_product)
+    - Cho tôi mua cái [váy công sở dự tiệc sang trọng bigsize amyra](buy_product) nhé
+    - Chốt mua [váy công sở dự tiệc sang trọng bigsize amyra](buy_product)
+    - Ship cho tôi [váy công sở dự tiệc sang trọng bigsize amyra](buy_product) nhé
+    - Tôi mua [váy công sở dự tiệc sang trọng bigsize amyra](buy_product)
+    - Mua [váy công sở dự tiệc sang trọng bigsize amyra](buy_product) nhé
+    - Tôi đặt [váy công sở dự tiệc sang trọng bigsize amyra](buy_product)
+    - Cho tôi mua [váy ren tiểu thư v920](buy_product)
+    - Tôi mua cái [váy ren tiểu thư v920](buy_product)
+    - Cho tôi mua cái [váy ren tiểu thư v920](buy_product) nhé
+    - Chốt mua [váy ren tiểu thư v920](buy_product)
+    - Ship cho tôi [váy ren tiểu thư v920](buy_product) nhé
+    - Tôi mua [váy ren tiểu thư v920](buy_product)
+    - Mua [váy ren tiểu thư v920](buy_product) nhé
+    - Tôi đặt [váy ren tiểu thư v920](buy_product)
+    - Cho tôi mua [váy tơ tiểu thư v908](buy_product)
+    - Tôi mua cái [váy tơ tiểu thư v908](buy_product)
+    - Cho tôi mua cái [váy tơ tiểu thư v908](buy_product) nhé
+    - Chốt mua [váy tơ tiểu thư v908](buy_product)
+    - Ship cho tôi [váy tơ tiểu thư v908](buy_product) nhé
+    - Tôi mua [váy tơ tiểu thư v908](buy_product)
+    - Mua [váy tơ tiểu thư v908](buy_product) nhé
+    - Tôi đặt [váy tơ tiểu thư v908](buy_product)
+    - Cho tôi mua [váy voan tiểu thư v784](buy_product)
+    - Tôi mua cái [váy voan tiểu thư v784](buy_product)
+    - Cho tôi mua cái [váy voan tiểu thư v784](buy_product) nhé
+    - Chốt mua [váy voan tiểu thư v784](buy_product)
+    - Ship cho tôi [váy voan tiểu thư v784](buy_product) nhé
+    - Tôi mua [váy voan tiểu thư v784](buy_product)
+    - Mua [váy voan tiểu thư v784](buy_product) nhé
+    - Tôi đặt [váy voan tiểu thư v784](buy_product)
+    - Cho tôi mua [váy hoa nhí v243](buy_product)
+    - Tôi mua cái [váy hoa nhí v243](buy_product)
+    - Cho tôi mua cái [váy hoa nhí v243](buy_product) nhé
+    - Chốt mua [váy hoa nhí v243](buy_product)
+    - Ship cho tôi [váy hoa nhí v243](buy_product) nhé
+    - Tôi mua [váy hoa nhí v243](buy_product)
+    - Mua [váy hoa nhí v243](buy_product) nhé
+    - Tôi đặt [váy hoa nhí v243](buy_product)
+    - Cho tôi mua [áo thun tay ngắn dây rút](buy_product)
+    - Tôi mua cái [áo thun tay ngắn dây rút](buy_product)
+    - Cho tôi mua cái [áo thun tay ngắn dây rút](buy_product) nhé
+    - Chốt mua [áo thun tay ngắn dây rút](buy_product)
+    - Ship cho tôi [áo thun tay ngắn dây rút](buy_product) nhé
+    - Tôi mua [áo thun tay ngắn dây rút](buy_product)
+    - Mua [áo thun tay ngắn dây rút](buy_product) nhé
+    - Tôi đặt [áo thun tay ngắn dây rút](buy_product)
+    - Cho tôi mua [áo thun xiang nian ni tay ngắn phối dây rút](buy_product)
+    - Tôi mua cái [áo thun xiang nian ni tay ngắn phối dây rút](buy_product)
+    - Cho tôi mua cái [áo thun xiang nian ni tay ngắn phối dây rút](buy_product) nhé
+    - Chốt mua [áo thun xiang nian ni tay ngắn phối dây rút](buy_product)
+    - Ship cho tôi [áo thun xiang nian ni tay ngắn phối dây rút](buy_product) nhé
+    - Tôi mua [áo thun xiang nian ni tay ngắn phối dây rút](buy_product)
+    - Mua [áo thun xiang nian ni tay ngắn phối dây rút](buy_product) nhé
+    - Tôi đặt [áo thun xiang nian ni tay ngắn phối dây rút](buy_product)
+    - Cho tôi mua [áo phông áo thun american vintage](buy_product)
+    - Tôi mua cái [áo phông áo thun american vintage](buy_product)
+    - Cho tôi mua cái [áo phông áo thun american vintage](buy_product) nhé
+    - Chốt mua [áo phông áo thun american vintage](buy_product)
+    - Ship cho tôi [áo phông áo thun american vintage](buy_product) nhé
+    - Tôi mua [áo phông áo thun american vintage](buy_product)
+    - Mua [áo phông áo thun american vintage](buy_product) nhé
+    - Tôi đặt [áo phông áo thun american vintage](buy_product)
+    - Cho tôi mua [áo thun nữ thời trang ngắn tay oversize](buy_product)
+    - Tôi mua cái [áo thun nữ thời trang ngắn tay oversize](buy_product)
+    - Cho tôi mua cái [áo thun nữ thời trang ngắn tay oversize](buy_product) nhé
+    - Chốt mua [áo thun nữ thời trang ngắn tay oversize](buy_product)
+    - Ship cho tôi [áo thun nữ thời trang ngắn tay oversize](buy_product) nhé
+    - Tôi mua [áo thun nữ thời trang ngắn tay oversize](buy_product)
+    - Mua [áo thun nữ thời trang ngắn tay oversize](buy_product) nhé
+    - Tôi đặt [áo thun nữ thời trang ngắn tay oversize](buy_product)
+    - Cho tôi mua [áo sơ mi nữ tay bồng sm12](buy_product)
+    - Tôi mua cái [áo sơ mi nữ tay bồng sm12](buy_product)
+    - Cho tôi mua cái [áo sơ mi nữ tay bồng sm12](buy_product) nhé
+    - Chốt mua [áo sơ mi nữ tay bồng sm12](buy_product)
+    - Ship cho tôi [áo sơ mi nữ tay bồng sm12](buy_product) nhé
+    - Tôi mua [áo sơ mi nữ tay bồng sm12](buy_product)
+    - Mua [áo sơ mi nữ tay bồng sm12](buy_product) nhé
+    - Tôi đặt [áo sơ mi nữ tay bồng sm12](buy_product)
+    - Cho tôi mua [áo sơ mi nữ công sở lavilo sm07](buy_product)
+    - Tôi mua cái [áo sơ mi nữ công sở lavilo sm07](buy_product)
+    - Cho tôi mua cái [áo sơ mi nữ công sở lavilo sm07](buy_product) nhé
+    - Chốt mua [áo sơ mi nữ công sở lavilo sm07](buy_product)
+    - Ship cho tôi [áo sơ mi nữ công sở lavilo sm07](buy_product) nhé
+    - Tôi mua [áo sơ mi nữ công sở lavilo sm07](buy_product)
+    - Mua [áo sơ mi nữ công sở lavilo sm07](buy_product) nhé
+    - Tôi đặt [áo sơ mi nữ công sở lavilo sm07](buy_product)
 
 - intent: cancle_buy_product
   examples: |
