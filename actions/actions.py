@@ -422,6 +422,19 @@ class ActionCancleBuyProduct(Action):
 
         return []
 
+class ActionAskSize(Action):
+    def name(self):
+        return "action_ask_size"
+
+    def run(self, dispatcher, tracker, domain):
+        
+        dispatcher.utter_message(
+            response= "utter_ask_size",
+            image="https://scontent.fhan14-4.fna.fbcdn.net/v/t39.30808-6/399316730_637236465283110_7190245153972557471_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_ohc=7Vnmi8hY4aYAX8WMWN0&_nc_ht=scontent.fhan14-4.fna&oh=00_AfAK9JuUEqA9kLPpirTYdz8-feF13atpfkGMyRKCiaJKyw&oe=654F0BEA"
+        )
+
+        return []
+
 # Mua hàng---------End-------------
 
 
@@ -473,9 +486,9 @@ class ActionSaveAddress(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        address = tracker.get_slot("address")
+        user_mesage = tracker.latest_message.get('text').lower()
         user_id = tracker.sender_id
-        DB.update_address(user_id,address)
+        DB.update_address(user_id,user_mesage)
 
         print("Đã lưu địa chỉ")
 

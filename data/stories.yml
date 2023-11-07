@@ -1,220 +1,225 @@
 version: "3.1"
 
 stories:
-# 1. Chào hỏi cơ bản
-- story: greet path
-  steps:
-  - intent: greet
-  - action: utter_greet
+  # 1. Chào hỏi cơ bản
+  - story: greet path
+    steps:
+      - intent: greet
+      - action: utter_greet
 
-- story: goodbye path
-  steps:
-  - intent: goodbye
-  - action: utter_goodbye
+  - story: goodbye path
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
 
-- story: affirm path
-  steps:
-  - intent: affirm
-  - action: utter_affirm
+  - story: affirm path
+    steps:
+      - intent: affirm
+      - action: utter_affirm
 
-- story: deny path
-  steps:
-  - intent: deny
-  - action: utter_deny
+  - story: deny path
+    steps:
+      - intent: deny
+      - action: utter_deny
 
-- story: gender path
-  steps:
-  - intent: gender
-  - action: utter_gender
+  - story: gender path
+    steps:
+      - intent: gender
+      - action: utter_gender
 
-- story: help path
-  steps:
-  - intent: help
-  - action: utter_help
+  - story: help path
+    steps:
+      - intent: help
+      - action: utter_help
 
-- story: introduce path
-  steps:
-  - intent: introduce
-  - action: utter_introduce
+  - story: introduce path
+    steps:
+      - intent: introduce
+      - action: utter_introduce
 
-- story: scold path
-  steps:
-  - intent: scold
-  - action: utter_scold
+  - story: scold path
+    steps:
+      - intent: scold
+      - action: utter_scold
 
-- story: thanks path
-  steps:
-  - intent: thanks
-  - action: utter_thanks
+  - story: thanks path
+    steps:
+      - intent: thanks
+      - action: utter_thanks
 
-- story: what_name path
-  steps:
-  - intent: what_name
-  - action: utter_what_name
+  - story: what_name path
+    steps:
+      - intent: what_name
+      - action: utter_what_name
 
-# 2. Hỏi về thông tin shop
+  # 2. Hỏi về thông tin shop
 
-- story: ask about location path
-  steps:
-  - intent: ask_about_shop_location
-  - action: utter_ask_shop_location
+  - story: ask about location path
+    steps:
+      - intent: ask_about_shop_location
+      - action: utter_ask_shop_location
 
-- story: ask about product path
-  steps:
-  - intent: ask_shop_product
-  - action: utter_ask_shop_product
+  - story: ask about product path
+    steps:
+      - intent: ask_shop_product
+      - action: utter_ask_shop_product
 
-- story: ask sale product
-  steps:
-  - intent: ask_sale_product
-  - action: utter_ask_sale_product
+  - story: ask sale product
+    steps:
+      - intent: ask_sale_product
+      - action: utter_ask_sale_product
 
-- story: ask product price
-  steps:
-  - intent: ask_products_price
-  - action: action_product_price
-  - intent: ask_previous_product
-  - action: action_ask_product_order
+  - story: ask product price
+    steps:
+      - intent: ask_products_price
+      - action: action_product_price
+      - intent: ask_previous_product
+      - action: action_ask_product_order
 
-- story: ask dress price
-  steps:
-  - intent: ask_dress_price
-  - action: action_dress_price
-  - intent: ask_previous_product
-  - action: action_ask_product_order
+  - story: ask dress price
+    steps:
+      - intent: ask_dress_price
+      - action: action_dress_price
+      - intent: ask_previous_product
+      - action: action_ask_product_order
 
-- story: ask shirt price
-  steps:
-  - intent: ask_shirts_price
-  - action: action_shirts_price
-  - intent: ask_previous_product
-  - action: action_ask_product_order
+  - story: ask shirt price
+    steps:
+      - intent: ask_shirts_price
+      - action: action_shirts_price
+      - intent: ask_previous_product
+      - action: action_ask_product_order
 
-- story: ask trousers price
-  steps:
-  - intent: ask_trousers_price
-  - action: action_trousers_price
-  - intent: ask_previous_product
-  - action: action_ask_product_order
+  - story: ask trousers price
+    steps:
+      - intent: ask_trousers_price
+      - action: action_trousers_price
+      - intent: ask_previous_product
+      - action: action_ask_product_order
 
-- story: ask dress type
-  steps:
-  - intent: ask_dress_type
-  - action: action_dress_type
-  - intent: ask_previous_product
-  - action: action_ask_product_order
+  - story: ask dress type
+    steps:
+      - intent: ask_dress_type
+      - action: action_dress_type
+      - intent: ask_previous_product
+      - action: action_ask_product_order
 
-- story: ask shirt type
-  steps:
-  - intent: ask_shirt_type
-  - action: action_shirt_type
-  - intent: ask_previous_product
-  - action: action_ask_product_order
+  - story: ask shirt type
+    steps:
+      - intent: ask_shirt_type
+      - action: action_shirt_type
+      - intent: ask_previous_product
+      - action: action_ask_product_order
 
-- story: ask trousers type
-  steps:
-  - intent: ask_trousers_type
-  - action: action_trousers_type
-  - intent: ask_previous_product
-  - action: action_ask_product_order
+  - story: ask trousers type
+    steps:
+      - intent: ask_trousers_type
+      - action: action_trousers_type
+      - intent: ask_previous_product
+      - action: action_ask_product_order
 
-- story: ask price
-  steps:
-  - intent: ask_price
-  - action: utter_ask_price
+  - story: ask price
+    steps:
+      - intent: ask_price
+      - action: utter_ask_price
 
-# 3. Gợi ý về chọn quần áo
+  # 3. Gợi ý về chọn quần áo
 
+  # - story: ask about dress
+  #   steps:
+  #   - intent: ask_shop_dress
+  #   - action: utter_ask_shop_dress
 
-# - story: ask about dress
-#   steps:
-#   - intent: ask_shop_dress
-#   - action: utter_ask_shop_dress
+  - story: ask about office outfit
+    steps:
+      - intent: ask_outfit_office
+      - action: utter_ask_outfit_office
 
+  # 4. Khai thác thông tin người dùng(Lưu thông tin người dùng)
 
-- story: ask about office outfit
-  steps:
-  - intent: ask_outfit_office
-  - action: utter_ask_outfit_office
+  # - story: ask customer name
+  #   steps:
+  #   - intent: give_name
+  #   - action: action_save_user_name
 
+  # - story: create database
+  #   steps:
+  #   - intent: create_db
+  #   - action: action_create_db
 
-# 4. Khai thác thông tin người dùng(Lưu thông tin người dùng)
+  - story: action ask customer name
+    steps:
+      - intent: ask_customer_name
+      - action: action_ask_customer_name
 
+  # 5. Mua hàng
 
-# - story: ask customer name
-#   steps:
-#   - intent: give_name
-#   - action: action_save_user_name
+  - story: action ask product detail
+    steps:
+      - intent: ask_product_detail
+      - action: action_product_detail
 
-# - story: create database
-#   steps:
-#   - intent: create_db
-#   - action: action_create_db
+  - story: action buy product
+    steps:
+      - intent: buy_product_intent
+      - action: action_buy_product
 
-- story: action ask customer name
-  steps:
-  - intent: ask_customer_name
-  - action: action_ask_customer_name
+  - story: action ask name
+    steps:
+      - intent: give_name
+      - action: action_save_user_name
+      - action: action_buy_product
 
+  - story: action ask name
+    steps:
+      - intent: give_phone
+      - action: action_save_phone
+      - action: action_buy_product
 
-# 5. Mua hàng
+  # - story: action ask name
+  #   steps:
+  #   - intent: give_address
+  #   - action: action_save_address
+  #   - action: action_buy_product
 
-- story: action ask product detail
-  steps:
-  - intent: ask_product_detail
-  - action: action_product_detail
+  # - story: ask size path
+  #   steps:
+  #     - intent: ask_size
+  #     - action: action_ask_size
 
-- story: action buy product
-  steps:
-  - intent: buy_product_intent
-  - action: action_buy_product
+  # 6. Buôn chuyện(Phát hiện cảm xúc qua icon)
 
-- story: action ask name
-  steps:
-  - intent: give_name
-  - action: action_save_user_name
-  - action: action_buy_product
-  - intent: give_phone
-  - action: action_save_phone
-  - action: action_buy_product
-  - intent: give_address
-  - action: action_save_address
-  - action: action_buy_product
+  - story: sing poem
+    steps:
+      - intent: sing_poem
+      - action: utter_sing_poem
 
+  - story: how are you
+    steps:
+      - intent: how_are_u
+      - action: utter_how_are_u
 
-# 6. Buôn chuyện(Phát hiện cảm xúc qua icon)
+  - story: praise
+    steps:
+      - intent: praise
+      - action: utter_praise
 
-- story: sing poem
-  steps:
-  - intent: sing_poem
-  - action: utter_sing_poem
+  - story: health_ok
+    steps:
+      - intent: health_ok
+      - action: utter_health_ok
 
-- story: how are you
-  steps:
-  - intent: how_are_u
-  - action: utter_how_are_u
+  - story: health_NG
+    steps:
+      - intent: health_NG
+      - action: utter_health_NG
 
-- story: praise
-  steps:
-  - intent: praise
-  - action: utter_praise
+  - story: speak non vietnammese
+    steps:
+      - intent: non_vietnammese
+      - action: utter_non_vietnammese
 
-- story: health_ok
-  steps:
-  - intent: health_ok
-  - action: utter_health_ok
-
-- story: health_NG
-  steps:
-  - intent: health_NG
-  - action: utter_health_NG
-
-- story: speak non vietnammese
-  steps:
-  - intent: non_vietnammese
-  - action: utter_non_vietnammese
-
-- story: speak out scope other
-  steps:
-  - intent: out_scope_other
-  - action: utter_out_scope_other
+  - story: speak out scope other
+    steps:
+      - intent: out_scope_other
+      - action: utter_out_scope_other

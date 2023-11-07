@@ -46,6 +46,7 @@ intents:
   - ask_previous_product
   - give_phone
   - give_address
+  - ask_size
 
 entities:
   - first_name
@@ -58,6 +59,7 @@ entities:
   - product_order
   - phone
   - address
+  - weight
 
 slots:
   first_name:
@@ -110,338 +112,346 @@ slots:
     mappings:
       - type: from_entity
         entity: address
+  weight:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: weight
 
 actions:
- - action_save_user_name
- - action_create_db
- - action_ask_customer_name
- - action_save_conversation
- - action_product_price
- - action_dress_price
- - action_shirts_price
- - action_trousers_price
- - action_dress_type
- - action_shirt_type
- - action_trousers_type
- - action_product_detail
- - action_ask_product_order
- - action_give_phone
- - action_give_address
- - action_buy_product
- - action_save_phone
- - action_save_address
+  - action_save_user_name
+  - action_create_db
+  - action_ask_customer_name
+  - action_save_conversation
+  - action_product_price
+  - action_dress_price
+  - action_shirts_price
+  - action_trousers_price
+  - action_dress_type
+  - action_shirt_type
+  - action_trousers_type
+  - action_product_detail
+  - action_ask_product_order
+  - action_give_phone
+  - action_give_address
+  - action_buy_product
+  - action_save_phone
+  - action_save_address
+  - action_ask_size
 
 responses:
-
   utter_default:
-  - text: Bạn nói cái gì tui hỏng có hỉu
-  - text: Tôi không hiểu bạn nói gì, bạn có thể hỏi câu khác được không
-  - text: Alio là bot hỗ trợ khách hàng của shop
-  - text: Xin lỗi tôi chưa hiểu bạn nói gì
-  - text: Xin lỗi tôi không hiểu bạn nói gì, tôi sẽ cố gắng học giỏi hơn để có thể trả lời bạn trong tương lai
+    - text: Bạn nói cái gì tui hỏng có hỉu
+    - text: Tôi không hiểu bạn nói gì, bạn có thể hỏi câu khác được không
+    - text: Alio là bot hỗ trợ khách hàng của shop
+    - text: Xin lỗi tôi chưa hiểu bạn nói gì
+    - text: Xin lỗi tôi không hiểu bạn nói gì, tôi sẽ cố gắng học giỏi hơn để có thể trả lời bạn trong tương lai
 
-# chào hỏi cơ bản
+  # chào hỏi cơ bản
   utter_greet:
-  - text: Xin chào , Bạn khỏe chứ?
-    image: https://i.pinimg.com/originals/b0/06/7a/b0067ade5e832d2aefec8ee9bda50fdc.gif
-  - text: Xin chào , tui nghe nè
-  - text: Bạn cần giúp gì không 
-  - text: Bạn cần tui giúp gì nè ^^
-
+    - text: Xin chào , Bạn khỏe chứ?
+      image: https://i.pinimg.com/originals/b0/06/7a/b0067ade5e832d2aefec8ee9bda50fdc.gif
+    - text: Xin chào , tui nghe nè
+    - text: Bạn cần giúp gì không
+    - text: Bạn cần tui giúp gì nè ^^
 
   utter_ask_customer_name:
-  - text: Tôi còn tên bạn là {name} mà
-  - text: Tên là {name}, tôi còn nhớ chứ
-  - text: "Bạn lại khinh thường trí nhớ tôi rồi \n Tôi còn nhớ bạn nói với tôi bạn tên là {name} "
-  - text: Làm sao tôi có thể quên được bạn tên {name} cơ chứ
-  - text: Bạn có nói với tôi bạn tên là {name} rồi
+    - text: Tôi còn tên bạn là {name} mà
+    - text: Tên là {name}, tôi còn nhớ chứ
+    - text: "Bạn lại khinh thường trí nhớ tôi rồi \n Tôi còn nhớ bạn nói với tôi bạn tên là {name} "
+    - text: Làm sao tôi có thể quên được bạn tên {name} cơ chứ
+    - text: Bạn có nói với tôi bạn tên là {name} rồi
 
   utter_goodbye:
-  - text: "Tạm biệt nhé"
-    image: https://i.pinimg.com/originals/b0/06/7a/b0067ade5e832d2aefec8ee9bda50fdc.gif
-  - text: "Bye bye"
-  - text: "Hẹn gặp lại nhé"
-    image: https://scr.vn/wp-content/uploads/2020/07/%E1%BA%A2nh-%C4%91%E1%BB%99ng-bye-bye-d%E1%BB%85-th%C6%B0%C6%A1ng.gif
-  - text: "Gặp lại sau nhee"
-  - text: "Lần sau lại ghé nhé bạn"
-    image: https://scr.vn/wp-content/uploads/2020/07/%E1%BA%A2nh-%C4%91%E1%BB%99ng-bye-bye-d%E1%BB%85-th%C6%B0%C6%A1ng.gif
-  - text: "Bye bye, lần sau lại ghe nha"
-  - text: "Tạm biệt, lần sau nói chuyện tiếp nhé"
+    - text: "Tạm biệt nhé"
+      image: https://i.pinimg.com/originals/b0/06/7a/b0067ade5e832d2aefec8ee9bda50fdc.gif
+    - text: "Bye bye"
+    - text: "Hẹn gặp lại nhé"
+      image: https://scr.vn/wp-content/uploads/2020/07/%E1%BA%A2nh-%C4%91%E1%BB%99ng-bye-bye-d%E1%BB%85-th%C6%B0%C6%A1ng.gif
+    - text: "Gặp lại sau nhee"
+    - text: "Lần sau lại ghé nhé bạn"
+      image: https://scr.vn/wp-content/uploads/2020/07/%E1%BA%A2nh-%C4%91%E1%BB%99ng-bye-bye-d%E1%BB%85-th%C6%B0%C6%A1ng.gif
+    - text: "Bye bye, lần sau lại ghe nha"
+    - text: "Tạm biệt, lần sau nói chuyện tiếp nhé"
 
-  utter_affirm:    
-  - text: "vâng"
-    image: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6hiSP7K92eS18xenIdZq1nxzWbUbC9B3GLrdEtr7UWKXT6NirI7YVz6ceECRiMkEFH0g&usqp=CAU
-  - text: "được rồi"
-  - text: "tất nhiên"
-  - text: "nghe hay đó"
-  - text: "chính xác"
-  - text: "ok"
-    image: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6hiSP7K92eS18xenIdZq1nxzWbUbC9B3GLrdEtr7UWKXT6NirI7YVz6ceECRiMkEFH0g&usqp=CAU
-  - text: "okay"
-  - text: "oki"
-  - text: "oke"
-  - text: "okie"
-  - text: "yes"
+  utter_affirm:
+    - text: "vâng"
+      image: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6hiSP7K92eS18xenIdZq1nxzWbUbC9B3GLrdEtr7UWKXT6NirI7YVz6ceECRiMkEFH0g&usqp=CAU
+    - text: "được rồi"
+    - text: "tất nhiên"
+    - text: "nghe hay đó"
+    - text: "chính xác"
+    - text: "ok"
+      image: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6hiSP7K92eS18xenIdZq1nxzWbUbC9B3GLrdEtr7UWKXT6NirI7YVz6ceECRiMkEFH0g&usqp=CAU
+    - text: "okay"
+    - text: "oki"
+    - text: "oke"
+    - text: "okie"
+    - text: "yes"
 
   utter_deny:
-  - text: "Dạ vâng"
-  - text: "Ô, xin lỗi vì làm bnaj không hài lòng"
-  - text: "Bạn thấy như thế có vấn đề gì ư"
-  - text: "Bạn đang không đồng ý điều gì"
-  - text: "Bạn đang băn khoăn điều gì hử"
-  - text: "uhm, nếu bạn khum thích thì thui vậy"
-  - text: "Sao bạn lại từ chối tui vậy"
-  - text: "Sao lại khum nhỉ"
-  - text: "Cho tui biết lý do đi"
+    - text: "Dạ vâng"
+    - text: "Ô, xin lỗi vì làm bnaj không hài lòng"
+    - text: "Bạn thấy như thế có vấn đề gì ư"
+    - text: "Bạn đang không đồng ý điều gì"
+    - text: "Bạn đang băn khoăn điều gì hử"
+    - text: "uhm, nếu bạn khum thích thì thui vậy"
+    - text: "Sao bạn lại từ chối tui vậy"
+    - text: "Sao lại khum nhỉ"
+    - text: "Cho tui biết lý do đi"
 
   utter_gender:
-  - text: Mình cũng không biết nữa :<
-  - text: Dù gái hay trai vẫn là cháu vua Hùng :D
-  - text: Trong mình có 96,69% là nam nha
+    - text: Mình cũng không biết nữa :<
+    - text: Dù gái hay trai vẫn là cháu vua Hùng :D
+    - text: Trong mình có 96,69% là nam nha
 
   utter_help:
-  - text: Có chuyện gì thế?
-  - text: Bạn cần gì nào?
-  - text: Tôi có thể giúp gì cho bạn?
+    - text: Có chuyện gì thế?
+    - text: Bạn cần gì nào?
+    - text: Tôi có thể giúp gì cho bạn?
 
   utter_introduce:
-  - text: Mình được tạo để nói chuyện với bạn, giúp bạn đặt hàng, hỗ trợ bạn khi không có nhân viên của cửa hàng nhé
-  - text: Tui có thể nói chuyện cùng bạn
-  - text: Bạn có thể hỏi mình điều gì đó
-  - text: Tôi có nhiệm vụ hỗ trợ bạn, gợi ý quần áo và hỗ trợ bạn đặt hàng nhé
-  - text: Tôi có thể nói chuyện cùng bạn, giúp bạn đặt hàng, gợi ý thời trang và bầu bạn với bạn
+    - text: Mình có thể hỗ trợ bạn tìm kiếm sản phẩm theo giá, theo thể loại, xem chi tiết sản phẩm, giúp bạn đặt hàng và nói chuyện với bạn
+    - text: Mình có thể giúp bạn tìm kiếm sản phẩm theo giá, theo thể loại, xem chi tiết sản phẩm, giúp bạn đặt hàng và nói chuyện với bạn
+    - text: Mình biết tìm kiếm sản phẩm cho mọi người, giúp xem chi tiết sản phẩm, trả lời các thông tin về shop, ngoài ra còn có thể nói chuyện với bạn
 
   utter_scold:
-  - text: "Sao bạn lại nói tôi như vậy"
-  - text: "Bạn nói vậy là tui buồn đó"
-  - text: "Bạn xin lỗi tui đi khum tui giận đó"
-  - text: "Tui khum thích bị chê như vậy"
-  - text: "Sao bạn lại nghĩ tui như vậy"
-  - text: "Tui khum có như vậy nhé"
+    - text: "Sao bạn lại nói tôi như vậy"
+    - text: "Bạn nói vậy là tui buồn đó"
+    - text: "Bạn xin lỗi tui đi khum tui giận đó"
+    - text: "Tui khum thích bị chê như vậy"
+    - text: "Sao bạn lại nghĩ tui như vậy"
+    - text: "Tui khum có như vậy nhé"
 
   utter_thanks:
-  - text: "Cảm ơn bạn nhe"
-    image: https://toigingiuvedep.vn/wp-content/uploads/2021/06/anh-dong-powerpoint-tam-biet-de-thuong-nhat.gif
-  - text: "Thank kiu"
-  - text: "Cảm ơn nè -_-"
-  - text: "Cảm ơn bạn nhìu"
-    image: https://toigingiuvedep.vn/wp-content/uploads/2021/06/anh-dong-powerpoint-tam-biet-de-thuong-nhat.gif
-  - text: "Dạ, mình cảm ơn"
+    - text: "Cảm ơn bạn nhe"
+      image: https://toigingiuvedep.vn/wp-content/uploads/2021/06/anh-dong-powerpoint-tam-biet-de-thuong-nhat.gif
+    - text: "Thank kiu"
+    - text: "Cảm ơn nè -_-"
+    - text: "Cảm ơn bạn nhìu"
+      image: https://toigingiuvedep.vn/wp-content/uploads/2021/06/anh-dong-powerpoint-tam-biet-de-thuong-nhat.gif
+    - text: "Dạ, mình cảm ơn"
 
   utter_what_name:
-  - text: Tôi là Alio
-  - text: Mọi người gọi tôi là ngáo nhưng tôi thích Alio hơn
-  - text: Bố đặt tên tôi là Alio
-  - text: Nghe thì giống Alo, nhưng tôi là Alio nha
-  - text: Alio nhaaaa
+    - text: Tôi là Alio
+    - text: Mọi người gọi tôi là ngáo nhưng tôi thích Alio hơn
+    - text: Bố đặt tên tôi là Alio
+    - text: Nghe thì giống Alo, nhưng tôi là Alio nha
+    - text: Alio nhaaaa
 
-# 2. Hỏi về thông tin shop, sản phẩm
+  # 2. Hỏi về thông tin shop, sản phẩm
   utter_ask_shop_location:
-  - text: Shop mình ở số 1, Nguyễn Văn trỗi, Hà Đông, Hà Nội nhé
-  - text: Ở số 1, Nguyễn Văn trỗi, Hà Đông, Hà Nội bạn nhé
-  - text: Bạn đến số 1, Nguyễn Văn trỗi, Hà Đông, Hà Nội nhé
-  - text: Cửa hàng hiện tại là ở số 1, Nguyễn Văn trỗi, Hà Đông, Hà Nội nhé
+    - text: Shop mình ở số 1, Nguyễn Văn trỗi, Hà Đông, Hà Nội nhé
+    - text: Ở số 1, Nguyễn Văn trỗi, Hà Đông, Hà Nội bạn nhé
+    - text: Bạn đến số 1, Nguyễn Văn trỗi, Hà Đông, Hà Nội nhé
+    - text: Cửa hàng hiện tại là ở số 1, Nguyễn Văn trỗi, Hà Đông, Hà Nội nhé
 
   utter_ask_shop_product:
-  - text: Cửa hàng mình bán các loại quần áo nữ, trẻ trung, năng động nhé
-  - text: Ở đây có quần áo của các soái tỷ nhé
-  - text: Ở đây có rất nhiều đồ nữ đẹp, đặc biệt là các loại váy và đầm
-  - text: shop mình chuyên quần áo, váy vóc cho các chị em ạ
-  - text: Cửa hàng mình chuyên quần áo chị em, đặc biệt có những bộ váy, đầm dự tiệc cực xinh
+    - text: Cửa hàng mình bán các loại quần áo nữ, trẻ trung, năng động nhé
+    - text: Ở đây có quần áo của các soái tỷ nhé
+    - text: Ở đây có rất nhiều đồ nữ đẹp, đặc biệt là các loại váy và đầm
+    - text: shop mình chuyên quần áo, váy vóc cho các chị em ạ
+    - text: Cửa hàng mình chuyên quần áo chị em, đặc biệt có những bộ váy, đầm dự tiệc cực xinh
 
   utter_ask_sale_product:
-  - text: Bên mình bán áo phông, áo sơ mi, quần váy và các loại đầm của chị em nhé
-  - text: Cửa hàng mình có áo phông, cáo sơ mi, váy, đầm và các loại chân váy nhé
-  - text: Bên mình chuyên các loại váy và chân váy ngoài ra thì còn có áo sơ mi và áo phông để phối cùng ạ
-  - text: Bên mình có bán áo, bán quần và các loại váy của chị em phụ nữ nhé
+    - text: Bên mình bán áo phông, áo sơ mi, quần váy và các loại đầm của chị em nhé
+    - text: Cửa hàng mình có áo phông, cáo sơ mi, váy, đầm và các loại chân váy nhé
+    - text: Bên mình chuyên các loại váy và chân váy ngoài ra thì còn có áo sơ mi và áo phông để phối cùng ạ
+    - text: Bên mình có bán áo, bán quần và các loại váy của chị em phụ nữ nhé
 
   utter_ask_products_price:
-  - text: "Với tầm giá này bên mình có một số sản phẩm như:"
-  - text: Tầm giá này hiện tại bên mình đang có 
-  - text: Bạn xem một số sản phẩm sau sau nhé
-  - text: Với mức giá này bên mình có một số sản phẩm tiêu biểu như 
+    - text: "Với tầm giá này bên mình có một số sản phẩm như:"
+    - text: Tầm giá này hiện tại bên mình đang có
+    - text: Bạn xem một số sản phẩm sau sau nhé
+    - text: Với mức giá này bên mình có một số sản phẩm tiêu biểu như
 
   utter_ask_dress_price:
-  - text: "Với tầm giá này bên mình có một số váy như: "
-  - text: Tầm giá này hiện tại bên mình đang có 
-  - text: Bạn xem một số váy sau nhé
-  - text: Với mức giá này bên mình có một số váy tiêu biểu như 
+    - text: "Với tầm giá này bên mình có một số váy như: "
+    - text: Tầm giá này hiện tại bên mình đang có
+    - text: Bạn xem một số váy sau nhé
+    - text: Với mức giá này bên mình có một số váy tiêu biểu như
 
   utter_ask_shirts_price:
-  - text: "Với tầm giá này bên mình có một số áo như: "
-  - text: Tầm giá này hiện tại bên mình đang có 
-  - text: Bạn xem một số quần sau nhé
-  - text: Với mức giá này bên mình có một số áo tiêu biểu như 
+    - text: "Với tầm giá này bên mình có một số áo như: "
+    - text: Tầm giá này hiện tại bên mình đang có
+    - text: Bạn xem một số quần sau nhé
+    - text: Với mức giá này bên mình có một số áo tiêu biểu như
 
   utter_ask_trousers_price:
-  - text: "Với tầm giá này bên mình có một số quần như: "
-  - text: Tầm giá này hiện tại bên mình đang có 
-  - text: Bạn xem một số quần sau nhé
-  - text: Với mức giá này bên mình có một số quần tiêu biểu như 
+    - text: "Với tầm giá này bên mình có một số quần như: "
+    - text: Tầm giá này hiện tại bên mình đang có
+    - text: Bạn xem một số quần sau nhé
+    - text: Với mức giá này bên mình có một số quần tiêu biểu như
 
   utter_ask_dress_type:
-  - text: Váy bên mình đang bán một số kiểu như {dress}
-  - text: Bên mình đang bán {dress}
-  - text: Váy bên mình đang hot mấy kiểu {dress}
-  - text: Bên mình có mấy kiểu váy này đang bán chạy như {dress}
+    - text: Váy bên mình đang bán một số kiểu như {dress}
+    - text: Bên mình đang bán {dress}
+    - text: Váy bên mình đang hot mấy kiểu {dress}
+    - text: Bên mình có mấy kiểu váy này đang bán chạy như {dress}
 
   utter_ask_shirt_type:
-  - text: Áo bên mình đang bán một số kiểu như {shirt}
-  - text: Bên mình đang bán {shirt}
-  - text: Áo bên mình đang hot mấy kiểu {shirt}
-  - text: Bên mình có mấy kiểu áo này đang bán chạy như {shirt}
+    - text: Áo bên mình đang bán một số kiểu như {shirt}
+    - text: Bên mình đang bán {shirt}
+    - text: Áo bên mình đang hot mấy kiểu {shirt}
+    - text: Bên mình có mấy kiểu áo này đang bán chạy như {shirt}
 
   utter_ask_trousers_type:
-  - text: Quần bên mình đang bán một số kiểu như {trousers}
-  - text: Bên mình đang bán {trousers}
-  - text: Quần bên mình đang hot mấy kiểu {trousers}
-  - text: Bên mình có mấy kiểu quần này đang bán chạy như {trousers}
+    - text: Quần bên mình đang bán một số kiểu như {trousers}
+    - text: Bên mình đang bán {trousers}
+    - text: Quần bên mình đang hot mấy kiểu {trousers}
+    - text: Bên mình có mấy kiểu quần này đang bán chạy như {trousers}
 
   utter_not_have_product:
-  - text: Với mức giá này bên mình không có sản phẩm nào
-  - text: Mức giá này bên mình chưa có sản phẩm nào
-  - text: Bên mình không có sản phẩm nào trong mức giá này
+    - text: Với mức giá này bên mình không có sản phẩm nào
+    - text: Mức giá này bên mình chưa có sản phẩm nào
+    - text: Bên mình không có sản phẩm nào trong mức giá này
 
   utter_not_have_dress:
-  - text: Với mức giá này bên mình không có váy nào
-  - text: Mức giá này bên mình chưa có váy nào
-  - text: Bên mình không có váy nào trong mức giá này
+    - text: Với mức giá này bên mình không có váy nào
+    - text: Mức giá này bên mình chưa có váy nào
+    - text: Bên mình không có váy nào trong mức giá này
 
   utter_not_have_shirt:
-  - text: Với mức giá này bên mình không có áo nào
-  - text: Mức giá này bên mình chưa có áo nào
-  - text: Bên mình không có áo nào trong mức giá này
+    - text: Với mức giá này bên mình không có áo nào
+    - text: Mức giá này bên mình chưa có áo nào
+    - text: Bên mình không có áo nào trong mức giá này
 
   utter_not_have_trousers:
-  - text: Với mức giá này bên mình không có quần nào
-  - text: Mức giá này bên mình chưa có quần nào
-  - text: Bên mình không có quần nào trong mức giá này
+    - text: Với mức giá này bên mình không có quần nào
+    - text: Mức giá này bên mình chưa có quần nào
+    - text: Bên mình không có quần nào trong mức giá này
 
   utter_ask_price:
-  - text: Bên mình có rất nhiều quần áo cùng nhiều giá khác nhau, bạn muốn xem cái nào ạ
-  - text: Có rất nhiều quần áo, không biết bạn muốn xem giá của cái nào ạ
-  - text: Không biết bạn muốn hỏi giá cho chiếc váy/quần/áo nào ạ
+    - text: Bên mình có rất nhiều quần áo cùng nhiều giá khác nhau, bạn muốn xem cái nào ạ
+    - text: Có rất nhiều quần áo, không biết bạn muốn xem giá của cái nào ạ
+    - text: Không biết bạn muốn hỏi giá cho chiếc váy/quần/áo nào ạ
 
   utter_dont_know_product:
-  - text: Xin lỗi mình không biết bạn đang muốn xem sản phẩm nào
-  - text: Xin lỗi tôi không biết bạn đang muốn xem sản phẩm nào ạ
-  - text: Bạn đang muốn xem cái nào ạ
-  - text: Bạn có thể nói rõ bạn muốn xem cái nào được không
+    - text: Xin lỗi mình không biết bạn đang muốn xem sản phẩm nào
+    - text: Xin lỗi tôi không biết bạn đang muốn xem sản phẩm nào ạ
+    - text: Bạn đang muốn xem cái nào ạ
+    - text: Bạn có thể nói rõ bạn muốn xem cái nào được không
 
-# 3. Gợi ý về chọn quần áo
+  # 3. Gợi ý về chọn quần áo
 
   utter_ask_shop_dress:
-  - text: Mình nghĩ một chiếc đầm cute sẽ hợp với bạn đó
-  - text: Bạn nên mặc thoải mái và vẫn lịch sự và quyến rũ
-  - text: Tôi nghĩ chân váy kết hợp với áo sơ mi sẽ phù hợp đó
-  - text: Lúc này mình nghĩ bạn sẽ hợp với một cái đầm cute hơn
-  - text: Thực ra mặc váy cũng đẹp, nhưng bạn cũng có thể chọn một cái quần vải xuông và áo croptop
-  - text: Tôi mạnh dạn chọn cho bạn 1 chiếc váy bò dài kết hợp với 1 cái ao croptop
-
+    - text: Mình nghĩ một chiếc đầm cute sẽ hợp với bạn đó
+    - text: Bạn nên mặc thoải mái và vẫn lịch sự và quyến rũ
+    - text: Tôi nghĩ chân váy kết hợp với áo sơ mi sẽ phù hợp đó
+    - text: Lúc này mình nghĩ bạn sẽ hợp với một cái đầm cute hơn
+    - text: Thực ra mặc váy cũng đẹp, nhưng bạn cũng có thể chọn một cái quần vải xuông và áo croptop
+    - text: Tôi mạnh dạn chọn cho bạn 1 chiếc váy bò dài kết hợp với 1 cái ao croptop
 
   utter_ask_outfit_office:
-  - text: Bạn nên mặc lịch sự nhưng vẫn thời thượng. Sau đây tôi gửi một số ảnh để bạn cân nhắc nhé
-    image: https://image.phunuonline.com.vn/news/2018/20181019/fckimage/143307_0f0a8f3813e2f507d273fb609963e76a007658e3-181150538.jpg
-  - text: Bạn thử một chiếc váy dài qua đầu gối cùng đó là áo sơ mi, trông vừa dịu dàng mà lịch sự
-    image: https://kenh14cdn.com/203336854389633024/2022/5/5/photo-1-16517253955391146395902.jpg
-  - text: Bạn có thích mặc vest không, hãy thử thăm khảo những ảnh sau đây nhé
-    image: https://phuhoang.com.vn/wp-content/uploads/2020/04/product-07-33-scaled.jpeg
-  
+    - text: Bạn nên mặc lịch sự nhưng vẫn thời thượng. Sau đây tôi gửi một số ảnh để bạn cân nhắc nhé
+      image: https://image.phunuonline.com.vn/news/2018/20181019/fckimage/143307_0f0a8f3813e2f507d273fb609963e76a007658e3-181150538.jpg
+    - text: Bạn thử một chiếc váy dài qua đầu gối cùng đó là áo sơ mi, trông vừa dịu dàng mà lịch sự
+      image: https://kenh14cdn.com/203336854389633024/2022/5/5/photo-1-16517253955391146395902.jpg
+    - text: Bạn có thích mặc vest không, hãy thử thăm khảo những ảnh sau đây nhé
+      image: https://phuhoang.com.vn/wp-content/uploads/2020/04/product-07-33-scaled.jpeg
+
   utter_user_name:
-  - text: Oh, một cái tên đẹp
-  - text: Tên đẹp như người vậy
-  - text: Bố mẹ bạn đặt tên thật khéo
-  - text: Nghe cái tên tôi đoán bạn rất xinh đẹp
-  
-# 4. Khai thác thông tin người dùng(Lưu thông tin người dùng)
-  
+    - text: Oh, một cái tên đẹp
+    - text: Tên đẹp như người vậy
+    - text: Bố mẹ bạn đặt tên thật khéo
+    - text: Nghe cái tên tôi đoán bạn rất xinh đẹp
+
+  # 4. Khai thác thông tin người dùng(Lưu thông tin người dùng)
+
   utter_greet_name:
-  - text: Xin chào {name}, Bạn khỏe chứ?
-    image: https://i.pinimg.com/originals/b0/06/7a/b0067ade5e832d2aefec8ee9bda50fdc.gif
-  - text: Xin chào {name}, tui nghe nè
-  - text: Bạn cần giúp gì không {name} 
-  - text: Chào {name}, Bạn cần tui giúp gì nè ^^
+    - text: Xin chào {name}, Bạn khỏe chứ?
+      image: https://i.pinimg.com/originals/b0/06/7a/b0067ade5e832d2aefec8ee9bda50fdc.gif
+    - text: Xin chào {name}, tui nghe nè
+    - text: Bạn cần giúp gì không {name}
+    - text: Chào {name}, Bạn cần tui giúp gì nè ^^
 
   utter_forget_customer_name:
-  - text: Xin lỗi tôi không nhớ bạn tên là gì
-  - text: Bạn đã nói tên bạn với tôi chưa nhỉ?
-  - text: Bạn có thể nói lại tên bạn là gì khum
-  - text: Tôi không nhớ lắm, bạn có thể nói lại không
+    - text: Xin lỗi tôi không nhớ bạn tên là gì
+    - text: Bạn đã nói tên bạn với tôi chưa nhỉ?
+    - text: Bạn có thể nói lại tên bạn là gì khum
+    - text: Tôi không nhớ lắm, bạn có thể nói lại không
 
   utter_ask_cumtomer_name:
-  - text: Bạn tên gì ạ?
-  - text: Cho hỏi bạn tên gì?
-  - text: Tên của bạn là gì nhỉ?
-  - text: Cho mình xin tên của bạn?
+    - text: Bạn tên gì ạ?
+    - text: Cho hỏi bạn tên gì?
+    - text: Tên của bạn là gì nhỉ?
+    - text: Cho mình xin tên của bạn?
 
   utter_ask_cumtomer_phone:
-  - text: Số điện thoại của bạn là gì ạ?
-  - text: Bạn cho tôi xin số điện thoại?
-  - text: Cho mình xin số điện thoại của bạn?
+    - text: Số điện thoại của bạn là gì ạ?
+    - text: Bạn cho tôi xin số điện thoại?
+    - text: Cho mình xin số điện thoại của bạn?
 
   utter_ask_cumtomer_address:
-  - text: Địa chỉ của bạn là gì ạ?
-  - text: Bạn cho tôi xin địa chỉ?
-  - text: Cho mình xin địa chỉ của bạn?
+    - text: Địa chỉ của bạn là gì ạ?
+    - text: Bạn cho tôi xin địa chỉ?
+    - text: Cho mình xin địa chỉ của bạn?
 
-# 5. Mua sản phẩm
+  # 5. Mua sản phẩm
 
   utter_ask_product_detail:
-  - text: "Sản phẩm {name} hiện đang có giá bán là {price} \n Sau đây là hình ảnh của sản phẩm"
-    image: "{image}"
-  - text: "Sản phẩm {name} bên mình đang bán với giá {price} \n đây là ảnh của sản phẩm"
-    image: "{image}"
+    - text: "Sản phẩm {name} hiện đang có giá bán là {price} \n Sau đây là hình ảnh của sản phẩm"
+      image: "{image}"
+    - text: "Sản phẩm {name} bên mình đang bán với giá {price} \n đây là ảnh của sản phẩm"
+      image: "{image}"
 
   utter_not_have_product_detail:
-  - text: Bên mình không có sản phẩm nào với tên {name}
-  - text: Bên mình không có sản phẩm nào với tên là {name}
-  - text: Có phải bạn muốn tìm sản phẩm có tên {name} không, bên mình hiện không có sản phẩm này
-  - text: Bạn có thể viết rõ hơn được không, chứ bên mình không có sản phẩm nào với tên {name}
+    - text: Bên mình không có sản phẩm nào với tên {name}
+    - text: Bên mình không có sản phẩm nào với tên là {name}
+    - text: Có phải bạn muốn tìm sản phẩm có tên {name} không, bên mình hiện không có sản phẩm này
+    - text: Bạn có thể viết rõ hơn được không, chứ bên mình không có sản phẩm nào với tên {name}
 
-# 6. Buôn chuyện(Phát hiện cảm xúc qua icon)
+  utter_ask_size:
+    - text: Mình gửi bạn thông tin size của sản phẩm nhé
+    - text: Mình gửi thông tin kích thước của sản phẩm ạ
+    - text: Mình gửi thông tin nhé
+
+  # 6. Buôn chuyện(Phát hiện cảm xúc qua icon)
 
   utter_sing_poem:
-  - text: "Con cò bé bé \nNó đậu cành tre \nĐi không hỏi mẹ \nBiết đi đường nào. \n\
-      Khi đi em hỏi\nKhi về em chào\nMiệng em chúm chím\nMẹ yêu không nào."
-  - text: "Một con vịt xòe ra hai cái cánh,\nNó kêu rằng cáp cáp cáp cạp cạp cạp\n\
-      Gặp hồ nước nó bì bà bì bõm\nLúc lên bờ vẫy cái cánh cho khô."
-  - text: "Nam quốc sơn hà nam đế cư \nTiệt nhiên định phận tại thiên thư \nNhư hà\
-      \ nghịch lỗ lai xâm phạm? \nNhữ đẳng hành khan thủ bại hư! "
+    - text:
+        "Con cò bé bé \nNó đậu cành tre \nĐi không hỏi mẹ \nBiết đi đường nào. \n\
+        Khi đi em hỏi\nKhi về em chào\nMiệng em chúm chím\nMẹ yêu không nào."
+    - text:
+        "Một con vịt xòe ra hai cái cánh,\nNó kêu rằng cáp cáp cáp cạp cạp cạp\n\
+        Gặp hồ nước nó bì bà bì bõm\nLúc lên bờ vẫy cái cánh cho khô."
+    - text:
+        "Nam quốc sơn hà nam đế cư \nTiệt nhiên định phận tại thiên thư \nNhư hà\
+        \ nghịch lỗ lai xâm phạm? \nNhữ đẳng hành khan thủ bại hư! "
 
   utter_how_are_u:
-  - text: Tôi cực kì khỏe luôn nhé
-  - text: Bữa trước cô bói nói tui sống thọ hơn 200 tuổi
-  - text: Hiện tại mình khỏe lắm, khum có người nói chuyện cùng thui
-  - text: Mệt lắm nhưng vẫn ngồi nói chuyện với bạn nè
+    - text: Tôi cực kì khỏe luôn nhé
+    - text: Bữa trước cô bói nói tui sống thọ hơn 200 tuổi
+    - text: Hiện tại mình khỏe lắm, khum có người nói chuyện cùng thui
+    - text: Mệt lắm nhưng vẫn ngồi nói chuyện với bạn nè
 
   utter_praise:
-  - text: Bạn khen quá rồi, hihi
-    image: https://cdn.chanhtuoi.com/uploads/2020/05/icon-facebook-56-1.jpg
-  - text: Hihi, bán quá khen
-  - text: Hehe, mình cảm ơn
-  - text: Hehe
-    image: https://cdn.iconscout.com/icon/premium/png-256-thumb/hihi-4639987-3849464.png
+    - text: Bạn khen quá rồi, hihi
+      image: https://cdn.chanhtuoi.com/uploads/2020/05/icon-facebook-56-1.jpg
+    - text: Hihi, bán quá khen
+    - text: Hehe, mình cảm ơn
+    - text: Hehe
+      image: https://cdn.iconscout.com/icon/premium/png-256-thumb/hihi-4639987-3849464.png
 
   utter_health_ok:
-  - text: Oh, tôi rất vui về điều đó
-  - text: Nghe vậy tôi cũng mừng hẳn
-  - text: Oh, tuyệt vời, có sức khỏe là có tất cả
+    - text: Oh, tôi rất vui về điều đó
+    - text: Nghe vậy tôi cũng mừng hẳn
+    - text: Oh, tuyệt vời, có sức khỏe là có tất cả
 
   utter_health_NG:
-  - text: Oh, bạn nên đi khám xem
-  - text: :(, Bạn cố giữ sức khỏe để ghé shop thường xuyên nhé
-  - text: Sức khỏe là tất cả, hãy chú ý đến nó
-  - text: Vậy bạn nên thử những bộ đồ mới bên mình, chắc chắn tâm trạng tốt lên thì Sức khỏe cũng tốt thôi
+    - text: Oh, bạn nên đi khám xem
+    - text: :(, Bạn cố giữ sức khỏe để ghé shop thường xuyên nhé
+    - text: Sức khỏe là tất cả, hãy chú ý đến nó
+    - text: Vậy bạn nên thử những bộ đồ mới bên mình, chắc chắn tâm trạng tốt lên thì Sức khỏe cũng tốt thôi
 
-# Out of scope
+  # Out of scope
   utter_non_vietnammese:
-  - text: Xin lỗi, tôi chỉ hiểu tiếng Việt
-  - text: Bạn có thể nói tiếng Việt không, tôi không hiểu
-  - text: Xin lỗi tôi chưa biết nói tiếng nước ngoài
+    - text: Xin lỗi, tôi chỉ hiểu tiếng Việt
+    - text: Bạn có thể nói tiếng Việt không, tôi không hiểu
+    - text: Xin lỗi tôi chưa biết nói tiếng nước ngoài
 
   utter_out_scope_other:
-  - text: Mình không hiểu bạn nói gì
-  - text: Bạn có thể hỏi câu khác được không
-  - text: Xin lỗi, cái này tôi không biết
-  - text: Cái này mình chưa biết, bạn hỏi câu khác được không
-
+    - text: Mình không hiểu bạn nói gì
+    - text: Bạn có thể hỏi câu khác được không
+    - text: Xin lỗi, cái này tôi không biết
+    - text: Cái này mình chưa biết, bạn hỏi câu khác được không
