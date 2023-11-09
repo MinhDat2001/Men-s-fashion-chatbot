@@ -328,6 +328,15 @@ class ActionAskProductOrder(Action):
                 description = product[3],
                 image = product[7]
             )
+            dispatcher.utter_message(
+                image = product[8]
+            )
+            dispatcher.utter_message(
+                image = product[9]
+            )
+            dispatcher.utter_message(
+                image = product[10]
+            )
         return []
 
 
@@ -401,6 +410,15 @@ class ActionProductDetail(Action):
                 price = product[0][4],
                 description = product[0][3],
                 image = product[0][7]
+            )
+            dispatcher.utter_message(
+                image = product[8]
+            )
+            dispatcher.utter_message(
+                image = product[9]
+            )
+            dispatcher.utter_message(
+                image = product[10]
             )
         else:
             dispatcher.utter_message(
