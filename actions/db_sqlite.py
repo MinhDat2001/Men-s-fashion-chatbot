@@ -130,9 +130,8 @@ def get_image_by_type(type):
 
     cursor.execute('''SELECT image  from product WHERE type=? LIMIT 3''',(type,))
     
-    print("select product type_detail successfully........")
+    print("get_image_by_type successfully........")
     records = cursor.fetchall()
-    print(records)
     return records
 
 def get_product_by_price(start_price, end_price):
@@ -148,11 +147,10 @@ def get_product_by_price(start_price, end_price):
     print("start_price: " , start)
     print("end_price: " , end)
 
-    cursor.execute('''SELECT name, image from product WHERE price>=? and price<=?''',(start,end))
+    cursor.execute('''SELECT * from product WHERE price>=? and price<=?''',(start,end))
     
     print("select product successfully........")
     records = cursor.fetchall()
-    print(records)
     return records
 
 def get_product_by_price_and_type(start_price, end_price, type):
@@ -166,11 +164,10 @@ def get_product_by_price_and_type(start_price, end_price, type):
     print("start_price: " , start)
     print("end_price: " , end)
 
-    cursor.execute('''SELECT name, image from product WHERE price>=? and price<=? and type=?''',(start,end, type))
+    cursor.execute('''SELECT * from product WHERE price>=? and price<=? and type=?''',(start,end, type))
     
     print("select product successfully........")
     records = cursor.fetchall()
-    print(records)
     return records
 
 def get_product_by_name(name):

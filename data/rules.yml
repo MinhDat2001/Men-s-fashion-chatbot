@@ -1,5 +1,0 @@
-rules:
-- rule: Save conversation after every user message
-  steps:
-  - intent: '*'
-  - action: action_save_conversation

@@ -100,3 +100,14 @@ def get_limit_product_by_price_and_type(start_price, end_price, order, type):
     if len(record)>= order:
         return record[order-1]
     return None
+
+def change_money(price):
+    print("price: ", price)
+    price = str(price)
+    res = ""
+    for i in range(len(price) -1, -1, -1):
+        res = price[i] + res
+        if (i+1) % 3 == 0 :
+            res = '.'+res
+    print("after change: ",res)
+    return res + " vnđ"

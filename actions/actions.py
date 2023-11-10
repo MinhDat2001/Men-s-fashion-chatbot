@@ -3,6 +3,7 @@ from rasa_sdk.executor import CollectingDispatcher
 from typing import Any, Text, Dict, List
 import json
 from actions import db_sqlite as DB, AlioConstant, CommonFunction
+from time import gmtime, strftime
 
 # Cơ bản ---------Start-------------
 class SaveConversationAction(Action):
@@ -14,6 +15,23 @@ class SaveConversationAction(Action):
         print("write conversation!")
         with open("conversation.json", "w") as file:
             json.dump(conversation, file)
+
+        return []
+
+class ActionGetTime(Action):
+    def name(self) -> Text:
+        return "action_get_time"
+
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        print(strftime("%H:%M:%S", gmtime()))
+        string = "Bây giờ là" + strftime("%H:%M:%S", gmtime())
+        dispatcher.utter_message(
+            text=string
+        )
 
         return []
 
@@ -78,8 +96,8 @@ class ActionProductPrice(Action):
                 )
             for i in products:
                 dispatcher.utter_message(
-                        text = i[0],
-                        image = i[1]
+                        text = i[1],
+                        image = i[7]
                     )
         else:
             dispatcher.utter_message(
@@ -121,8 +139,8 @@ class ActionDressPrice(Action):
                 )
             for i in products:
                 dispatcher.utter_message(
-                        text = i[0],
-                        image = i[1]
+                        text = i[1],
+                        image = i[7]
                     )
         else:
             dispatcher.utter_message(
@@ -167,8 +185,8 @@ class ActionShirtsPrice(Action):
                 )
             for i in products:
                 dispatcher.utter_message(
-                        text = i[0],
-                        image = i[1]
+                        text = i[1],
+                        image = i[7]
                     )
         else:
             dispatcher.utter_message(
@@ -212,8 +230,8 @@ class ActionTrousersPrice(Action):
                 )
             for i in products:
                 dispatcher.utter_message(
-                        text = i[0],
-                        image = i[1]
+                        text = i[1],
+                        image = i[7]
                     )
         else:
             dispatcher.utter_message(
@@ -324,7 +342,7 @@ class ActionAskProductOrder(Action):
             dispatcher.utter_message(
                 response="utter_ask_product_detail",
                 name = product[1],
-                price = product[4],
+                price = CommonFunction.change_money(product[4]),
                 description = product[3],
                 image = product[7]
             )
@@ -407,18 +425,18 @@ class ActionProductDetail(Action):
             dispatcher.utter_message(
                 response="utter_ask_product_detail",
                 name = product[0][1],
-                price = product[0][4],
+                price = CommonFunction.change_money(product[0][4]),
                 description = product[0][3],
                 image = product[0][7]
             )
             dispatcher.utter_message(
-                image = product[8]
+                image = product[0][8]
             )
             dispatcher.utter_message(
-                image = product[9]
+                image = product[0][9]
             )
             dispatcher.utter_message(
-                image = product[10]
+                image = product[0][10]
             )
         else:
             dispatcher.utter_message(

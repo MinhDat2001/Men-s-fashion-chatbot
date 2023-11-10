@@ -173,6 +173,13 @@ nlu:
       - Ngoài áo ra có những gì
       - Ngoài quần ra có những gì
       - Ngoài váy ra có những gì
+      - Bên bạn bán cái gì
+      - Bên bạn có những cái gì
+      - Bên shop bán cái gì
+      - Có bán áo con không
+      - Bên bạn có bán quần con không
+      - Có bán sì líp không
+      - Có bán silip không
 
   - intent: ask_products_price
     examples: |
