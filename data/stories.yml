@@ -159,6 +159,11 @@ stories:
       - intent: ask_product_detail
       - action: action_product_detail
 
+  - story: action ask product size
+    steps:
+      - intent: ask_size
+      - action: action_ask_size
+
   - story: action buy product
     steps:
       - intent: buy_product_intent
