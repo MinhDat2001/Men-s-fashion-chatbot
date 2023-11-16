@@ -122,7 +122,6 @@ actions:
   - action_save_user_name
   - action_create_db
   - action_ask_customer_name
-  - action_save_conversation
   - action_product_price
   - action_dress_price
   - action_shirts_price
@@ -171,7 +170,7 @@ responses:
     - text: "Gặp lại sau nhee"
     - text: "Lần sau lại ghé nhé bạn"
       image: https://scr.vn/wp-content/uploads/2020/07/%E1%BA%A2nh-%C4%91%E1%BB%99ng-bye-bye-d%E1%BB%85-th%C6%B0%C6%A1ng.gif
-    - text: "Bye bye, lần sau lại ghe nha"
+    - text: "Bye bye, lần sau lại ghé nha"
     - text: "Tạm biệt, lần sau nói chuyện tiếp nhé"
 
   utter_affirm:
@@ -191,7 +190,7 @@ responses:
 
   utter_deny:
     - text: "Dạ vâng"
-    - text: "Ô, xin lỗi vì làm bnaj không hài lòng"
+    - text: "Rất xin lỗi vì làm bạn không hài lòng"
     - text: "Bạn thấy như thế có vấn đề gì ư"
     - text: "Bạn đang không đồng ý điều gì"
     - text: "Bạn đang băn khoăn điều gì hử"
@@ -404,7 +403,7 @@ responses:
   utter_ask_size:
     - text: Mình gửi bạn thông tin size của sản phẩm nhé
     - text: Mình gửi thông tin kích thước của sản phẩm ạ
-    - text: Mình gửi thông tin nhé
+    - text: Đây là bảng size của sản phẩm, bạn xem nhé
 
   # 6. Buôn chuyện(Phát hiện cảm xúc qua icon)
 

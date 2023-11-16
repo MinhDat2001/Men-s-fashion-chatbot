@@ -5,18 +5,8 @@ import json
 from actions import db_sqlite as DB, AlioConstant, CommonFunction
 from time import gmtime, strftime
 
+product_detail_list = {}
 # Cơ bản ---------Start-------------
-class SaveConversationAction(Action):
-    def name(self):
-        return "action_save_conversation"
-
-    def run(self, dispatcher, tracker, domain):
-        conversation = tracker.export_stories()
-        print("write conversation!")
-        with open("conversation.json", "w") as file:
-            json.dump(conversation, file)
-
-        return []
 
 class ActionGetTime(Action):
     def name(self) -> Text:
@@ -339,6 +329,7 @@ class ActionAskProductOrder(Action):
             product = CommonFunction.get_product_by_action(action, order, start_price, end_price)
             
             print("product get:", product)
+            product_detail_list[tracker.sender_id] = product[1]
             dispatcher.utter_message(
                 response="utter_ask_product_detail",
                 name = product[1],
@@ -421,6 +412,8 @@ class ActionProductDetail(Action):
         product_name = CommonFunction.get_product_correct_name(product_detail)
         
         product = DB.get_product_by_name(product_name)
+        product_detail_list[tracker.sender_id] = product[0][1]
+        print(product_detail_list[tracker.sender_id])
         if product:
             dispatcher.utter_message(
                 response="utter_ask_product_detail",
@@ -463,10 +456,11 @@ class ActionAskSize(Action):
         return "action_ask_size"
 
     def run(self, dispatcher, tracker, domain):
-        
+        print(product_detail_list[tracker.sender_id])
+        product = DB.get_product_by_name(product_detail_list[tracker.sender_id])
         dispatcher.utter_message(
             response= "utter_ask_size",
-            image="https://scontent.fhan14-4.fna.fbcdn.net/v/t39.30808-6/399316730_637236465283110_7190245153972557471_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_ohc=7Vnmi8hY4aYAX8WMWN0&_nc_ht=scontent.fhan14-4.fna&oh=00_AfAK9JuUEqA9kLPpirTYdz8-feF13atpfkGMyRKCiaJKyw&oe=654F0BEA"
+            image=product[0][10]
         )
 
         return []

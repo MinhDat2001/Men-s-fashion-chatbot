@@ -105,9 +105,11 @@ def change_money(price):
     print("price: ", price)
     price = str(price)
     res = ""
+    dem=0
     for i in range(len(price) -1, -1, -1):
+        dem+=1
         res = price[i] + res
-        if (i+1) % 3 == 0 :
+        if dem % 3 == 0 and dem!=len(price) :
             res = '.'+res
     print("after change: ",res)
     return res + " vnđ"
