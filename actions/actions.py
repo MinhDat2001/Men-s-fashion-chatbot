@@ -85,8 +85,9 @@ class ActionProductPrice(Action):
                     response="utter_ask_products_price"
                 )
             for i in products:
+                message = "Sản phẩm "+i[1] +" có giá là " + CommonFunction.change_money(i[4])
                 dispatcher.utter_message(
-                        text = i[1],
+                        text = message,
                         image = i[7]
                     )
         else:
@@ -128,8 +129,9 @@ class ActionDressPrice(Action):
                     response="utter_ask_products_price"
                 )
             for i in products:
+                message = "Sản phẩm "+i[1] +" có giá là " + CommonFunction.change_money(i[4])
                 dispatcher.utter_message(
-                        text = i[1],
+                        text = message,
                         image = i[7]
                     )
         else:
@@ -174,8 +176,9 @@ class ActionShirtsPrice(Action):
                     response="utter_ask_products_price"
                 )
             for i in products:
+                message = "Sản phẩm "+i[1] +" có giá là " + CommonFunction.change_money(i[4])
                 dispatcher.utter_message(
-                        text = i[1],
+                        text = message,
                         image = i[7]
                     )
         else:
@@ -219,8 +222,9 @@ class ActionTrousersPrice(Action):
                     response="utter_ask_products_price"
                 )
             for i in products:
+                message = "Sản phẩm "+i[1] +" có giá là " + CommonFunction.change_money(i[4])
                 dispatcher.utter_message(
-                        text = i[1],
+                        text = message,
                         image = i[7]
                     )
         else:
@@ -373,6 +377,7 @@ class ActionBuyProduct(Action):
             DB.change_order_status(user_id, product[0][0])
             tracker.slots["buy_product"] = None
         user = DB.get_user_name(user_id)
+        print(user)
 
         if user[6] == 0:
             return []

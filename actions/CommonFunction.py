@@ -45,7 +45,7 @@ def get_product_correct_name(pre_name):
     return name
 
 def get_previous_action(list):
-    listSkip = ["action_ask_product_order","action_unlikely_intent","action_listen", "action_session_start", "utter_out_scope_other"]
+    listSkip = ["action_ask_product_order","action_unlikely_intent","action_listen", "action_session_start", "utter_out_scope_other", "action_buy_product"]
     for i in range(len(list)-1, 0, -1):
         if list[i] in listSkip:
             continue
