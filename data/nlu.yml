@@ -344,6 +344,7 @@ nlu:
       - shop mình có những váy gì nhỉ
       - shop mình có những đầm gì nhỉ
       - bên mình bán những kiểu váy gì
+      - cho tôi xem váy của shop
 
   - intent: ask_shirt_type
     examples: |
@@ -367,6 +368,7 @@ nlu:
       - bên mình có những kiểu áo gì nhỉ
       - shop mình có áo gì
       - shop mình có những kiểu áo gì
+      - cho xem áo của shop
 
   - intent: ask_trousers_type
     examples: |
@@ -382,6 +384,7 @@ nlu:
       - shop có những kiểu quần gì nhỉ
       - bên mình bán những kiểu quần nào nhỉ
       - Quần bên mình có những kiểu nào
+      - cho xem quần của shop
 
   - intent: ask_price
     examples: |

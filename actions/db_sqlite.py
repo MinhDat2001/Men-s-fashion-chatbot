@@ -67,6 +67,18 @@ def insert_hobby(sender_id, hobby):
     conn.commit()
     conn.close()
 
+def get_user(sender_id):
+    conn = sqlite3.connect("Alio.db")
+    cursor = conn.cursor()
+    print("sender_id: " , sender_id)
+    print("connect to database success!") 
+
+    cursor.execute('''SELECT * from user_info WHERE sender_id=? LIMIT 1''',(sender_id,))
+    
+    records = cursor.fetchone()
+    print("get user successfully........")
+    return records
+    
 def get_user_name(sender_id):
     conn = sqlite3.connect("Alio.db")
     cursor = conn.cursor()
@@ -75,9 +87,9 @@ def get_user_name(sender_id):
 
     cursor.execute('''SELECT * from user_info WHERE sender_id=? LIMIT 1''',(sender_id,))
     
-    print("select name successfully........")
     records = cursor.fetchone()
     print(records)
+    print("select name successfully........")
     if records:
         return records[1]
     else:
@@ -210,10 +222,13 @@ def order_product(user_id):
 def change_order_status(user_id, product_id):
     conn = sqlite3.connect("Alio.db")
     cursor = conn.cursor()
-    print("change_order_status") 
+    print("change_order_status")
+    print("user_id", user_id)
+    print("product_id", product_id) 
 
-    cursor.execute('''UPDATE user_info SET order=1, product_id=? WHERE sender_id=?;''',(product_id, user_id))
-    
+    cursor.execute('''UPDATE user_info SET product_order=1, product_id=? WHERE sender_id=?;''',(product_id, user_id))
+    conn.commit()
+    cursor.close()
     print("change_order_status successfully........")
     return True
 

@@ -169,23 +169,23 @@ stories:
       - intent: buy_product_intent
       - action: action_buy_product
 
-  - story: action ask name
+  - story: action ask customer name
     steps:
+      - action: utter_forget_customer_name
       - intent: give_name
       - action: action_save_user_name
-      - action: action_buy_product
 
-  - story: action ask name
+  - story: action ask customer phone
     steps:
+      - action: utter_ask_cumtomer_phone
       - intent: give_phone
       - action: action_save_phone
-      - action: action_buy_product
 
-  # - story: action ask name
-  #   steps:
-  #   - intent: give_address
-  #   - action: action_save_address
-  #   - action: action_buy_product
+  - story: action ask customer address
+    steps:
+    - action: utter_ask_cumtomer_address
+    - intent: give_address
+    - action: action_save_address
 
   # - story: ask size path
   #   steps:

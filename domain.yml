@@ -146,6 +146,10 @@ responses:
     - text: Xin lỗi tôi chưa hiểu bạn nói gì
     - text: Xin lỗi tôi không hiểu bạn nói gì, tôi sẽ cố gắng học giỏi hơn để có thể trả lời bạn trong tương lai
 
+  utter_error:
+    - text: Xin lỗi tôi không hiểu
+    - text: Xin lỗi tôi gặp chút sự cố trong câu hỏi này, bạn hỏi câu khác nhé
+    - text: Xin lỗi, bạn hỏi câu khác nhé
   # chào hỏi cơ bản
   utter_greet:
     - text: Xin chào , Bạn khỏe chứ?
