@@ -1,0 +1,150 @@
+version: "3.1"
+stories:
+- story: ask dress type 1 (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_dress_type
+  - action: action_shirt_type  # predicted: action_dress_type
+- story: ask dress type 2 (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_dress_type
+  - action: action_shirt_type  # predicted: action_dress_type
+- story: ask dress type 3 (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_dress_type
+  - action: action_shirt_type  # predicted: action_dress_type
+- story: ask dress type 4 (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_dress_type
+  - action: action_shirt_type  # predicted: action_dress_type
+- story: ask dress type 5 (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_dress_type
+  - action: action_shirt_type  # predicted: action_dress_type
+- story: ask dress type 6 (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_dress_type
+  - action: action_shirt_type  # predicted: action_dress_type
+- story: ask product price 1 (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_products_price  # predicted: ask_products_price: Với giá từ [100k](start_price) đến [500k](end_price) bên shop có những sản phẩm nào
+  - action: action_product_price
+- story: ask product price 2 (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_products_price  # predicted: ask_products_price: Với giá trên [100k](start_price) bên shop có những sản phẩm nào
+  - action: action_product_price
+- story: ask product price 3 (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_products_price  # predicted: ask_products_price: Với giá dưới [200k](start_price) bên shop có những sản phẩm nào
+  - action: action_product_price
+- story: ask shirt price 1 (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_shirts_price  # predicted: ask_shirts_price: Với giá từ [100k](start_price) đến [500k](end_price) bên shop có những áo nào
+  - action: action_shirts_price
+- story: ask shirt price 2 (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_shirts_price  # predicted: nlu_fallback: Với giá trên [100k](start_price) bên shop có những áo nào
+  - action: action_shirts_price
+- story: ask shirt price 3 (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_shirts_price  # predicted: nlu_fallback: Với giá dưới [200k](start_price) bên shop có những áo nào
+  - action: action_shirts_price
+- story: ask dress price 1 (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_dress_price  # predicted: ask_dress_price: Với giá từ [100k](start_price) đến [500k](end_price) bên shop có những váy nào
+  - action: action_dress_price
+- story: ask dress price 2 (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_dress_price  # predicted: nlu_fallback: Với giá trên [100k](start_price) bên shop có những váy nào
+  - action: action_dress_price
+- story: ask dress price 3 (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_dress_price  # predicted: nlu_fallback: Với giá dưới [300k](start_price) bên shop có những váy nào
+  - action: action_dress_price
+- story: ask trousers price 1 (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_trousers_price  # predicted: nlu_fallback: Với giá từ [100k](start_price) đến [500k](end_price) bên shop có những quần nào
+  - action: action_trousers_price
+- story: ask trousers price 2 (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_trousers_price  # predicted: nlu_fallback: Với giá trên [100k](start_price) bên shop có những quần nào
+  - action: action_trousers_price
+- story: ask trousers price 3 (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_trousers_price  # predicted: nlu_fallback: Với giá dưới [300k](start_price) bên shop có những quần nào
+  - action: action_trousers_price
+- story: ask product detail 1 (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_product_detail  # predicted: ask_product_detail: Cho tôi xem váy lụa [hai dây dự](product_order) tiệc
+  - action: action_product_detail
+- story: ask product detail 2 (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_product_detail  # predicted: ask_product_detail: Cho tôi xem [áo thun dây rút](product_detail)
+  - action: action_product_detail
+- story: ask product detail 2 (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_product_detail  # predicted: ask_product_detail: Cho tôi xem áo [sơ mi công sở](product_detail)
+  - action: action_product_detail
+- story: ask product order 1 (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_previous_product  # predicted: ask_previous_product: Cho tôi xem sản phẩm [đầu](product_order) tiên
+  - action: action_ask_product_order  # predicted: action_unlikely_intent
+- story: ask product order 2 (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_previous_product  # predicted: ask_previous_product: Cho tôi xem sản phẩm thứ [hai](product_order)
+  - action: action_ask_product_order  # predicted: action_unlikely_intent
+- story: ask product order 3 (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_previous_product  # predicted: ask_previous_product: Cho tôi xem sản phẩm thứ [3](product_order)
+  - action: action_ask_product_order  # predicted: action_unlikely_intent
+- story: ask product order 4 (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_previous_product  # predicted: ask_previous_product: Cho tôi xem sản phẩm [cuối](product_order) cùng
+  - action: action_ask_product_order  # predicted: action_unlikely_intent
+- story: ask product order 5 (.\tests\test_stories.yml)
+  steps:
+  - intent: ask_previous_product  # predicted: ask_previous_product: Cho tôi xem sản phẩm ở [giữa](product_order)
+  - action: action_ask_product_order  # predicted: action_unlikely_intent
+- story: give name 1 (.\tests\test_stories.yml)
+  steps:
+  - intent: give_name  # predicted: give_name: Tôi tên là [Đạt](first_name)
+  - action: action_save_user_name  # predicted: action_unlikely_intent
+- story: give name 3 (.\tests\test_stories.yml)
+  steps:
+  - intent: give_name  # predicted: give_name: Tôi tên là [Huy](first_name)
+  - action: action_save_user_name  # predicted: action_unlikely_intent
+- story: give_phone 1 (.\tests\test_stories.yml)
+  steps:
+  - intent: give_phone  # predicted: give_phone: [0963632312](phone)
+  - action: action_save_phone  # predicted: action_unlikely_intent
+- story: give_phone 2 (.\tests\test_stories.yml)
+  steps:
+  - intent: give_phone  # predicted: give_phone: [0973473422](phone)
+  - action: action_save_phone  # predicted: action_unlikely_intent
+- story: give address 1 (.\tests\test_stories.yml)
+  steps:
+  - intent: give_address  # predicted: give_address: [tỉnh Hòa Bình](address)
+  - action: action_save_address  # predicted: action_unlikely_intent
+- story: give address 2 (.\tests\test_stories.yml)
+  steps:
+  - intent: give_address  # predicted: give_address: [Mỗ Lao](address), [Hà Đông](address), [Hà Nội](address)
+  - action: action_save_address  # predicted: action_unlikely_intent
+- story: buy product 1 (.\tests\test_stories.yml)
+  steps:
+  - intent: buy_product_intent  # predicted: buy_product_intent: Cho tôi mua [áo sơ mi văn phòng](buy_product)
+  - action: action_buy_product
+- story: buy product 2 (.\tests\test_stories.yml)
+  steps:
+  - intent: buy_product_intent  # predicted: buy_product_intent: Cho tôi mua [áo thun dây rút](buy_product)
+  - action: action_buy_product
+- story: buy product 3 (.\tests\test_stories.yml)
+  steps:
+  - intent: buy_product_intent  # predicted: buy_product_intent: Cho tôi mua [váy hoa nhí](buy_product)
+  - action: action_buy_product
+- story: sing poem 2 (.\tests\test_stories.yml)
+  steps:
+  - intent: sing_poem  # predicted: nlu_fallback: Bạn biết làm thơ không
+  - action: utter_sing_poem
+- story: out scope other 1 (.\tests\test_stories.yml)
+  steps:
+  - intent: out_scope_other  # predicted: give_phone: [4](phone) + [2](phone) = ?
+  - action: utter_out_scope_other

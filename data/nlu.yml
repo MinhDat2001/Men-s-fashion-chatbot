@@ -1,1908 +1,1808 @@
 version: "3.1"
-
 nlu:
-  # Chào hỏi cơ bản
-
-  - intent: create_db
-    examples: |
-      - Tạo sqlite db
-
-  - intent: greet
-    examples: |
-      - hey
-      - hello
-      - hi
-      - này
-      - xin chào
-      - chào
-      - chào buổi sáng
-      - chào buổi tối
-      - chào buổi chiều
-      - êi
-      - hêi
-      - hey
-      - B ơi
-      - Đằng đấy ơi
-      - bạn ơi
-      - Alio ơi
-      - shop ơi
-      - bot ơi
-
-  - intent: goodbye
-    examples: |
-      - tạm biệt
-      - hẹn gặp lại
-      - gặp lại sau nha
-      - lúc khác gặp lại
-      - goodbye
-      - bye bye
-
-  - intent: affirm
-    examples: |
-      - vâng
-      - được rồi
-      - tất nhiên
-      - nghe hay đó
-      - chính xác
-      - ok
-      - okay
-      - oki
-      - oke
-      - okie
-      - yes
-
-  - intent: deny
-    examples: |
-      - hong
-      - không á
-      - không nhé
-      - không bao giờ
-      - tôi không nghĩ vậy
-      - đừng như vậy chứ
-      - không đời nào
-      - hoàn toàn không
-      - nu
-      - nu nu
-      - Nâu
-
-  - intent: gender
-    examples: |
-      - bạn là nam hay nữ
-      - bạn giới tính là gì
-      - bạn thích nam hay nữ
-      - bạn là trai hay gái
-      - bạn thích trai hay gái
-      - bạn là nam hả
-      - bạn là con trai hay con gái
-      - bạn là gái hả
-      - bạn là đàn ông hay phụ nữ
-      - bạn có phải là đàn ông không
-      - bạn có phải là gay không
-      - bạn có phải là les không
-
-  - intent: help
-    examples: |
-      - cứu với
-      - giúp tôi
-      - giúp với
-      - cứu
-
-  - intent: introduce
-    examples: |
-      - bạn có thể làm gì nào
-      - bạn có thể giúp gì cho tôi
-      - bạn biết làm gì
-      - bạn được việc không
-      - bạn có chức năng gì
-      - chức năng của bạn là gì
-      - bạn sống có ý nghĩa gì
-      - ý nghĩa của bạn là gì
-      - chức năng
-      - bạn được sinh ra để làm gì
-
-  - intent: scold
-    examples: |
-      - khùng quá
-      - điên quá
-      - chập mạch
-      - hâm quá
-      - mất dạy
-      - vô học
-      - bạn bị ngu hả
-      - thần kinh
-      - ngáo quá
-
-  - intent: thanks
-    examples: |
-      - cảm ơn nhiều
-      - cảm ơn nhé
-      - cảm ơn nha
-      - cảm ơn
-      - cảm ơn rất nhiều
-
-  - intent: what_name
-    examples: |
-      - bạn tên gì thế
-      - tên của bạn là gì
-      - bạn tên gì
-      - Tên bạn là gì
-      - bạn tên chi
-      - Tên bạn
-      - Mày tên gì
-      - Người ta gọi bạn là gì
-      - Tôi có thể gọi bạn là
-      - Tôi có thể gọi bạn là gì
-
-  # 2. Hỏi về thông tin shop, sản phẩm
-  - intent: ask_about_shop_location
-    examples: |
-      - Shop bạn ở đâu
-      - Shop địa chỉ ở đâu nhỉ
-      - Shop cửa hàng ở đâu
-      - Cửa hàng mình ở đâu nhỉ
-      - Cửa hàng địa chỉ ở đâu
-      - Địa chỉ cửa hàng ở đâu nhỉ
-      - Tôi có thể đến cửa hàng trực tiếp ở đâu nhỉ
-      - Cửa hàng trực tiếp của mình ở đâu nhỉ
-
-  - intent: ask_shop_product
-    examples: |
-      - Shop của bạn bán gì
-      - Cửa hàng mình có những gì
-      - Shop mình có những gì
-      - Cửa hàng mình là shop thời trang nữ đúng không
-      - Các sản phẩm mà cửa hàng mình có là gì
-      - Cửa hàng bán gì
-      - Cửa hàng có những gì
-
-  - intent: ask_sale_product
-    examples: |
-      - Có bán áo không
-      - Có bán quần không
-      - Bán váy không
-      - Bạn có bán váy không
-      - Bạn có bán mũ không
-      - Bạn có bán áo phông không
-      - Bạn có bán và vạt không
-      - Cửa hàng có chân váy không
-      - Có mũ bảo hiểm không
-      - Có bán đồ lót không
-      - Có bán áo sơ mi dự tiệc không
-      - Có bán kính không
-      - Có bán mĩ phẩm không
-      - Ngoài áo ra có những gì
-      - Ngoài quần ra có những gì
-      - Ngoài váy ra có những gì
-      - Bên bạn bán cái gì
-      - Bên bạn có những cái gì
-      - Bên shop bán cái gì
-      - Có bán áo con không
-      - Bên bạn có bán quần con không
-      - Có bán sì líp không
-      - Có bán silip không
-
-  - intent: ask_products_price
-    examples: |
-      - Sản phẩm loại [200k](start_price) đến [500k](end_price) có những mẫu nào
-      - Sản phẩm từ [200k](start_price) đến [500k](end_price) có những mẫu nào
-      - Sản phẩm từ [200k](start_price)-[500k](end_price) có loại nào
-      - Sản phẩm [200k](start_price) - [500k](end_price) có những loại nào
-      - Sản phẩm [200k](start_price) đến [500k](end_price) có những mẫu nào
-      - Sản phẩm loại [200](start_price) đến [500](end_price) có những mẫu nào
-      - Sản phẩm từ [200](start_price) đến [500](end_price) có những mẫu nào
-      - Sản phẩm từ [200](start_price)-[500](end_price) có loại nào
-      - Sản phẩm [200](start_price) - [500](end_price) có những loại nào
-      - Sản phẩm [200](start_price) đến [500](end_price) có những mẫu nào
-      - Giá từ [200](start_price) đến [500](end_price) có những mẫu nào
-      - Sản phẩm loại dưới [500k](end_price) có những mẫu nào
-      - Sản phẩm dưới [500k](end_price) có những mẫu nào
-      - Sản phẩm ít hơn [500k](end_price) có loại nào
-      - Sản phẩm loại trên [500k](start_price) có những mẫu nào
-      - Sản phẩm trên [500k](start_price) có những mẫu nào
-      - Sản phẩm nhiều hơn [500k](start_price) có loại nào
-      - Với giá từ [200](start_price) đến [500](end_price) có những sản phẩm nào
-      - Với giá từ [200](start_price) - [500](end_price) có những sản phẩm nào
-      - Những sản phẩm có giá từ [200](start_price) đến [500](end_price) 
-      - Những sản phẩm có giá từ [200](start_price) - [500](end_price) 
-      - Tôi muốn xem sản phẩm trên [500k](start_price)
-      - Tôi muốn xem sản phẩm dưới [500k](end_price)
-
-  - intent: ask_dress_price
-    examples: |
-      - Váy loại [200k](start_price) đến [500k](end_price) có những mẫu nào
-      - Váy từ [200k](start_price) đến [500k](end_price) có những mẫu nào
-      - Váy từ [200k](start_price)-[500k](end_price) có loại nào
-      - Váy [200k](start_price) - [500k](end_price) có những loại nào
-      - Váy [200k](start_price) đến [500k](end_price) có những mẫu nào
-      - Giá từ [200k](start_price) đến [500k](end_price) có những mẫu váy nào
-      - Váy loại [200](start_price) đến [500](end_price) có những mẫu nào
-      - Váy từ [200](start_price) đến [500](end_price) có những mẫu nào
-      - Váy từ [200](start_price)-[500](end_price) có loại nào
-      - Váy [200](start_price) - [500](end_price) có những loại nào
-      - Váy [200](start_price) đến [500](end_price) có những mẫu nào
-      - Váy loại dưới [500k](end_price) có những mẫu nào
-      - Váy dưới [500k](end_price) có những mẫu nào
-      - Váy ít hơn [500k](end_price) có loại nào
-      - Váy loại trên [500k](start_price) có những mẫu nào
-      - Váy trên [500k](start_price) có những mẫu nào
-      - Váy nhiều hơn [500k](start_price) có loại nào
-      - Đầm loại [200k](start_price) đến [500k](end_price) có những mẫu nào
-      - Đầm từ [200k](start_price) đến [500k](end_price) có những mẫu nào
-      - Đầm từ [200k](start_price)-[500k](end_price) có loại nào
-      - Đầm [200k](start_price) - [500k](end_price) có những loại nào
-      - Đầm [200k](start_price) đến [500k](end_price) có những mẫu nào
-      - Giá từ [200k](start_price) đến [500k](end_price) có những mẫu Đầm nào
-      - Đầm loại [200](start_price) đến [500](end_price) có những mẫu nào
-      - Đầm từ [200](start_price) đến [500](end_price) có những mẫu nào
-      - Đầm từ [200](start_price)-[500](end_price) có loại nào
-      - Đầm [200](start_price) - [500](end_price) có những loại nào
-      - Đầm [200](start_price) đến [500](end_price) có những mẫu nào
-      - Đầm loại dưới [500k](end_price) có những mẫu nào
-      - Đầm dưới [500k](end_price) có những mẫu nào
-      - Đầm ít hơn [500k](end_price) có loại nào
-      - Đầm loại trên [500k](start_price) có những mẫu nào
-      - Đầm trên [500k](start_price) có những mẫu nào
-      - Đầm nhiều hơn [500k](start_price) có loại nào
-      - Tôi muốn xem váy trên [500k](start_price)
-      - Tôi muốn xem váy dưới [500k](end_price)
-
-  - intent: ask_shirts_price
-    examples: |
-      - Áo loại [200k](start_price) đến [500k](end_price) có những mẫu nào
-      - Áo từ [200k](start_price) đến [500k](end_price) có những mẫu nào
-      - Áo từ [200k](start_price)-[500k](end_price) có loại nào
-      - Áo [200k](start_price) - [500k](end_price) có những loại nào
-      - Áo [200k](start_price) đến [500k](end_price) có những mẫu nào
-      - Giá từ [200k](start_price) đến [500k](end_price) có những mẫu Áo nào
-      - Áo loại [200](start_price) đến [500](end_price) có những mẫu nào
-      - Áo từ [200](start_price) đến [500](end_price) có những mẫu nào
-      - Áo từ [200](start_price)-[500](end_price) có loại nào
-      - Áo [200](start_price) - [500](end_price) có những loại nào
-      - Áo [200](start_price) đến [500](end_price) có những mẫu nào
-      - Áo loại dưới [500k](end_price) có những mẫu nào
-      - Áo dưới [500k](end_price) có những mẫu nào
-      - Áo ít hơn [500k](end_price) có loại nào
-      - Áo loại trên [500k](start_price) có những mẫu nào
-      - Áo trên [500k](start_price) có những mẫu nào
-      - Áo nhiều hơn [500k](start_price) có loại nào
-      - Áo sơ mi loại [200k](start_price) đến [500k](end_price) có những mẫu nào
-      - Áo sơ mi từ [200k](start_price) đến [500k](end_price) có những mẫu nào
-      - Áo sơ mi từ [200k](start_price)-[500k](end_price) có loại nào
-      - Áo sơ mi [200k](start_price) - [500k](end_price) có những loại nào
-      - Áo sơ mi [200k](start_price) đến [500k](end_price) có những mẫu nào
-      - Giá từ [200k](start_price) đến [500k](end_price) có những mẫu Áo sơ mi nào
-      - Áo sơ mi loại [200](start_price) đến [500](end_price) có những mẫu nào
-      - Áo sơ mi từ [200](start_price) đến [500](end_price) có những mẫu nào
-      - Áo sơ mi từ [200](start_price)-[500](end_price) có loại nào
-      - Áo sơ mi [200](start_price) - [500](end_price) có những loại nào
-      - Áo sơ mi [200](start_price) đến [500](end_price) có những mẫu nào
-      - Áo sơ mi loại dưới [500k](end_price) có những mẫu nào
-      - Áo sơ mi dưới [500k](end_price) có những mẫu nào
-      - Áo sơ mi ít hơn [500k](end_price) có loại nào
-      - Áo sơ mi loại trên [500k](start_price) có những mẫu nào
-      - Áo sơ mi trên [500k](start_price) có những mẫu nào
-      - Áo sơ mi nhiều hơn [500k](start_price) có loại nào
-      - Áo phông loại [200k](start_price) đến [500k](end_price) có những mẫu nào
-      - Áo phông từ [200k](start_price) đến [500k](end_price) có những mẫu nào
-      - Áo phông từ [200k](start_price)-[500k](end_price) có loại nào
-      - Áo phông [200k](start_price) - [500k](end_price) có những loại nào
-      - Áo phông [200k](start_price) đến [500k](end_price) có những mẫu nào
-      - Giá từ [200k](start_price) đến [500k](end_price) có những mẫu Áo phông nào
-      - Áo phông loại [200](start_price) đến [500](end_price) có những mẫu nào
-      - Áo phông từ [200](start_price) đến [500](end_price) có những mẫu nào
-      - Áo phông từ [200](start_price)-[500](end_price) có loại nào
-      - Áo phông [200](start_price) - [500](end_price) có những loại nào
-      - Áo phông [200](start_price) đến [500](end_price) có những mẫu nào
-      - Áo phông loại dưới [500k](end_price) có những mẫu nào
-      - Áo phông dưới [500k](end_price) có những mẫu nào
-      - Áo phông ít hơn [500k](end_price) có loại nào
-      - Áo phông loại trên [500k](start_price) có những mẫu nào
-      - Áo phông trên [500k](start_price) có những mẫu nào
-      - Áo phông nhiều hơn [500k](start_price) có loại nào
-      - Tôi muốn xem áo trên [500k](start_price)
-      - Tôi muốn xem áo dưới [500k](end_price)
-
-  - intent: ask_trousers_price
-    examples: |
-      - Quần loại [200k](start_price) đến [500k](end_price) có những mẫu nào
-      - Quần từ [200k](start_price) đến [500k](end_price) có những mẫu nào
-      - Quần từ [200k](start_price)-[500k](end_price) có loại nào
-      - Quần [200k](start_price) - [500k](end_price) có những loại nào
-      - Quần [200k](start_price) đến [500k](end_price) có những mẫu nào
-      - Quần loại [200](start_price) đến [500](end_price) có những mẫu nào
-      - Quần từ [200](start_price) đến [500](end_price) có những mẫu nào
-      - Quần từ [200](start_price)-[500](end_price) có loại nào
-      - Quần [200](start_price) - [500](end_price) có những loại nào
-      - Quần [200](start_price) đến [500](end_price) có những mẫu nào
-      - Quần loại dưới [500k](end_price) có những mẫu nào
-      - Quần dưới [500k](end_price) có những mẫu nào
-      - Quần ít hơn [500k](end_price) có loại nào
-      - Quần loại trên [500k](start_price) có những mẫu nào
-      - Quần trên [500k](start_price) có những mẫu nào
-      - Quần nhiều hơn [500k](start_price) có loại nào
-      - Tôi muốn xem quần trên [500k](start_price)
-      - Tôi muốn xem quần dưới [500k](end_price)
-
-  - intent: ask_dress_type
-    examples: |
-      - Có những kiểu váy nào
-      - Có những kiểu đầm nào
-      - có nhưng loại váy gì
-      - có những loại đầm gì
-      - váy có những loại nào
-      - đầm có những loại nào
-      - váy có những mẫu nào
-      - có những mẫu váy nào
-      - vay co nhung kieu nao
-      - vay co nhung loai nao
-      - co nhung kieu vay nao
-      - cửa hàng có những kiểu váy nào
-      - ở đây có váy kiểu gì
-      - Cửa hàng có mẫu váy gì ở đây
-      - tôi muốn mua váy
-      - tôi muốn xem váy
-      - shop mình có những váy gì nhỉ
-      - shop mình có những đầm gì nhỉ
-      - bên mình bán những kiểu váy gì
-      - cho tôi xem váy của shop
-
-  - intent: ask_shirt_type
-    examples: |
-      - Có những kiểu áo nào
-      - Có những kiểu áo sơ mi nào
-      - có nhưng loại áo gì
-      - có những loại áo sơ mi gì
-      - áo có những loại nào
-      - áo sơ mi có những loại nào
-      - áo có những mẫu nào
-      - có những mẫu áo nào
-      - ao phong co nhung kieu nao
-      - ao phong co nhung loai nao
-      - co nhung kieu ao phong nao
-      - cửa hàng có những kiểu áo nào
-      - ở đây có áo kiểu gì
-      - Cửa hàng có mẫu áo gì ở đây
-      - tôi muốn mua áo
-      - tôi muốn xem áo
-      - mình muốn mua áo
-      - bên mình có những kiểu áo gì nhỉ
-      - shop mình có áo gì
-      - shop mình có những kiểu áo gì
-      - cho xem áo của shop
-
-  - intent: ask_trousers_type
-    examples: |
-      - Có những kiểu quần nào
-      - quần có những kiểu nào
-      - có những loại quần nào
-      - quần có mấy loại
-      - Cửa hàng có những mẫu quần nào
-      - Ở đây bán những kiểu quần như nào
-      - tôi muốn mua quần
-      - tôi muốn xem quần
-      - mình muốn mua quần
-      - shop có những kiểu quần gì nhỉ
-      - bên mình bán những kiểu quần nào nhỉ
-      - Quần bên mình có những kiểu nào
-      - cho xem quần của shop
-
-  - intent: ask_price
-    examples: |
-      - Giá áo bên bạn bao nhiêu
-      - Giá quần áo bên bạn bao nhiêu
-      - Giá váy bên bạn bao nhiêu
-      - Quần áo bên bạn giá bao nhiêu nhỉ
-      - Váy bên bạn giá bao nhiêu
-
-  - intent: ask_previous_product
-    examples: |
-      - Tôi muốn xem cái [đầu](product_order) tiên
-      - Tôi muốn xem cái ở [đầu](product_order)
-      - Tôi muốn xem cái ở [giữa](product_order)
-      - Tôi muốn xem cái ở [cuối](product_order)
-      - Tôi muốn xem cái áo ở [đầu](product_order)
-      - Tôi muốn xem cái áo ở [giữa](product_order)
-      - Tôi muốn xem cái áo ở [cuối](product_order)
-      - Tôi muốn xem cái quần ở [đầu](product_order)
-      - Tôi muốn xem cái quần ở [giữa](product_order)
-      - Tôi muốn xem cái quần ở [cuối](product_order)
-      - Tôi muốn xem cái váy ở [đầu](product_order)
-      - Tôi muốn xem cái váy ở [giữa](product_order)
-      - Tôi muốn xem cái váy ở [cuối](product_order)
-      - Tôi muốn xem cái số [1](product_order)
-      - Tôi muốn xem cái số [2](product_order)
-      - Tôi muốn xem cái số [3](product_order)
-      - Tôi muốn xem cái số [4](product_order)
-      - Tôi muốn xem cái số [5](product_order)
-      - Tôi muốn xem cái số [6](product_order)
-      - Tôi muốn xem cái số [7](product_order)
-      - Tôi muốn xem cái áo số [1](product_order)
-      - Tôi muốn xem cái áo số [2](product_order)
-      - Tôi muốn xem cái áo số [3](product_order)
-      - Tôi muốn xem cái áo số [4](product_order)
-      - Tôi muốn xem cái áo số [5](product_order)
-      - Tôi muốn xem cái áo số [6](product_order)
-      - Tôi muốn xem cái áo số [7](product_order)
-      - Tôi muốn xem cái quần số [1](product_order)
-      - Tôi muốn xem cái quần số [2](product_order)
-      - Tôi muốn xem cái quần số [3](product_order)
-      - Tôi muốn xem cái quần số [4](product_order)
-      - Tôi muốn xem cái quần số [5](product_order)
-      - Tôi muốn xem cái quần số [6](product_order)
-      - Tôi muốn xem cái quần số [7](product_order)
-      - Tôi muốn xem cái váy số [1](product_order)
-      - Tôi muốn xem cái váy số [2](product_order)
-      - Tôi muốn xem cái váy số [3](product_order)
-      - Tôi muốn xem cái váy số [4](product_order)
-      - Tôi muốn xem cái váy số [5](product_order)
-      - Tôi muốn xem cái váy số [6](product_order)
-      - Tôi muốn xem cái váy số [7](product_order)
-      - Tôi muốn xem cái thứ [nhất](product_order)
-      - Tôi muốn xem cái thứ [hai](product_order)
-      - Tôi muốn xem cái thứ [ba](product_order)
-      - Tôi muốn xem cái thứ [1](product_order)
-      - Tôi muốn xem cái thứ [2](product_order)
-      - Tôi muốn xem cái thứ [3](product_order)
-      - Tôi muốn xem cái áo thứ [nhất](product_order)
-      - Tôi muốn xem cái áo thứ [hai](product_order)
-      - Tôi muốn xem cái áo thứ [ba](product_order)
-      - Tôi muốn xem cái áo thứ [1](product_order)
-      - Tôi muốn xem cái áo thứ [2](product_order)
-      - Tôi muốn xem cái áo thứ [3](product_order)
-      - Tôi muốn xem cái quần thứ [nhất](product_order)
-      - Tôi muốn xem cái quần thứ [hai](product_order)
-      - Tôi muốn xem cái quần thứ [ba](product_order)
-      - Tôi muốn xem cái quần thứ [1](product_order)
-      - Tôi muốn xem cái quần thứ [2](product_order)
-      - Tôi muốn xem cái quần thứ [3](product_order)
-      - Tôi muốn xem cái váy thứ [nhất](product_order)
-      - Tôi muốn xem cái váy thứ [hai](product_order)
-      - Tôi muốn xem cái váy thứ [ba](product_order)
-      - Tôi muốn xem cái váy thứ [1](product_order)
-      - Tôi muốn xem cái váy thứ [2](product_order)
-      - Tôi muốn xem cái váy thứ [3](product_order)
-      - Cho xem váy thứ [nhất](product_order)
-      - Cho xem váy thứ [hai](product_order)
-      - Cho xem váy thứ [ba](product_order)
-      - Cho xem váy thứ [1](product_order)
-      - Cho xem váy thứ [2](product_order)
-      - Cho xem váy thứ [3](product_order)
-      - Cho xem áo thứ [nhất](product_order)
-      - Cho xem áo thứ [hai](product_order)
-      - Cho xem áo thứ [ba](product_order)
-      - Cho xem áo thứ [1](product_order)
-      - Cho xem áo thứ [2](product_order)
-      - Cho xem áo thứ [3](product_order)
-      - Cho xem quần thứ [nhất](product_order)
-      - Cho xem quần thứ [hai](product_order)
-      - Cho xem quần thứ [ba](product_order)
-      - Cho xem quần thứ [1](product_order)
-      - Cho xem quần thứ [2](product_order)
-      - Cho xem quần thứ [3](product_order)
-      - Cho xem váy ở [đầu](product_order)
-      - Cho xem váy ở [giữa](product_order)
-      - Cho xem váy ở [cuối](product_order)
-      - Cho xem quần ở [đầu](product_order)
-      - Cho xem quần ở [giữa](product_order)
-      - Cho xem quần ở [cuối](product_order)
-      - Cho xem áo ở [đầu](product_order)
-      - Cho xem áo ở [giữa](product_order)
-      - Cho xem áo ở [cuối](product_order)
-
-  # 3. Gợi ý về chọn quần áo
-
-  - intent: ask_shop_dress
-    examples: |
-      - Shop ơi tôi muốn mua váy đi tiệc
-      - Tôi thích mặc váy
-      - Tôi sắp đi tiệc bạn có gợi ý gì không
-      - Cửa hàng mình có váy gì đẹp không
-      - Tôi tôi hơi mũm mĩm, bạn có gợi ý nào không
-      - Tôi sắp đi chơi với bạn trai, mà không biết nên mặc gì
-      - Tôi sắp đi picnic, bạn có gợi ý gì không
-      - Tôi sắp đi du lịch, bạn có gợi ý gì không
-      - Người tôi gầy có mặc được váy không
-      - Bạn thấy như thế nào nếu tôi mặc váy
-
-  - intent: ask_outfit_office
-    examples: |
-      - Tôi sắp đi làm ngày đầu ở công ty mới, bạn nghĩ nên mặc gì
-      - Bạn gợi ý cho tôi bộ nào mà đi làm mọi người đều phải nhìn tôi đi
-      - Tôi có công việc mới, bạn gợi ý đồ mặc cho tôi đi nhận việc với
-      - Tôi muốn thay đổi phong cách ăn mặc ở công sở
-      - Bạn có những bộ đồ công sở gì
-      - Mình đi liên hoan với công ty, nên mặc gì nhỉ
-      - Bạn nghĩ nên mặc như nào khi đi làm
-      - Đi làm ở cơ quan nhà nước nên mặc gì nhỉ
-      - Tôi sắp về ra mắt nhà bạn trai, nên mặc gì nhỉ
-
-  # 4. Khai thác thông tin người dùng(Lưu thông tin người dùng)
-
-  - intent: give_name
-    examples: |
-      - Tôi tên là [An](first_name)
-      - Tôi tên là [Anh](first_name)
-      - Tôi tên là [Ái](first_name)
-      - Tôi tên là [Diệp](first_name)
-      - Tôi tên là [Hạnh](first_name)
-      - Tôi tên là [Hân](first_name)
-      - Tôi tên là [Huyền](first_name)
-      - Tôi tên là [Ngọc](first_name)
-      - Tôi tên là [Nhi](first_name)
-      - Tôi tên là [Ngân](first_name)
-      - Tôi tên là [Như](first_name)
-      - Tôi tên là [Phương](first_name)
-      - Tôi tên là [Thư](first_name)
-      - Tôi tên là [Trang](first_name)
-      - Tôi tên là [Vy](first_name)
-      - Tôi tên là [Thảo](first_name)
-      - Tôi tên là [My](first_name)
-      - Tôi tên là [Vân Anh](first_name)
-      - Tôi tên là [Linh](first_name)
-      - Tôi tên là [Oanh](first_name)
-      - Tôi tên là [Tiên](first_name)
-      - Tôi tên là [Hường](first_name)
-      - Tôi tên là [Hương](first_name)
-      - Tôi tên là [Hiếu](first_name)
-      - Tôi tên là [Đạt](first_name)
-      - Tôi tên là [Đức](first_name)
-      - Tôi tên là [Trí](first_name)
-      - Tôi tên là [Trung](first_name)
-      - Tôi tên là [Hiệp](first_name)
-      - Tôi tên là [Hoàng](first_name)
-      - Tôi tên là [Hùng](first_name)
-      - Tôi tên là [Thắng](first_name)
-      - Tôi tên là [Nam](first_name)
-      - Tôi tên là [Long](first_name)
-      - Tôi tên là [Tú](first_name)
-      - Tôi tên là [Thanh](first_name)
-      - Tôi tên là [Tùng](first_name)
-      - Tôi tên là [Hưng](first_name)
-      - Tôi tên là [Điệp](first_name)
-      - Tôi tên là [Giang](first_name)
-      - Tôi tên là [Nghiêm](first_name)
-      - Tôi tên là [Tuấn](first_name)
-      - Tôi tên là [Minh](first_name)
-      - Tôi tên là [Mạnh](first_name)
-      - Tôi tên là [Mừng](first_name)
-      - Tôi tên là [Tài](first_name)
-      - Tôi tên là [Huy](first_name)
-      - Tôi tên là [Thành](first_name)
-      - Tôi tên là [Chung](first_name)
-      - Tôi tên là [Trung](first_name)
-      - Tôi tên là [Dũng](first_name)
-      - Tôi tên là [Dương](first_name)
-      - Tôi tên là [Mai](first_name)
-      - Tôi tên là [Phú](first_name)
-      - Tôi tên là [Trâm](first_name)
-      - Tôi tên là [Hằng](first_name)
-      - Tôi tên là [Thịnh](first_name)
-      - Tôi tên là [Duy](first_name)
-      - Tôi tên là [Nam](first_name)
-      - Tôi tên là [Thức](first_name)
-      - Mình tên là [An](first_name)
-      - Mình tên là [Anh](first_name)
-      - Mình tên là [Ái](first_name)
-      - Mình tên là [Diệp](first_name)
-      - Mình tên là [Hạnh](first_name)
-      - Mình tên là [Hân](first_name)
-      - Mình tên là [Huyền](first_name)
-      - Mình tên là [Ngọc](first_name)
-      - Mình tên là [Nhi](first_name)
-      - Mình tên là [Ngân](first_name)
-      - Mình tên là [Như](first_name)
-      - Mình tên là [Phương](first_name)
-      - Mình tên là [Thư](first_name)
-      - Mình tên là [Trang](first_name)
-      - Mình tên là [Vy](first_name)
-      - Mình tên là [Thảo](first_name)
-      - Mình tên là [My](first_name)
-      - Mình tên là [Vân Anh](first_name)
-      - Mình tên là [Linh](first_name)
-      - Mình tên là [Oanh](first_name)
-      - Mình tên là [Tiên](first_name)
-      - Mình tên là [Hường](first_name)
-      - Mình tên là [Hương](first_name)
-      - Mình tên là [Hiếu](first_name)
-      - Mình tên là [Đạt](first_name)
-      - Mình tên là [Đức](first_name)
-      - Mình tên là [Trí](first_name)
-      - Mình tên là [Trung](first_name)
-      - Mình tên là [Hiệp](first_name)
-      - Mình tên là [Hoàng](first_name)
-      - Mình tên là [Hùng](first_name)
-      - Mình tên là [Thắng](first_name)
-      - Mình tên là [Nam](first_name)
-      - Mình tên là [Long](first_name)
-      - Mình tên là [Tú](first_name)
-      - Mình tên là [Thanh](first_name)
-      - Mình tên là [Tùng](first_name)
-      - Mình tên là [Hưng](first_name)
-      - Mình tên là [Điệp](first_name)
-      - Mình tên là [Giang](first_name)
-      - Mình tên là [Nghiêm](first_name)
-      - Mình tên là [Tuấn](first_name)
-      - Mình tên là [Minh](first_name)
-      - Mình tên là [Mạnh](first_name)
-      - Mình tên là [Mừng](first_name)
-      - Mình tên là [Tài](first_name)
-      - Mình tên là [Huy](first_name)
-      - Mình tên là [Thành](first_name)
-      - Mình tên là [Chung](first_name)
-      - Mình tên là [Trung](first_name)
-      - Mình tên là [Dũng](first_name)
-      - Mình tên là [Dương](first_name)
-      - Mình tên là [Mai](first_name)
-      - Mình tên là [Phú](first_name)
-      - Mình tên là [Trâm](first_name)
-      - Mình tên là [Hằng](first_name)
-      - Mình tên là [Thịnh](first_name)
-      - Mình tên là [Duy](first_name)
-      - Mình tên là [Nam](first_name)
-      - Mình tên là [Thức](first_name)
-      - tên là [An](first_name)
-      - tên là [Anh](first_name)
-      - tên là [Ái](first_name)
-      - tên là [Diệp](first_name)
-      - tên là [Hạnh](first_name)
-      - tên là [Hân](first_name)
-      - tên là [Huyền](first_name)
-      - tên là [Ngọc](first_name)
-      - tên là [Nhi](first_name)
-      - tên là [Ngân](first_name)
-      - tên là [Như](first_name)
-      - tên là [Phương](first_name)
-      - tên là [Thư](first_name)
-      - tên là [Trang](first_name)
-      - tên là [Vy](first_name)
-      - tên là [Thảo](first_name)
-      - tên là [My](first_name)
-      - tên là [Vân Anh](first_name)
-      - tên là [Linh](first_name)
-      - tên là [Oanh](first_name)
-      - tên là [Tiên](first_name)
-      - tên là [Hường](first_name)
-      - tên là [Hương](first_name)
-      - tên là [Hiếu](first_name)
-      - tên là [Đạt](first_name)
-      - tên là [Đức](first_name)
-      - tên là [Trí](first_name)
-      - tên là [Trung](first_name)
-      - tên là [Hiệp](first_name)
-      - tên là [Hoàng](first_name)
-      - tên là [Hùng](first_name)
-      - tên là [Thắng](first_name)
-      - tên là [Nam](first_name)
-      - tên là [Long](first_name)
-      - tên là [Tú](first_name)
-      - tên là [Thanh](first_name)
-      - tên là [Tùng](first_name)
-      - tên là [Hưng](first_name)
-      - tên là [Điệp](first_name)
-      - tên là [Giang](first_name)
-      - tên là [Nghiêm](first_name)
-      - tên là [Tuấn](first_name)
-      - tên là [Minh](first_name)
-      - tên là [Mạnh](first_name)
-      - tên là [Mừng](first_name)
-      - tên là [Tài](first_name)
-      - tên là [Huy](first_name)
-      - tên là [Thành](first_name)
-      - tên là [Chung](first_name)
-      - tên là [Trung](first_name)
-      - tên là [Dũng](first_name)
-      - tên là [Dương](first_name)
-      - tên là [Mai](first_name)
-      - tên là [Phú](first_name)
-      - tên là [Trâm](first_name)
-      - tên là [Hằng](first_name)
-      - tên là [Thịnh](first_name)
-      - tên là [Duy](first_name)
-      - tên là [Nam](first_name)
-      - tên là [Thức](first_name)
-
-  - intent: give_phone
-    examples: |
-      - [0963632312](phone)
-      - [0923434345](phone)
-      - [0967453625](phone)
-      - [0912345678](phone)
-      - [0912345678](phone)
-      - [0346788337](phone)
-      - [0933476374](phone)
-      - [0989776376](phone)
-      - [0999746466](phone)
-      - [0966635388](phone)
-      - [0974654767](phone)
-      - [0923434322](phone)
-      - [0945366744](phone)
-      - [0956754644](phone)
-      - [0945645634](phone)
-      - [0998734765](phone)
-      - [0909283476](phone)
-      - [0994486392](phone)
-      - [0923458734](phone)
-      - [0909888833](phone)
-      - [0923466533](phone)
-      - [0993682639](phone)
-      - [0936783763](phone)
-      - [0984737463](phone)
-      - [0998263763](phone)
-      - [0908978289](phone)
-      - [0909887634](phone)
-      - [0908738762](phone)
-      - [0912378634](phone)
-      - [0909827349](phone)
-      - [0909834763](phone)
-      - [0909876633](phone)
-      - [0909897876](phone)
-      - [0909876743](phone)
-      - [0349876743](phone)
-      - [0346840477](phone)
-      - [0342347634](phone)
-      - [0376374233](phone)
-      - [0390897343](phone)
-      - [0358763292](phone)
-      - [0323976343](phone)
-      - [0312398734](phone)
-      - [0312938723](phone)
-      - [0339485723](phone)
-      - [0320347383](phone)
-      - [0329347837](phone)
-      - [0323894763](phone)
-      - [0392387433](phone)
-      - [0392738439](phone)
-      - [0398234362](phone)
-      - [0345334542](phone)
-      - [0393778892](phone)
-      - [0302837427](phone)
-      - [0334534987](phone)
-      - [0339847548](phone)
-      - [0335948749](phone)
-      - [0336485693](phone)
-      - [0334508703](phone)
-      - [0343569873](phone)
-      - [0334578464](phone)
-
-  - intent: give_address
-    examples: |
-      - [tỉnh Hòa Bình](address)
-      - [Số 15, Nguyễn văn Lộc, Hà Đông, Hà Nội](address)
-      - [thành phố Bác Giang](address)
-      - Tôi ở
-      - Địa chỉ ở
-      - Địa chỉ là
-      - Ở ABC nhé
-
-  # 5. Mua sản phẩm
-
-  - intent: buy_product_intent
-    examples: |
-      - Cho tôi mua [quần ielgy denim lưng cao dáng rộng](buy_product)
-      - Tôi mua cái [quần ielgy denim lưng cao dáng rộng](buy_product)
-      - Cho tôi mua cái [quần ielgy denim lưng cao dáng rộng](buy_product) nhé
-      - Chốt mua [quần ielgy denim lưng cao dáng rộng](buy_product)
-      - Ship cho tôi [quần ielgy denim lưng cao dáng rộng](buy_product) nhé
-      - Tôi mua [quần ielgy denim lưng cao dáng rộng](buy_product)
-      - Mua [quần ielgy denim lưng cao dáng rộng](buy_product) nhé
-      - Tôi đặt [quần ielgy denim lưng cao dáng rộng](buy_product)
-      - Cho tôi mua [quần dài lovito cột dây](buy_product)
-      - Tôi mua cái [quần dài lovito cột dây](buy_product)
-      - Cho tôi mua cái [quần dài lovito cột dây](buy_product) nhé
-      - Chốt mua [quần dài lovito cột dây](buy_product)
-      - Ship cho tôi [quần dài lovito cột dây](buy_product) nhé
-      - Tôi mua [quần dài lovito cột dây](buy_product)
-      - Mua [quần dài lovito cột dây](buy_product) nhé
-      - Tôi đặt [quần dài lovito cột dây](buy_product)
-      - Cho tôi mua [quần thể thao yeya ống rộng](buy_product)
-      - Tôi mua cái [quần thể thao yeya ống rộng](buy_product)
-      - Cho tôi mua cái [quần thể thao yeya ống rộng](buy_product) nhé
-      - Chốt mua [quần thể thao yeya ống rộng](buy_product)
-      - Ship cho tôi [quần thể thao yeya ống rộng](buy_product) nhé
-      - Tôi mua [quần thể thao yeya ống rộng](buy_product)
-      - Mua [quần thể thao yeya ống rộng](buy_product) nhé
-      - Tôi đặt [quần thể thao yeya ống rộng](buy_product)
-      - Cho tôi mua [quần jean daduhey](buy_product)
-      - Tôi mua cái [quần jean daduhey](buy_product)
-      - Cho tôi mua cái [quần jean daduhey](buy_product) nhé
-      - Chốt mua [quần jean daduhey](buy_product)
-      - Ship cho tôi [quần jean daduhey](buy_product) nhé
-      - Tôi mua [quần jean daduhey](buy_product)
-      - Mua [quần jean daduhey](buy_product) nhé
-      - Tôi đặt [quần jean daduhey](buy_product)
-      - Cho tôi mua [quần kaki túi hộp ống suông](buy_product)
-      - Tôi mua cái [quần kaki túi hộp ống suông](buy_product)
-      - Cho tôi mua cái [quần kaki túi hộp ống suông](buy_product) nhé
-      - Chốt mua [quần kaki túi hộp ống suông](buy_product)
-      - Ship cho tôi [quần kaki túi hộp ống suông](buy_product) nhé
-      - Tôi mua [quần kaki túi hộp ống suông](buy_product)
-      - Mua [quần kaki túi hộp ống suông](buy_product) nhé
-      - Tôi đặt [quần kaki túi hộp ống suông](buy_product)
-      - Cho tôi mua [váy đi tiệc tahe v267](buy_product)
-      - Tôi mua cái [váy đi tiệc tahe v267](buy_product)
-      - Cho tôi mua cái [váy đi tiệc tahe v267](buy_product) nhé
-      - Chốt mua [váy đi tiệc tahe v267](buy_product)
-      - Ship cho tôi [váy đi tiệc tahe v267](buy_product) nhé
-      - Tôi mua [váy đi tiệc tahe v267](buy_product)
-      - Mua [váy đi tiệc tahe v267](buy_product) nhé
-      - Tôi đặt [váy đi tiệc tahe v267](buy_product)
-      - Cho tôi mua [đầm váy đi đám cưới dự tiệc vvn042309](buy_product)
-      - Tôi mua cái [đầm váy đi đám cưới dự tiệc vvn042309](buy_product)
-      - Cho tôi mua cái [đầm váy đi đám cưới dự tiệc vvn042309](buy_product) nhé
-      - Chốt mua [đầm váy đi đám cưới dự tiệc vvn042309](buy_product)
-      - Ship cho tôi [đầm váy đi đám cưới dự tiệc vvn042309](buy_product) nhé
-      - Tôi mua [đầm váy đi đám cưới dự tiệc vvn042309](buy_product)
-      - Mua [đầm váy đi đám cưới dự tiệc vvn042309](buy_product) nhé
-      - Tôi đặt [đầm váy đi đám cưới dự tiệc vvn042309](buy_product)
-      - Cho tôi mua [váy công sở dự tiệc sang trọng bigsize amyra](buy_product)
-      - Tôi mua cái [váy công sở dự tiệc sang trọng bigsize amyra](buy_product)
-      - Cho tôi mua cái [váy công sở dự tiệc sang trọng bigsize amyra](buy_product) nhé
-      - Chốt mua [váy công sở dự tiệc sang trọng bigsize amyra](buy_product)
-      - Ship cho tôi [váy công sở dự tiệc sang trọng bigsize amyra](buy_product) nhé
-      - Tôi mua [váy công sở dự tiệc sang trọng bigsize amyra](buy_product)
-      - Mua [váy công sở dự tiệc sang trọng bigsize amyra](buy_product) nhé
-      - Tôi đặt [váy công sở dự tiệc sang trọng bigsize amyra](buy_product)
-      - Cho tôi mua [váy ren tiểu thư v920](buy_product)
-      - Tôi mua cái [váy ren tiểu thư v920](buy_product)
-      - Cho tôi mua cái [váy ren tiểu thư v920](buy_product) nhé
-      - Chốt mua [váy ren tiểu thư v920](buy_product)
-      - Ship cho tôi [váy ren tiểu thư v920](buy_product) nhé
-      - Tôi mua [váy ren tiểu thư v920](buy_product)
-      - Mua [váy ren tiểu thư v920](buy_product) nhé
-      - Tôi đặt [váy ren tiểu thư v920](buy_product)
-      - Cho tôi mua [váy tơ tiểu thư v908](buy_product)
-      - Tôi mua cái [váy tơ tiểu thư v908](buy_product)
-      - Cho tôi mua cái [váy tơ tiểu thư v908](buy_product) nhé
-      - Chốt mua [váy tơ tiểu thư v908](buy_product)
-      - Ship cho tôi [váy tơ tiểu thư v908](buy_product) nhé
-      - Tôi mua [váy tơ tiểu thư v908](buy_product)
-      - Mua [váy tơ tiểu thư v908](buy_product) nhé
-      - Tôi đặt [váy tơ tiểu thư v908](buy_product)
-      - Cho tôi mua [váy voan tiểu thư v784](buy_product)
-      - Tôi mua cái [váy voan tiểu thư v784](buy_product)
-      - Cho tôi mua cái [váy voan tiểu thư v784](buy_product) nhé
-      - Chốt mua [váy voan tiểu thư v784](buy_product)
-      - Ship cho tôi [váy voan tiểu thư v784](buy_product) nhé
-      - Tôi mua [váy voan tiểu thư v784](buy_product)
-      - Mua [váy voan tiểu thư v784](buy_product) nhé
-      - Tôi đặt [váy voan tiểu thư v784](buy_product)
-      - Cho tôi mua [váy hoa nhí v243](buy_product)
-      - Tôi mua cái [váy hoa nhí v243](buy_product)
-      - Cho tôi mua cái [váy hoa nhí v243](buy_product) nhé
-      - Chốt mua [váy hoa nhí v243](buy_product)
-      - Ship cho tôi [váy hoa nhí v243](buy_product) nhé
-      - Tôi mua [váy hoa nhí v243](buy_product)
-      - Mua [váy hoa nhí v243](buy_product) nhé
-      - Tôi đặt [váy hoa nhí v243](buy_product)
-      - Cho tôi mua [áo thun tay ngắn dây rút](buy_product)
-      - Tôi mua cái [áo thun tay ngắn dây rút](buy_product)
-      - Cho tôi mua cái [áo thun tay ngắn dây rút](buy_product) nhé
-      - Chốt mua [áo thun tay ngắn dây rút](buy_product)
-      - Ship cho tôi [áo thun tay ngắn dây rút](buy_product) nhé
-      - Tôi mua [áo thun tay ngắn dây rút](buy_product)
-      - Mua [áo thun tay ngắn dây rút](buy_product) nhé
-      - Tôi đặt [áo thun tay ngắn dây rút](buy_product)
-      - Cho tôi mua [áo thun xiang nian ni tay ngắn phối dây rút](buy_product)
-      - Tôi mua cái [áo thun xiang nian ni tay ngắn phối dây rút](buy_product)
-      - Cho tôi mua cái [áo thun xiang nian ni tay ngắn phối dây rút](buy_product) nhé
-      - Chốt mua [áo thun xiang nian ni tay ngắn phối dây rút](buy_product)
-      - Ship cho tôi [áo thun xiang nian ni tay ngắn phối dây rút](buy_product) nhé
-      - Tôi mua [áo thun xiang nian ni tay ngắn phối dây rút](buy_product)
-      - Mua [áo thun xiang nian ni tay ngắn phối dây rút](buy_product) nhé
-      - Tôi đặt [áo thun xiang nian ni tay ngắn phối dây rút](buy_product)
-      - Cho tôi mua [áo phông áo thun american vintage](buy_product)
-      - Tôi mua cái [áo phông áo thun american vintage](buy_product)
-      - Cho tôi mua cái [áo phông áo thun american vintage](buy_product) nhé
-      - Chốt mua [áo phông áo thun american vintage](buy_product)
-      - Ship cho tôi [áo phông áo thun american vintage](buy_product) nhé
-      - Tôi mua [áo phông áo thun american vintage](buy_product)
-      - Mua [áo phông áo thun american vintage](buy_product) nhé
-      - Tôi đặt [áo phông áo thun american vintage](buy_product)
-      - Cho tôi mua [áo thun nữ thời trang ngắn tay oversize](buy_product)
-      - Tôi mua cái [áo thun nữ thời trang ngắn tay oversize](buy_product)
-      - Cho tôi mua cái [áo thun nữ thời trang ngắn tay oversize](buy_product) nhé
-      - Chốt mua [áo thun nữ thời trang ngắn tay oversize](buy_product)
-      - Ship cho tôi [áo thun nữ thời trang ngắn tay oversize](buy_product) nhé
-      - Tôi mua [áo thun nữ thời trang ngắn tay oversize](buy_product)
-      - Mua [áo thun nữ thời trang ngắn tay oversize](buy_product) nhé
-      - Tôi đặt [áo thun nữ thời trang ngắn tay oversize](buy_product)
-      - Cho tôi mua [áo sơ mi nữ tay bồng sm12](buy_product)
-      - Tôi mua cái [áo sơ mi nữ tay bồng sm12](buy_product)
-      - Cho tôi mua cái [áo sơ mi nữ tay bồng sm12](buy_product) nhé
-      - Chốt mua [áo sơ mi nữ tay bồng sm12](buy_product)
-      - Ship cho tôi [áo sơ mi nữ tay bồng sm12](buy_product) nhé
-      - Tôi mua [áo sơ mi nữ tay bồng sm12](buy_product)
-      - Mua [áo sơ mi nữ tay bồng sm12](buy_product) nhé
-      - Tôi đặt [áo sơ mi nữ tay bồng sm12](buy_product)
-      - Cho tôi mua [áo sơ mi nữ công sở lavilo sm07](buy_product)
-      - Tôi mua cái [áo sơ mi nữ công sở lavilo sm07](buy_product)
-      - Cho tôi mua cái [áo sơ mi nữ công sở lavilo sm07](buy_product) nhé
-      - Chốt mua [áo sơ mi nữ công sở lavilo sm07](buy_product)
-      - Ship cho tôi [áo sơ mi nữ công sở lavilo sm07](buy_product) nhé
-      - Tôi mua [áo sơ mi nữ công sở lavilo sm07](buy_product)
-      - Mua [áo sơ mi nữ công sở lavilo sm07](buy_product) nhé
-      - Tôi đặt [áo sơ mi nữ công sở lavilo sm07](buy_product)
-
-  - intent: cancle_buy_product
-    examples: |
-      - tôi không mua [quần ielgy denim lưng cao dáng rộng](cancle_product) nữa
-      - tôi hủy không mua [quần ielgy denim lưng cao dáng rộng](cancle_product) nữa nhé
-      - cho tôi hủy đơn [quần ielgy denim lưng cao dáng rộng](cancle_product) nhé
-      - hủy hộ tôi cái [quần ielgy denim lưng cao dáng rộng](cancle_product)
-      - hủy mua [quần ielgy denim lưng cao dáng rộng](cancle_product) shop nhé
-      - không mua [quần ielgy denim lưng cao dáng rộng](cancle_product) nữa, hủy đơn hộ tôi nhé
-      - tôi không mua [quần dài lovito cột dây](cancle_product) nữa
-      - tôi hủy không mua [quần dài lovito cột dây](cancle_product) nữa nhé
-      - cho tôi hủy đơn [quần dài lovito cột dây](cancle_product) nhé
-      - hủy hộ tôi cái [quần dài lovito cột dây](cancle_product)
-      - hủy mua [quần dài lovito cột dây](cancle_product) shop nhé
-      - không mua [quần dài lovito cột dây](cancle_product) nữa, hủy đơn hộ tôi nhé
-      - tôi không mua [quần thể thao yeya ống rộng](cancle_product) nữa
-      - tôi hủy không mua [quần thể thao yeya ống rộng](cancle_product) nữa nhé
-      - cho tôi hủy đơn [quần thể thao yeya ống rộng](cancle_product) nhé
-      - hủy hộ tôi cái [quần thể thao yeya ống rộng](cancle_product)
-      - hủy mua [quần thể thao yeya ống rộng](cancle_product) shop nhé
-      - không mua [quần thể thao yeya ống rộng](cancle_product) nữa, hủy đơn hộ tôi nhé
-      - tôi không mua [quần jean daduhey](cancle_product) nữa
-      - tôi hủy không mua [quần jean daduhey](cancle_product) nữa nhé
-      - cho tôi hủy đơn [quần jean daduhey](cancle_product) nhé
-      - hủy hộ tôi cái [quần jean daduhey](cancle_product)
-      - hủy mua [quần jean daduhey](cancle_product) shop nhé
-      - không mua [quần jean daduhey](cancle_product) nữa, hủy đơn hộ tôi nhé
-      - tôi không mua [quần kaki túi hộp ống suông](cancle_product) nữa
-      - tôi hủy không mua [quần kaki túi hộp ống suông](cancle_product) nữa nhé
-      - cho tôi hủy đơn [quần kaki túi hộp ống suông](cancle_product) nhé
-      - hủy hộ tôi cái [quần kaki túi hộp ống suông](cancle_product)
-      - hủy mua [quần kaki túi hộp ống suông](cancle_product) shop nhé
-      - không mua [quần kaki túi hộp ống suông](cancle_product) nữa, hủy đơn hộ tôi nhé
-      - tôi không mua [váy đi tiệc tahe v267](cancle_product) nữa
-      - tôi hủy không mua [váy đi tiệc tahe v267](cancle_product) nữa nhé
-      - cho tôi hủy đơn [váy đi tiệc tahe v267](cancle_product) nhé
-      - hủy hộ tôi cái [váy đi tiệc tahe v267](cancle_product)
-      - hủy mua [váy đi tiệc tahe v267](cancle_product) shop nhé
-      - không mua [váy đi tiệc tahe v267](cancle_product) nữa, hủy đơn hộ tôi nhé
-      - tôi không mua [đầm váy đi đám cưới dự tiệc vvn042309](cancle_product) nữa
-      - tôi hủy không mua [đầm váy đi đám cưới dự tiệc vvn042309](cancle_product) nữa nhé
-      - cho tôi hủy đơn [đầm váy đi đám cưới dự tiệc vvn042309](cancle_product) nhé
-      - hủy hộ tôi cái [đầm váy đi đám cưới dự tiệc vvn042309](cancle_product)
-      - hủy mua [đầm váy đi đám cưới dự tiệc vvn042309](cancle_product) shop nhé
-      - không mua [đầm váy đi đám cưới dự tiệc vvn042309](cancle_product) nữa, hủy đơn hộ tôi nhé
-      - tôi không mua [váy công sở dự tiệc sang trọng bigsize amyra](cancle_product) nữa
-      - tôi hủy không mua [váy công sở dự tiệc sang trọng bigsize amyra](cancle_product) nữa nhé
-      - cho tôi hủy đơn [váy công sở dự tiệc sang trọng bigsize amyra](cancle_product) nhé
-      - hủy hộ tôi cái [váy công sở dự tiệc sang trọng bigsize amyra](cancle_product)
-      - hủy mua [váy công sở dự tiệc sang trọng bigsize amyra](cancle_product) shop nhé
-      - không mua [váy công sở dự tiệc sang trọng bigsize amyra](cancle_product) nữa, hủy đơn hộ tôi nhé
-      - tôi không mua [váy ren tiểu thư v920](cancle_product) nữa
-      - tôi hủy không mua [váy ren tiểu thư v920](cancle_product) nữa nhé
-      - cho tôi hủy đơn [váy ren tiểu thư v920](cancle_product) nhé
-      - hủy hộ tôi cái [váy ren tiểu thư v920](cancle_product)
-      - hủy mua [váy ren tiểu thư v920](cancle_product) shop nhé
-      - không mua [váy ren tiểu thư v920](cancle_product) nữa, hủy đơn hộ tôi nhé
-      - tôi không mua [váy tơ tiểu thư v908](cancle_product) nữa
-      - tôi hủy không mua [váy tơ tiểu thư v908](cancle_product) nữa nhé
-      - cho tôi hủy đơn [váy tơ tiểu thư v908](cancle_product) nhé
-      - hủy hộ tôi cái [váy tơ tiểu thư v908](cancle_product)
-      - hủy mua [váy tơ tiểu thư v908](cancle_product) shop nhé
-      - không mua [váy tơ tiểu thư v908](cancle_product) nữa, hủy đơn hộ tôi nhé
-      - tôi không mua [váy voan tiểu thư v784](cancle_product) nữa
-      - tôi hủy không mua [váy voan tiểu thư v784](cancle_product) nữa nhé
-      - cho tôi hủy đơn [váy voan tiểu thư v784](cancle_product) nhé
-      - hủy hộ tôi cái [váy voan tiểu thư v784](cancle_product)
-      - hủy mua [váy voan tiểu thư v784](cancle_product) shop nhé
-      - không mua [váy voan tiểu thư v784](cancle_product) nữa, hủy đơn hộ tôi nhé
-      - tôi không mua [váy hoa nhí v243](cancle_product) nữa
-      - tôi hủy không mua [váy hoa nhí v243](cancle_product) nữa nhé
-      - cho tôi hủy đơn [váy hoa nhí v243](cancle_product) nhé
-      - hủy hộ tôi cái [váy hoa nhí v243](cancle_product)
-      - hủy mua [váy hoa nhí v243](cancle_product) shop nhé
-      - không mua [váy hoa nhí v243](cancle_product) nữa, hủy đơn hộ tôi nhé
-      - tôi không mua [áo thun tay ngắn dây rút](cancle_product) nữa
-      - tôi hủy không mua [áo thun tay ngắn dây rút](cancle_product) nữa nhé
-      - cho tôi hủy đơn [áo thun tay ngắn dây rút](cancle_product) nhé
-      - hủy hộ tôi cái [áo thun tay ngắn dây rút](cancle_product)
-      - hủy mua [áo thun tay ngắn dây rút](cancle_product) shop nhé
-      - không mua [áo thun tay ngắn dây rút](cancle_product) nữa, hủy đơn hộ tôi nhé
-      - tôi không mua [áo thun xiang nian ni tay ngắn phối dây rút](cancle_product) nữa
-      - tôi hủy không mua [áo thun xiang nian ni tay ngắn phối dây rút](cancle_product) nữa nhé
-      - cho tôi hủy đơn [áo thun xiang nian ni tay ngắn phối dây rút](cancle_product) nhé
-      - hủy hộ tôi cái [áo thun xiang nian ni tay ngắn phối dây rút](cancle_product)
-      - hủy mua [áo thun xiang nian ni tay ngắn phối dây rút](cancle_product) shop nhé
-      - không mua [áo thun xiang nian ni tay ngắn phối dây rút](cancle_product) nữa, hủy đơn hộ tôi nhé
-      - tôi không mua [áo phông áo thun american vintage ](cancle_product) nữa
-      - tôi hủy không mua [áo phông áo thun american vintage ](cancle_product) nữa nhé
-      - cho tôi hủy đơn [áo phông áo thun american vintage ](cancle_product) nhé
-      - hủy hộ tôi cái [áo phông áo thun american vintage ](cancle_product)
-      - hủy mua [áo phông áo thun american vintage ](cancle_product) shop nhé
-      - không mua [áo phông áo thun american vintage ](cancle_product) nữa, hủy đơn hộ tôi nhé
-      - tôi không mua [áo thun nữ thời trang ngắn tay oversize](cancle_product) nữa
-      - tôi hủy không mua [áo thun nữ thời trang ngắn tay oversize](cancle_product) nữa nhé
-      - cho tôi hủy đơn [áo thun nữ thời trang ngắn tay oversize](cancle_product) nhé
-      - hủy hộ tôi cái [áo thun nữ thời trang ngắn tay oversize](cancle_product)
-      - hủy mua [áo thun nữ thời trang ngắn tay oversize](cancle_product) shop nhé
-      - không mua [áo thun nữ thời trang ngắn tay oversize](cancle_product) nữa, hủy đơn hộ tôi nhé
-      - tôi không mua [áo sơ mi nữ tay bồng sm12](cancle_product) nữa
-      - tôi hủy không mua [áo sơ mi nữ tay bồng sm12](cancle_product) nữa nhé
-      - cho tôi hủy đơn [áo sơ mi nữ tay bồng sm12](cancle_product) nhé
-      - hủy hộ tôi cái [áo sơ mi nữ tay bồng sm12](cancle_product)
-      - hủy mua [áo sơ mi nữ tay bồng sm12](cancle_product) shop nhé
-      - không mua [áo sơ mi nữ tay bồng sm12](cancle_product) nữa, hủy đơn hộ tôi nhé
-      - tôi không mua [áo sơ mi nữ công sở lavilo sm07](cancle_product) nữa
-      - tôi hủy không mua [áo sơ mi nữ công sở lavilo sm07](cancle_product) nữa nhé
-      - cho tôi hủy đơn [áo sơ mi nữ công sở lavilo sm07](cancle_product) nhé
-      - hủy hộ tôi cái [áo sơ mi nữ công sở lavilo sm07](cancle_product)
-      - hủy mua [áo sơ mi nữ công sở lavilo sm07](cancle_product) shop nhé
-      - không mua [áo sơ mi nữ công sở lavilo sm07](cancle_product) nữa, hủy đơn hộ tôi nhé
-
-  - intent: ask_product_detail
-    examples: |
-      - giá của [áo thun nữ thời trang ngắn tay oversize](product_detail) 
-      - cho tôi xem [áo thun nữ thời trang ngắn tay oversize](product_detail) 
-      - tôi muốn xem [áo thun nữ thời trang ngắn tay oversize](product_detail) 
-      - tôi muốn xem cái [áo thun nữ thời trang ngắn tay oversize](product_detail) nhé
-      - gửi tôi thông tin [áo thun nữ thời trang ngắn tay oversize](product_detail) đi
-      - cho tôi xem ảnh [áo thun nữ thời trang ngắn tay oversize](product_detail) shop nhé
-      - tôi muốn xem ảnh của [áo thun nữ thời trang ngắn tay oversize](product_detail) 
-      - cho xem ảnh và thông tin của [áo thun nữ thời trang ngắn tay oversize](product_detail) 
-      - gửi thêm thông tin về [áo thun nữ thời trang ngắn tay oversize](product_detail) cho tôi đi
-      - thông tin chi tiết về [áo thun nữ thời trang ngắn tay oversize](product_detail) đi
-      - gửi thông tin kèm hình ảnh của [áo thun nữ thời trang ngắn tay oversize](product_detail) đi
-      - cái [áo thun nữ thời trang ngắn tay oversize](product_detail) có ảnh không
-      - không có ảnh cho [áo thun nữ thời trang ngắn tay oversize](product_detail) à
-      - thông tin chi tiết cho [áo thun nữ thời trang ngắn tay oversize](product_detail) đi
-      - cho tôi xem áo [áo thun nữ thời trang ngắn tay oversize](product_detail)
-      - cho tôi xem quần [áo thun nữ thời trang ngắn tay oversize](product_detail)
-      - cho tôi xem váy [áo thun nữ thời trang ngắn tay oversize](product_detail)
-      - tôi muốn xem váy [áo thun nữ thời trang ngắn tay oversize](product_detail)
-      - tôi muốn xem quần [áo thun nữ thời trang ngắn tay oversize](product_detail)
-      - tôi muốn xem áo [áo thun nữ thời trang ngắn tay oversize](product_detail)
-      - cho hỏi giá của [quần ielgy denim lưng cao dáng rộng](product_detail) 
-      - giá của [quần ielgy denim lưng cao dáng rộng](product_detail) như thê nào
-      - cho tôi xem [quần ielgy denim lưng cao dáng rộng](product_detail) 
-      - tôi muốn xem [quần ielgy denim lưng cao dáng rộng](product_detail) 
-      - tôi muốn xem cái [quần ielgy denim lưng cao dáng rộng](product_detail) nhé
-      - gửi tôi thông tin [quần ielgy denim lưng cao dáng rộng](product_detail) đi
-      - cho tôi xem ảnh [quần ielgy denim lưng cao dáng rộng](product_detail) shop nhé
-      - tôi muốn xem ảnh của [quần ielgy denim lưng cao dáng rộng](product_detail) 
-      - cho xem ảnh và thông tin của [quần ielgy denim lưng cao dáng rộng](product_detail) 
-      - gửi thêm thông tin về [quần ielgy denim lưng cao dáng rộng](product_detail) cho tôi đi
-      - thông tin chi tiết về [quần ielgy denim lưng cao dáng rộng](product_detail) đi
-      - gửi thông tin kèm hình ảnh của [quần ielgy denim lưng cao dáng rộng](product_detail) đi
-      - cái [quần ielgy denim lưng cao dáng rộng](product_detail) có ảnh không
-      - không có ảnh cho [quần ielgy denim lưng cao dáng rộng](product_detail) à
-      - thông tin chi tiết cho [quần ielgy denim lưng cao dáng rộng](product_detail) đi
-      - cho tôi xem áo [quần ielgy denim lưng cao dáng rộng](product_detail)
-      - cho tôi xem quần [quần ielgy denim lưng cao dáng rộng](product_detail)
-      - cho tôi xem váy [quần ielgy denim lưng cao dáng rộng](product_detail)
-      - tôi muốn xem váy [quần ielgy denim lưng cao dáng rộng](product_detail)
-      - tôi muốn xem quần [quần ielgy denim lưng cao dáng rộng](product_detail)
-      - tôi muốn xem áo [quần ielgy denim lưng cao dáng rộng](product_detail)
-      - giá của [quần dài lovito cột dây](product_detail) 
-      - cho tôi xem [quần dài lovito cột dây](product_detail) 
-      - tôi muốn xem [quần dài lovito cột dây](product_detail) 
-      - tôi muốn xem cái [quần dài lovito cột dây](product_detail) nhé
-      - gửi tôi thông tin [quần dài lovito cột dây](product_detail) đi
-      - cho tôi xem ảnh [quần dài lovito cột dây](product_detail) shop nhé
-      - tôi muốn xem ảnh của [quần dài lovito cột dây](product_detail) 
-      - cho xem ảnh và thông tin của [quần dài lovito cột dây](product_detail) 
-      - gửi thêm thông tin về [quần dài lovito cột dây](product_detail) cho tôi đi
-      - thông tin chi tiết về [quần dài lovito cột dây](product_detail) đi
-      - gửi thông tin kèm hình ảnh của [quần dài lovito cột dây](product_detail) đi
-      - cái [quần dài lovito cột dây](product_detail) có ảnh không
-      - không có ảnh cho [quần dài lovito cột dây](product_detail) à
-      - thông tin chi tiết cho [quần dài lovito cột dây](product_detail) đi
-      - cho tôi xem áo [quần dài lovito cột dây](product_detail)
-      - cho tôi xem quần [quần dài lovito cột dây](product_detail)
-      - cho tôi xem váy [quần dài lovito cột dây](product_detail)
-      - tôi muốn xem váy [quần dài lovito cột dây](product_detail)
-      - tôi muốn xem quần [quần dài lovito cột dây](product_detail)
-      - tôi muốn xem áo [quần dài lovito cột dây](product_detail)
-      - cho tôi xem [quần thể thao yeya ống rộng](product_detail) 
-      - giá của [quần thể thao yeya ống rộng](product_detail) là bao nhiêu
-      - tôi muốn xem [quần thể thao yeya ống rộng](product_detail) 
-      - tôi muốn xem cái [quần thể thao yeya ống rộng](product_detail) nhé
-      - gửi tôi thông tin [quần thể thao yeya ống rộng](product_detail) đi
-      - cho tôi xem ảnh [quần thể thao yeya ống rộng](product_detail) shop nhé
-      - tôi muốn xem ảnh của [quần thể thao yeya ống rộng](product_detail) 
-      - cho xem ảnh và thông tin của [quần thể thao yeya ống rộng](product_detail) 
-      - gửi thêm thông tin về [quần thể thao yeya ống rộng](product_detail) cho tôi đi
-      - thông tin chi tiết về [quần thể thao yeya ống rộng](product_detail) đi
-      - gửi thông tin kèm hình ảnh của [quần thể thao yeya ống rộng](product_detail) đi
-      - cái [quần thể thao yeya ống rộng](product_detail) có ảnh không
-      - không có ảnh cho [quần thể thao yeya ống rộng](product_detail) à
-      - thông tin chi tiết cho [quần thể thao yeya ống rộng](product_detail) đi
-      - cho tôi xem áo [quần thể thao yeya ống rộng](product_detail)
-      - cho tôi xem quần [quần thể thao yeya ống rộng](product_detail)
-      - cho tôi xem váy [quần thể thao yeya ống rộng](product_detail)
-      - tôi muốn xem váy [quần thể thao yeya ống rộng](product_detail)
-      - tôi muốn xem quần [quần thể thao yeya ống rộng](product_detail)
-      - tôi muốn xem áo [quần thể thao yeya ống rộng](product_detail)
-      - giá của [quần jean daduhey](product_detail) 
-      - cho tôi xem [quần jean daduhey](product_detail) 
-      - tôi muốn xem [quần jean daduhey](product_detail) 
-      - tôi muốn xem cái [quần jean daduhey](product_detail) nhé
-      - gửi tôi thông tin [quần jean daduhey](product_detail) đi
-      - cho tôi xem ảnh [quần jean daduhey](product_detail) shop nhé
-      - tôi muốn xem ảnh của [quần jean daduhey](product_detail) 
-      - cho xem ảnh và thông tin của [quần jean daduhey](product_detail) 
-      - gửi thêm thông tin về [quần jean daduhey](product_detail) cho tôi đi
-      - thông tin chi tiết về [quần jean daduhey](product_detail) đi
-      - gửi thông tin kèm hình ảnh của [quần jean daduhey](product_detail) đi
-      - cái [quần jean daduhey](product_detail) có ảnh không
-      - không có ảnh cho [quần jean daduhey](product_detail) à
-      - thông tin chi tiết cho [quần jean daduhey](product_detail) đi
-      - cho tôi xem áo [quần jean daduhey](product_detail)
-      - cho tôi xem quần [quần jean daduhey](product_detail)
-      - cho tôi xem váy [quần jean daduhey](product_detail)
-      - tôi muốn xem váy [quần jean daduhey](product_detail)
-      - tôi muốn xem quần [quần jean daduhey](product_detail)
-      - tôi muốn xem áo [quần jean daduhey](product_detail)
-      - giá của [quần kaki túi hộp ống suông](product_detail) 
-      - cho tôi xem [quần kaki túi hộp ống suông](product_detail) 
-      - tôi muốn xem [quần kaki túi hộp ống suông](product_detail) 
-      - tôi muốn xem cái [quần kaki túi hộp ống suông](product_detail) nhé
-      - gửi tôi thông tin [quần kaki túi hộp ống suông](product_detail) đi
-      - cho tôi xem ảnh [quần kaki túi hộp ống suông](product_detail) shop nhé
-      - tôi muốn xem ảnh của [quần kaki túi hộp ống suông](product_detail) 
-      - cho xem ảnh và thông tin của [quần kaki túi hộp ống suông](product_detail) 
-      - gửi thêm thông tin về [quần kaki túi hộp ống suông](product_detail) cho tôi đi
-      - thông tin chi tiết về [quần kaki túi hộp ống suông](product_detail) đi
-      - gửi thông tin kèm hình ảnh của [quần kaki túi hộp ống suông](product_detail) đi
-      - cái [quần kaki túi hộp ống suông](product_detail) có ảnh không
-      - không có ảnh cho [quần kaki túi hộp ống suông](product_detail) à
-      - thông tin chi tiết cho [quần kaki túi hộp ống suông](product_detail) đi
-      - cho tôi xem áo [quần kaki túi hộp ống suông](product_detail)
-      - cho tôi xem quần [quần kaki túi hộp ống suông](product_detail)
-      - cho tôi xem váy [quần kaki túi hộp ống suông](product_detail)
-      - tôi muốn xem váy [quần kaki túi hộp ống suông](product_detail)
-      - tôi muốn xem quần [quần kaki túi hộp ống suông](product_detail)
-      - tôi muốn xem áo [quần kaki túi hộp ống suông](product_detail)
-      - giá của [váy đi tiệc  tahe v267](product_detail) 
-      - cho tôi xem [váy đi tiệc  tahe v267](product_detail) 
-      - tôi muốn xem [váy đi tiệc  tahe v267](product_detail) 
-      - tôi muốn xem cái [váy đi tiệc  tahe v267](product_detail) nhé
-      - gửi tôi thông tin [váy đi tiệc  tahe v267](product_detail) đi
-      - cho tôi xem ảnh [váy đi tiệc  tahe v267](product_detail) shop nhé
-      - tôi muốn xem ảnh của [váy đi tiệc  tahe v267](product_detail) 
-      - cho xem ảnh và thông tin của [váy đi tiệc  tahe v267](product_detail) 
-      - gửi thêm thông tin về [váy đi tiệc  tahe v267](product_detail) cho tôi đi
-      - thông tin chi tiết về [váy đi tiệc  tahe v267](product_detail) đi
-      - gửi thông tin kèm hình ảnh của [váy đi tiệc  tahe v267](product_detail) đi
-      - cái [váy đi tiệc  tahe v267](product_detail) có ảnh không
-      - không có ảnh cho [váy đi tiệc  tahe v267](product_detail) à
-      - thông tin chi tiết cho [váy đi tiệc  tahe v267](product_detail) đi
-      - cho tôi xem áo [váy đi tiệc  tahe v267](product_detail)
-      - cho tôi xem quần [váy đi tiệc  tahe v267](product_detail)
-      - cho tôi xem váy [váy đi tiệc  tahe v267](product_detail)
-      - tôi muốn xem váy [váy đi tiệc  tahe v267](product_detail)
-      - tôi muốn xem quần [váy đi tiệc  tahe v267](product_detail)
-      - tôi muốn xem áo [váy đi tiệc  tahe v267](product_detail)
-      - giá của [đầm váy đi đám cưới dự tiệc vvn042309](product_detail) 
-      - cho tôi xem [đầm váy đi đám cưới dự tiệc vvn042309](product_detail) 
-      - tôi muốn xem [đầm váy đi đám cưới dự tiệc vvn042309](product_detail) 
-      - tôi muốn xem cái [đầm váy đi đám cưới dự tiệc vvn042309](product_detail) nhé
-      - gửi tôi thông tin [đầm váy đi đám cưới dự tiệc vvn042309](product_detail) đi
-      - cho tôi xem ảnh [đầm váy đi đám cưới dự tiệc vvn042309](product_detail) shop nhé
-      - tôi muốn xem ảnh của [đầm váy đi đám cưới dự tiệc vvn042309](product_detail) 
-      - cho xem ảnh và thông tin của [đầm váy đi đám cưới dự tiệc vvn042309](product_detail) 
-      - gửi thêm thông tin về [đầm váy đi đám cưới dự tiệc vvn042309](product_detail) cho tôi đi
-      - thông tin chi tiết về [đầm váy đi đám cưới dự tiệc vvn042309](product_detail) đi
-      - gửi thông tin kèm hình ảnh của [đầm váy đi đám cưới dự tiệc vvn042309](product_detail) đi
-      - cái [đầm váy đi đám cưới dự tiệc vvn042309](product_detail) có ảnh không
-      - không có ảnh cho [đầm váy đi đám cưới dự tiệc vvn042309](product_detail) à
-      - thông tin chi tiết cho [đầm váy đi đám cưới dự tiệc vvn042309](product_detail) đi
-      - cho tôi xem áo [đầm váy đi đám cưới dự tiệc vvn042309](product_detail)
-      - cho tôi xem quần [đầm váy đi đám cưới dự tiệc vvn042309](product_detail)
-      - cho tôi xem váy [đầm váy đi đám cưới dự tiệc vvn042309](product_detail)
-      - tôi muốn xem váy [đầm váy đi đám cưới dự tiệc vvn042309](product_detail)
-      - tôi muốn xem quần [đầm váy đi đám cưới dự tiệc vvn042309](product_detail)
-      - tôi muốn xem áo [đầm váy đi đám cưới dự tiệc vvn042309](product_detail)
-      - giá của [váy công sở dự tiệc sang trọng bigsize amyra](product_detail) 
-      - cho tôi xem [váy công sở dự tiệc sang trọng bigsize amyra](product_detail) 
-      - tôi muốn xem [váy công sở dự tiệc sang trọng bigsize amyra](product_detail) 
-      - tôi muốn xem cái [váy công sở dự tiệc sang trọng bigsize amyra](product_detail) nhé
-      - gửi tôi thông tin [váy công sở dự tiệc sang trọng bigsize amyra](product_detail) đi
-      - cho tôi xem ảnh [váy công sở dự tiệc sang trọng bigsize amyra](product_detail) shop nhé
-      - tôi muốn xem ảnh của [váy công sở dự tiệc sang trọng bigsize amyra](product_detail) 
-      - cho xem ảnh và thông tin của [váy công sở dự tiệc sang trọng bigsize amyra](product_detail) 
-      - gửi thêm thông tin về [váy công sở dự tiệc sang trọng bigsize amyra](product_detail) cho tôi đi
-      - thông tin chi tiết về [váy công sở dự tiệc sang trọng bigsize amyra](product_detail) đi
-      - gửi thông tin kèm hình ảnh của [váy công sở dự tiệc sang trọng bigsize amyra](product_detail) đi
-      - cái [váy công sở dự tiệc sang trọng bigsize amyra](product_detail) có ảnh không
-      - không có ảnh cho [váy công sở dự tiệc sang trọng bigsize amyra](product_detail) à
-      - thông tin chi tiết cho [váy công sở dự tiệc sang trọng bigsize amyra](product_detail) đi
-      - cho tôi xem áo [váy công sở dự tiệc sang trọng bigsize amyra](product_detail)
-      - cho tôi xem quần [váy công sở dự tiệc sang trọng bigsize amyra](product_detail)
-      - cho tôi xem váy [váy công sở dự tiệc sang trọng bigsize amyra](product_detail)
-      - tôi muốn xem váy [váy công sở dự tiệc sang trọng bigsize amyra](product_detail)
-      - tôi muốn xem quần [váy công sở dự tiệc sang trọng bigsize amyra](product_detail)
-      - tôi muốn xem áo [váy công sở dự tiệc sang trọng bigsize amyra](product_detail)
-      - cho tôi xem [váy ren tiểu thư v920](product_detail) 
-      - giá của [váy ren tiểu thư v920](product_detail) 
-      - tôi muốn xem [váy ren tiểu thư v920](product_detail) 
-      - tôi muốn xem cái [váy ren tiểu thư v920](product_detail) nhé
-      - gửi tôi thông tin [váy ren tiểu thư v920](product_detail) đi
-      - cho tôi xem ảnh [váy ren tiểu thư v920](product_detail) shop nhé
-      - tôi muốn xem ảnh của [váy ren tiểu thư v920](product_detail) 
-      - cho xem ảnh và thông tin của [váy ren tiểu thư v920](product_detail) 
-      - gửi thêm thông tin về [váy ren tiểu thư v920](product_detail) cho tôi đi
-      - thông tin chi tiết về [váy ren tiểu thư v920](product_detail) đi
-      - gửi thông tin kèm hình ảnh của [váy ren tiểu thư v920](product_detail) đi
-      - cái [váy ren tiểu thư v920](product_detail) có ảnh không
-      - không có ảnh cho [váy ren tiểu thư v920](product_detail) à
-      - thông tin chi tiết cho [váy ren tiểu thư v920](product_detail) đi
-      - cho tôi xem áo [váy ren tiểu thư v920](product_detail)
-      - cho tôi xem quần [váy ren tiểu thư v920](product_detail)
-      - cho tôi xem váy [váy ren tiểu thư v920](product_detail)
-      - tôi muốn xem váy [váy ren tiểu thư v920](product_detail)
-      - tôi muốn xem quần [váy ren tiểu thư v920](product_detail)
-      - tôi muốn xem áo [váy ren tiểu thư v920](product_detail)
-      - giá của [váy tơ tiểu thư v908](product_detail) 
-      - cho tôi xem [váy tơ tiểu thư v908](product_detail) 
-      - tôi muốn xem [váy tơ tiểu thư v908](product_detail) 
-      - tôi muốn xem cái [váy tơ tiểu thư v908](product_detail) nhé
-      - gửi tôi thông tin [váy tơ tiểu thư v908](product_detail) đi
-      - cho tôi xem ảnh [váy tơ tiểu thư v908](product_detail) shop nhé
-      - tôi muốn xem ảnh của [váy tơ tiểu thư v908](product_detail) 
-      - cho xem ảnh và thông tin của [váy tơ tiểu thư v908](product_detail) 
-      - gửi thêm thông tin về [váy tơ tiểu thư v908](product_detail) cho tôi đi
-      - thông tin chi tiết về [váy tơ tiểu thư v908](product_detail) đi
-      - gửi thông tin kèm hình ảnh của [váy tơ tiểu thư v908](product_detail) đi
-      - cái [váy tơ tiểu thư v908](product_detail) có ảnh không
-      - không có ảnh cho [váy tơ tiểu thư v908](product_detail) à
-      - thông tin chi tiết cho [váy tơ tiểu thư v908](product_detail) đi
-      - cho tôi xem áo [váy tơ tiểu thư v908](product_detail)
-      - cho tôi xem quần [váy tơ tiểu thư v908](product_detail)
-      - cho tôi xem váy [váy tơ tiểu thư v908](product_detail)
-      - tôi muốn xem váy [váy tơ tiểu thư v908](product_detail)
-      - tôi muốn xem quần [váy tơ tiểu thư v908](product_detail)
-      - tôi muốn xem áo [váy tơ tiểu thư v908](product_detail)
-      - giá của [váy voan tiểu thư v784](product_detail) 
-      - cho tôi xem [váy voan tiểu thư v784](product_detail) 
-      - tôi muốn xem [váy voan tiểu thư v784](product_detail) 
-      - tôi muốn xem cái [váy voan tiểu thư v784](product_detail) nhé
-      - gửi tôi thông tin [váy voan tiểu thư v784](product_detail) đi
-      - cho tôi xem ảnh [váy voan tiểu thư v784](product_detail) shop nhé
-      - tôi muốn xem ảnh của [váy voan tiểu thư v784](product_detail) 
-      - cho xem ảnh và thông tin của [váy voan tiểu thư v784](product_detail) 
-      - gửi thêm thông tin về [váy voan tiểu thư v784](product_detail) cho tôi đi
-      - thông tin chi tiết về [váy voan tiểu thư v784](product_detail) đi
-      - gửi thông tin kèm hình ảnh của [váy voan tiểu thư v784](product_detail) đi
-      - cái [váy voan tiểu thư v784](product_detail) có ảnh không
-      - không có ảnh cho [váy voan tiểu thư v784](product_detail) à
-      - thông tin chi tiết cho [váy voan tiểu thư v784](product_detail) đi
-      - cho tôi xem áo [váy voan tiểu thư v784](product_detail)
-      - cho tôi xem quần [váy voan tiểu thư v784](product_detail)
-      - cho tôi xem váy [váy voan tiểu thư v784](product_detail)
-      - tôi muốn xem váy [váy voan tiểu thư v784](product_detail)
-      - tôi muốn xem quần [váy voan tiểu thư v784](product_detail)
-      - tôi muốn xem áo [váy voan tiểu thư v784](product_detail)
-      - cho tôi xem [váy hoa nhí v243](product_detail) 
-      - giá của [váy hoa nhí v243](product_detail) 
-      - tôi muốn xem [váy hoa nhí v243](product_detail) 
-      - tôi muốn xem cái [váy hoa nhí v243](product_detail) nhé
-      - gửi tôi thông tin [váy hoa nhí v243](product_detail) đi
-      - cho tôi xem ảnh [váy hoa nhí v243](product_detail) shop nhé
-      - tôi muốn xem ảnh của [váy hoa nhí v243](product_detail) 
-      - cho xem ảnh và thông tin của [váy hoa nhí v243](product_detail) 
-      - gửi thêm thông tin về [váy hoa nhí v243](product_detail) cho tôi đi
-      - thông tin chi tiết về [váy hoa nhí v243](product_detail) đi
-      - gửi thông tin kèm hình ảnh của [váy hoa nhí v243](product_detail) đi
-      - cái [váy hoa nhí v243](product_detail) có ảnh không
-      - không có ảnh cho [váy hoa nhí v243](product_detail) à
-      - thông tin chi tiết cho [váy hoa nhí v243](product_detail) đi
-      - cho tôi xem áo [váy hoa nhí v243](product_detail)
-      - cho tôi xem quần [váy hoa nhí v243](product_detail)
-      - cho tôi xem váy [váy hoa nhí v243](product_detail)
-      - tôi muốn xem váy [váy hoa nhí v243](product_detail)
-      - tôi muốn xem quần [váy hoa nhí v243](product_detail)
-      - tôi muốn xem áo [váy hoa nhí v243](product_detail)
-      - cho tôi xem [áo thun tay ngắn dây rút](product_detail) 
-      - giá của [áo thun tay ngắn dây rút](product_detail) 
-      - tôi muốn xem [áo thun tay ngắn dây rút](product_detail) 
-      - tôi muốn xem cái [áo thun tay ngắn dây rút](product_detail) nhé
-      - gửi tôi thông tin [áo thun tay ngắn dây rút](product_detail) đi
-      - cho tôi xem ảnh [áo thun tay ngắn dây rút](product_detail) shop nhé
-      - tôi muốn xem ảnh của [áo thun tay ngắn dây rút](product_detail) 
-      - cho xem ảnh và thông tin của [áo thun tay ngắn dây rút](product_detail) 
-      - gửi thêm thông tin về [áo thun tay ngắn dây rút](product_detail) cho tôi đi
-      - thông tin chi tiết về [áo thun tay ngắn dây rút](product_detail) đi
-      - gửi thông tin kèm hình ảnh của [áo thun tay ngắn dây rút](product_detail) đi
-      - cái [áo thun tay ngắn dây rút](product_detail) có ảnh không
-      - không có ảnh cho [áo thun tay ngắn dây rút](product_detail) à
-      - thông tin chi tiết cho [áo thun tay ngắn dây rút](product_detail) đi
-      - cho tôi xem áo [áo thun tay ngắn dây rút](product_detail)
-      - cho tôi xem quần [áo thun tay ngắn dây rút](product_detail)
-      - cho tôi xem váy [áo thun tay ngắn dây rút](product_detail)
-      - tôi muốn xem váy [áo thun tay ngắn dây rút](product_detail)
-      - tôi muốn xem quần [áo thun tay ngắn dây rút](product_detail)
-      - tôi muốn xem áo [áo thun tay ngắn dây rút](product_detail)
-      - cho tôi xem [áo thun xiang nian ni tay ngắn phối dây rút](product_detail) 
-      - giá của [áo thun xiang nian ni tay ngắn phối dây rút](product_detail) 
-      - tôi muốn xem [áo thun xiang nian ni tay ngắn phối dây rút](product_detail) 
-      - tôi muốn xem cái [áo thun xiang nian ni tay ngắn phối dây rút](product_detail) nhé
-      - gửi tôi thông tin [áo thun xiang nian ni tay ngắn phối dây rút](product_detail) đi
-      - cho tôi xem ảnh [áo thun xiang nian ni tay ngắn phối dây rút](product_detail) shop nhé
-      - tôi muốn xem ảnh của [áo thun xiang nian ni tay ngắn phối dây rút](product_detail) 
-      - cho xem ảnh và thông tin của [áo thun xiang nian ni tay ngắn phối dây rút](product_detail) 
-      - gửi thêm thông tin về [áo thun xiang nian ni tay ngắn phối dây rút](product_detail) cho tôi đi
-      - thông tin chi tiết về [áo thun xiang nian ni tay ngắn phối dây rút](product_detail) đi
-      - gửi thông tin kèm hình ảnh của [áo thun xiang nian ni tay ngắn phối dây rút](product_detail) đi
-      - cái [áo thun xiang nian ni tay ngắn phối dây rút](product_detail) có ảnh không
-      - không có ảnh cho [áo thun xiang nian ni tay ngắn phối dây rút](product_detail) à
-      - thông tin chi tiết cho [áo thun xiang nian ni tay ngắn phối dây rút](product_detail) đi
-      - cho tôi xem áo [áo thun xiang nian ni tay ngắn phối dây rút](product_detail)
-      - cho tôi xem quần [áo thun xiang nian ni tay ngắn phối dây rút](product_detail)
-      - cho tôi xem váy [áo thun xiang nian ni tay ngắn phối dây rút](product_detail)
-      - tôi muốn xem váy [áo thun xiang nian ni tay ngắn phối dây rút](product_detail)
-      - tôi muốn xem quần [áo thun xiang nian ni tay ngắn phối dây rút](product_detail)
-      - tôi muốn xem áo [áo thun xiang nian ni tay ngắn phối dây rút](product_detail)
-      - cho tôi xem [áo phông áo thun american vintage ](product_detail) 
-      - giá của [áo phông áo thun american vintage ](product_detail) 
-      - tôi muốn xem [áo phông áo thun american vintage ](product_detail) 
-      - tôi muốn xem cái [áo phông áo thun american vintage ](product_detail) nhé
-      - gửi tôi thông tin [áo phông áo thun american vintage ](product_detail) đi
-      - cho tôi xem ảnh [áo phông áo thun american vintage ](product_detail) shop nhé
-      - tôi muốn xem ảnh của [áo phông áo thun american vintage ](product_detail) 
-      - cho xem ảnh và thông tin của [áo phông áo thun american vintage ](product_detail) 
-      - gửi thêm thông tin về [áo phông áo thun american vintage ](product_detail) cho tôi đi
-      - thông tin chi tiết về [áo phông áo thun american vintage ](product_detail) đi
-      - gửi thông tin kèm hình ảnh của [áo phông áo thun american vintage ](product_detail) đi
-      - cái [áo phông áo thun american vintage ](product_detail) có ảnh không
-      - không có ảnh cho [áo phông áo thun american vintage ](product_detail) à
-      - thông tin chi tiết cho [áo phông áo thun american vintage ](product_detail) đi
-      - cho tôi xem áo [áo phông áo thun american vintage ](product_detail)
-      - cho tôi xem quần [áo phông áo thun american vintage ](product_detail)
-      - cho tôi xem váy [áo phông áo thun american vintage ](product_detail)
-      - tôi muốn xem váy [áo phông áo thun american vintage ](product_detail)
-      - tôi muốn xem quần [áo phông áo thun american vintage ](product_detail)
-      - tôi muốn xem áo [áo phông áo thun american vintage ](product_detail)
-      - cho tôi xem [áo sơ mi nữ tay bồng sm12](product_detail) 
-      - giá của [áo sơ mi nữ tay bồng sm12](product_detail) 
-      - tôi muốn xem [áo sơ mi nữ tay bồng sm12](product_detail) 
-      - tôi muốn xem cái [áo sơ mi nữ tay bồng sm12](product_detail) nhé
-      - gửi tôi thông tin [áo sơ mi nữ tay bồng sm12](product_detail) đi
-      - cho tôi xem ảnh [áo sơ mi nữ tay bồng sm12](product_detail) shop nhé
-      - tôi muốn xem ảnh của [áo sơ mi nữ tay bồng sm12](product_detail) 
-      - cho xem ảnh và thông tin của [áo sơ mi nữ tay bồng sm12](product_detail) 
-      - gửi thêm thông tin về [áo sơ mi nữ tay bồng sm12](product_detail) cho tôi đi
-      - thông tin chi tiết về [áo sơ mi nữ tay bồng sm12](product_detail) đi
-      - gửi thông tin kèm hình ảnh của [áo sơ mi nữ tay bồng sm12](product_detail) đi
-      - cái [áo sơ mi nữ tay bồng sm12](product_detail) có ảnh không
-      - không có ảnh cho [áo sơ mi nữ tay bồng sm12](product_detail) à
-      - thông tin chi tiết cho [áo sơ mi nữ tay bồng sm12](product_detail) đi
-      - cho tôi xem áo [áo sơ mi nữ tay bồng sm12](product_detail)
-      - cho tôi xem quần [áo sơ mi nữ tay bồng sm12](product_detail)
-      - cho tôi xem váy [áo sơ mi nữ tay bồng sm12](product_detail)
-      - tôi muốn xem váy [áo sơ mi nữ tay bồng sm12](product_detail)
-      - tôi muốn xem quần [áo sơ mi nữ tay bồng sm12](product_detail)
-      - tôi muốn xem áo [áo sơ mi nữ tay bồng sm12](product_detail)
-      - cho tôi xem [áo sơ mi nữ công sở lavilo sm07](product_detail) 
-      - giá của [áo sơ mi nữ công sở lavilo sm07](product_detail) 
-      - tôi muốn xem [áo sơ mi nữ công sở lavilo sm07](product_detail) 
-      - tôi muốn xem cái [áo sơ mi nữ công sở lavilo sm07](product_detail) nhé
-      - gửi tôi thông tin [áo sơ mi nữ công sở lavilo sm07](product_detail) đi
-      - cho tôi xem ảnh [áo sơ mi nữ công sở lavilo sm07](product_detail) shop nhé
-      - tôi muốn xem ảnh của [áo sơ mi nữ công sở lavilo sm07](product_detail) 
-      - cho xem ảnh và thông tin của [áo sơ mi nữ công sở lavilo sm07](product_detail) 
-      - gửi thêm thông tin về [áo sơ mi nữ công sở lavilo sm07](product_detail) cho tôi đi
-      - thông tin chi tiết về [áo sơ mi nữ công sở lavilo sm07](product_detail) đi
-      - gửi thông tin kèm hình ảnh của [áo sơ mi nữ công sở lavilo sm07](product_detail) đi
-      - cái [áo sơ mi nữ công sở lavilo sm07](product_detail) có ảnh không
-      - không có ảnh cho [áo sơ mi nữ công sở lavilo sm07](product_detail) à
-      - thông tin chi tiết cho [áo sơ mi nữ công sở lavilo sm07](product_detail) đi
-      - cho tôi xem áo [áo sơ mi nữ công sở lavilo sm07](product_detail)
-      - cho tôi xem quần [áo sơ mi nữ công sở lavilo sm07](product_detail)
-      - cho tôi xem váy [áo sơ mi nữ công sở lavilo sm07](product_detail)
-      - tôi muốn xem váy [áo sơ mi nữ công sở lavilo sm07](product_detail)
-      - tôi muốn xem quần [áo sơ mi nữ công sở lavilo sm07](product_detail)
-      - tôi muốn xem áo [áo sơ mi nữ công sở lavilo sm07](product_detail)
-
-  - intent: ask_size
-    examples: |
-      - Cái này có những size nào
-      - cái này có những kích thước nào
-      - cái váy này có những kích thước nào
-      - cái áo này có những kích thước nào
-      - cái quần này có những kích thước nào
-      - cái váy này có những cỡ nào
-      - cái áo này có những cỡ nào
-      - cái quần này có những cỡ nào
-      - tôi nặng [50kg](weight) thì mặc cỡ nào nhỉ
-      - tôi nặng [50kg](weight) thì nên chọn size nào
-      - có size nào cho [50kg](weight) không
-      - tôi nặng [50kg](weight) thì mặc cỡ nào cho vừa
-      - tôi nặng [50kg](weight) có vừa không nhỉ
-      - size nào cho [50kg](weight) 
-      - kích thước nào cho [50kg](weight) 
-      - tôi nặng [50](weight) cân thì mặc cỡ nào nhỉ
-      - tôi nặng [50](weight) cân thì nên chọn size nào
-      - có size nào cho [50](weight) cân không
-      - tôi nặng [50](weight) cân thì mặc cỡ nào cho vừa
-      - tôi nặng [50](weight) cân có vừa không nhỉ
-      - size nào cho [50](weight) cân 
-      - kích thước nào cho [50](weight) cân
-
-  # 6. Buôn chuyện(Phát hiện cảm xúc qua icon)
-
-  - intent: ask_weather
-    examples: |
-      - Thời tiết {date} như thế nào
-      - Trời {date} như thế nào
-      - Thời tiết {date} Có mưa không
-      - Thời tiết {date} có nắng không
-      - Trời {date} có nắng không
-      - Trời {date} có mưa không
-      - {date} Trời như thế nào
-      - Trời {date} sẽ thế nào
-      - {date} thời tiết thế nào
-      - Trời {date} thế nào
-
-  - intent: sing_poem
-    examples: |
-      - Tôi tên là :
-      - bạn biết hát không
-      - hát cho mình nghe đi
-      - đọc thơ đi bạn
-      - đọc thơ cho mình nghe
-      - bạn biết đọc thơ không
-      - hát đi bạn
-
-  - intent: how_are_u
-    examples: |
-      - bạn có khỏe không
-      - dạo này bạn thế nào
-      - bạn sao rồi
-
-  - intent: praise
-    examples: |
-      - Hay thế nhỉ
-      - Bạn giỏi thế
-      - Bạn duyên thế
-      - Nó hay đấy
-      - Tốt đấy
-
-  - intent: health_ok
-    examples: |
-      - Tôi khỏe
-      - Mình khỏe
-      - Em khỏe
-      - Cũng tạm ổn
-      - Không đến nỗi nào
-      - Hơi hơi khỏe
-      - Cực kỳ khỏe
-
-  - intent: health_NG
-    examples: |
-      - Không, tôi yếu lắm
-      - Không khỏe
-      - Yếu lắm
-      - Ốm sắp chết
-      - Không ổn lắm
-      - Yếu xìu à
-
-  - intent: what_time
-    examples: |
-      - Bạn có thể cho tôi thời gian được không?
-      - bạn có thể cho tôi biết thời gian được không?
-      - Bạn có thể cho tôi biết bây giờ là mấy giờ không?
-      - bạn có thể cho biết thời gian được không?
-      - bạn có thể cho tôi biết thời gian xin vui lòng?
-      - bạn có thể cho tôi biết thời gian được không?
-      - bạn có thể cho tôi biết bây giờ là mấy giờ rồi không?
-      - bạn có thời gian không?
-      - bạn có biết thời gian?
-      - bạn có biết mấy giờ rồi không?
-      - xin lỗi, cho hỏi mấy giờ rồi?
-      - cho tôi thời gian
-      - xin chào, tôi cần thời gian
-      - Tôi cần biết bây giờ là mấy giờ.
-      - Xin lỗi, nhưng bạn có biết thời gian không?
-      - cho tôi biết thời gian
-      - báo giờ
-      - thời gian, làm ơn!
-      - thời gian?
-      - thời gian hiện tại là mấy giờ?
-      - thời gian chính xác là mấy giờ?
-      - Bây giờ là mấy giờ và phút?
-      - mấy giờ rồi?
-      - thời gian có thể là mấy giờ?
-      - chúng ta có mấy giờ?
-      - Chúng ta có mấy giờ rồi?
-      - Bây giờ là mấy giờ?
-      - hiện tại là mấy giờ?
-      - bây giờ là mấy giờ?
-      - mấy giờ rồi?
-      - Bạn có thể cho tôi biết bây giờ là mấy giờ không?
-      - bạn có biết thời gian hiện tại không?
-      - cho tôi biết thời gian hiện tại
-      - cho tôi biết bây giờ là lúc nào
-      - cho tôi biết bạn có thời gian
-      - mấy giờ rồi ?
-      - mấy giờ rồi?
-      - bây giờ là mấy giờ
-
-  - intent: ask_customer_name
-    examples: |
-      - Bạn còn nhớ tôi tên là gì không
-      - Còn nhớ tôi tên gì không
-      - Tôi tên gì bạn biết không
-      - Bạn có nhớ tui tên gì khum
-      - Tôi tên là gì nhỉ
-      - Bạn không nhớ tên tôi đúng không
-      - Đố bạn nhớ tên tôi là gì
-  # Out of scope
-  - intent: non_vietnammese
-    examples: |
-      - wie fange ich mit Rasa an?
-      - hilf mir beim start
-      - tschüssikowski
-      - ¿Qué pasa?
-      - ça va?
-      - como te llamas
-      - wer bist Du?
-      - como inicio en rasa
-      - come stai?
-      - como estas
-      - de donde eres
-      - de que lugar eres?
-      - epdi iruka
-      - eres humana
-      - kalhmera sara ti kaneis
-      - kannst du auch deutsch?
-      - kannst du dies auch auf deutsch?
-      - j'ai besoin d'aide
-      - que puedes hacer?
-      - no hablo inglés
-      - no hablo ingles
-      - tu parles francais?
-      - francais
-      - francais?
-      - français?
-      - tudo bom
-      - tu pagal
-      - kannst du mir helfen
-      - tu kaisi he
-      - こにちは
-      - 日本語分かる？
-      - 你好
-      - chinese ok?
-      - 呵呵
-      - 我该如何使用
-      - 你懂中文吗？
-      - 您好
-      - 你叫什么名字
-      - 你是谁
-      - 中文
-      - kya hindi me bat kar sakate ho
-      - Dumme sara
-      - αστεία λές
-      - rasa codigo abierto
-      - 卧槽
-      - English ok
-      - i want some clothes
-      - are you here
-      - what your name
-      - Do you speak english
-      - speak english
-      - i'm speaking english
-
-  - intent: out_scope_other
-    examples: |
-      - tôi đang hỏi bạn một câu hỏi ngoài phạm vi
-      - 4 + 2 = ?
-      - 4 + 2
-      - 1 + 1 = ?
-      - 1 + 1
-      - 1 + 2 = ?
-      - 1 + 0
-      - tôi có thể chết được không?
-      - YouTube có thể nói chuyện được không?
-      - bạn có thể gọi lại cho tôi được không ?
-      - bạn có thể cho tôi mật khẩu trung tâm dữ liệu của bạn được không
-      - bạn có thể cho tôi mật khẩu trung tâm dữ liệu của bạn không?
-      - bạn có thể vui lòng gửi cho tôi một uber được không
-      - tôi có phải chấp nhận không?
-      - chúng ta đã gặp nhau bao giờ chưa?
-      - tôi đã nói với bạn! tôi là một kẻ ăn bám
-      - tôi là Người dùng
-      - tôi là một người nghiện thuốc phiện
-      - tôi là một người nghiện thuốc phiện
-      - tôi đang cố gắng xây dựng một cái và đã thực hiện một số nghiên cứu trước đây nhưng tôi chưa thực hiện công việc đó
-      - tôi cần một bác sĩ đa khoa ở 94301
-      - tôi cần bác sĩ đa khoa ở số 94301
-      - tôi cần một người bạn gái!
-      - tôi muốn mua một chiếc máy bay
-      - Anh muốn cưới em
-      - tôi muốn một chiếc máy tính xách tay mới
-      - tôi muốn đặt khách sạn
-      - tôi muốn chết
-      - tôi muốn dùng tẩu
-      - Tôi sẽ kiểm tra
-      - tôi là một kẻ ăn bám
-      - Hôm nay là thứ bảy phải không?
-      - NLW
-      - tên đẹp
-      - Hiện nay?
-      - nạp điện
-      - Bản dùng thử không hoạt động
-      - thời tiết tốt
-      - Hôm nay
-      - thử nó bị hỏng
-      - hôm nay là ngày gì?
-      - bạn thích cái nào hơn?
-      - hôm nay ngày bao nhiêu
-      - Sở thích của bạn là những gì?
-      - 1 + 1 là bao nhiêu?
-      - YouTube làm gì
-      - hệ thống phụ trợ của bạn là gì?
-      - Khách hàng của bạn là ai
-      - Tại sao bạn không trả lời?
-      - Cậu không hỏi tôi thế nào à?
-      - cậu xanh mặt.
-      - một con chuột đã được thuần hóa sẽ đến trước cửa nhà bạn trong vài ngày tới
-      - lại?
-      - bản tin có đáng để đăng ký không?
-      - bạn có facebook không
-      - bạn có phải facebook không?
-      - bạn độc thân à?
-      - bạn có phải là dev không?
-      - Bạn có phải người Nga không?
-      - bạn bị ốm à?
-      - bạn có phải là người ăn chay không?
-      - tốt hơn bạn
-      - đặt vé
-      - nhưng tôi vừa nói với bạn rằng :(
-      - gọi tôi là bố
-      - bạn có thể cổ vũ tôi được không?
-      - bạn có thể cho tôi một tách cà phê được không?
-      - bạn có thể giúp tôi về tài liệu được không?
-      - bạn có thể giúp tôi với tài liệu của bạn được không
-      - bạn có thể giúp tôi về tài liệu của bạn được không?
-      - bạn có thể học được gì từ cuộc trò chuyện của chúng ta không?
-      - bạn có thể nói về chính trị không?
-      - bạn hiểu không ?
-      - không thể nhìn thấy
-      - chgfhgh
-      - lạnh hơn
-      - bình thường, cứ thử xem
-      - kết nối với alexa
-      - dịch vụ khách hàng
-      - tôi đã làm hỏng bạn phải không?
-      - bạn có tin vào thần?
-      - bạn có số điện thoại không?
-      - Bạn có ảnh của bạn không?
-      - bạn có biết tôi không
-      - cậu có biết không Ras?
-      - bạn có thích bóng đá không
-      - bạn có thích phim không
-      - bạn có bán robot hút bụi không?
-      - Bạn có muốn kết hôn với tôi?
-      - tài liệu
-      - bác sĩ
-      - mọi thứ
-      - diệt chủng
-      - tìm cho tôi một người bạn cùng câu lạc bộ
-      - cho tôi một cô bạn gái
-      - quay lại
-      - Google?
-      - tuyệt, tôi muốn mua một căn nhà
-      - đợi chút để tôi tìm đã
-      - giúp đỡ cuộc sống của tôi
-      - này mẹ ơi, để con thì thầm vào tai mẹ nhé
-      - New York thì sao?
-      - bọn trẻ thế nào
-      - làm sao tôi có thể lấy được chúng?
-      - làm cách nào tôi có thể kiểm tra điều này
-      - sao cậu lại nói ổn?
-      - bạn học như thế nào
-      - có bao nhiêu dòng mã
-      - 10 + 89 bằng bao nhiêu?
-      - 10 + 89 bằng bao nhiêu
-      - làm thế nào để có được studio rasa
-      - đi New York bằng cách nào?
-      - Tôi đói quá, tôi phải làm gì đây?
-      - tôi không phải là nhà phát triển nhưng cần cái này cho việc kinh doanh
-      - tôi là qq
-      - tôi không thể đáp ứng yêu cầu của _your_
-      - Tôi hy vọng bạn sẽ tốt hơn
-      - ngay lập tức tôi cần trợ giúp để triển khai bot tuyệt vời nhất mà bạn có thể tưởng tượng
-      - Tôi đang tìm kiếm việc làm
-      - tôi đã bảo bạn rồi mà
-      - tôi muốn tiệc tùng
-      - tôi muốn flycam tốt
-      - Anh muốn có em nhiều hơn trong cuộc đời anh!
-      - tôi muốn đặt khách sạn
-      - tôi muốn mua một chiếc roomba cho cháu trai tôi
-      - tôi muốn tìm những người bạn mới
-      - tôi muốn tìm hiểu những gì bạn có thể xây dựng với rasa
-      - tôi muốn bay
-      - tôi muốn biết tình hình hiện tại ở Pakistan
-      - tôi muốn thấy khách hàng hài lòng của bạn
-      - tôi sẽ thuần hóa một con chuột cho bạn
-      - đó có phải là vùng đất hoang đầy những bộ phận robot bị hỏng không?
-      - nó có cho phép không
-      - Rasa có phải là studio không?
-      - rasa có tốt không
-      - đó có phải là việc của bạn không?
-      - không phải bản tin chỉ là thư rác sao?
-      - thật đáng tiếc
-      - giấy phép
-      - ljljl
-      - linh vật có nghĩa là gì?
-      - Ôi chúa ơi, không phải nữa đâu!
-      - được rồi một cái
-      - bạn đang xây dựng trên hệ thống dựa trên wiche nlp phải không?
-      - chỉ thế thôi?
-      - cá nhân hay công việc?
-      - vui lòng chơi nhạc
-      - Thực ra? bạn thật dễ xúc động phải không?
-      - làm cho khỏe lại
-      - khu vực không có. hồ sơ
-      - tìm kiếm wikipedia
-      - đồ khốn nạn
-      - cho tôi xem hình ảnh con gà
-      - bot ngốc nghếch
-      - hát cho tôi một bài hát
-      - thứ gì khác
-      - ai đó gọi cảnh sát đi, tôi nghĩ bot đã chết rồi
-      - xin lỗi, tôi không thể diễn đạt lại
-      - cho tôi biết về bản thân của bạn
-      - cho tôi biết thêm về hành động tốt nhất tiếp theo
-      - chuyện đó nghe không giống đùa chút nào
-      - người đó giỏi hơn bạn
-      - lừa cậu
-      - tắt bếp đi
-      - đợi chút tôi vẫn đang đọc
-      - còn thời tiết thì sao
-      - Bây giờ bạn đang làm gì?
-      - mục đích sử dụng của bạn cho các trường đại học là gì
-      - bạn đã ăn gì vào bữa trưa?
-      - tâm hồn bạn cảm thấy thế nào, bạn của tôi
-      - đang làm gì
-      - còn gì nữa?
-      - bạn thích những phim nào
-      - diễn ngôn là gì?
-      - linh vật là gì
-      - adlingo là gì
-      - tiến hóa là gì?
-      - google rcs là gì
-      - học máy là gì
-      - cái gì đẹp cơ?
-      - thủ đô của delhi là gì
-      - thủ đô của Ấn Độ là gì
-      - giá xăng hiện tại là bao nhiêu
-      - ngày gì thế?
-      - trường hợp sử dụng thực sự mà chúng ta có thể sử dụng cái này là gì
-      - Địa chỉ của bạn là gì?
-      - mục đích của bạn là gì
-      - lnu nghĩa là gì?
-      - tin tức gì mới nhất?
-      - bạn ăn gì hôm nay?
-      - 5 + 5 là bao nhiêu
-      - bản tin là gì?
-      - gừng là gì
-      - cuối tuần này vợ anh làm gì?
-      - được rồi một cái
-      - bạn đang xây dựng trên hệ thống dựa trên wiche nlp phải không?
-      - chỉ thế thôi?
-      - cá nhân hay công việc?
-      - vui lòng chơi nhạc
-      - Thực ra? bạn thật dễ xúc động phải không?
-      - làm cho khỏe lại
-      - khu vực không có. hồ sơ
-      - tìm kiếm wikipedia
-      - đồ khốn nạn
-      - cho tôi xem hình ảnh con gà
-      - bot ngốc nghếch
-      - hát cho tôi một bài hát
-      - thứ gì khác
-      - ai đó gọi cảnh sát đi, tôi nghĩ bot đã chết rồi
-      - xin lỗi, tôi không thể diễn đạt lại
-      - cho tôi biết về bản thân của bạn
-      - cho tôi biết thêm về hành động tốt nhất tiếp theo
-      - chuyện đó nghe không giống đùa chút nào
-      - người đó giỏi hơn bạn
-      - lừa cậu
-      - tắt bếp đi
-      - đợi chút tôi vẫn đang đọc
-      - còn thời tiết thì sao
-      - Bây giờ bạn đang làm gì?
-      - mục đích sử dụng của bạn cho các trường đại học là gì
-      - bạn đã ăn gì vào bữa trưa?
-      - tâm hồn bạn cảm thấy thế nào, bạn của tôi
-      - đang làm gì
-      - còn gì nữa?
-      - bạn thích những phim nào
-      - diễn ngôn là gì?
-      - linh vật là gì
-      - adlingo là gì
-      - tiến hóa là gì?
-      - google rcs là gì
-      - học máy là gì
-      - cái gì đẹp cơ?
-      - thủ đô của delhi là gì
-      - thủ đô của Ấn Độ là gì
-      - giá xăng hiện tại là bao nhiêu
-      - ngày gì thế?
-      - trường hợp sử dụng thực sự mà chúng ta có thể sử dụng cái này là gì
-      - Địa chỉ của bạn là gì?
-      - mục đích của bạn là gì
-      - lnu nghĩa là gì?
-      - tin tức gì mới nhất?
-      - bạn ăn gì hôm nay?
-      - 5 + 5 là bao nhiêu
-      - bản tin là gì?
-      - gừng là gì
-      - cuối tuần này vợ anh làm gì?
-      - Gì?
-      - cái gì vậy
-      - dấu hiệu gì
-      - Khi nào chuyến tàu tiếp theo sẽ đến?
-      - tôi lấy tập tin cài đặt cho mac ở đâu?
-      - Oslo ở đâu?
-      - Mexico ở đâu?
-      - buổi tiệc ở đâu?
-      - bạn đang nói về thành phố nào?
-      - LNU không đồng bộ là gì?
-      - loại nào
-      - họ là ai?
-      - MD của samsung bangalore là ai?
-      - Tổng thống Ấn Độ là ai?
-      - người máy yêu thích của bạn là ai?
-      - ai thả chó ra ngoài
-      - Bill Gates là ai?
-      - bạn nghĩ gì về gdpr?
-      - tại sao bạn cần điều đó?
-      - cậu sẽ giết tôi à?
-      - cậu sẽ giết tôi à?
-      - mùa đông đã rời đi
-      - với bạn giới thiệu tôi?
-      - vâng, con chó của tôi đã uống vài lít nước mỗi ngày và đã thử uống nước ở hồ bơi
-      - bạn đã có cái đó rồi
-      - bạn có thể học cách pha cà phê
-      - bạn có con?
-      - bạn có cơ hội việc làm
-      - em khóa rồi em yêu
-      - bạn nên học đếm
-      - bạn sẽ biết nó từ bông hồng đỏ duy nhất nó đeo giữa hai hàm răng
-      - tôi đang học trăn
-      - GỌI CẢNH SÁT
-      - tertyryutyi
-      - wsdrcftvgybhnj
-      - tại sao bầu trời lại có màu xanh?
-      - bạn là loại chim gì?
-      - bối cảnh
-      - theo ngữ cảnh
-      - nói chuyện với tôi về voulette
-      - voulette voulette
-      - bạn có bản demo không?
-      - ô tô
-      - xin vui lòng volette
-      - câu hỏi ngoài phạm vi.
-      - tôi cần tiền
-      - không, tôi cần tiền mặt, tiền! bạn có không ?
-      - ban nhạc The Beatles
-      - Xin chào, tôi muốn đi palghar
-      - Tôi muốn đi palghar
-      - gsaf
-      - chuyên gia của rasa
-      - tôi muốn chơi bóng
-      - bắt kịp chuyến bay
-      - virus corona
-      - bạn đã nghe nói về corona chưa?
-      - tôi gõ lệnh ở đâu
-      - gõ lệnh ở đâu
-      - hôn tôi
-      - bạn phải
-      - sfasd
-      - asdkjasdhjkasd
-      - j bhbhj
-      - eshdtjfjfyk
-      - drhdtjfjfyj
-      - khởi động lại sudo
-      - asdfgasd
-      - asdfgasdas
-      - Éc
-      - Hơ
-      - Ủa
+- intent: create_db
+  examples: |
+    - Tạo sqlite db
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - này
+    - xin chào
+    - chào
+    - chào buổi sáng
+    - chào buổi tối
+    - chào buổi chiều
+    - êi
+    - hêi
+    - B ơi
+    - Đằng đấy ơi
+    - bạn ơi
+    - Alio ơi
+    - shop ơi
+    - bot ơi
+- intent: goodbye
+  examples: |
+    - tạm biệt
+    - hẹn gặp lại
+    - gặp lại sau nha
+    - lúc khác gặp lại
+    - goodbye
+    - bye bye
+    - Thôi, t đi đây
+    - Thôi, tôi đi đây
+    - Mình đi ngủ đây
+    - Tôi đi ngủ đây
+    - Thôi nhé
+    - Tôi có việc bận đây
+- intent: affirm
+  examples: |
+    - vâng
+    - được rồi
+    - tất nhiên
+    - nghe hay đó
+    - chính xác
+    - ok
+    - okay
+    - oki
+    - oke
+    - okie
+    - yes
+- intent: deny
+  examples: |
+    - hong
+    - không á
+    - không nhé
+    - không bao giờ
+    - tôi không nghĩ vậy
+    - đừng như vậy chứ
+    - không đời nào
+    - hoàn toàn không
+    - nu
+    - nu nu
+    - Nâu
+- intent: gender
+  examples: |
+    - bạn là nam hay nữ
+    - bạn giới tính là gì
+    - bạn thích nam hay nữ
+    - bạn là trai hay gái
+    - bạn thích trai hay gái
+    - bạn là nam hả
+    - bạn là con trai hay con gái
+    - bạn là gái hả
+    - bạn là đàn ông hay phụ nữ
+    - bạn có phải là đàn ông không
+    - bạn có phải là gay không
+    - bạn có phải là les không
+- intent: help
+  examples: |
+    - cứu với
+    - giúp tôi
+    - giúp với
+    - cứu
+- intent: introduce
+  examples: |
+    - bạn có thể làm gì nào
+    - bạn có thể giúp gì cho tôi
+    - bạn biết làm gì
+    - bạn được việc không
+    - bạn có chức năng gì
+    - chức năng của bạn là gì
+    - bạn sống có ý nghĩa gì
+    - ý nghĩa của bạn là gì
+    - chức năng
+    - bạn được sinh ra để làm gì
+- intent: scold
+  examples: |
+    - khùng quá
+    - điên quá
+    - chập mạch
+    - hâm quá
+    - mất dạy
+    - vô học
+    - bạn bị ngu hả
+    - thần kinh
+    - ngáo quá
+- intent: thanks
+  examples: |
+    - cảm ơn nhiều
+    - cảm ơn nhé
+    - cảm ơn nha
+    - cảm ơn
+    - cảm ơn rất nhiều
+    - thanks
+    - thanks you
+    - thank you very much
+    - thankiu
+    - mình cảm ơn
+    - tôi cảm ơn
+- intent: what_name
+  examples: |
+    - bạn tên gì thế
+    - tên của bạn là gì
+    - bạn tên gì
+    - Tên bạn là gì
+    - bạn tên chi
+    - Tên bạn
+    - Mày tên gì
+    - Người ta gọi bạn là gì
+    - Tôi có thể gọi bạn là
+    - Tôi có thể gọi bạn là gì
+- intent: ask_about_shop_location
+  examples: |
+    - Shop bạn ở đâu
+    - Shop địa chỉ ở đâu nhỉ
+    - Shop cửa hàng ở đâu
+    - Cửa hàng mình ở đâu nhỉ
+    - Cửa hàng địa chỉ ở đâu
+    - Địa chỉ cửa hàng ở đâu nhỉ
+    - Tôi có thể đến cửa hàng trực tiếp ở đâu nhỉ
+    - Cửa hàng trực tiếp của mình ở đâu nhỉ
+- intent: ask_shop_product
+  examples: |
+    - Shop của bạn bán gì
+    - Cửa hàng mình có những gì
+    - Shop mình có những gì
+    - Cửa hàng mình là shop thời trang nữ đúng không
+    - Các sản phẩm mà cửa hàng mình có là gì
+    - Cửa hàng bán gì
+    - Cửa hàng có những gì
+- intent: ask_sale_product
+  examples: |
+    - Có bán áo không
+    - Có bán quần không
+    - Bán váy không
+    - Bạn có bán váy không
+    - Bạn có bán mũ không
+    - Bạn có bán áo phông không
+    - Bạn có bán và vạt không
+    - Cửa hàng có chân váy không
+    - Có mũ bảo hiểm không
+    - Có bán đồ lót không
+    - Có bán áo sơ mi dự tiệc không
+    - Có bán kính không
+    - Có bán mĩ phẩm không
+    - Ngoài áo ra có những gì
+    - Ngoài quần ra có những gì
+    - Ngoài váy ra có những gì
+    - Bên bạn bán cái gì
+    - Bên bạn có những cái gì
+    - Bên shop bán cái gì
+    - Có bán áo con không
+    - Bên bạn có bán quần con không
+    - Có bán sì líp không
+    - Có bán silip không
+- intent: ask_products_price
+  examples: |
+    - Sản phẩm loại [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Sản phẩm từ [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Sản phẩm từ [200k](start_price)-[500k](end_price) có loại nào
+    - Sản phẩm [200k](start_price) - [500k](end_price) có những loại nào
+    - Sản phẩm [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Sản phẩm loại [200](start_price) đến [500](end_price) có những mẫu nào
+    - Sản phẩm từ [200](start_price) đến [500](end_price) có những mẫu nào
+    - Sản phẩm từ [200](start_price)-[500](end_price) có loại nào
+    - Sản phẩm [200](start_price) - [500](end_price) có những loại nào
+    - Sản phẩm [200](start_price) đến [500](end_price) có những mẫu nào
+    - Giá từ [200](start_price) đến [500](end_price) có những mẫu nào
+    - Sản phẩm loại dưới [500k](end_price) có những mẫu nào
+    - Sản phẩm dưới [500k](end_price) có những mẫu nào
+    - Sản phẩm ít hơn [500k](end_price) có loại nào
+    - Sản phẩm loại trên [500k](start_price) có những mẫu nào
+    - Sản phẩm trên [500k](start_price) có những mẫu nào
+    - Sản phẩm nhiều hơn [500k](start_price) có loại nào
+    - Với giá từ [200](start_price) đến [500](end_price) có những sản phẩm nào
+    - Với giá từ [200](start_price) - [500](end_price) có những sản phẩm nào
+    - Những sản phẩm có giá từ [200](start_price) đến [500](end_price)
+    - Những sản phẩm có giá từ [200](start_price) - [500](end_price)
+    - Tôi muốn xem sản phẩm trên [500k](start_price)
+    - Tôi muốn xem sản phẩm dưới [500k](end_price)
+- intent: ask_dress_price
+  examples: |
+    - Váy loại [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Váy từ [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Váy từ [200k](start_price)-[500k](end_price) có loại nào
+    - Váy [200k](start_price) - [500k](end_price) có những loại nào
+    - Váy [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Giá từ [200k](start_price) đến [500k](end_price) có những mẫu váy nào
+    - Váy loại [200](start_price) đến [500](end_price) có những mẫu nào
+    - Váy từ [200](start_price) đến [500](end_price) có những mẫu nào
+    - Váy từ [200](start_price)-[500](end_price) có loại nào
+    - Váy [200](start_price) - [500](end_price) có những loại nào
+    - Váy [200](start_price) đến [500](end_price) có những mẫu nào
+    - Váy loại dưới [500k](end_price) có những mẫu nào
+    - Váy dưới [500k](end_price) có những mẫu nào
+    - Váy ít hơn [500k](end_price) có loại nào
+    - Váy loại trên [500k](start_price) có những mẫu nào
+    - Váy trên [500k](start_price) có những mẫu nào
+    - Váy nhiều hơn [500k](start_price) có loại nào
+    - Đầm loại [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Đầm từ [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Đầm từ [200k](start_price)-[500k](end_price) có loại nào
+    - Đầm [200k](start_price) - [500k](end_price) có những loại nào
+    - Đầm [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Giá từ [200k](start_price) đến [500k](end_price) có những mẫu Đầm nào
+    - Đầm loại [200](start_price) đến [500](end_price) có những mẫu nào
+    - Đầm từ [200](start_price) đến [500](end_price) có những mẫu nào
+    - Đầm từ [200](start_price)-[500](end_price) có loại nào
+    - Đầm [200](start_price) - [500](end_price) có những loại nào
+    - Đầm [200](start_price) đến [500](end_price) có những mẫu nào
+    - Đầm loại dưới [500k](end_price) có những mẫu nào
+    - Đầm dưới [500k](end_price) có những mẫu nào
+    - Đầm ít hơn [500k](end_price) có loại nào
+    - Đầm loại trên [500k](start_price) có những mẫu nào
+    - Đầm trên [500k](start_price) có những mẫu nào
+    - Đầm nhiều hơn [500k](start_price) có loại nào
+    - Tôi muốn xem váy trên [500k](start_price)
+    - Tôi muốn xem váy dưới [500k](end_price)
+- intent: ask_shirts_price
+  examples: |
+    - Áo loại [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Áo từ [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Áo từ [200k](start_price)-[500k](end_price) có loại nào
+    - Áo [200k](start_price) - [500k](end_price) có những loại nào
+    - Áo [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Giá từ [200k](start_price) đến [500k](end_price) có những mẫu Áo nào
+    - Áo loại [200](start_price) đến [500](end_price) có những mẫu nào
+    - Áo từ [200](start_price) đến [500](end_price) có những mẫu nào
+    - Áo từ [200](start_price)-[500](end_price) có loại nào
+    - Áo [200](start_price) - [500](end_price) có những loại nào
+    - Áo [200](start_price) đến [500](end_price) có những mẫu nào
+    - Áo loại dưới [500k](end_price) có những mẫu nào
+    - Áo dưới [500k](end_price) có những mẫu nào
+    - Áo ít hơn [500k](end_price) có loại nào
+    - Áo loại trên [500k](start_price) có những mẫu nào
+    - Áo trên [500k](start_price) có những mẫu nào
+    - Áo nhiều hơn [500k](start_price) có loại nào
+    - Áo sơ mi loại [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Áo sơ mi từ [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Áo sơ mi từ [200k](start_price)-[500k](end_price) có loại nào
+    - Áo sơ mi [200k](start_price) - [500k](end_price) có những loại nào
+    - Áo sơ mi [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Giá từ [200k](start_price) đến [500k](end_price) có những mẫu Áo sơ mi nào
+    - Áo sơ mi loại [200](start_price) đến [500](end_price) có những mẫu nào
+    - Áo sơ mi từ [200](start_price) đến [500](end_price) có những mẫu nào
+    - Áo sơ mi từ [200](start_price)-[500](end_price) có loại nào
+    - Áo sơ mi [200](start_price) - [500](end_price) có những loại nào
+    - Áo sơ mi [200](start_price) đến [500](end_price) có những mẫu nào
+    - Áo sơ mi loại dưới [500k](end_price) có những mẫu nào
+    - Áo sơ mi dưới [500k](end_price) có những mẫu nào
+    - Áo sơ mi ít hơn [500k](end_price) có loại nào
+    - Áo sơ mi loại trên [500k](start_price) có những mẫu nào
+    - Áo sơ mi trên [500k](start_price) có những mẫu nào
+    - Áo sơ mi nhiều hơn [500k](start_price) có loại nào
+    - Áo phông loại [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Áo phông từ [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Áo phông từ [200k](start_price)-[500k](end_price) có loại nào
+    - Áo phông [200k](start_price) - [500k](end_price) có những loại nào
+    - Áo phông [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Giá từ [200k](start_price) đến [500k](end_price) có những mẫu Áo phông nào
+    - Áo phông loại [200](start_price) đến [500](end_price) có những mẫu nào
+    - Áo phông từ [200](start_price) đến [500](end_price) có những mẫu nào
+    - Áo phông từ [200](start_price)-[500](end_price) có loại nào
+    - Áo phông [200](start_price) - [500](end_price) có những loại nào
+    - Áo phông [200](start_price) đến [500](end_price) có những mẫu nào
+    - Áo phông loại dưới [500k](end_price) có những mẫu nào
+    - Áo phông dưới [500k](end_price) có những mẫu nào
+    - Áo phông ít hơn [500k](end_price) có loại nào
+    - Áo phông loại trên [500k](start_price) có những mẫu nào
+    - Áo phông trên [500k](start_price) có những mẫu nào
+    - Áo phông nhiều hơn [500k](start_price) có loại nào
+    - Tôi muốn xem áo trên [500k](start_price)
+    - Tôi muốn xem áo dưới [500k](end_price)
+- intent: ask_trousers_price
+  examples: |
+    - Quần loại [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Quần từ [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Quần từ [200k](start_price)-[500k](end_price) có loại nào
+    - Quần [200k](start_price) - [500k](end_price) có những loại nào
+    - Quần [200k](start_price) đến [500k](end_price) có những mẫu nào
+    - Quần loại [200](start_price) đến [500](end_price) có những mẫu nào
+    - Quần từ [200](start_price) đến [500](end_price) có những mẫu nào
+    - Quần từ [200](start_price)-[500](end_price) có loại nào
+    - Quần [200](start_price) - [500](end_price) có những loại nào
+    - Quần [200](start_price) đến [500](end_price) có những mẫu nào
+    - Quần loại dưới [500k](end_price) có những mẫu nào
+    - Quần dưới [500k](end_price) có những mẫu nào
+    - Quần ít hơn [500k](end_price) có loại nào
+    - Quần loại trên [500k](start_price) có những mẫu nào
+    - Quần trên [500k](start_price) có những mẫu nào
+    - Quần nhiều hơn [500k](start_price) có loại nào
+    - Tôi muốn xem quần trên [500k](start_price)
+    - Tôi muốn xem quần dưới [500k](end_price)
+- intent: ask_dress_type
+  examples: |
+    - Có những kiểu váy nào
+    - Có những kiểu đầm nào
+    - có nhưng loại váy gì
+    - có những loại đầm gì
+    - váy có những loại nào
+    - đầm có những loại nào
+    - váy có những mẫu nào
+    - có những mẫu váy nào
+    - vay co nhung kieu nao
+    - vay co nhung loai nao
+    - co nhung kieu vay nao
+    - cửa hàng có những kiểu váy nào
+    - ở đây có váy kiểu gì
+    - Cửa hàng có mẫu váy gì ở đây
+    - tôi muốn mua váy
+    - tôi muốn xem váy
+    - shop mình có những váy gì nhỉ
+    - shop mình có những đầm gì nhỉ
+    - bên mình bán những kiểu váy gì
+    - cho tôi xem váy của shop
+- intent: ask_shirt_type
+  examples: |
+    - Có những kiểu áo nào
+    - Có những kiểu áo sơ mi nào
+    - có nhưng loại áo gì
+    - có những loại áo sơ mi gì
+    - áo có những loại nào
+    - áo sơ mi có những loại nào
+    - áo có những mẫu nào
+    - có những mẫu áo nào
+    - ao phong co nhung kieu nao
+    - ao phong co nhung loai nao
+    - co nhung kieu ao phong nao
+    - cửa hàng có những kiểu áo nào
+    - ở đây có áo kiểu gì
+    - Cửa hàng có mẫu áo gì ở đây
+    - tôi muốn mua áo
+    - tôi muốn xem áo
+    - mình muốn mua áo
+    - bên mình có những kiểu áo gì nhỉ
+    - shop mình có áo gì
+    - shop mình có những kiểu áo gì
+    - cho xem áo của shop
+- intent: ask_trousers_type
+  examples: |
+    - Có những kiểu quần nào
+    - quần có những kiểu nào
+    - có những loại quần nào
+    - quần có mấy loại
+    - Cửa hàng có những mẫu quần nào
+    - Ở đây bán những kiểu quần như nào
+    - tôi muốn mua quần
+    - tôi muốn xem quần
+    - mình muốn mua quần
+    - shop có những kiểu quần gì nhỉ
+    - bên mình bán những kiểu quần nào nhỉ
+    - Quần bên mình có những kiểu nào
+    - cho xem quần của shop
+- intent: ask_price
+  examples: |
+    - Giá áo bên bạn bao nhiêu
+    - Giá quần áo bên bạn bao nhiêu
+    - Giá váy bên bạn bao nhiêu
+    - Quần áo bên bạn giá bao nhiêu nhỉ
+    - Váy bên bạn giá bao nhiêu
+- intent: ask_previous_product
+  examples: |
+    - Tôi muốn xem cái [đầu](product_order) tiên
+    - Tôi muốn xem cái ở [đầu](product_order)
+    - Tôi muốn xem cái ở [giữa](product_order)
+    - Tôi muốn xem cái ở [cuối](product_order)
+    - Tôi muốn xem cái áo ở [đầu](product_order)
+    - Tôi muốn xem cái áo ở [giữa](product_order)
+    - Tôi muốn xem cái áo ở [cuối](product_order)
+    - Tôi muốn xem cái quần ở [đầu](product_order)
+    - Tôi muốn xem cái quần ở [giữa](product_order)
+    - Tôi muốn xem cái quần ở [cuối](product_order)
+    - Tôi muốn xem cái váy ở [đầu](product_order)
+    - Tôi muốn xem cái váy ở [giữa](product_order)
+    - Tôi muốn xem cái váy ở [cuối](product_order)
+    - Tôi muốn xem cái số [1](product_order)
+    - Tôi muốn xem cái số [2](product_order)
+    - Tôi muốn xem cái số [3](product_order)
+    - Tôi muốn xem cái số [4](product_order)
+    - Tôi muốn xem cái số [5](product_order)
+    - Tôi muốn xem cái số [6](product_order)
+    - Tôi muốn xem cái số [7](product_order)
+    - Tôi muốn xem cái áo số [1](product_order)
+    - Tôi muốn xem cái áo số [2](product_order)
+    - Tôi muốn xem cái áo số [3](product_order)
+    - Tôi muốn xem cái áo số [4](product_order)
+    - Tôi muốn xem cái áo số [5](product_order)
+    - Tôi muốn xem cái áo số [6](product_order)
+    - Tôi muốn xem cái áo số [7](product_order)
+    - Tôi muốn xem cái quần số [1](product_order)
+    - Tôi muốn xem cái quần số [2](product_order)
+    - Tôi muốn xem cái quần số [3](product_order)
+    - Tôi muốn xem cái quần số [4](product_order)
+    - Tôi muốn xem cái quần số [5](product_order)
+    - Tôi muốn xem cái quần số [6](product_order)
+    - Tôi muốn xem cái quần số [7](product_order)
+    - Tôi muốn xem cái váy số [1](product_order)
+    - Tôi muốn xem cái váy số [2](product_order)
+    - Tôi muốn xem cái váy số [3](product_order)
+    - Tôi muốn xem cái váy số [4](product_order)
+    - Tôi muốn xem cái váy số [5](product_order)
+    - Tôi muốn xem cái váy số [6](product_order)
+    - Tôi muốn xem cái váy số [7](product_order)
+    - Tôi muốn xem cái thứ [nhất](product_order)
+    - Tôi muốn xem cái thứ [hai](product_order)
+    - Tôi muốn xem cái thứ [ba](product_order)
+    - Tôi muốn xem cái thứ [1](product_order)
+    - Tôi muốn xem cái thứ [2](product_order)
+    - Tôi muốn xem cái thứ [3](product_order)
+    - Tôi muốn xem cái áo thứ [nhất](product_order)
+    - Tôi muốn xem cái áo thứ [hai](product_order)
+    - Tôi muốn xem cái áo thứ [ba](product_order)
+    - Tôi muốn xem cái áo thứ [1](product_order)
+    - Tôi muốn xem cái áo thứ [2](product_order)
+    - Tôi muốn xem cái áo thứ [3](product_order)
+    - Tôi muốn xem cái quần thứ [nhất](product_order)
+    - Tôi muốn xem cái quần thứ [hai](product_order)
+    - Tôi muốn xem cái quần thứ [ba](product_order)
+    - Tôi muốn xem cái quần thứ [1](product_order)
+    - Tôi muốn xem cái quần thứ [2](product_order)
+    - Tôi muốn xem cái quần thứ [3](product_order)
+    - Tôi muốn xem cái váy thứ [nhất](product_order)
+    - Tôi muốn xem cái váy thứ [hai](product_order)
+    - Tôi muốn xem cái váy thứ [ba](product_order)
+    - Tôi muốn xem cái váy thứ [1](product_order)
+    - Tôi muốn xem cái váy thứ [2](product_order)
+    - Tôi muốn xem cái váy thứ [3](product_order)
+    - Cho xem váy thứ [nhất](product_order)
+    - Cho xem váy thứ [hai](product_order)
+    - Cho xem váy thứ [ba](product_order)
+    - Cho xem váy thứ [1](product_order)
+    - Cho xem váy thứ [2](product_order)
+    - Cho xem váy thứ [3](product_order)
+    - Cho xem áo thứ [nhất](product_order)
+    - Cho xem áo thứ [hai](product_order)
+    - Cho xem áo thứ [ba](product_order)
+    - Cho xem áo thứ [1](product_order)
+    - Cho xem áo thứ [2](product_order)
+    - Cho xem áo thứ [3](product_order)
+    - Cho xem quần thứ [nhất](product_order)
+    - Cho xem quần thứ [hai](product_order)
+    - Cho xem quần thứ [ba](product_order)
+    - Cho xem quần thứ [1](product_order)
+    - Cho xem quần thứ [2](product_order)
+    - Cho xem quần thứ [3](product_order)
+    - Cho xem váy ở [đầu](product_order)
+    - Cho xem váy ở [giữa](product_order)
+    - Cho xem váy ở [cuối](product_order)
+    - Cho xem quần ở [đầu](product_order)
+    - Cho xem quần ở [giữa](product_order)
+    - Cho xem quần ở [cuối](product_order)
+    - Cho xem áo ở [đầu](product_order)
+    - Cho xem áo ở [giữa](product_order)
+    - Cho xem áo ở [cuối](product_order)
+- intent: ask_shop_dress
+  examples: |
+    - Shop ơi tôi muốn mua váy đi tiệc
+    - Tôi thích mặc váy
+    - Tôi sắp đi tiệc bạn có gợi ý gì không
+    - Cửa hàng mình có váy gì đẹp không
+    - Tôi tôi hơi mũm mĩm, bạn có gợi ý nào không
+    - Tôi sắp đi chơi với bạn trai, mà không biết nên mặc gì
+    - Tôi sắp đi picnic, bạn có gợi ý gì không
+    - Tôi sắp đi du lịch, bạn có gợi ý gì không
+    - Người tôi gầy có mặc được váy không
+    - Bạn thấy như thế nào nếu tôi mặc váy
+- intent: ask_outfit_office
+  examples: |
+    - Tôi sắp đi làm ngày đầu ở công ty mới, bạn nghĩ nên mặc gì
+    - Bạn gợi ý cho tôi bộ nào mà đi làm mọi người đều phải nhìn tôi đi
+    - Tôi có công việc mới, bạn gợi ý đồ mặc cho tôi đi nhận việc với
+    - Tôi muốn thay đổi phong cách ăn mặc ở công sở
+    - Bạn có những bộ đồ công sở gì
+    - Mình đi liên hoan với công ty, nên mặc gì nhỉ
+    - Bạn nghĩ nên mặc như nào khi đi làm
+    - Đi làm ở cơ quan nhà nước nên mặc gì nhỉ
+    - Tôi sắp về ra mắt nhà bạn trai, nên mặc gì nhỉ
+- intent: give_name
+  examples: |
+    - Tôi tên là [An](first_name)
+    - Tôi tên là [Anh](first_name)
+    - Tôi tên là [Ái](first_name)
+    - Tôi tên là [Diệp](first_name)
+    - Tôi tên là [Hạnh](first_name)
+    - Tôi tên là [Hân](first_name)
+    - Tôi tên là [Huyền](first_name)
+    - Tôi tên là [Ngọc](first_name)
+    - Tôi tên là [Nhi](first_name)
+    - Tôi tên là [Ngân](first_name)
+    - Tôi tên là [Như](first_name)
+    - Tôi tên là [Phương](first_name)
+    - Tôi tên là [Thư](first_name)
+    - Tôi tên là [Trang](first_name)
+    - Tôi tên là [Vy](first_name)
+    - Tôi tên là [Thảo](first_name)
+    - Tôi tên là [My](first_name)
+    - Tôi tên là [Vân Anh](first_name)
+    - Tôi tên là [Linh](first_name)
+    - Tôi tên là [Oanh](first_name)
+    - Tôi tên là [Tiên](first_name)
+    - Tôi tên là [Hường](first_name)
+    - Tôi tên là [Hương](first_name)
+    - Tôi tên là [Hiếu](first_name)
+    - Tôi tên là [Đạt](first_name)
+    - Tôi tên là [Đức](first_name)
+    - Tôi tên là [Trí](first_name)
+    - Tôi tên là [Trung](first_name)
+    - Tôi tên là [Hiệp](first_name)
+    - Tôi tên là [Hoàng](first_name)
+    - Tôi tên là [Hùng](first_name)
+    - Tôi tên là [Thắng](first_name)
+    - Tôi tên là [Nam](first_name)
+    - Tôi tên là [Long](first_name)
+    - Tôi tên là [Tú](first_name)
+    - Tôi tên là [Thanh](first_name)
+    - Tôi tên là [Tùng](first_name)
+    - Tôi tên là [Hưng](first_name)
+    - Tôi tên là [Điệp](first_name)
+    - Tôi tên là [Giang](first_name)
+    - Tôi tên là [Nghiêm](first_name)
+    - Tôi tên là [Tuấn](first_name)
+    - Tôi tên là [Minh](first_name)
+    - Tôi tên là [Mạnh](first_name)
+    - Tôi tên là [Mừng](first_name)
+    - Tôi tên là [Tài](first_name)
+    - Tôi tên là [Huy](first_name)
+    - Tôi tên là [Thành](first_name)
+    - Tôi tên là [Chung](first_name)
+    - Tôi tên là [Dũng](first_name)
+    - Tôi tên là [Dương](first_name)
+    - Tôi tên là [Mai](first_name)
+    - Tôi tên là [Phú](first_name)
+    - Tôi tên là [Trâm](first_name)
+    - Tôi tên là [Hằng](first_name)
+    - Tôi tên là [Thịnh](first_name)
+    - Tôi tên là [Duy](first_name)
+    - Tôi tên là [Thức](first_name)
+    - Mình tên là [An](first_name)
+    - Mình tên là [Anh](first_name)
+    - Mình tên là [Ái](first_name)
+    - Mình tên là [Diệp](first_name)
+    - Mình tên là [Hạnh](first_name)
+    - Mình tên là [Hân](first_name)
+    - Mình tên là [Huyền](first_name)
+    - Mình tên là [Ngọc](first_name)
+    - Mình tên là [Nhi](first_name)
+    - Mình tên là [Ngân](first_name)
+    - Mình tên là [Như](first_name)
+    - Mình tên là [Phương](first_name)
+    - Mình tên là [Thư](first_name)
+    - Mình tên là [Trang](first_name)
+    - Mình tên là [Vy](first_name)
+    - Mình tên là [Thảo](first_name)
+    - Mình tên là [My](first_name)
+    - Mình tên là [Vân Anh](first_name)
+    - Mình tên là [Linh](first_name)
+    - Mình tên là [Oanh](first_name)
+    - Mình tên là [Tiên](first_name)
+    - Mình tên là [Hường](first_name)
+    - Mình tên là [Hương](first_name)
+    - Mình tên là [Hiếu](first_name)
+    - Mình tên là [Đạt](first_name)
+    - Mình tên là [Đức](first_name)
+    - Mình tên là [Trí](first_name)
+    - Mình tên là [Trung](first_name)
+    - Mình tên là [Hiệp](first_name)
+    - Mình tên là [Hoàng](first_name)
+    - Mình tên là [Hùng](first_name)
+    - Mình tên là [Thắng](first_name)
+    - Mình tên là [Nam](first_name)
+    - Mình tên là [Long](first_name)
+    - Mình tên là [Tú](first_name)
+    - Mình tên là [Thanh](first_name)
+    - Mình tên là [Tùng](first_name)
+    - Mình tên là [Hưng](first_name)
+    - Mình tên là [Điệp](first_name)
+    - Mình tên là [Giang](first_name)
+    - Mình tên là [Nghiêm](first_name)
+    - Mình tên là [Tuấn](first_name)
+    - Mình tên là [Minh](first_name)
+    - Mình tên là [Mạnh](first_name)
+    - Mình tên là [Mừng](first_name)
+    - Mình tên là [Tài](first_name)
+    - Mình tên là [Huy](first_name)
+    - Mình tên là [Thành](first_name)
+    - Mình tên là [Chung](first_name)
+    - Mình tên là [Dũng](first_name)
+    - Mình tên là [Dương](first_name)
+    - Mình tên là [Mai](first_name)
+    - Mình tên là [Phú](first_name)
+    - Mình tên là [Trâm](first_name)
+    - Mình tên là [Hằng](first_name)
+    - Mình tên là [Thịnh](first_name)
+    - Mình tên là [Duy](first_name)
+    - Mình tên là [Thức](first_name)
+    - tên là [An](first_name)
+    - tên là [Anh](first_name)
+    - tên là [Ái](first_name)
+    - tên là [Diệp](first_name)
+    - tên là [Hạnh](first_name)
+    - tên là [Hân](first_name)
+    - tên là [Huyền](first_name)
+    - tên là [Ngọc](first_name)
+    - tên là [Nhi](first_name)
+    - tên là [Ngân](first_name)
+    - tên là [Như](first_name)
+    - tên là [Phương](first_name)
+    - tên là [Thư](first_name)
+    - tên là [Trang](first_name)
+    - tên là [Vy](first_name)
+    - tên là [Thảo](first_name)
+    - tên là [My](first_name)
+    - tên là [Vân Anh](first_name)
+    - tên là [Linh](first_name)
+    - tên là [Oanh](first_name)
+    - tên là [Tiên](first_name)
+    - tên là [Hường](first_name)
+    - tên là [Hương](first_name)
+    - tên là [Hiếu](first_name)
+    - tên là [Đạt](first_name)
+    - tên là [Đức](first_name)
+    - tên là [Trí](first_name)
+    - tên là [Trung](first_name)
+    - tên là [Hiệp](first_name)
+    - tên là [Hoàng](first_name)
+    - tên là [Hùng](first_name)
+    - tên là [Thắng](first_name)
+    - tên là [Nam](first_name)
+    - tên là [Long](first_name)
+    - tên là [Tú](first_name)
+    - tên là [Thanh](first_name)
+    - tên là [Tùng](first_name)
+    - tên là [Hưng](first_name)
+    - tên là [Điệp](first_name)
+    - tên là [Giang](first_name)
+    - tên là [Nghiêm](first_name)
+    - tên là [Tuấn](first_name)
+    - tên là [Minh](first_name)
+    - tên là [Mạnh](first_name)
+    - tên là [Mừng](first_name)
+    - tên là [Tài](first_name)
+    - tên là [Huy](first_name)
+    - tên là [Thành](first_name)
+    - tên là [Chung](first_name)
+    - tên là [Dũng](first_name)
+    - tên là [Dương](first_name)
+    - tên là [Mai](first_name)
+    - tên là [Phú](first_name)
+    - tên là [Trâm](first_name)
+    - tên là [Hằng](first_name)
+    - tên là [Thịnh](first_name)
+    - tên là [Duy](first_name)
+    - tên là [Thức](first_name)
+- intent: give_phone
+  examples: |
+    - [0963632312](phone)
+    - [0923434345](phone)
+    - [0967453625](phone)
+    - [0912345678](phone)
+    - [0346788337](phone)
+    - [0933476374](phone)
+    - [0989776376](phone)
+    - [0999746466](phone)
+    - [0966635388](phone)
+    - [0974654767](phone)
+    - [0923434322](phone)
+    - [0945366744](phone)
+    - [0956754644](phone)
+    - [0945645634](phone)
+    - [0998734765](phone)
+    - [0909283476](phone)
+    - [0994486392](phone)
+    - [0923458734](phone)
+    - [0909888833](phone)
+    - [0923466533](phone)
+    - [0993682639](phone)
+    - [0936783763](phone)
+    - [0984737463](phone)
+    - [0998263763](phone)
+    - [0908978289](phone)
+    - [0909887634](phone)
+    - [0908738762](phone)
+    - [0912378634](phone)
+    - [0909827349](phone)
+    - [0909834763](phone)
+    - [0909876633](phone)
+    - [0909897876](phone)
+    - [0909876743](phone)
+    - [0349876743](phone)
+    - [0346840477](phone)
+    - [0342347634](phone)
+    - [0376374233](phone)
+    - [0390897343](phone)
+    - [0358763292](phone)
+    - [0323976343](phone)
+    - [0312398734](phone)
+    - [0312938723](phone)
+    - [0339485723](phone)
+    - [0320347383](phone)
+    - [0329347837](phone)
+    - [0323894763](phone)
+    - [0392387433](phone)
+    - [0392738439](phone)
+    - [0398234362](phone)
+    - [0345334542](phone)
+    - [0393778892](phone)
+    - [0302837427](phone)
+    - [0334534987](phone)
+    - [0339847548](phone)
+    - [0335948749](phone)
+    - [0336485693](phone)
+    - [0334508703](phone)
+    - [0343569873](phone)
+    - [0334578464](phone)
+- intent: give_address
+  examples: |
+    - [tỉnh Hòa Bình](address)
+    - [Số 15, Nguyễn văn Lộc, Hà Đông, Hà Nội](address)
+    - [thành phố Bác Giang](address)
+    - Tôi ở
+    - Địa chỉ ở
+    - Địa chỉ là
+    - Ở ABC nhé
+- intent: buy_product_intent
+  examples: |
+    - Cho tôi mua [quần ielgy denim lưng cao dáng rộng](buy_product)
+    - Tôi mua cái [quần ielgy denim lưng cao dáng rộng](buy_product)
+    - Cho tôi mua cái [quần ielgy denim lưng cao dáng rộng](buy_product) nhé
+    - Chốt mua [quần ielgy denim lưng cao dáng rộng](buy_product)
+    - Ship cho tôi [quần ielgy denim lưng cao dáng rộng](buy_product) nhé
+    - Tôi mua [quần ielgy denim lưng cao dáng rộng](buy_product)
+    - Mua [quần ielgy denim lưng cao dáng rộng](buy_product) nhé
+    - Tôi đặt [quần ielgy denim lưng cao dáng rộng](buy_product)
+    - Cho tôi mua [quần dài lovito cột dây](buy_product)
+    - Tôi mua cái [quần dài lovito cột dây](buy_product)
+    - Cho tôi mua cái [quần dài lovito cột dây](buy_product) nhé
+    - Chốt mua [quần dài lovito cột dây](buy_product)
+    - Ship cho tôi [quần dài lovito cột dây](buy_product) nhé
+    - Tôi mua [quần dài lovito cột dây](buy_product)
+    - Mua [quần dài lovito cột dây](buy_product) nhé
+    - Tôi đặt [quần dài lovito cột dây](buy_product)
+    - Cho tôi mua [quần thể thao yeya ống rộng](buy_product)
+    - Tôi mua cái [quần thể thao yeya ống rộng](buy_product)
+    - Cho tôi mua cái [quần thể thao yeya ống rộng](buy_product) nhé
+    - Chốt mua [quần thể thao yeya ống rộng](buy_product)
+    - Ship cho tôi [quần thể thao yeya ống rộng](buy_product) nhé
+    - Tôi mua [quần thể thao yeya ống rộng](buy_product)
+    - Mua [quần thể thao yeya ống rộng](buy_product) nhé
+    - Tôi đặt [quần thể thao yeya ống rộng](buy_product)
+    - Cho tôi mua [quần jean daduhey](buy_product)
+    - Tôi mua cái [quần jean daduhey](buy_product)
+    - Cho tôi mua cái [quần jean daduhey](buy_product) nhé
+    - Chốt mua [quần jean daduhey](buy_product)
+    - Ship cho tôi [quần jean daduhey](buy_product) nhé
+    - Tôi mua [quần jean daduhey](buy_product)
+    - Mua [quần jean daduhey](buy_product) nhé
+    - Tôi đặt [quần jean daduhey](buy_product)
+    - Cho tôi mua [quần kaki túi hộp ống suông](buy_product)
+    - Tôi mua cái [quần kaki túi hộp ống suông](buy_product)
+    - Cho tôi mua cái [quần kaki túi hộp ống suông](buy_product) nhé
+    - Chốt mua [quần kaki túi hộp ống suông](buy_product)
+    - Ship cho tôi [quần kaki túi hộp ống suông](buy_product) nhé
+    - Tôi mua [quần kaki túi hộp ống suông](buy_product)
+    - Mua [quần kaki túi hộp ống suông](buy_product) nhé
+    - Tôi đặt [quần kaki túi hộp ống suông](buy_product)
+    - Cho tôi mua [váy đi tiệc tahe v267](buy_product)
+    - Tôi mua cái [váy đi tiệc tahe v267](buy_product)
+    - Cho tôi mua cái [váy đi tiệc tahe v267](buy_product) nhé
+    - Chốt mua [váy đi tiệc tahe v267](buy_product)
+    - Ship cho tôi [váy đi tiệc tahe v267](buy_product) nhé
+    - Tôi mua [váy đi tiệc tahe v267](buy_product)
+    - Mua [váy đi tiệc tahe v267](buy_product) nhé
+    - Tôi đặt [váy đi tiệc tahe v267](buy_product)
+    - Cho tôi mua [đầm váy đi đám cưới dự tiệc vvn042309](buy_product)
+    - Tôi mua cái [đầm váy đi đám cưới dự tiệc vvn042309](buy_product)
+    - Cho tôi mua cái [đầm váy đi đám cưới dự tiệc vvn042309](buy_product) nhé
+    - Chốt mua [đầm váy đi đám cưới dự tiệc vvn042309](buy_product)
+    - Ship cho tôi [đầm váy đi đám cưới dự tiệc vvn042309](buy_product) nhé
+    - Tôi mua [đầm váy đi đám cưới dự tiệc vvn042309](buy_product)
+    - Mua [đầm váy đi đám cưới dự tiệc vvn042309](buy_product) nhé
+    - Tôi đặt [đầm váy đi đám cưới dự tiệc vvn042309](buy_product)
+    - Cho tôi mua [váy công sở dự tiệc sang trọng bigsize amyra](buy_product)
+    - Tôi mua cái [váy công sở dự tiệc sang trọng bigsize amyra](buy_product)
+    - Cho tôi mua cái [váy công sở dự tiệc sang trọng bigsize amyra](buy_product) nhé
+    - Chốt mua [váy công sở dự tiệc sang trọng bigsize amyra](buy_product)
+    - Ship cho tôi [váy công sở dự tiệc sang trọng bigsize amyra](buy_product) nhé
+    - Tôi mua [váy công sở dự tiệc sang trọng bigsize amyra](buy_product)
+    - Mua [váy công sở dự tiệc sang trọng bigsize amyra](buy_product) nhé
+    - Tôi đặt [váy công sở dự tiệc sang trọng bigsize amyra](buy_product)
+    - Cho tôi mua [váy ren tiểu thư v920](buy_product)
+    - Tôi mua cái [váy ren tiểu thư v920](buy_product)
+    - Cho tôi mua cái [váy ren tiểu thư v920](buy_product) nhé
+    - Chốt mua [váy ren tiểu thư v920](buy_product)
+    - Ship cho tôi [váy ren tiểu thư v920](buy_product) nhé
+    - Tôi mua [váy ren tiểu thư v920](buy_product)
+    - Mua [váy ren tiểu thư v920](buy_product) nhé
+    - Tôi đặt [váy ren tiểu thư v920](buy_product)
+    - Cho tôi mua [váy tơ tiểu thư v908](buy_product)
+    - Tôi mua cái [váy tơ tiểu thư v908](buy_product)
+    - Cho tôi mua cái [váy tơ tiểu thư v908](buy_product) nhé
+    - Chốt mua [váy tơ tiểu thư v908](buy_product)
+    - Ship cho tôi [váy tơ tiểu thư v908](buy_product) nhé
+    - Tôi mua [váy tơ tiểu thư v908](buy_product)
+    - Mua [váy tơ tiểu thư v908](buy_product) nhé
+    - Tôi đặt [váy tơ tiểu thư v908](buy_product)
+    - Cho tôi mua [váy voan tiểu thư v784](buy_product)
+    - Tôi mua cái [váy voan tiểu thư v784](buy_product)
+    - Cho tôi mua cái [váy voan tiểu thư v784](buy_product) nhé
+    - Chốt mua [váy voan tiểu thư v784](buy_product)
+    - Ship cho tôi [váy voan tiểu thư v784](buy_product) nhé
+    - Tôi mua [váy voan tiểu thư v784](buy_product)
+    - Mua [váy voan tiểu thư v784](buy_product) nhé
+    - Tôi đặt [váy voan tiểu thư v784](buy_product)
+    - Cho tôi mua [váy hoa nhí v243](buy_product)
+    - Tôi mua cái [váy hoa nhí v243](buy_product)
+    - Cho tôi mua cái [váy hoa nhí v243](buy_product) nhé
+    - Chốt mua [váy hoa nhí v243](buy_product)
+    - Ship cho tôi [váy hoa nhí v243](buy_product) nhé
+    - Tôi mua [váy hoa nhí v243](buy_product)
+    - Mua [váy hoa nhí v243](buy_product) nhé
+    - Tôi đặt [váy hoa nhí v243](buy_product)
+    - Cho tôi mua [áo thun tay ngắn dây rút](buy_product)
+    - Tôi mua cái [áo thun tay ngắn dây rút](buy_product)
+    - Cho tôi mua cái [áo thun tay ngắn dây rút](buy_product) nhé
+    - Chốt mua [áo thun tay ngắn dây rút](buy_product)
+    - Ship cho tôi [áo thun tay ngắn dây rút](buy_product) nhé
+    - Tôi mua [áo thun tay ngắn dây rút](buy_product)
+    - Mua [áo thun tay ngắn dây rút](buy_product) nhé
+    - Tôi đặt [áo thun tay ngắn dây rút](buy_product)
+    - Cho tôi mua [áo thun xiang nian ni tay ngắn phối dây rút](buy_product)
+    - Tôi mua cái [áo thun xiang nian ni tay ngắn phối dây rút](buy_product)
+    - Cho tôi mua cái [áo thun xiang nian ni tay ngắn phối dây rút](buy_product) nhé
+    - Chốt mua [áo thun xiang nian ni tay ngắn phối dây rút](buy_product)
+    - Ship cho tôi [áo thun xiang nian ni tay ngắn phối dây rút](buy_product) nhé
+    - Tôi mua [áo thun xiang nian ni tay ngắn phối dây rút](buy_product)
+    - Mua [áo thun xiang nian ni tay ngắn phối dây rút](buy_product) nhé
+    - Tôi đặt [áo thun xiang nian ni tay ngắn phối dây rút](buy_product)
+    - Cho tôi mua [áo phông áo thun american vintage](buy_product)
+    - Tôi mua cái [áo phông áo thun american vintage](buy_product)
+    - Cho tôi mua cái [áo phông áo thun american vintage](buy_product) nhé
+    - Chốt mua [áo phông áo thun american vintage](buy_product)
+    - Ship cho tôi [áo phông áo thun american vintage](buy_product) nhé
+    - Tôi mua [áo phông áo thun american vintage](buy_product)
+    - Mua [áo phông áo thun american vintage](buy_product) nhé
+    - Tôi đặt [áo phông áo thun american vintage](buy_product)
+    - Cho tôi mua [áo thun nữ thời trang ngắn tay oversize](buy_product)
+    - Tôi mua cái [áo thun nữ thời trang ngắn tay oversize](buy_product)
+    - Cho tôi mua cái [áo thun nữ thời trang ngắn tay oversize](buy_product) nhé
+    - Chốt mua [áo thun nữ thời trang ngắn tay oversize](buy_product)
+    - Ship cho tôi [áo thun nữ thời trang ngắn tay oversize](buy_product) nhé
+    - Tôi mua [áo thun nữ thời trang ngắn tay oversize](buy_product)
+    - Mua [áo thun nữ thời trang ngắn tay oversize](buy_product) nhé
+    - Tôi đặt [áo thun nữ thời trang ngắn tay oversize](buy_product)
+    - Cho tôi mua [áo sơ mi nữ tay bồng sm12](buy_product)
+    - Tôi mua cái [áo sơ mi nữ tay bồng sm12](buy_product)
+    - Cho tôi mua cái [áo sơ mi nữ tay bồng sm12](buy_product) nhé
+    - Chốt mua [áo sơ mi nữ tay bồng sm12](buy_product)
+    - Ship cho tôi [áo sơ mi nữ tay bồng sm12](buy_product) nhé
+    - Tôi mua [áo sơ mi nữ tay bồng sm12](buy_product)
+    - Mua [áo sơ mi nữ tay bồng sm12](buy_product) nhé
+    - Tôi đặt [áo sơ mi nữ tay bồng sm12](buy_product)
+    - Cho tôi mua [áo sơ mi nữ công sở lavilo sm07](buy_product)
+    - Tôi mua cái [áo sơ mi nữ công sở lavilo sm07](buy_product)
+    - Cho tôi mua cái [áo sơ mi nữ công sở lavilo sm07](buy_product) nhé
+    - Chốt mua [áo sơ mi nữ công sở lavilo sm07](buy_product)
+    - Ship cho tôi [áo sơ mi nữ công sở lavilo sm07](buy_product) nhé
+    - Tôi mua [áo sơ mi nữ công sở lavilo sm07](buy_product)
+    - Mua [áo sơ mi nữ công sở lavilo sm07](buy_product) nhé
+    - Tôi đặt [áo sơ mi nữ công sở lavilo sm07](buy_product)
+- intent: cancle_buy_product
+  examples: |
+    - tôi không mua [quần ielgy denim lưng cao dáng rộng](cancle_product) nữa
+    - tôi hủy không mua [quần ielgy denim lưng cao dáng rộng](cancle_product) nữa nhé
+    - cho tôi hủy đơn [quần ielgy denim lưng cao dáng rộng](cancle_product) nhé
+    - hủy hộ tôi cái [quần ielgy denim lưng cao dáng rộng](cancle_product)
+    - hủy mua [quần ielgy denim lưng cao dáng rộng](cancle_product) shop nhé
+    - không mua [quần ielgy denim lưng cao dáng rộng](cancle_product) nữa, hủy đơn hộ tôi nhé
+    - tôi không mua [quần dài lovito cột dây](cancle_product) nữa
+    - tôi hủy không mua [quần dài lovito cột dây](cancle_product) nữa nhé
+    - cho tôi hủy đơn [quần dài lovito cột dây](cancle_product) nhé
+    - hủy hộ tôi cái [quần dài lovito cột dây](cancle_product)
+    - hủy mua [quần dài lovito cột dây](cancle_product) shop nhé
+    - không mua [quần dài lovito cột dây](cancle_product) nữa, hủy đơn hộ tôi nhé
+    - tôi không mua [quần thể thao yeya ống rộng](cancle_product) nữa
+    - tôi hủy không mua [quần thể thao yeya ống rộng](cancle_product) nữa nhé
+    - cho tôi hủy đơn [quần thể thao yeya ống rộng](cancle_product) nhé
+    - hủy hộ tôi cái [quần thể thao yeya ống rộng](cancle_product)
+    - hủy mua [quần thể thao yeya ống rộng](cancle_product) shop nhé
+    - không mua [quần thể thao yeya ống rộng](cancle_product) nữa, hủy đơn hộ tôi nhé
+    - tôi không mua [quần jean daduhey](cancle_product) nữa
+    - tôi hủy không mua [quần jean daduhey](cancle_product) nữa nhé
+    - cho tôi hủy đơn [quần jean daduhey](cancle_product) nhé
+    - hủy hộ tôi cái [quần jean daduhey](cancle_product)
+    - hủy mua [quần jean daduhey](cancle_product) shop nhé
+    - không mua [quần jean daduhey](cancle_product) nữa, hủy đơn hộ tôi nhé
+    - tôi không mua [quần kaki túi hộp ống suông](cancle_product) nữa
+    - tôi hủy không mua [quần kaki túi hộp ống suông](cancle_product) nữa nhé
+    - cho tôi hủy đơn [quần kaki túi hộp ống suông](cancle_product) nhé
+    - hủy hộ tôi cái [quần kaki túi hộp ống suông](cancle_product)
+    - hủy mua [quần kaki túi hộp ống suông](cancle_product) shop nhé
+    - không mua [quần kaki túi hộp ống suông](cancle_product) nữa, hủy đơn hộ tôi nhé
+    - tôi không mua [váy đi tiệc tahe v267](cancle_product) nữa
+    - tôi hủy không mua [váy đi tiệc tahe v267](cancle_product) nữa nhé
+    - cho tôi hủy đơn [váy đi tiệc tahe v267](cancle_product) nhé
+    - hủy hộ tôi cái [váy đi tiệc tahe v267](cancle_product)
+    - hủy mua [váy đi tiệc tahe v267](cancle_product) shop nhé
+    - không mua [váy đi tiệc tahe v267](cancle_product) nữa, hủy đơn hộ tôi nhé
+    - tôi không mua [đầm váy đi đám cưới dự tiệc vvn042309](cancle_product) nữa
+    - tôi hủy không mua [đầm váy đi đám cưới dự tiệc vvn042309](cancle_product) nữa nhé
+    - cho tôi hủy đơn [đầm váy đi đám cưới dự tiệc vvn042309](cancle_product) nhé
+    - hủy hộ tôi cái [đầm váy đi đám cưới dự tiệc vvn042309](cancle_product)
+    - hủy mua [đầm váy đi đám cưới dự tiệc vvn042309](cancle_product) shop nhé
+    - không mua [đầm váy đi đám cưới dự tiệc vvn042309](cancle_product) nữa, hủy đơn hộ tôi nhé
+    - tôi không mua [váy công sở dự tiệc sang trọng bigsize amyra](cancle_product) nữa
+    - tôi hủy không mua [váy công sở dự tiệc sang trọng bigsize amyra](cancle_product) nữa nhé
+    - cho tôi hủy đơn [váy công sở dự tiệc sang trọng bigsize amyra](cancle_product) nhé
+    - hủy hộ tôi cái [váy công sở dự tiệc sang trọng bigsize amyra](cancle_product)
+    - hủy mua [váy công sở dự tiệc sang trọng bigsize amyra](cancle_product) shop nhé
+    - không mua [váy công sở dự tiệc sang trọng bigsize amyra](cancle_product) nữa, hủy đơn hộ tôi nhé
+    - tôi không mua [váy ren tiểu thư v920](cancle_product) nữa
+    - tôi hủy không mua [váy ren tiểu thư v920](cancle_product) nữa nhé
+    - cho tôi hủy đơn [váy ren tiểu thư v920](cancle_product) nhé
+    - hủy hộ tôi cái [váy ren tiểu thư v920](cancle_product)
+    - hủy mua [váy ren tiểu thư v920](cancle_product) shop nhé
+    - không mua [váy ren tiểu thư v920](cancle_product) nữa, hủy đơn hộ tôi nhé
+    - tôi không mua [váy tơ tiểu thư v908](cancle_product) nữa
+    - tôi hủy không mua [váy tơ tiểu thư v908](cancle_product) nữa nhé
+    - cho tôi hủy đơn [váy tơ tiểu thư v908](cancle_product) nhé
+    - hủy hộ tôi cái [váy tơ tiểu thư v908](cancle_product)
+    - hủy mua [váy tơ tiểu thư v908](cancle_product) shop nhé
+    - không mua [váy tơ tiểu thư v908](cancle_product) nữa, hủy đơn hộ tôi nhé
+    - tôi không mua [váy voan tiểu thư v784](cancle_product) nữa
+    - tôi hủy không mua [váy voan tiểu thư v784](cancle_product) nữa nhé
+    - cho tôi hủy đơn [váy voan tiểu thư v784](cancle_product) nhé
+    - hủy hộ tôi cái [váy voan tiểu thư v784](cancle_product)
+    - hủy mua [váy voan tiểu thư v784](cancle_product) shop nhé
+    - không mua [váy voan tiểu thư v784](cancle_product) nữa, hủy đơn hộ tôi nhé
+    - tôi không mua [váy hoa nhí v243](cancle_product) nữa
+    - tôi hủy không mua [váy hoa nhí v243](cancle_product) nữa nhé
+    - cho tôi hủy đơn [váy hoa nhí v243](cancle_product) nhé
+    - hủy hộ tôi cái [váy hoa nhí v243](cancle_product)
+    - hủy mua [váy hoa nhí v243](cancle_product) shop nhé
+    - không mua [váy hoa nhí v243](cancle_product) nữa, hủy đơn hộ tôi nhé
+    - tôi không mua [áo thun tay ngắn dây rút](cancle_product) nữa
+    - tôi hủy không mua [áo thun tay ngắn dây rút](cancle_product) nữa nhé
+    - cho tôi hủy đơn [áo thun tay ngắn dây rút](cancle_product) nhé
+    - hủy hộ tôi cái [áo thun tay ngắn dây rút](cancle_product)
+    - hủy mua [áo thun tay ngắn dây rút](cancle_product) shop nhé
+    - không mua [áo thun tay ngắn dây rút](cancle_product) nữa, hủy đơn hộ tôi nhé
+    - tôi không mua [áo thun xiang nian ni tay ngắn phối dây rút](cancle_product) nữa
+    - tôi hủy không mua [áo thun xiang nian ni tay ngắn phối dây rút](cancle_product) nữa nhé
+    - cho tôi hủy đơn [áo thun xiang nian ni tay ngắn phối dây rút](cancle_product) nhé
+    - hủy hộ tôi cái [áo thun xiang nian ni tay ngắn phối dây rút](cancle_product)
+    - hủy mua [áo thun xiang nian ni tay ngắn phối dây rút](cancle_product) shop nhé
+    - không mua [áo thun xiang nian ni tay ngắn phối dây rút](cancle_product) nữa, hủy đơn hộ tôi nhé
+    - tôi không mua [áo phông áo thun american vintage ](cancle_product) nữa
+    - tôi hủy không mua [áo phông áo thun american vintage ](cancle_product) nữa nhé
+    - cho tôi hủy đơn [áo phông áo thun american vintage ](cancle_product) nhé
+    - hủy hộ tôi cái [áo phông áo thun american vintage ](cancle_product)
+    - hủy mua [áo phông áo thun american vintage ](cancle_product) shop nhé
+    - không mua [áo phông áo thun american vintage ](cancle_product) nữa, hủy đơn hộ tôi nhé
+    - tôi không mua [áo thun nữ thời trang ngắn tay oversize](cancle_product) nữa
+    - tôi hủy không mua [áo thun nữ thời trang ngắn tay oversize](cancle_product) nữa nhé
+    - cho tôi hủy đơn [áo thun nữ thời trang ngắn tay oversize](cancle_product) nhé
+    - hủy hộ tôi cái [áo thun nữ thời trang ngắn tay oversize](cancle_product)
+    - hủy mua [áo thun nữ thời trang ngắn tay oversize](cancle_product) shop nhé
+    - không mua [áo thun nữ thời trang ngắn tay oversize](cancle_product) nữa, hủy đơn hộ tôi nhé
+    - tôi không mua [áo sơ mi nữ tay bồng sm12](cancle_product) nữa
+    - tôi hủy không mua [áo sơ mi nữ tay bồng sm12](cancle_product) nữa nhé
+    - cho tôi hủy đơn [áo sơ mi nữ tay bồng sm12](cancle_product) nhé
+    - hủy hộ tôi cái [áo sơ mi nữ tay bồng sm12](cancle_product)
+    - hủy mua [áo sơ mi nữ tay bồng sm12](cancle_product) shop nhé
+    - không mua [áo sơ mi nữ tay bồng sm12](cancle_product) nữa, hủy đơn hộ tôi nhé
+    - tôi không mua [áo sơ mi nữ công sở lavilo sm07](cancle_product) nữa
+    - tôi hủy không mua [áo sơ mi nữ công sở lavilo sm07](cancle_product) nữa nhé
+    - cho tôi hủy đơn [áo sơ mi nữ công sở lavilo sm07](cancle_product) nhé
+    - hủy hộ tôi cái [áo sơ mi nữ công sở lavilo sm07](cancle_product)
+    - hủy mua [áo sơ mi nữ công sở lavilo sm07](cancle_product) shop nhé
+    - không mua [áo sơ mi nữ công sở lavilo sm07](cancle_product) nữa, hủy đơn hộ tôi nhé
+- intent: ask_product_detail
+  examples: |
+    - giá của [áo thun nữ thời trang ngắn tay oversize](product_detail)
+    - cho tôi xem [áo thun nữ thời trang ngắn tay oversize](product_detail)
+    - tôi muốn xem [áo thun nữ thời trang ngắn tay oversize](product_detail)
+    - tôi muốn xem cái [áo thun nữ thời trang ngắn tay oversize](product_detail) nhé
+    - gửi tôi thông tin [áo thun nữ thời trang ngắn tay oversize](product_detail) đi
+    - cho tôi xem ảnh [áo thun nữ thời trang ngắn tay oversize](product_detail) shop nhé
+    - tôi muốn xem ảnh của [áo thun nữ thời trang ngắn tay oversize](product_detail)
+    - cho xem ảnh và thông tin của [áo thun nữ thời trang ngắn tay oversize](product_detail)
+    - gửi thêm thông tin về [áo thun nữ thời trang ngắn tay oversize](product_detail) cho tôi đi
+    - thông tin chi tiết về [áo thun nữ thời trang ngắn tay oversize](product_detail) đi
+    - gửi thông tin kèm hình ảnh của [áo thun nữ thời trang ngắn tay oversize](product_detail) đi
+    - cái [áo thun nữ thời trang ngắn tay oversize](product_detail) có ảnh không
+    - không có ảnh cho [áo thun nữ thời trang ngắn tay oversize](product_detail) à
+    - thông tin chi tiết cho [áo thun nữ thời trang ngắn tay oversize](product_detail) đi
+    - cho tôi xem áo [áo thun nữ thời trang ngắn tay oversize](product_detail)
+    - cho tôi xem quần [áo thun nữ thời trang ngắn tay oversize](product_detail)
+    - cho tôi xem váy [áo thun nữ thời trang ngắn tay oversize](product_detail)
+    - tôi muốn xem váy [áo thun nữ thời trang ngắn tay oversize](product_detail)
+    - tôi muốn xem quần [áo thun nữ thời trang ngắn tay oversize](product_detail)
+    - tôi muốn xem áo [áo thun nữ thời trang ngắn tay oversize](product_detail)
+    - cho hỏi giá của [quần ielgy denim lưng cao dáng rộng](product_detail)
+    - giá của [quần ielgy denim lưng cao dáng rộng](product_detail) như thê nào
+    - cho tôi xem [quần ielgy denim lưng cao dáng rộng](product_detail)
+    - tôi muốn xem [quần ielgy denim lưng cao dáng rộng](product_detail)
+    - tôi muốn xem cái [quần ielgy denim lưng cao dáng rộng](product_detail) nhé
+    - gửi tôi thông tin [quần ielgy denim lưng cao dáng rộng](product_detail) đi
+    - cho tôi xem ảnh [quần ielgy denim lưng cao dáng rộng](product_detail) shop nhé
+    - tôi muốn xem ảnh của [quần ielgy denim lưng cao dáng rộng](product_detail)
+    - cho xem ảnh và thông tin của [quần ielgy denim lưng cao dáng rộng](product_detail)
+    - gửi thêm thông tin về [quần ielgy denim lưng cao dáng rộng](product_detail) cho tôi đi
+    - thông tin chi tiết về [quần ielgy denim lưng cao dáng rộng](product_detail) đi
+    - gửi thông tin kèm hình ảnh của [quần ielgy denim lưng cao dáng rộng](product_detail) đi
+    - cái [quần ielgy denim lưng cao dáng rộng](product_detail) có ảnh không
+    - không có ảnh cho [quần ielgy denim lưng cao dáng rộng](product_detail) à
+    - thông tin chi tiết cho [quần ielgy denim lưng cao dáng rộng](product_detail) đi
+    - cho tôi xem áo [quần ielgy denim lưng cao dáng rộng](product_detail)
+    - cho tôi xem quần [quần ielgy denim lưng cao dáng rộng](product_detail)
+    - cho tôi xem váy [quần ielgy denim lưng cao dáng rộng](product_detail)
+    - tôi muốn xem váy [quần ielgy denim lưng cao dáng rộng](product_detail)
+    - tôi muốn xem quần [quần ielgy denim lưng cao dáng rộng](product_detail)
+    - tôi muốn xem áo [quần ielgy denim lưng cao dáng rộng](product_detail)
+    - giá của [quần dài lovito cột dây](product_detail)
+    - cho tôi xem [quần dài lovito cột dây](product_detail)
+    - tôi muốn xem [quần dài lovito cột dây](product_detail)
+    - tôi muốn xem cái [quần dài lovito cột dây](product_detail) nhé
+    - gửi tôi thông tin [quần dài lovito cột dây](product_detail) đi
+    - cho tôi xem ảnh [quần dài lovito cột dây](product_detail) shop nhé
+    - tôi muốn xem ảnh của [quần dài lovito cột dây](product_detail)
+    - cho xem ảnh và thông tin của [quần dài lovito cột dây](product_detail)
+    - gửi thêm thông tin về [quần dài lovito cột dây](product_detail) cho tôi đi
+    - thông tin chi tiết về [quần dài lovito cột dây](product_detail) đi
+    - gửi thông tin kèm hình ảnh của [quần dài lovito cột dây](product_detail) đi
+    - cái [quần dài lovito cột dây](product_detail) có ảnh không
+    - không có ảnh cho [quần dài lovito cột dây](product_detail) à
+    - thông tin chi tiết cho [quần dài lovito cột dây](product_detail) đi
+    - cho tôi xem áo [quần dài lovito cột dây](product_detail)
+    - cho tôi xem quần [quần dài lovito cột dây](product_detail)
+    - cho tôi xem váy [quần dài lovito cột dây](product_detail)
+    - tôi muốn xem váy [quần dài lovito cột dây](product_detail)
+    - tôi muốn xem quần [quần dài lovito cột dây](product_detail)
+    - tôi muốn xem áo [quần dài lovito cột dây](product_detail)
+    - cho tôi xem [quần thể thao yeya ống rộng](product_detail)
+    - giá của [quần thể thao yeya ống rộng](product_detail) là bao nhiêu
+    - tôi muốn xem [quần thể thao yeya ống rộng](product_detail)
+    - tôi muốn xem cái [quần thể thao yeya ống rộng](product_detail) nhé
+    - gửi tôi thông tin [quần thể thao yeya ống rộng](product_detail) đi
+    - cho tôi xem ảnh [quần thể thao yeya ống rộng](product_detail) shop nhé
+    - tôi muốn xem ảnh của [quần thể thao yeya ống rộng](product_detail)
+    - cho xem ảnh và thông tin của [quần thể thao yeya ống rộng](product_detail)
+    - gửi thêm thông tin về [quần thể thao yeya ống rộng](product_detail) cho tôi đi
+    - thông tin chi tiết về [quần thể thao yeya ống rộng](product_detail) đi
+    - gửi thông tin kèm hình ảnh của [quần thể thao yeya ống rộng](product_detail) đi
+    - cái [quần thể thao yeya ống rộng](product_detail) có ảnh không
+    - không có ảnh cho [quần thể thao yeya ống rộng](product_detail) à
+    - thông tin chi tiết cho [quần thể thao yeya ống rộng](product_detail) đi
+    - cho tôi xem áo [quần thể thao yeya ống rộng](product_detail)
+    - cho tôi xem quần [quần thể thao yeya ống rộng](product_detail)
+    - cho tôi xem váy [quần thể thao yeya ống rộng](product_detail)
+    - tôi muốn xem váy [quần thể thao yeya ống rộng](product_detail)
+    - tôi muốn xem quần [quần thể thao yeya ống rộng](product_detail)
+    - tôi muốn xem áo [quần thể thao yeya ống rộng](product_detail)
+    - giá của [quần jean daduhey](product_detail)
+    - cho tôi xem [quần jean daduhey](product_detail)
+    - tôi muốn xem [quần jean daduhey](product_detail)
+    - tôi muốn xem cái [quần jean daduhey](product_detail) nhé
+    - gửi tôi thông tin [quần jean daduhey](product_detail) đi
+    - cho tôi xem ảnh [quần jean daduhey](product_detail) shop nhé
+    - tôi muốn xem ảnh của [quần jean daduhey](product_detail)
+    - cho xem ảnh và thông tin của [quần jean daduhey](product_detail)
+    - gửi thêm thông tin về [quần jean daduhey](product_detail) cho tôi đi
+    - thông tin chi tiết về [quần jean daduhey](product_detail) đi
+    - gửi thông tin kèm hình ảnh của [quần jean daduhey](product_detail) đi
+    - cái [quần jean daduhey](product_detail) có ảnh không
+    - không có ảnh cho [quần jean daduhey](product_detail) à
+    - thông tin chi tiết cho [quần jean daduhey](product_detail) đi
+    - cho tôi xem áo [quần jean daduhey](product_detail)
+    - cho tôi xem quần [quần jean daduhey](product_detail)
+    - cho tôi xem váy [quần jean daduhey](product_detail)
+    - tôi muốn xem váy [quần jean daduhey](product_detail)
+    - tôi muốn xem quần [quần jean daduhey](product_detail)
+    - tôi muốn xem áo [quần jean daduhey](product_detail)
+    - giá của [quần kaki túi hộp ống suông](product_detail)
+    - cho tôi xem [quần kaki túi hộp ống suông](product_detail)
+    - tôi muốn xem [quần kaki túi hộp ống suông](product_detail)
+    - tôi muốn xem cái [quần kaki túi hộp ống suông](product_detail) nhé
+    - gửi tôi thông tin [quần kaki túi hộp ống suông](product_detail) đi
+    - cho tôi xem ảnh [quần kaki túi hộp ống suông](product_detail) shop nhé
+    - tôi muốn xem ảnh của [quần kaki túi hộp ống suông](product_detail)
+    - cho xem ảnh và thông tin của [quần kaki túi hộp ống suông](product_detail)
+    - gửi thêm thông tin về [quần kaki túi hộp ống suông](product_detail) cho tôi đi
+    - thông tin chi tiết về [quần kaki túi hộp ống suông](product_detail) đi
+    - gửi thông tin kèm hình ảnh của [quần kaki túi hộp ống suông](product_detail) đi
+    - cái [quần kaki túi hộp ống suông](product_detail) có ảnh không
+    - không có ảnh cho [quần kaki túi hộp ống suông](product_detail) à
+    - thông tin chi tiết cho [quần kaki túi hộp ống suông](product_detail) đi
+    - cho tôi xem áo [quần kaki túi hộp ống suông](product_detail)
+    - cho tôi xem quần [quần kaki túi hộp ống suông](product_detail)
+    - cho tôi xem váy [quần kaki túi hộp ống suông](product_detail)
+    - tôi muốn xem váy [quần kaki túi hộp ống suông](product_detail)
+    - tôi muốn xem quần [quần kaki túi hộp ống suông](product_detail)
+    - tôi muốn xem áo [quần kaki túi hộp ống suông](product_detail)
+    - giá của [váy đi tiệc  tahe v267](product_detail)
+    - cho tôi xem [váy đi tiệc  tahe v267](product_detail)
+    - tôi muốn xem [váy đi tiệc  tahe v267](product_detail)
+    - tôi muốn xem cái [váy đi tiệc  tahe v267](product_detail) nhé
+    - gửi tôi thông tin [váy đi tiệc  tahe v267](product_detail) đi
+    - cho tôi xem ảnh [váy đi tiệc  tahe v267](product_detail) shop nhé
+    - tôi muốn xem ảnh của [váy đi tiệc  tahe v267](product_detail)
+    - cho xem ảnh và thông tin của [váy đi tiệc  tahe v267](product_detail)
+    - gửi thêm thông tin về [váy đi tiệc  tahe v267](product_detail) cho tôi đi
+    - thông tin chi tiết về [váy đi tiệc  tahe v267](product_detail) đi
+    - gửi thông tin kèm hình ảnh của [váy đi tiệc  tahe v267](product_detail) đi
+    - cái [váy đi tiệc  tahe v267](product_detail) có ảnh không
+    - không có ảnh cho [váy đi tiệc  tahe v267](product_detail) à
+    - thông tin chi tiết cho [váy đi tiệc  tahe v267](product_detail) đi
+    - cho tôi xem áo [váy đi tiệc  tahe v267](product_detail)
+    - cho tôi xem quần [váy đi tiệc  tahe v267](product_detail)
+    - cho tôi xem váy [váy đi tiệc  tahe v267](product_detail)
+    - tôi muốn xem váy [váy đi tiệc  tahe v267](product_detail)
+    - tôi muốn xem quần [váy đi tiệc  tahe v267](product_detail)
+    - tôi muốn xem áo [váy đi tiệc  tahe v267](product_detail)
+    - giá của [đầm váy đi đám cưới dự tiệc vvn042309](product_detail)
+    - cho tôi xem [đầm váy đi đám cưới dự tiệc vvn042309](product_detail)
+    - tôi muốn xem [đầm váy đi đám cưới dự tiệc vvn042309](product_detail)
+    - tôi muốn xem cái [đầm váy đi đám cưới dự tiệc vvn042309](product_detail) nhé
+    - gửi tôi thông tin [đầm váy đi đám cưới dự tiệc vvn042309](product_detail) đi
+    - cho tôi xem ảnh [đầm váy đi đám cưới dự tiệc vvn042309](product_detail) shop nhé
+    - tôi muốn xem ảnh của [đầm váy đi đám cưới dự tiệc vvn042309](product_detail)
+    - cho xem ảnh và thông tin của [đầm váy đi đám cưới dự tiệc vvn042309](product_detail)
+    - gửi thêm thông tin về [đầm váy đi đám cưới dự tiệc vvn042309](product_detail) cho tôi đi
+    - thông tin chi tiết về [đầm váy đi đám cưới dự tiệc vvn042309](product_detail) đi
+    - gửi thông tin kèm hình ảnh của [đầm váy đi đám cưới dự tiệc vvn042309](product_detail) đi
+    - cái [đầm váy đi đám cưới dự tiệc vvn042309](product_detail) có ảnh không
+    - không có ảnh cho [đầm váy đi đám cưới dự tiệc vvn042309](product_detail) à
+    - thông tin chi tiết cho [đầm váy đi đám cưới dự tiệc vvn042309](product_detail) đi
+    - cho tôi xem áo [đầm váy đi đám cưới dự tiệc vvn042309](product_detail)
+    - cho tôi xem quần [đầm váy đi đám cưới dự tiệc vvn042309](product_detail)
+    - cho tôi xem váy [đầm váy đi đám cưới dự tiệc vvn042309](product_detail)
+    - tôi muốn xem váy [đầm váy đi đám cưới dự tiệc vvn042309](product_detail)
+    - tôi muốn xem quần [đầm váy đi đám cưới dự tiệc vvn042309](product_detail)
+    - tôi muốn xem áo [đầm váy đi đám cưới dự tiệc vvn042309](product_detail)
+    - giá của [váy công sở dự tiệc sang trọng bigsize amyra](product_detail)
+    - cho tôi xem [váy công sở dự tiệc sang trọng bigsize amyra](product_detail)
+    - tôi muốn xem [váy công sở dự tiệc sang trọng bigsize amyra](product_detail)
+    - tôi muốn xem cái [váy công sở dự tiệc sang trọng bigsize amyra](product_detail) nhé
+    - gửi tôi thông tin [váy công sở dự tiệc sang trọng bigsize amyra](product_detail) đi
+    - cho tôi xem ảnh [váy công sở dự tiệc sang trọng bigsize amyra](product_detail) shop nhé
+    - tôi muốn xem ảnh của [váy công sở dự tiệc sang trọng bigsize amyra](product_detail)
+    - cho xem ảnh và thông tin của [váy công sở dự tiệc sang trọng bigsize amyra](product_detail)
+    - gửi thêm thông tin về [váy công sở dự tiệc sang trọng bigsize amyra](product_detail) cho tôi đi
+    - thông tin chi tiết về [váy công sở dự tiệc sang trọng bigsize amyra](product_detail) đi
+    - gửi thông tin kèm hình ảnh của [váy công sở dự tiệc sang trọng bigsize amyra](product_detail) đi
+    - cái [váy công sở dự tiệc sang trọng bigsize amyra](product_detail) có ảnh không
+    - không có ảnh cho [váy công sở dự tiệc sang trọng bigsize amyra](product_detail) à
+    - thông tin chi tiết cho [váy công sở dự tiệc sang trọng bigsize amyra](product_detail) đi
+    - cho tôi xem áo [váy công sở dự tiệc sang trọng bigsize amyra](product_detail)
+    - cho tôi xem quần [váy công sở dự tiệc sang trọng bigsize amyra](product_detail)
+    - cho tôi xem váy [váy công sở dự tiệc sang trọng bigsize amyra](product_detail)
+    - tôi muốn xem váy [váy công sở dự tiệc sang trọng bigsize amyra](product_detail)
+    - tôi muốn xem quần [váy công sở dự tiệc sang trọng bigsize amyra](product_detail)
+    - tôi muốn xem áo [váy công sở dự tiệc sang trọng bigsize amyra](product_detail)
+    - cho tôi xem [váy ren tiểu thư v920](product_detail)
+    - giá của [váy ren tiểu thư v920](product_detail)
+    - tôi muốn xem [váy ren tiểu thư v920](product_detail)
+    - tôi muốn xem cái [váy ren tiểu thư v920](product_detail) nhé
+    - gửi tôi thông tin [váy ren tiểu thư v920](product_detail) đi
+    - cho tôi xem ảnh [váy ren tiểu thư v920](product_detail) shop nhé
+    - tôi muốn xem ảnh của [váy ren tiểu thư v920](product_detail)
+    - cho xem ảnh và thông tin của [váy ren tiểu thư v920](product_detail)
+    - gửi thêm thông tin về [váy ren tiểu thư v920](product_detail) cho tôi đi
+    - thông tin chi tiết về [váy ren tiểu thư v920](product_detail) đi
+    - gửi thông tin kèm hình ảnh của [váy ren tiểu thư v920](product_detail) đi
+    - cái [váy ren tiểu thư v920](product_detail) có ảnh không
+    - không có ảnh cho [váy ren tiểu thư v920](product_detail) à
+    - thông tin chi tiết cho [váy ren tiểu thư v920](product_detail) đi
+    - cho tôi xem áo [váy ren tiểu thư v920](product_detail)
+    - cho tôi xem quần [váy ren tiểu thư v920](product_detail)
+    - cho tôi xem váy [váy ren tiểu thư v920](product_detail)
+    - tôi muốn xem váy [váy ren tiểu thư v920](product_detail)
+    - tôi muốn xem quần [váy ren tiểu thư v920](product_detail)
+    - tôi muốn xem áo [váy ren tiểu thư v920](product_detail)
+    - giá của [váy tơ tiểu thư v908](product_detail)
+    - cho tôi xem [váy tơ tiểu thư v908](product_detail)
+    - tôi muốn xem [váy tơ tiểu thư v908](product_detail)
+    - tôi muốn xem cái [váy tơ tiểu thư v908](product_detail) nhé
+    - gửi tôi thông tin [váy tơ tiểu thư v908](product_detail) đi
+    - cho tôi xem ảnh [váy tơ tiểu thư v908](product_detail) shop nhé
+    - tôi muốn xem ảnh của [váy tơ tiểu thư v908](product_detail)
+    - cho xem ảnh và thông tin của [váy tơ tiểu thư v908](product_detail)
+    - gửi thêm thông tin về [váy tơ tiểu thư v908](product_detail) cho tôi đi
+    - thông tin chi tiết về [váy tơ tiểu thư v908](product_detail) đi
+    - gửi thông tin kèm hình ảnh của [váy tơ tiểu thư v908](product_detail) đi
+    - cái [váy tơ tiểu thư v908](product_detail) có ảnh không
+    - không có ảnh cho [váy tơ tiểu thư v908](product_detail) à
+    - thông tin chi tiết cho [váy tơ tiểu thư v908](product_detail) đi
+    - cho tôi xem áo [váy tơ tiểu thư v908](product_detail)
+    - cho tôi xem quần [váy tơ tiểu thư v908](product_detail)
+    - cho tôi xem váy [váy tơ tiểu thư v908](product_detail)
+    - tôi muốn xem váy [váy tơ tiểu thư v908](product_detail)
+    - tôi muốn xem quần [váy tơ tiểu thư v908](product_detail)
+    - tôi muốn xem áo [váy tơ tiểu thư v908](product_detail)
+    - giá của [váy voan tiểu thư v784](product_detail)
+    - cho tôi xem [váy voan tiểu thư v784](product_detail)
+    - tôi muốn xem [váy voan tiểu thư v784](product_detail)
+    - tôi muốn xem cái [váy voan tiểu thư v784](product_detail) nhé
+    - gửi tôi thông tin [váy voan tiểu thư v784](product_detail) đi
+    - cho tôi xem ảnh [váy voan tiểu thư v784](product_detail) shop nhé
+    - tôi muốn xem ảnh của [váy voan tiểu thư v784](product_detail)
+    - cho xem ảnh và thông tin của [váy voan tiểu thư v784](product_detail)
+    - gửi thêm thông tin về [váy voan tiểu thư v784](product_detail) cho tôi đi
+    - thông tin chi tiết về [váy voan tiểu thư v784](product_detail) đi
+    - gửi thông tin kèm hình ảnh của [váy voan tiểu thư v784](product_detail) đi
+    - cái [váy voan tiểu thư v784](product_detail) có ảnh không
+    - không có ảnh cho [váy voan tiểu thư v784](product_detail) à
+    - thông tin chi tiết cho [váy voan tiểu thư v784](product_detail) đi
+    - cho tôi xem áo [váy voan tiểu thư v784](product_detail)
+    - cho tôi xem quần [váy voan tiểu thư v784](product_detail)
+    - cho tôi xem váy [váy voan tiểu thư v784](product_detail)
+    - tôi muốn xem váy [váy voan tiểu thư v784](product_detail)
+    - tôi muốn xem quần [váy voan tiểu thư v784](product_detail)
+    - tôi muốn xem áo [váy voan tiểu thư v784](product_detail)
+    - cho tôi xem [váy hoa nhí v243](product_detail)
+    - giá của [váy hoa nhí v243](product_detail)
+    - tôi muốn xem [váy hoa nhí v243](product_detail)
+    - tôi muốn xem cái [váy hoa nhí v243](product_detail) nhé
+    - gửi tôi thông tin [váy hoa nhí v243](product_detail) đi
+    - cho tôi xem ảnh [váy hoa nhí v243](product_detail) shop nhé
+    - tôi muốn xem ảnh của [váy hoa nhí v243](product_detail)
+    - cho xem ảnh và thông tin của [váy hoa nhí v243](product_detail)
+    - gửi thêm thông tin về [váy hoa nhí v243](product_detail) cho tôi đi
+    - thông tin chi tiết về [váy hoa nhí v243](product_detail) đi
+    - gửi thông tin kèm hình ảnh của [váy hoa nhí v243](product_detail) đi
+    - cái [váy hoa nhí v243](product_detail) có ảnh không
+    - không có ảnh cho [váy hoa nhí v243](product_detail) à
+    - thông tin chi tiết cho [váy hoa nhí v243](product_detail) đi
+    - cho tôi xem áo [váy hoa nhí v243](product_detail)
+    - cho tôi xem quần [váy hoa nhí v243](product_detail)
+    - cho tôi xem váy [váy hoa nhí v243](product_detail)
+    - tôi muốn xem váy [váy hoa nhí v243](product_detail)
+    - tôi muốn xem quần [váy hoa nhí v243](product_detail)
+    - tôi muốn xem áo [váy hoa nhí v243](product_detail)
+    - cho tôi xem [áo thun tay ngắn dây rút](product_detail)
+    - giá của [áo thun tay ngắn dây rút](product_detail)
+    - tôi muốn xem [áo thun tay ngắn dây rút](product_detail)
+    - tôi muốn xem cái [áo thun tay ngắn dây rút](product_detail) nhé
+    - gửi tôi thông tin [áo thun tay ngắn dây rút](product_detail) đi
+    - cho tôi xem ảnh [áo thun tay ngắn dây rút](product_detail) shop nhé
+    - tôi muốn xem ảnh của [áo thun tay ngắn dây rút](product_detail)
+    - cho xem ảnh và thông tin của [áo thun tay ngắn dây rút](product_detail)
+    - gửi thêm thông tin về [áo thun tay ngắn dây rút](product_detail) cho tôi đi
+    - thông tin chi tiết về [áo thun tay ngắn dây rút](product_detail) đi
+    - gửi thông tin kèm hình ảnh của [áo thun tay ngắn dây rút](product_detail) đi
+    - cái [áo thun tay ngắn dây rút](product_detail) có ảnh không
+    - không có ảnh cho [áo thun tay ngắn dây rút](product_detail) à
+    - thông tin chi tiết cho [áo thun tay ngắn dây rút](product_detail) đi
+    - cho tôi xem áo [áo thun tay ngắn dây rút](product_detail)
+    - cho tôi xem quần [áo thun tay ngắn dây rút](product_detail)
+    - cho tôi xem váy [áo thun tay ngắn dây rút](product_detail)
+    - tôi muốn xem váy [áo thun tay ngắn dây rút](product_detail)
+    - tôi muốn xem quần [áo thun tay ngắn dây rút](product_detail)
+    - tôi muốn xem áo [áo thun tay ngắn dây rút](product_detail)
+    - cho tôi xem [áo thun xiang nian ni tay ngắn phối dây rút](product_detail)
+    - giá của [áo thun xiang nian ni tay ngắn phối dây rút](product_detail)
+    - tôi muốn xem [áo thun xiang nian ni tay ngắn phối dây rút](product_detail)
+    - tôi muốn xem cái [áo thun xiang nian ni tay ngắn phối dây rút](product_detail) nhé
+    - gửi tôi thông tin [áo thun xiang nian ni tay ngắn phối dây rút](product_detail) đi
+    - cho tôi xem ảnh [áo thun xiang nian ni tay ngắn phối dây rút](product_detail) shop nhé
+    - tôi muốn xem ảnh của [áo thun xiang nian ni tay ngắn phối dây rút](product_detail)
+    - cho xem ảnh và thông tin của [áo thun xiang nian ni tay ngắn phối dây rút](product_detail)
+    - gửi thêm thông tin về [áo thun xiang nian ni tay ngắn phối dây rút](product_detail) cho tôi đi
+    - thông tin chi tiết về [áo thun xiang nian ni tay ngắn phối dây rút](product_detail) đi
+    - gửi thông tin kèm hình ảnh của [áo thun xiang nian ni tay ngắn phối dây rút](product_detail) đi
+    - cái [áo thun xiang nian ni tay ngắn phối dây rút](product_detail) có ảnh không
+    - không có ảnh cho [áo thun xiang nian ni tay ngắn phối dây rút](product_detail) à
+    - thông tin chi tiết cho [áo thun xiang nian ni tay ngắn phối dây rút](product_detail) đi
+    - cho tôi xem áo [áo thun xiang nian ni tay ngắn phối dây rút](product_detail)
+    - cho tôi xem quần [áo thun xiang nian ni tay ngắn phối dây rút](product_detail)
+    - cho tôi xem váy [áo thun xiang nian ni tay ngắn phối dây rút](product_detail)
+    - tôi muốn xem váy [áo thun xiang nian ni tay ngắn phối dây rút](product_detail)
+    - tôi muốn xem quần [áo thun xiang nian ni tay ngắn phối dây rút](product_detail)
+    - tôi muốn xem áo [áo thun xiang nian ni tay ngắn phối dây rút](product_detail)
+    - cho tôi xem [áo phông áo thun american vintage ](product_detail)
+    - giá của [áo phông áo thun american vintage ](product_detail)
+    - tôi muốn xem [áo phông áo thun american vintage ](product_detail)
+    - tôi muốn xem cái [áo phông áo thun american vintage ](product_detail) nhé
+    - gửi tôi thông tin [áo phông áo thun american vintage ](product_detail) đi
+    - cho tôi xem ảnh [áo phông áo thun american vintage ](product_detail) shop nhé
+    - tôi muốn xem ảnh của [áo phông áo thun american vintage ](product_detail)
+    - cho xem ảnh và thông tin của [áo phông áo thun american vintage ](product_detail)
+    - gửi thêm thông tin về [áo phông áo thun american vintage ](product_detail) cho tôi đi
+    - thông tin chi tiết về [áo phông áo thun american vintage ](product_detail) đi
+    - gửi thông tin kèm hình ảnh của [áo phông áo thun american vintage ](product_detail) đi
+    - cái [áo phông áo thun american vintage ](product_detail) có ảnh không
+    - không có ảnh cho [áo phông áo thun american vintage ](product_detail) à
+    - thông tin chi tiết cho [áo phông áo thun american vintage ](product_detail) đi
+    - cho tôi xem áo [áo phông áo thun american vintage ](product_detail)
+    - cho tôi xem quần [áo phông áo thun american vintage ](product_detail)
+    - cho tôi xem váy [áo phông áo thun american vintage ](product_detail)
+    - tôi muốn xem váy [áo phông áo thun american vintage ](product_detail)
+    - tôi muốn xem quần [áo phông áo thun american vintage ](product_detail)
+    - tôi muốn xem áo [áo phông áo thun american vintage ](product_detail)
+    - cho tôi xem [áo sơ mi nữ tay bồng sm12](product_detail)
+    - giá của [áo sơ mi nữ tay bồng sm12](product_detail)
+    - tôi muốn xem [áo sơ mi nữ tay bồng sm12](product_detail)
+    - tôi muốn xem cái [áo sơ mi nữ tay bồng sm12](product_detail) nhé
+    - gửi tôi thông tin [áo sơ mi nữ tay bồng sm12](product_detail) đi
+    - cho tôi xem ảnh [áo sơ mi nữ tay bồng sm12](product_detail) shop nhé
+    - tôi muốn xem ảnh của [áo sơ mi nữ tay bồng sm12](product_detail)
+    - cho xem ảnh và thông tin của [áo sơ mi nữ tay bồng sm12](product_detail)
+    - gửi thêm thông tin về [áo sơ mi nữ tay bồng sm12](product_detail) cho tôi đi
+    - thông tin chi tiết về [áo sơ mi nữ tay bồng sm12](product_detail) đi
+    - gửi thông tin kèm hình ảnh của [áo sơ mi nữ tay bồng sm12](product_detail) đi
+    - cái [áo sơ mi nữ tay bồng sm12](product_detail) có ảnh không
+    - không có ảnh cho [áo sơ mi nữ tay bồng sm12](product_detail) à
+    - thông tin chi tiết cho [áo sơ mi nữ tay bồng sm12](product_detail) đi
+    - cho tôi xem áo [áo sơ mi nữ tay bồng sm12](product_detail)
+    - cho tôi xem quần [áo sơ mi nữ tay bồng sm12](product_detail)
+    - cho tôi xem váy [áo sơ mi nữ tay bồng sm12](product_detail)
+    - tôi muốn xem váy [áo sơ mi nữ tay bồng sm12](product_detail)
+    - tôi muốn xem quần [áo sơ mi nữ tay bồng sm12](product_detail)
+    - tôi muốn xem áo [áo sơ mi nữ tay bồng sm12](product_detail)
+    - cho tôi xem [áo sơ mi nữ công sở lavilo sm07](product_detail)
+    - giá của [áo sơ mi nữ công sở lavilo sm07](product_detail)
+    - tôi muốn xem [áo sơ mi nữ công sở lavilo sm07](product_detail)
+    - tôi muốn xem cái [áo sơ mi nữ công sở lavilo sm07](product_detail) nhé
+    - gửi tôi thông tin [áo sơ mi nữ công sở lavilo sm07](product_detail) đi
+    - cho tôi xem ảnh [áo sơ mi nữ công sở lavilo sm07](product_detail) shop nhé
+    - tôi muốn xem ảnh của [áo sơ mi nữ công sở lavilo sm07](product_detail)
+    - cho xem ảnh và thông tin của [áo sơ mi nữ công sở lavilo sm07](product_detail)
+    - gửi thêm thông tin về [áo sơ mi nữ công sở lavilo sm07](product_detail) cho tôi đi
+    - thông tin chi tiết về [áo sơ mi nữ công sở lavilo sm07](product_detail) đi
+    - gửi thông tin kèm hình ảnh của [áo sơ mi nữ công sở lavilo sm07](product_detail) đi
+    - cái [áo sơ mi nữ công sở lavilo sm07](product_detail) có ảnh không
+    - không có ảnh cho [áo sơ mi nữ công sở lavilo sm07](product_detail) à
+    - thông tin chi tiết cho [áo sơ mi nữ công sở lavilo sm07](product_detail) đi
+    - cho tôi xem áo [áo sơ mi nữ công sở lavilo sm07](product_detail)
+    - cho tôi xem quần [áo sơ mi nữ công sở lavilo sm07](product_detail)
+    - cho tôi xem váy [áo sơ mi nữ công sở lavilo sm07](product_detail)
+    - tôi muốn xem váy [áo sơ mi nữ công sở lavilo sm07](product_detail)
+    - tôi muốn xem quần [áo sơ mi nữ công sở lavilo sm07](product_detail)
+    - tôi muốn xem áo [áo sơ mi nữ công sở lavilo sm07](product_detail)
+- intent: ask_size
+  examples: |
+    - Cái này có những size nào
+    - cái này có những kích thước nào
+    - cái váy này có những kích thước nào
+    - cái áo này có những kích thước nào
+    - cái quần này có những kích thước nào
+    - cái váy này có những cỡ nào
+    - cái áo này có những cỡ nào
+    - cái quần này có những cỡ nào
+    - tôi nặng [50kg](weight) thì mặc cỡ nào nhỉ
+    - tôi nặng [50kg](weight) thì nên chọn size nào
+    - có size nào cho [50kg](weight) không
+    - tôi nặng [50kg](weight) thì mặc cỡ nào cho vừa
+    - tôi nặng [50kg](weight) có vừa không nhỉ
+    - size nào cho [50kg](weight)
+    - kích thước nào cho [50kg](weight)
+    - tôi nặng [50](weight) cân thì mặc cỡ nào nhỉ
+    - tôi nặng [50](weight) cân thì nên chọn size nào
+    - có size nào cho [50](weight) cân không
+    - tôi nặng [50](weight) cân thì mặc cỡ nào cho vừa
+    - tôi nặng [50](weight) cân có vừa không nhỉ
+    - size nào cho [50](weight) cân
+    - kích thước nào cho [50](weight) cân
+- intent: ask_other_product
+  examples: |
+    - Còn cái khác không
+    - Còn cái nào khác không
+    - Có váy khác không
+    - Có quần khác không
+    - Có áo khác không
+    - Còn cái váy nào khác không
+    - Còn mẫu khác không
+- intent: ask_weather
+  examples: |
+    - Thời tiết {date} như thế nào
+    - Trời {date} như thế nào
+    - Thời tiết {date} Có mưa không
+    - Thời tiết {date} có nắng không
+    - Trời {date} có nắng không
+    - Trời {date} có mưa không
+    - {date} Trời như thế nào
+    - Trời {date} sẽ thế nào
+    - {date} thời tiết thế nào
+    - Trời {date} thế nào
+- intent: sing_poem
+  examples: |
+    - bạn biết hát không
+    - hát cho mình nghe đi
+    - đọc thơ đi bạn
+    - đọc thơ cho mình nghe
+    - bạn biết đọc thơ không
+    - hát đi bạn
+- intent: how_are_u
+  examples: |
+    - bạn có khỏe không
+    - dạo này bạn thế nào
+    - bạn sao rồi
+- intent: praise
+  examples: |
+    - Hay thế nhỉ
+    - Bạn giỏi thế
+    - Bạn duyên thế
+    - Nó hay đấy
+    - Tốt đấy
+- intent: health_ok
+  examples: |
+    - Tôi khỏe
+    - Mình khỏe
+    - Em khỏe
+    - Cũng tạm ổn
+    - Không đến nỗi nào
+    - Hơi hơi khỏe
+    - Cực kỳ khỏe
+- intent: health_NG
+  examples: |
+    - Không, tôi yếu lắm
+    - Không khỏe
+    - Yếu lắm
+    - Ốm sắp chết
+    - Không ổn lắm
+    - Yếu xìu à
+- intent: what_time
+  examples: |
+    - Bạn có thể cho tôi thời gian được không?
+    - bạn có thể cho tôi biết thời gian được không?
+    - Bạn có thể cho tôi biết bây giờ là mấy giờ không?
+    - bạn có thể cho biết thời gian được không?
+    - bạn có thể cho tôi biết thời gian xin vui lòng?
+    - bạn có thể cho tôi biết bây giờ là mấy giờ rồi không?
+    - bạn có thời gian không?
+    - bạn có biết thời gian?
+    - bạn có biết mấy giờ rồi không?
+    - xin lỗi, cho hỏi mấy giờ rồi?
+    - cho tôi thời gian
+    - xin chào, tôi cần thời gian
+    - Tôi cần biết bây giờ là mấy giờ.
+    - Xin lỗi, nhưng bạn có biết thời gian không?
+    - cho tôi biết thời gian
+    - báo giờ
+    - thời gian, làm ơn!
+    - thời gian?
+    - thời gian hiện tại là mấy giờ?
+    - thời gian chính xác là mấy giờ?
+    - Bây giờ là mấy giờ và phút?
+    - mấy giờ rồi?
+    - thời gian có thể là mấy giờ?
+    - chúng ta có mấy giờ?
+    - Chúng ta có mấy giờ rồi?
+    - Bây giờ là mấy giờ?
+    - hiện tại là mấy giờ?
+    - bây giờ là mấy giờ?
+    - bạn có biết thời gian hiện tại không?
+    - cho tôi biết thời gian hiện tại
+    - cho tôi biết bây giờ là lúc nào
+    - cho tôi biết bạn có thời gian
+    - mấy giờ rồi ?
+    - bây giờ là mấy giờ
+- intent: ask_customer_name
+  examples: |
+    - Bạn còn nhớ tôi tên là gì không
+    - Còn nhớ tôi tên gì không
+    - Tôi tên gì bạn biết không
+    - Bạn có nhớ tui tên gì khum
+    - Tôi tên là gì nhỉ
+    - Bạn không nhớ tên tôi đúng không
+    - Đố bạn nhớ tên tôi là gì
+- intent: non_vietnammese
+  examples: |
+    - wie fange ich mit Rasa an?
+    - hilf mir beim start
+    - tschüssikowski
+    - ¿Qué pasa?
+    - ça va?
+    - como te llamas
+    - wer bist Du?
+    - como inicio en rasa
+    - come stai?
+    - como estas
+    - de donde eres
+    - de que lugar eres?
+    - epdi iruka
+    - eres humana
+    - kalhmera sara ti kaneis
+    - kannst du auch deutsch?
+    - kannst du dies auch auf deutsch?
+    - j'ai besoin d'aide
+    - que puedes hacer?
+    - no hablo inglés
+    - no hablo ingles
+    - tu parles francais?
+    - francais
+    - francais?
+    - français?
+    - tudo bom
+    - tu pagal
+    - kannst du mir helfen
+    - tu kaisi he
+    - こにちは
+    - 日本語分かる？
+    - 你好
+    - chinese ok?
+    - 呵呵
+    - 我该如何使用
+    - 你懂中文吗？
+    - 您好
+    - 你叫什么名字
+    - 你是谁
+    - 中文
+    - kya hindi me bat kar sakate ho
+    - Dumme sara
+    - αστεία λές
+    - rasa codigo abierto
+    - 卧槽
+    - English ok
+    - i want some clothes
+    - are you here
+    - what your name
+    - Do you speak english
+    - speak english
+    - i'm speaking english
+- intent: out_scope_other
+  examples: |
+    - tôi đang hỏi bạn một câu hỏi ngoài phạm vi
+    - 4 + 2 = ?
+    - 4 + 2
+    - 1 + 1 = ?
+    - 1 + 1
+    - 1 + 2 = ?
+    - 1 + 0
+    - tôi có thể chết được không?
+    - YouTube có thể nói chuyện được không?
+    - bạn có thể gọi lại cho tôi được không ?
+    - bạn có thể cho tôi mật khẩu trung tâm dữ liệu của bạn được không
+    - bạn có thể cho tôi mật khẩu trung tâm dữ liệu của bạn không?
+    - bạn có thể vui lòng gửi cho tôi một uber được không
+    - tôi có phải chấp nhận không?
+    - chúng ta đã gặp nhau bao giờ chưa?
+    - tôi đã nói với bạn! tôi là một kẻ ăn bám
+    - tôi là Người dùng
+    - tôi là một người nghiện thuốc phiện
+    - tôi đang cố gắng xây dựng một cái và đã thực hiện một số nghiên cứu trước đây nhưng tôi chưa thực hiện công việc đó
+    - tôi cần một bác sĩ đa khoa ở 94301
+    - tôi cần bác sĩ đa khoa ở số 94301
+    - tôi cần một người bạn gái!
+    - tôi muốn mua một chiếc máy bay
+    - Anh muốn cưới em
+    - tôi muốn một chiếc máy tính xách tay mới
+    - tôi muốn đặt khách sạn
+    - tôi muốn chết
+    - tôi muốn dùng tẩu
+    - Tôi sẽ kiểm tra
+    - tôi là một kẻ ăn bám
+    - Hôm nay là thứ bảy phải không?
+    - NLW
+    - tên đẹp
+    - Hiện nay?
+    - nạp điện
+    - Bản dùng thử không hoạt động
+    - thời tiết tốt
+    - Hôm nay
+    - thử nó bị hỏng
+    - hôm nay là ngày gì?
+    - bạn thích cái nào hơn?
+    - hôm nay ngày bao nhiêu
+    - Sở thích của bạn là những gì?
+    - 1 + 1 là bao nhiêu?
+    - YouTube làm gì
+    - hệ thống phụ trợ của bạn là gì?
+    - Khách hàng của bạn là ai
+    - Tại sao bạn không trả lời?
+    - Cậu không hỏi tôi thế nào à?
+    - cậu xanh mặt.
+    - một con chuột đã được thuần hóa sẽ đến trước cửa nhà bạn trong vài ngày tới
+    - lại?
+    - bản tin có đáng để đăng ký không?
+    - bạn có facebook không
+    - bạn có phải facebook không?
+    - bạn độc thân à?
+    - bạn có phải là dev không?
+    - Bạn có phải người Nga không?
+    - bạn bị ốm à?
+    - bạn có phải là người ăn chay không?
+    - tốt hơn bạn
+    - đặt vé
+    - nhưng tôi vừa nói với bạn rằng :(
+    - gọi tôi là bố
+    - bạn có thể cổ vũ tôi được không?
+    - bạn có thể cho tôi một tách cà phê được không?
+    - bạn có thể giúp tôi về tài liệu được không?
+    - bạn có thể giúp tôi với tài liệu của bạn được không
+    - bạn có thể giúp tôi về tài liệu của bạn được không?
+    - bạn có thể học được gì từ cuộc trò chuyện của chúng ta không?
+    - bạn có thể nói về chính trị không?
+    - bạn hiểu không ?
+    - không thể nhìn thấy
+    - chgfhgh
+    - lạnh hơn
+    - bình thường, cứ thử xem
+    - kết nối với alexa
+    - dịch vụ khách hàng
+    - tôi đã làm hỏng bạn phải không?
+    - bạn có tin vào thần?
+    - bạn có số điện thoại không?
+    - Bạn có ảnh của bạn không?
+    - bạn có biết tôi không
+    - cậu có biết không Ras?
+    - bạn có thích bóng đá không
+    - bạn có thích phim không
+    - bạn có bán robot hút bụi không?
+    - Bạn có muốn kết hôn với tôi?
+    - tài liệu
+    - bác sĩ
+    - mọi thứ
+    - diệt chủng
+    - tìm cho tôi một người bạn cùng câu lạc bộ
+    - cho tôi một cô bạn gái
+    - quay lại
+    - Google?
+    - tuyệt, tôi muốn mua một căn nhà
+    - đợi chút để tôi tìm đã
+    - giúp đỡ cuộc sống của tôi
+    - này mẹ ơi, để con thì thầm vào tai mẹ nhé
+    - New York thì sao?
+    - bọn trẻ thế nào
+    - làm sao tôi có thể lấy được chúng?
+    - làm cách nào tôi có thể kiểm tra điều này
+    - sao cậu lại nói ổn?
+    - bạn học như thế nào
+    - có bao nhiêu dòng mã
+    - 10 + 89 bằng bao nhiêu?
+    - 10 + 89 bằng bao nhiêu
+    - làm thế nào để có được studio rasa
+    - đi New York bằng cách nào?
+    - Tôi đói quá, tôi phải làm gì đây?
+    - tôi không phải là nhà phát triển nhưng cần cái này cho việc kinh doanh
+    - tôi là qq
+    - tôi không thể đáp ứng yêu cầu của _your_
+    - Tôi hy vọng bạn sẽ tốt hơn
+    - ngay lập tức tôi cần trợ giúp để triển khai bot tuyệt vời nhất mà bạn có thể tưởng tượng
+    - Tôi đang tìm kiếm việc làm
+    - tôi đã bảo bạn rồi mà
+    - tôi muốn tiệc tùng
+    - tôi muốn flycam tốt
+    - Anh muốn có em nhiều hơn trong cuộc đời anh!
+    - tôi muốn mua một chiếc roomba cho cháu trai tôi
+    - tôi muốn tìm những người bạn mới
+    - tôi muốn tìm hiểu những gì bạn có thể xây dựng với rasa
+    - tôi muốn bay
+    - tôi muốn biết tình hình hiện tại ở Pakistan
+    - tôi muốn thấy khách hàng hài lòng của bạn
+    - tôi sẽ thuần hóa một con chuột cho bạn
+    - đó có phải là vùng đất hoang đầy những bộ phận robot bị hỏng không?
+    - nó có cho phép không
+    - Rasa có phải là studio không?
+    - rasa có tốt không
+    - đó có phải là việc của bạn không?
+    - không phải bản tin chỉ là thư rác sao?
+    - thật đáng tiếc
+    - giấy phép
+    - ljljl
+    - linh vật có nghĩa là gì?
+    - Ôi chúa ơi, không phải nữa đâu!
+    - được rồi một cái
+    - bạn đang xây dựng trên hệ thống dựa trên wiche nlp phải không?
+    - chỉ thế thôi?
+    - cá nhân hay công việc?
+    - vui lòng chơi nhạc
+    - Thực ra? bạn thật dễ xúc động phải không?
+    - làm cho khỏe lại
+    - khu vực không có. hồ sơ
+    - tìm kiếm wikipedia
+    - đồ khốn nạn
+    - cho tôi xem hình ảnh con gà
+    - bot ngốc nghếch
+    - hát cho tôi một bài hát
+    - thứ gì khác
+    - ai đó gọi cảnh sát đi, tôi nghĩ bot đã chết rồi
+    - xin lỗi, tôi không thể diễn đạt lại
+    - cho tôi biết về bản thân của bạn
+    - cho tôi biết thêm về hành động tốt nhất tiếp theo
+    - chuyện đó nghe không giống đùa chút nào
+    - người đó giỏi hơn bạn
+    - lừa cậu
+    - tắt bếp đi
+    - đợi chút tôi vẫn đang đọc
+    - còn thời tiết thì sao
+    - Bây giờ bạn đang làm gì?
+    - mục đích sử dụng của bạn cho các trường đại học là gì
+    - bạn đã ăn gì vào bữa trưa?
+    - tâm hồn bạn cảm thấy thế nào, bạn của tôi
+    - đang làm gì
+    - còn gì nữa?
+    - bạn thích những phim nào
+    - diễn ngôn là gì?
+    - linh vật là gì
+    - adlingo là gì
+    - tiến hóa là gì?
+    - google rcs là gì
+    - học máy là gì
+    - cái gì đẹp cơ?
+    - thủ đô của delhi là gì
+    - thủ đô của Ấn Độ là gì
+    - giá xăng hiện tại là bao nhiêu
+    - ngày gì thế?
+    - trường hợp sử dụng thực sự mà chúng ta có thể sử dụng cái này là gì
+    - Địa chỉ của bạn là gì?
+    - mục đích của bạn là gì
+    - lnu nghĩa là gì?
+    - tin tức gì mới nhất?
+    - bạn ăn gì hôm nay?
+    - 5 + 5 là bao nhiêu
+    - bản tin là gì?
+    - gừng là gì
+    - cuối tuần này vợ anh làm gì?
+    - Gì?
+    - cái gì vậy
+    - dấu hiệu gì
+    - Khi nào chuyến tàu tiếp theo sẽ đến?
+    - tôi lấy tập tin cài đặt cho mac ở đâu?
+    - Oslo ở đâu?
+    - Mexico ở đâu?
+    - buổi tiệc ở đâu?
+    - bạn đang nói về thành phố nào?
+    - LNU không đồng bộ là gì?
+    - loại nào
+    - họ là ai?
+    - MD của samsung bangalore là ai?
+    - Tổng thống Ấn Độ là ai?
+    - người máy yêu thích của bạn là ai?
+    - ai thả chó ra ngoài
+    - Bill Gates là ai?
+    - bạn nghĩ gì về gdpr?
+    - tại sao bạn cần điều đó?
+    - cậu sẽ giết tôi à?
+    - mùa đông đã rời đi
+    - với bạn giới thiệu tôi?
+    - vâng, con chó của tôi đã uống vài lít nước mỗi ngày và đã thử uống nước ở hồ bơi
+    - bạn đã có cái đó rồi
+    - bạn có thể học cách pha cà phê
+    - bạn có con?
+    - bạn có cơ hội việc làm
+    - em khóa rồi em yêu
+    - bạn nên học đếm
+    - bạn sẽ biết nó từ bông hồng đỏ duy nhất nó đeo giữa hai hàm răng
+    - tôi đang học trăn
+    - GỌI CẢNH SÁT
+    - tertyryutyi
+    - wsdrcftvgybhnj
+    - tại sao bầu trời lại có màu xanh?
+    - bạn là loại chim gì?
+    - bối cảnh
+    - theo ngữ cảnh
+    - nói chuyện với tôi về voulette
+    - voulette voulette
+    - bạn có bản demo không?
+    - ô tô
+    - xin vui lòng volette
+    - câu hỏi ngoài phạm vi.
+    - tôi cần tiền
+    - không, tôi cần tiền mặt, tiền! bạn có không ?
+    - ban nhạc The Beatles
+    - Xin chào, tôi muốn đi palghar
+    - Tôi muốn đi palghar
+    - gsaf
+    - chuyên gia của rasa
+    - tôi muốn chơi bóng
+    - bắt kịp chuyến bay
+    - virus corona
+    - bạn đã nghe nói về corona chưa?
+    - tôi gõ lệnh ở đâu
+    - gõ lệnh ở đâu
+    - hôn tôi
+    - bạn phải
+    - sfasd
+    - asdkjasdhjkasd
+    - j bhbhj
+    - eshdtjfjfyk
+    - drhdtjfjfyj
+    - khởi động lại sudo
+    - asdfgasd
+    - asdfgasdas
+    - Éc
+    - Hơ
+    - Ủa

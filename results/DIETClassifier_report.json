@@ -1,0 +1,93 @@
+{
+  "product_detail": {
+    "precision": 1.0,
+    "recall": 0.9470666078517865,
+    "f1-score": 0.9728137743543271,
+    "support": 2267,
+    "confused_with": {}
+  },
+  "cancle_product": {
+    "precision": 1.0,
+    "recall": 0.9469026548672567,
+    "f1-score": 0.9727272727272728,
+    "support": 678,
+    "confused_with": {}
+  },
+  "buy_product": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 904,
+    "confused_with": {}
+  },
+  "end_price": {
+    "precision": 0.9891304347826086,
+    "recall": 1.0,
+    "f1-score": 0.994535519125683,
+    "support": 91,
+    "confused_with": {}
+  },
+  "start_price": {
+    "precision": 1.0,
+    "recall": 0.8571428571428571,
+    "f1-score": 0.923076923076923,
+    "support": 105,
+    "confused_with": {
+      "end_price": 1
+    }
+  },
+  "address": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 16,
+    "confused_with": {}
+  },
+  "weight": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 14,
+    "confused_with": {}
+  },
+  "product_order": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 92,
+    "confused_with": {}
+  },
+  "first_name": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 177,
+    "confused_with": {}
+  },
+  "phone": {
+    "precision": 0.8309859154929577,
+    "recall": 1.0,
+    "f1-score": 0.9076923076923077,
+    "support": 59,
+    "confused_with": {}
+  },
+  "micro avg": {
+    "precision": 0.9969375736160189,
+    "recall": 0.9611628435157847,
+    "f1-score": 0.9787234042553191,
+    "support": 4403
+  },
+  "macro avg": {
+    "precision": 0.9820116350275567,
+    "recall": 0.9751112119861901,
+    "f1-score": 0.9770845796976515,
+    "support": 4403
+  },
+  "weighted avg": {
+    "precision": 0.9975105697431984,
+    "recall": 0.9611628435157847,
+    "f1-score": 0.9786185720389986,
+    "support": 4403
+  },
+  "accuracy": 0.9850648820696972
+}

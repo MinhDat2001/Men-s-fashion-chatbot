@@ -5,15 +5,12 @@ from actions import db_sqlite as DB, AlioConstant
 def levenshtein_distance(str1, str2):
     m, n = len(str1), len(str2)
     
-    
     dp = [[0] * (n + 1) for _ in range(m + 1)]
-    
     
     for i in range(m + 1):
         dp[i][0] = i
     for j in range(n + 1):
         dp[0][j] = j
-    
     
     for i in range(1, m + 1):
         for j in range(1, n + 1):
@@ -102,7 +99,6 @@ def get_limit_product_by_price_and_type(start_price, end_price, order, type):
     return None
 
 def change_money(price):
-    print("price: ", price)
     price = str(price)
     res = ""
     dem=0
@@ -111,5 +107,4 @@ def change_money(price):
         res = price[i] + res
         if dem % 3 == 0 and dem!=len(price) :
             res = '.'+res
-    print("after change: ",res)
     return res + " vnđ"

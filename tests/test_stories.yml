@@ -2,90 +2,609 @@
 #### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
 
 stories:
-- story: happy path 1
+- story: ask shop location 1
   steps:
   - user: |
-      hello there!
-    intent: greet
-  - action: utter_greet
-  - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
-
-- story: happy path 2
+      Địa chỉ shop ở đâu đấy
+    intent: ask_about_shop_location
+  - action: utter_ask_shop_location
+  
+- story: ask shop location 2
   steps:
   - user: |
-      hello there!
+      Shop địa chỉ ở đâu nhỉ
+    intent: ask_about_shop_location
+  - action: utter_ask_shop_location
+  
+- story: ask shop location 3
+  steps:
+  - user: |
+      Địa chỉ cửa hàng ở đâu nhỉ
+    intent: ask_about_shop_location
+  - action: utter_ask_shop_location
+
+- story: greet 1
+  steps:
+  - user: |
+      Xin chào
     intent: greet
   - action: utter_greet
-  - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
-  - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
 
-- story: sad path 1
+- story: greet 2
+  steps:
+  - user: |
+      chào buổi sáng
+    intent: greet
+  - action: utter_greet
+
+- story: greet 3
+  steps:
+  - user: |
+      Hi
+    intent: greet
+  - action: utter_greet
+
+- story: greet 4
+  steps:
+  - user: |
+      B ơi
+    intent: greet
+  - action: utter_greet
+
+- story: greet 5
   steps:
   - user: |
       hello
     intent: greet
   - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      yes
-    intent: affirm
-  - action: utter_happy
 
-- story: sad path 2
+- story: ask shirt type 1
   steps:
   - user: |
-      hello
-    intent: greet
-  - action: utter_greet
-  - user: |
-      not good
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      not really
-    intent: deny
-  - action: utter_goodbye
+      Bên shop có những mẫu áo nào
+    intent: ask_shirt_type
+  - action: action_shirt_type
 
-- story: sad path 3
+- story: ask shirt type 2
   steps:
   - user: |
-      hi
-    intent: greet
-  - action: utter_greet
-  - user: |
-      very terrible
-    intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - user: |
-      no
-    intent: deny
-  - action: utter_goodbye
+      Bên bạn có những kiểu áo nào
+    intent: ask_shirt_type
+  - action: action_shirt_type
 
-- story: say goodbye
+- story: ask shirt type 3
   steps:
   - user: |
-      bye-bye!
+      Shop bán những loại áo nào
+    intent: ask_shirt_type
+  - action: action_shirt_type
+
+- story: ask shirt type 4
+  steps:
+  - user: |
+      áo có những mẫu nào
+    intent: ask_shirt_type
+  - action: action_shirt_type
+
+- story: ask shirt type 5
+  steps:
+  - user: |
+      có nhưng loại áo gì
+    intent: ask_shirt_type
+  - action: action_shirt_type
+
+- story: ask shirt type 6
+  steps:
+  - user: |
+      tôi muốn mua áo
+    intent: ask_shirt_type
+  - action: action_shirt_type
+
+- story: ask dress type 1
+  steps:
+  - user: |
+      Bên shop có những mẫu váy nào
+    intent: ask_dress_type
+  - action: action_shirt_type
+
+- story: ask dress type 2
+  steps:
+  - user: |
+      Bên shop có những kiểu váy nào
+    intent: ask_dress_type
+  - action: action_shirt_type
+
+- story: ask dress type 3
+  steps:
+  - user: |
+      Shop bán những loại váy nào
+    intent: ask_dress_type
+  - action: action_shirt_type
+
+- story: ask dress type 4
+  steps:
+  - user: |
+      đầm có những loại nào
+    intent: ask_dress_type
+  - action: action_shirt_type
+
+- story: ask dress type 5
+  steps:
+  - user: |
+      shop mình có những váy gì nhỉ
+    intent: ask_dress_type
+  - action: action_shirt_type
+
+- story: ask dress type 6
+  steps:
+  - user: |
+      bên mình bán những kiểu váy gì
+    intent: ask_dress_type
+  - action: action_shirt_type
+
+- story: ask trousers type 1
+  steps:
+  - user: |
+      Bên shop có những loại quần nào
+    intent: ask_trousers_type
+  - action: action_trousers_type
+
+- story: ask trousers type 2
+  steps:
+  - user: |
+      Shop có những kiểu quần nào
+    intent: ask_trousers_type
+  - action: action_trousers_type
+
+- story: ask trousers type 3
+  steps:
+  - user: |
+      Shop bán những loại quần nào
+    intent: ask_trousers_type
+  - action: action_trousers_type
+
+- story: ask trousers type 4
+  steps:
+  - user: |
+      quần có mấy loại
+    intent: ask_trousers_type
+  - action: action_trousers_type
+
+- story: ask trousers type 5
+  steps:
+  - user: |
+      Ở đây bán những kiểu quần như nào
+    intent: ask_trousers_type
+  - action: action_trousers_type
+
+- story: ask trousers type 6
+  steps:
+  - user: |
+      tôi muốn xem quần
+    intent: ask_trousers_type
+  - action: action_trousers_type
+
+- story: ask trousers type 7
+  steps:
+  - user: |
+      cho xem quần của shop
+    intent: ask_trousers_type
+  - action: action_trousers_type
+
+- story: ask product price 1
+  steps:
+  - user: |
+      Với giá từ 100k đến 500k bên shop có những sản phẩm nào
+    intent: ask_products_price
+  - action: action_product_price
+
+- story: ask product price 2
+  steps:
+  - user: |
+      Với giá trên 100k bên shop có những sản phẩm nào
+    intent: ask_products_price
+  - action: action_product_price
+
+- story: ask product price 3
+  steps:
+  - user: |
+      Với giá dưới 200k bên shop có những sản phẩm nào
+    intent: ask_products_price
+  - action: action_product_price
+
+- story: ask shirt price 1
+  steps:
+  - user: |
+      Với giá từ 100k đến 500k bên shop có những áo nào
+    intent: ask_shirts_price
+  - action: action_shirts_price
+
+- story: ask shirt price 2
+  steps:
+  - user: |
+      Với giá trên 100k bên shop có những áo nào
+    intent: ask_shirts_price
+  - action: action_shirts_price
+
+- story: ask shirt price 3
+  steps:
+  - user: |
+      Với giá dưới 200k bên shop có những áo nào
+    intent: ask_shirts_price
+  - action: action_shirts_price
+
+- story: ask dress price 1
+  steps:
+  - user: |
+      Với giá từ 100k đến 500k bên shop có những váy nào
+    intent: ask_dress_price
+  - action: action_dress_price
+
+- story: ask dress price 2
+  steps:
+  - user: |
+      Với giá trên 100k bên shop có những váy nào
+    intent: ask_dress_price
+  - action: action_dress_price
+
+- story: ask dress price 3
+  steps:
+  - user: |
+      Với giá dưới 300k bên shop có những váy nào
+    intent: ask_dress_price
+  - action: action_dress_price
+
+
+- story: ask trousers price 1
+  steps:
+  - user: |
+      Với giá từ 100k đến 500k bên shop có những quần nào
+    intent: ask_trousers_price
+  - action: action_trousers_price
+
+- story: ask trousers price 2
+  steps:
+  - user: |
+      Với giá trên 100k bên shop có những quần nào
+    intent: ask_trousers_price
+  - action: action_trousers_price
+
+- story: ask trousers price 3
+  steps:
+  - user: |
+      Với giá dưới 300k bên shop có những quần nào
+    intent: ask_trousers_price
+  - action: action_trousers_price
+
+- story: ask product detail 1
+  steps:
+  - user: |
+      Cho tôi xem váy lụa hai dây dự tiệc
+    intent: ask_product_detail
+  - action: action_product_detail
+
+- story: ask product detail 2
+  steps:
+  - user: |
+      Cho tôi xem áo thun dây rút
+    intent: ask_product_detail
+  - action: action_product_detail
+
+- story: ask product detail 2
+  steps:
+  - user: |
+      Cho tôi xem áo sơ mi công sở
+    intent: ask_product_detail
+  - action: action_product_detail
+
+- story: ask product order 1
+  steps:
+  - user: |
+      Cho tôi xem sản phẩm đầu tiên
+    intent: ask_previous_product
+  - action: action_ask_product_order
+
+
+- story: ask product order 2
+  steps:
+  - user: |
+      Cho tôi xem sản phẩm thứ hai
+    intent: ask_previous_product
+  - action: action_ask_product_order
+
+
+- story: ask product order 3
+  steps:
+  - user: |
+      Cho tôi xem sản phẩm thứ 3
+    intent: ask_previous_product
+  - action: action_ask_product_order
+
+- story: ask product order 4
+  steps:
+  - user: |
+      Cho tôi xem sản phẩm cuối cùng
+    intent: ask_previous_product
+  - action: action_ask_product_order
+
+- story: ask product order 5
+  steps:
+  - user: |
+      Cho tôi xem sản phẩm ở giữa
+    intent: ask_previous_product
+  - action: action_ask_product_order
+
+- story: goodbye 1
+  steps:
+  - user: |
+      tạm biệt
     intent: goodbye
   - action: utter_goodbye
 
-- story: bot challenge
+- story: goodbye 2
   steps:
   - user: |
-      are you a bot?
-    intent: bot_challenge
-  - action: utter_iamabot
+      Hẹn gặp lại sau nhé
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: goodbye 3
+  steps:
+  - user: |
+      Thôi tôi đi đây
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: goodbye 4
+  steps:
+  - user: |
+      Bye bye
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: introduce 1
+  steps:
+  - user: |
+      Bạn có thể làm gì
+    intent: introduce
+  - action: utter_introduce
+
+- story: introduce 2
+  steps:
+  - user: |
+      Bạn biết làm gì
+    intent: introduce
+  - action: utter_introduce
+
+- story: introduce 3
+  steps:
+  - user: |
+      bạn có chức năng gì
+    intent: introduce
+  - action: utter_introduce
+
+- story: introduce 4
+  steps:
+  - user: |
+      chức năng của bạn là gì
+    intent: introduce
+  - action: utter_introduce
+
+- story: thanks 1
+  steps:
+  - user: |
+      Cảm ơn nhé
+    intent: thanks
+  - action: utter_thanks
+
+- story: thanks 2
+  steps:
+  - user: |
+      Cảm ơn bạn nhiều
+    intent: thanks
+  - action: utter_thanks
+
+- story: thanks 3
+  steps:
+  - user: |
+      thankiu
+    intent: thanks
+  - action: utter_thanks
+
+- story: thanks 4
+  steps:
+  - user: |
+      cảm ơn nha
+    intent: thanks
+  - action: utter_thanks
+
+- story: ask shop product 1
+  steps:
+  - user: |
+      Shop của bạn bán gì
+    intent: ask_shop_product
+  - action: utter_ask_shop_product
+
+- story: ask shop product 2
+  steps:
+  - user: |
+      Cửa hàng mình có những gì
+    intent: ask_shop_product
+  - action: utter_ask_shop_product
+
+- story: ask shop product 3
+  steps:
+  - user: |
+      Cửa hàng bán gì
+    intent: ask_shop_product
+  - action: utter_ask_shop_product
+
+- story: ask shop product 4
+  steps:
+  - user: |
+      Cửa hàng mình là shop thời trang nữ đúng không
+    intent: ask_shop_product
+  - action: utter_ask_shop_product
+
+- story: ask price 1
+  steps:
+  - user: |
+       Giá áo bên bạn bao nhiêu
+    intent: ask_price
+  - action: utter_ask_price
+
+- story: ask price 2
+  steps:
+  - user: |
+       Giá quần áo bên bạn bao nhiêu
+    intent: ask_price
+  - action: utter_ask_price
+
+- story: ask price 3
+  steps:
+  - user: |
+       Quần áo bên bạn giá bao nhiêu nhỉ
+    intent: ask_price
+  - action: utter_ask_price
+
+- story: give name 1
+  steps:
+  - user: |
+       Tôi tên là Đạt
+    intent: give_name
+  - action: action_save_user_name
+
+- story: give name 2
+  steps:
+  - user: |
+       Tôi tên là Đạt
+    intent: give_name
+  - action: action_save_user_name
+
+- story: give name 3
+  steps:
+  - user: |
+       Tôi tên là Huy
+    intent: give_name
+  - action: action_save_user_name
+
+- story: give_phone 1
+  steps:
+  - user: |
+       0963632312
+    intent: give_phone
+  - action: action_save_phone
+
+- story: give_phone 2
+  steps:
+  - user: |
+       0973473422
+    intent: give_phone
+  - action: action_save_phone
+
+- story: give address 1
+  steps:
+  - user: |
+       tỉnh Hòa Bình
+    intent: give_address
+  - action: action_save_address
+
+- story: give address 2
+  steps:
+  - user: |
+       Mỗ Lao, Hà Đông, Hà Nội
+    intent: give_address
+  - action: action_save_address
+
+- story: buy product 1
+  steps:
+  - user: |
+       Cho tôi mua áo sơ mi văn phòng
+    intent: buy_product_intent
+  - action: action_buy_product
+
+- story: buy product 2
+  steps:
+  - user: |
+       Cho tôi mua áo thun dây rút
+    intent: buy_product_intent
+  - action: action_buy_product
+
+- story: buy product 3
+  steps:
+  - user: |
+       Cho tôi mua váy hoa nhí
+    intent: buy_product_intent
+  - action: action_buy_product
+
+- story: sing poem 1
+  steps:
+  - user: |
+       Bạn biết hát không
+    intent: sing_poem
+  - action: utter_sing_poem
+
+- story: sing poem 2
+  steps:
+  - user: |
+       Bạn biết làm thơ không
+    intent: sing_poem
+  - action: utter_sing_poem
+
+- story: sing poem 3
+  steps:
+  - user: |
+       Bạn hát đi
+    intent: sing_poem
+  - action: utter_sing_poem
+
+- story: non vietnammese 1
+  steps:
+  - user: |
+       what are you doing
+    intent: non_vietnammese
+  - action: utter_non_vietnammese
+
+- story: non vietnammese 2
+  steps:
+  - user: |
+       hilf mir beim start
+    intent: non_vietnammese
+  - action: utter_non_vietnammese
+
+- story: non vietnammese 3
+  steps:
+  - user: |
+       kannst du dies auch auf deutsch?
+    intent: non_vietnammese
+  - action: utter_non_vietnammese
+
+- story: out scope other 1
+  steps:
+  - user: |
+       4 + 2 = ?
+    intent: out_scope_other
+  - action: utter_out_scope_other
+
+- story: out scope other 2
+  steps:
+  - user: |
+       tôi là một người nghiện thuốc phiện
+    intent: out_scope_other
+  - action: utter_out_scope_other
+
+- story: out scope other 3
+  steps:
+  - user: |
+       bạn có thể cho tôi mật khẩu trung tâm dữ liệu của bạn được không
+    intent: out_scope_other
+  - action: utter_out_scope_other
+
+- story: out scope other 4
+  steps:
+  - user: |
+       tôi có thể chết được không?
+    intent: out_scope_other
+  - action: utter_out_scope_other
+  
+

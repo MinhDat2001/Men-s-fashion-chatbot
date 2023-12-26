@@ -235,11 +235,12 @@ def change_order_status(user_id, product_id):
 def update_phone(user_id, phone):
     conn = sqlite3.connect("Alio.db")
     cursor = conn.cursor()
-    print("change_order_status") 
+    print("update_phone") 
 
-    cursor.execute('''UPDATE user_info SET phone_number=? WHERE sender_id=?;''',(phone, user_id))
+    cursor.execute('''UPDATE user_info SET phone_number=? WHERE sender_id=?;''',(str(phone), user_id))
     
-    print("change_order_status successfully........")
+    conn.commit()
+    print("update_phone successfully........")
     return True
 
 def update_address(user_id, address):

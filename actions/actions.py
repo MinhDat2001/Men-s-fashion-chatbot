@@ -58,6 +58,7 @@ class ActionProductPrice(Action):
 
     def run(self, dispatcher, tracker, domain):
         print("action_product_price")
+        tracker.slots["previous_action"] = "action_product_price"
 
         try:
             start_price = "0"
@@ -108,6 +109,7 @@ class ActionDressPrice(Action):
 
     def run(self, dispatcher, tracker, domain):
         print("action_dress_price")
+        tracker.slots["previous_action"] = "action_dress_price"
 
         try:
             start_price = "0"
@@ -158,6 +160,7 @@ class ActionShirtsPrice(Action):
 
     def run(self, dispatcher, tracker, domain):
         print("action_shirts_price")
+        tracker.slots["previous_action"] = "action_shirts_price"
 
         try:
             start_price = "0"
@@ -211,6 +214,7 @@ class ActionTrousersPrice(Action):
 
     def run(self, dispatcher, tracker, domain):
         print("action_trousers_price")
+        tracker.slots["previous_action"] = "action_trousers_price"
 
         try:
             start_price = "0"
@@ -262,6 +266,7 @@ class ActionDressType(Action):
 
     def run(self, dispatcher, tracker, domain):
         print("action_dress_type")
+        tracker.slots["previous_action"] = "action_dress_type"
 
         try:
             records = DB.get_product_by_type(AlioConstant.Dress)
@@ -291,6 +296,7 @@ class ActionShirtType(Action):
 
     def run(self, dispatcher, tracker, domain):
         print("action_shirt_type")
+        tracker.slots["previous_action"] = "action_shirt_type"
 
         records = DB.get_product_by_type(AlioConstant.Shirt)
         shirts = ""
@@ -314,6 +320,7 @@ class ActionTrousersType(Action):
 
     def run(self, dispatcher, tracker, domain):
         print("action_trousers_type")
+        tracker.slots["previous_action"] = "action_trousers_type"
         try:
             records = DB.get_product_by_type(AlioConstant.Trousers)
             
@@ -342,6 +349,7 @@ class ActionAskProductOrder(Action):
 
     def run(self, dispatcher, tracker, domain):
         print("action_ask_product_order")
+        tracker.slots["previous_action"] = "action_ask_product_order"
 
         try:
             product_order = tracker.get_slot("product_order")
@@ -400,6 +408,8 @@ class ActionBuyProduct(Action):
 
     def run(self, dispatcher, tracker, domain):
         print("action_buy_product")
+        tracker.slots["previous_action"] = "action_buy_product"
+
         try:
             buy_product = tracker.get_slot("buy_product")
             print("buy product: ", buy_product)
@@ -436,7 +446,9 @@ class ActionBuyProduct(Action):
                 )
 
             if DB.order_product(user_id) is None:
-                dispatcher.utter_message()
+                dispatcher.utter_message(
+                    text = "Đã đặt hàng thành công"
+                )
             else:
                 dispatcher.utter_message()
         except:
@@ -450,6 +462,9 @@ class ActionProductDetail(Action):
         return "action_product_detail"
 
     def run(self, dispatcher, tracker, domain):
+        print("action_product_detail")
+        tracker.slots["previous_action"] = "action_product_detail"
+
         try:
 
             latest_message = tracker.latest_message
@@ -498,10 +513,9 @@ class ActionCancleBuyProduct(Action):
         return "action_cancle_buy_product"
 
     def run(self, dispatcher, tracker, domain):
-        conversation = tracker.export_stories()
-        print("write conversation!")
-        with open("conversation.json", "w") as file:
-            json.dump(conversation, file)
+        print("action_cancle_buy_product")
+        tracker.slots["previous_action"] = "action_cancle_buy_product"
+        
 
         return []
 
@@ -510,6 +524,9 @@ class ActionAskSize(Action):
         return "action_ask_size"
 
     def run(self, dispatcher, tracker, domain):
+        print("action_ask_size")
+        tracker.slots["previous_action"] = "action_ask_size"
+
         print(product_detail_list[tracker.sender_id])
         product = DB.get_product_by_name(product_detail_list[tracker.sender_id])
         dispatcher.utter_message(
@@ -519,6 +536,19 @@ class ActionAskSize(Action):
 
         return []
 
+class ActionAskOtherProduct(Action):
+    def name(self):
+        return "action_ask_other_product"
+
+    def run(self, dispatcher, tracker, domain):
+        print("action_ask_other_product")
+
+        previous_action = tracker.get_slot("previous_action")
+        dispatcher.utter_message(
+            response= "utter_ask_size"
+        )
+
+        return []
 # Mua hàng---------End-------------
 
 
@@ -553,13 +583,14 @@ class ActionSavePhone(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         print("action_save_phone")
+        tracker.slots["previous_action"] = "action_save_phone"
         
         phone = tracker.get_slot("phone")
         user_id = tracker.sender_id
         DB.update_phone(user_id,phone)
 
         print("Đã lưu số điện thoại")
-
+        ActionBuyProduct.run(self, dispatcher=dispatcher, tracker=tracker, domain=domain)
         return []
     
 class ActionSaveAddress(Action):
@@ -571,6 +602,7 @@ class ActionSaveAddress(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         print("action_save_address")
+        tracker.slots["previous_action"] = "action_save_address"
         
         user_mesage = tracker.latest_message.get('text').lower()
         user_id = tracker.sender_id
@@ -578,6 +610,7 @@ class ActionSaveAddress(Action):
 
         print("Đã lưu địa chỉ")
 
+        ActionBuyProduct.run(self,dispatcher=dispatcher, tracker=tracker, domain=domain)
         return []
     
 class ActionAskCustomerName(Action):

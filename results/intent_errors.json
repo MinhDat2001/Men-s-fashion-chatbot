@@ -1,0 +1,58 @@
+[
+  {
+    "text": "4 + 2 = ?",
+    "intent": "out_scope_other",
+    "intent_prediction": {
+      "name": "give_phone",
+      "confidence": 0.7123398184776306
+    }
+  },
+  {
+    "text": "4 + 2",
+    "intent": "out_scope_other",
+    "intent_prediction": {
+      "name": "give_phone",
+      "confidence": 0.7123398184776306
+    }
+  },
+  {
+    "text": "1 + 1 = ?",
+    "intent": "out_scope_other",
+    "intent_prediction": {
+      "name": "give_phone",
+      "confidence": 0.7123398184776306
+    }
+  },
+  {
+    "text": "1 + 1",
+    "intent": "out_scope_other",
+    "intent_prediction": {
+      "name": "give_phone",
+      "confidence": 0.7123398184776306
+    }
+  },
+  {
+    "text": "1 + 2 = ?",
+    "intent": "out_scope_other",
+    "intent_prediction": {
+      "name": "give_phone",
+      "confidence": 0.7123398184776306
+    }
+  },
+  {
+    "text": "1 + 0",
+    "intent": "out_scope_other",
+    "intent_prediction": {
+      "name": "give_phone",
+      "confidence": 0.7123398184776306
+    }
+  },
+  {
+    "text": "bạn có biết tôi không",
+    "intent": "out_scope_other",
+    "intent_prediction": {
+      "name": "ask_sale_product",
+      "confidence": 0.1371893286705017
+    }
+  }
+]

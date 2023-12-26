@@ -125,11 +125,6 @@ stories:
 
   # 3. Gợi ý về chọn quần áo
 
-  # - story: ask about dress
-  #   steps:
-  #   - intent: ask_shop_dress
-  #   - action: utter_ask_shop_dress
-
   - story: ask about office outfit
     steps:
       - intent: ask_outfit_office
@@ -141,11 +136,6 @@ stories:
   #   steps:
   #   - intent: give_name
   #   - action: action_save_user_name
-
-  # - story: create database
-  #   steps:
-  #   - intent: create_db
-  #   - action: action_create_db
 
   - story: action ask customer name
     steps:
@@ -187,10 +177,10 @@ stories:
     - intent: give_address
     - action: action_save_address
 
-  # - story: ask size path
-  #   steps:
-  #     - intent: ask_size
-  #     - action: action_ask_size
+  - story: ask size path
+    steps:
+      - intent: ask_size
+      - action: action_ask_size
 
   # 6. Buôn chuyện(Phát hiện cảm xúc qua icon)
 
@@ -228,3 +218,4 @@ stories:
     steps:
       - intent: out_scope_other
       - action: utter_out_scope_other
+
