@@ -439,11 +439,17 @@ class ActionBuyProduct(Action):
                 dispatcher.utter_message(
                     response= "utter_ask_cumtomer_phone"
                 )
-            elif user[5] is None or len(user[5])<1:
-                print("utter_ask_cumtomer_address")
+            else:
+
+            # elif user[5] is None or len(user[5])<1:
+            #     print("utter_ask_cumtomer_address")
+            #     dispatcher.utter_message(
+            #         response= "utter_ask_cumtomer_address"
+            #     )
+            
                 dispatcher.utter_message(
-                    response= "utter_ask_cumtomer_address"
-                )
+                        text = "Bạn" + user[1] + " đã đặt hàng thành công, \n Hàng sẽ được gửi về địa chỉ " + user[5]+" trong vài ngày tới \n Bạn chú ý nghe máy nhé"
+                    )
 
             if DB.order_product(user_id) is None:
                 dispatcher.utter_message(
@@ -516,6 +522,9 @@ class ActionCancleBuyProduct(Action):
         print("action_cancle_buy_product")
         tracker.slots["previous_action"] = "action_cancle_buy_product"
         
+        dispatcher.utter_message(
+            text = "Đã hủy mua áo thun dây rút tay ngắn"
+        )
 
         return []
 
